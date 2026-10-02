@@ -1,0 +1,282 @@
+import bpy, bmesh, os, math, json
+from mathutils import Vector, Matrix
+from mathutils.bvhtree import BVHTree
+BASE=os.path.abspath(os.path.join(os.path.dirname(__file__),"../../blender"))
+bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.ops.import_scene.gltf(filepath=os.path.join(BASE,'Ferrari-458-interior.glb'))
+def P(x,y,z): return Vector((x,-z,y))
+def W(v): return Vector((v.x,v.z,-v.y))
+def material(name,color,rough=.8,metal=0):
+ m=bpy.data.materials.new(name);m.diffuse_color=(*color,1);m.use_nodes=True
+ n=m.node_tree.nodes.get('Principled BSDF');n.inputs['Base Color'].default_value=(*color,1);n.inputs['Roughness'].default_value=rough;n.inputs['Metallic'].default_value=metal
+ return m
+leather=material('Fitted upholstery',(.024,.030,.027),.88)
+black=material('Fitted fixed black trim',(.012,.017,.014),.92)
+felt=material('Fitted recessed felt',(.004,.007,.005),1)
+thread=material('Fitted saddle thread',(.12,.105,.082),.95)
+metal=material('Fitted satin aluminium',(.32,.36,.33),.3,.8)
+red=material('Fitted red reflector',(.4,.016,.009),.3)
+new=[]
+def group(name,origin=(0,0,0)):
+ o=bpy.data.objects.new(name,None);bpy.context.collection.objects.link(o);o.location=P(*origin);new.append(o);return o
+rear=group('upgrade_rear')
+def obj(name,verts,faces,mat,parent=None,smooth=True,bevel=0):
+ g=bpy.data.meshes.new(name);g.from_pydata([P(*v) for v in verts],[],faces);g.update()
+ uv=g.uv_layers.new(name='Upholstery UV')
+ for loop in g.loops:
+  x,y,z=verts[loop.vertex_index];uv.data[loop.index].uv=(z,y) if parent and parent.name=='upgrade_rear' else (x,y)
+ o=bpy.data.objects.new(name,g);bpy.context.collection.objects.link(o);o.data.materials.append(mat)
+ if parent:o.parent=parent;o.matrix_parent_inverse=parent.matrix_world.inverted()
+ for p in g.polygons:p.use_smooth=smooth
+ if bevel:
+  mod=o.modifiers.new('Soft manufactured edges','BEVEL');mod.width=bevel;mod.segments=3
+  mod=o.modifiers.new('Stable face normals','WEIGHTED_NORMAL');mod.keep_sharp=True
+ new.append(o);return o
+def solid(name,surface,nu,nv,mat,parent,depth=.009,axis=0):
+ verts=[];faces=[]
+ for layer in range(2):
+  for j in range(nv+1):
+   for i in range(nu+1):
+    p=Vector(surface(i/nu,j/nv));p[axis]+=layer*depth;verts.append(p)
+ stride=nu+1;n=stride*(nv+1)
+ for j in range(nv):
+  for i in range(nu):
+   a=j*stride+i;b=a+1;c=a+stride;d=c+1;faces.extend([(a,c,d,b),(a+n,b+n,d+n,c+n)])
+ edge=list(range(stride))+[j*stride+nu for j in range(1,nv+1)]+[nv*stride+i for i in range(nu-1,-1,-1)]+[j*stride for j in range(nv-1,0,-1)]
+ for i,a in enumerate(edge):b=edge[(i+1)%len(edge)];faces.append((a,b,b+n,a+n))
+ return obj(name,verts,faces,mat,parent)
+def tube(name,points,r,mat,parent):
+ c=bpy.data.curves.new(name,'CURVE');c.dimensions='3D';c.resolution_u=16;c.bevel_depth=r;c.bevel_resolution=3
+ s=c.splines.new('POLY');s.points.add(len(points)-1)
+ for a,p in zip(s.points,points):a.co=(*P(*p),1)
+ o=bpy.data.objects.new(name,c);bpy.context.collection.objects.link(o);o.data.materials.append(mat)
+ if parent:o.parent=parent;o.matrix_parent_inverse=parent.matrix_world.inverted()
+ new.append(o);return o
+def cuboid(name,c,size,mat,parent,r=.005):
+ x,y,z=c;dx,dy,dz=[v/2 for v in size];vs=[(x+a*dx,y+b*dy,z+d*dz) for a,b,d in [(-1,-1,-1),(-1,-1,1),(-1,1,1),(-1,1,-1),(1,-1,-1),(1,-1,1),(1,1,1),(1,1,-1)]]
+ return obj(name,vs,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(3,7,6,2),(1,2,6,5),(0,4,7,3)],mat,parent,True,r)
+def stitch(name,points,mat,parent):
+ # Each stitch follows its supporting surface and has a distinct short dash.
+ for i in range(0,len(points)-1,2):tube(name,[points[i],points[i+1]],.0006,mat,parent)
+
+# Measure the painted rear aperture, after the complete door panel was detached.
+body=bpy.data.objects.get('body');edge_counts={};points=[];weld={};ids={}
+for v in body.data.vertices:
+ p=W(body.matrix_world@v.co);key=tuple(round(x,5) for x in p)
+ if key not in weld:weld[key]=len(points);points.append(p)
+ ids[v.index]=weld[key]
+for f in body.data.polygons:
+ vv=[ids[i] for i in f.vertices]
+ for i,a in enumerate(vv):b=vv[(i+1)%len(vv)];key=tuple(sorted((a,b)));edge_counts[key]=edge_counts.get(key,0)+1
+boundary=[(points[a],points[b]) for (a,b),n in edge_counts.items() if n==1]
+def aperture(y,side):
+ candidates=[]
+ for a,b in boundary:
+  if a.z*side<.65 or b.z*side<.65 or a.z*side>1.02 or b.z*side>1.02:continue
+  if max(a.x,b.x)<.42 or min(a.x,b.x)>.80:continue
+  if min(a.y,b.y)<=y<=max(a.y,b.y) and abs(b.y-a.y)>1e-6:
+   p=a.lerp(b,(y-a.y)/(b.y-a.y));candidates.append(p)
+ if candidates:
+  return min(candidates,key=lambda p:abs(p.x-.565))
+ candidates=[p for p in points if .52<p.x<.72 and .65<p.z*side<.99]
+ p=min(candidates,key=lambda p:abs(p.y-y)*8+abs(p.x-.565));return Vector((p.x,y,p.z))
+samples={str(side):[list(aperture(.25+i*.65/12,side)) for i in range(13)] for side in [-1,1]}
+print('MEASURED APERTURE',json.dumps(samples))
+
+# A continuous curved rear shell: central wall and both quarter returns share vertices.
+def rear_surface(u,v):
+ y=.238+v*.658;z=(u*2-1)*.705;x=.486+.064*v*v+.014*(abs(z)/.705)**4
+ return (x,y,z)
+solid('rear_continuous_bulkhead',rear_surface,80,56,black,rear,.012)
+for side in [-1,1]:
+ def quarter(u,v,side=side):
+  y=.238+v*.658;edge=aperture(y,side);x0=edge.x+.004;z0=edge.z-side*.007
+  inner=Vector(rear_surface(0 if side<0 else 1,v));t=u*u*(3-2*u)
+  p=Vector((x0,y,z0)).lerp(inner,t);p.x-=.016*math.sin(math.pi*u)*math.sin(math.pi*v)
+  return p
+ solid('rear_moulded_quarter_'+str(side),quarter,40,56,black,rear,.009)
+ # Upholstery is an inset surface rather than a slab placed in the doorway.
+ def inset(u,v,side=side):
+  p=Vector(rear_surface(.045+u*.40 if side<0 else .555+u*.40,.10+v*.80));p.x-=.002+.004*math.sin(u*math.pi)*math.sin(v*math.pi);return p
+ solid('rear_upholstered_inset_'+str(side),inset,40,40,leather,rear,.004)
+ for u in [.018,.034,.966,.982]:
+  stitch('rear_double_stitch',[(inset(u,j/160)[0]-.001,*inset(u,j/160)[1:]) for j in range(161)],thread,rear)
+ for v in [.018,.034,.966,.982]:stitch('rear_double_stitch',[(inset(j/160,v)[0]-.001,*inset(j/160,v)[1:]) for j in range(161)],thread,rear)
+ # Rounded belt guide and recessed lower service panel.
+ edge=aperture(.81,side)
+ cuboid('rear_belt_guide',(edge.x+.015,.80,side*.676),(.027,.048,.085),black,rear,.010)
+ tube('rear_belt_mount_rim',[(edge.x-.004,.802,side*(.65+j*.003)) for j in range(19)],.002,metal,rear)
+ # Broad, gently curved webbing connects the pillar to the seat buckle.
+ def belt_surface(u,v,side=side,edge=edge):
+  t=v;cx=(edge.x+.007)*(1-t)+.15*t-.013*math.sin(t*math.pi);cy=.804*(1-t)+.365*t;cz=side*(.677*(1-t)+.602*t)
+  return (cx,cy,cz+side*(u-.5)*.042)
+ solid('seatbelt_webbing_fitted',belt_surface,4,48,felt,rear,.002)
+solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.pi),-.705+v*1.41),40,32,felt,rear,.012,1)
+tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
+
+# Closed bucket seats, with one continuous headrest/back rather than intersecting shells.
+seats=group('upgrade_seats')
+for side in [-1,1]:
+ zc=side*.35
+ rows=[(.39,.045,.056,.15),(.44,.055,.067,.205),(.54,.10,.065,.205),(.68,.155,.060,.175),(.82,.215,.062,.215),(.88,.245,.055,.225),(.93,.265,.048,.135),(1.00,.280,.052,.145),(1.075,.289,.042,.140),(1.10,.290,.025,.117)]
+ def profile(y):
+  i=next((i for i in range(len(rows)-1) if rows[i+1][0]>=y),len(rows)-2);a,b=rows[i:i+2];t=max(0,min(1,(y-a[0])/(b[0]-a[0])));t=t*t*(3-2*t)
+  return tuple(a[k]*(1-t)+b[k]*t for k in range(1,4))
+ vs=[];fs=[];rings=84;around=64
+ for j in range(rings+1):
+  y=.39+j*.71/rings;x,depth,width=profile(y)
+  for i in range(around):
+   a=i*math.tau/around;vs.append((x+.075+math.cos(a)*depth,y,zc+math.sin(a)*width))
+ for j in range(rings):
+  for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((a,a+around,b+around,b))
+ for j in [0,rings]:
+  y=.39+j*.71/rings;x,depth,width=profile(y);center=len(vs);vs.append((x+.075,y,zc))
+  for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((center,b,a) if j==rings else (center,a,b))
+ obj('seat_continuous_closed_back',vs,fs,leather,seats)
+ def padded(u,v):
+  y=.472+v*.402;x,d,w=profile(y);dz=(u-.5)*.23
+  return (x+.075-d*math.sqrt(max(0,1-(dz/w)**2))-.003-.005*math.sin(u*math.pi)*math.sin(v*math.pi),y,zc+dz)
+ solid('seat_central_padded_insert',padded,48,64,leather,seats,.006)
+ for u in [.014,.030,.970,.986]:stitch('seat_double_saddle_stitch',[(padded(u,j/160)[0]-.0008,*padded(u,j/160)[1:]) for j in range(161)],thread,seats)
+ for v in [.17,.34,.51,.68,.85]:tube('seat_quilted_horizontal_seam',[(padded(i/80,v)[0]-.0008,*padded(i/80,v)[1:]) for i in range(81)],.00065,thread,seats)
+ cuboid('seat_structural_base',(-.055,.285,zc),(.61,.115,.46),black,seats,.033)
+ def cushion(u,v):
+  x=-.385+u*.53;dz=(v-.5)*.45;y=.342+.020*math.sin(u*math.pi)+.038*(abs(dz)/.225)**4
+  return (x,y,zc+dz)
+ solid('seat_contoured_cushion',cushion,56,48,leather,seats,-.055,1)
+ for v in [.15,.18,.82,.85]:stitch('seat_cushion_double_stitch',[(cushion(i/140,v)[0],cushion(i/140,v)[1]+.001,cushion(i/140,v)[2]) for i in range(141)],thread,seats)
+ for dz in [-.18,.18]:cuboid('seat_adjustment_slide',(-.04,.222,zc+dz),(.51,.026,.026),metal,seats,.004)
+ cuboid('seat_buckle',(-.044,.406,zc-side*.25),(.036,.068,.046),black,seats,.006)
+ cuboid('seat_red_release',(-.044,.441,zc-side*.25),(.030,.008,.038),red,seats,.002)
+
+# Rebuild each door over its measured original exterior, with a tapered thickness.
+for side,label in [(-1,'L'),(1,'R')]:
+ source=bpy.data.objects.get('door_'+label)
+ source.rotation_euler=(0,0,0);bpy.context.view_layer.update()
+ meshes=[o for o in source.children_recursive if o.type=='MESH' and o.name.startswith('body_door')]
+ def area(o):
+  ps=[W(o.matrix_world@v.co) for v in o.data.vertices];return (max(p.x for p in ps)-min(p.x for p in ps))*(max(p.y for p in ps)-min(p.y for p in ps))
+ skin=max(meshes,key=area);ps=[W(skin.matrix_world@v.co) for v in skin.data.vertices];skin.data.calc_loop_triangles()
+ tris=[]
+ for t in skin.data.loop_triangles:
+  a,b,c=[ps[i] for i in t.vertices]
+  if (b-a).cross(c-a).z*side>1e-10:tris.append((a,b,c))
+ bins={};step=.045
+ for tri in tris:
+  for ix in range(math.floor(min(p.x for p in tri)/step),math.floor(max(p.x for p in tri)/step)+1):
+   for iy in range(math.floor(min(p.y for p in tri)/step),math.floor(max(p.y for p in tri)/step)+1):bins.setdefault((ix,iy),[]).append(tri)
+ def outer(x,y):
+  for a,b,c in bins.get((math.floor(x/step),math.floor(y/step)),[]):
+   den=(b.y-c.y)*(a.x-c.x)+(c.x-b.x)*(a.y-c.y)
+   if abs(den)<1e-12:continue
+   u=((b.y-c.y)*(x-c.x)+(c.x-b.x)*(y-c.y))/den;v=((c.y-a.y)*(x-c.x)+(a.x-c.x)*(y-c.y))/den
+   if u>=-1e-5 and v>=-1e-5 and u+v<=1.00001:return u*a.z+v*b.z+(1-u-v)*c.z
+  return min(ps,key=lambda p:(p.x-x)**2+(p.y-y)**2).z
+ def face(x,y,d=0):return (x,y,outer(x,y)-side*(.034+d))
+ door=group('upgrade_door_'+label,(-.73,.65,side*.83));bpy.context.view_layer.update()
+ # Weld the measured skin before making its solid return, preserving the exact silhouette.
+ vv=[];ff=[];mapping={}
+ for tri in tris:
+  out=[]
+  for p in tri:
+   key=tuple(round(v,6) for v in p)
+   if key not in mapping:mapping[key]=len(vv);vv.append(face(p.x,p.y))
+   out.append(mapping[key])
+  ff.append(tuple(reversed(out)))
+ n=len(vv);vv.extend([(x,y,z+side*.032) for x,y,z in vv]);faces=ff+[tuple(i+n for i in reversed(f)) for f in ff];edges={}
+ for f in ff:
+  for i,a in enumerate(f):b=f[(i+1)%len(f)];key=tuple(sorted((a,b)));edges.setdefault(key,[]).append((a,b))
+ for pairs in edges.values():
+  if len(pairs)==1:a,b=pairs[0];faces.append((a,b,b+n,a+n))
+ obj('door_continuous_inner_skin_'+label,vv,faces,black,door)
+ # Large smoothly bulged leather insert, formed into the door rather than stacked blocks.
+ def insert(u,v):
+  x=-.575+u*.95;y=.47+v*.235+.025*math.sin(u*math.pi);return face(x,y,.004+.006*math.sin(u*math.pi)*math.sin(v*math.pi))
+ solid('door_padded_leather_insert_'+label,insert,64,32,leather,door,side*.004,2)
+ for v in [.025,.045,.955,.975]:stitch('door_insert_double_stitch',[insert(i/160,v) for i in range(161)],thread,door)
+ # Sculpted armrest has a narrow padded crown and tapered support.
+ def armrest(u,v):
+  x=-.29+u*.57;y=.565+v*.062+.014*math.sin(u*math.pi);d=.015+.034*math.sin(v*math.pi)**.7*math.sin(u*math.pi)**.35
+  return face(x,y,d)
+ solid('door_sculpted_armrest_'+label,armrest,64,24,leather,door,side*.012,2)
+ for v in [.33,.43]:stitch('door_armrest_stitch',[armrest(i/140,v) for i in range(141)],thread,door)
+ # Pocket: felt cavity, shaped lip and two joined ends.
+ solid('door_storage_recess_'+label,lambda u,v:face(-.25+u*.53,.35+v*.092,.008),48,16,felt,door,side*.006,2)
+ solid('door_storage_front_lip_'+label,lambda u,v:face(-.25+u*.53,.353+v*.045+.011*math.sin(u*math.pi),.024+.019*math.sin(u*math.pi)),48,12,leather,door,side*.012,2)
+ for x in [-.25,.28]:solid('door_storage_joined_end',lambda u,v,x=x:face(x+u*.009,.35+v*.09,.008+.025*(1-v)),4,20,black,door,side*.008,2)
+ # Release handle and recess follow the same curved skin; every point has a support.
+ solid('door_release_recess',lambda u,v:face(-.19+u*.25,.64+v*.042,.011),40,12,felt,door,side*.006,2)
+ tube('door_release_handle',[face(-.17+i*.23/40,.66+.012*math.sin(i*math.pi/40),.024+.004*math.sin(i*math.pi/40)) for i in range(41)],.006,metal,door)
+ # Mounted perforated speaker with a circular leather surround.
+ center=(-.46,.442)
+ def disc(r):
+  vs=[face(*center,.008)]+[face(center[0]+r*math.cos(i*math.tau/96),center[1]+r*math.sin(i*math.tau/96),.008) for i in range(96)]
+  return vs,[(0,i+1,(i+1)%96+1) for i in range(96)]
+ vs,fs=disc(.076);obj('door_speaker_grille',vs,fs,felt,door)
+ tube('door_speaker_satin_ring',[face(center[0]+.078*math.cos(i*math.tau/96),center[1]+.078*math.sin(i*math.tau/96),.008) for i in range(97)],.0014,metal,door)
+ pores=[];pf=[]
+ for row in range(-15,16):
+  for col in range(-15,16):
+   dx=col*.0044+(row%2)*.0022;dy=row*.00381
+   if dx*dx+dy*dy>.069**2:continue
+   at=len(pores);pores.append(face(center[0]+dx,center[1]+dy,.009))
+   pores.extend([face(center[0]+dx+.0007*math.cos(i*math.tau/6),center[1]+dy+.0007*math.sin(i*math.tau/6),.0093) for i in range(6)])
+   pf.extend([(at,at+i+1,at+(i+1)%6+1) for i in range(6)])
+ obj('door_speaker_microperforations',pores,pf,black,door)
+ for x in [-.34,-.292]:
+  solid('door_window_switch',lambda u,v,x=x:face(x+u*.025,.687+v*.012,.017),8,4,metal,door,side*.005,2)
+ solid('door_red_edge_reflector',lambda u,v:face(.388+u*.026,.357+v*.040,.005),6,8,red,door,side*.003,2)
+ tube('door_lower_soft_binding',[face(-.55+i*.88/70,.315+.022*math.sin(i*math.pi/70),.001) for i in range(71)],.002,black,door)
+
+# Batch microdetails per assembly and material; thousands of stitches do not become draw calls.
+for o in bpy.context.selected_objects:o.select_set(False)
+for o in new:
+ if o.type=='CURVE':o.select_set(True)
+bpy.context.view_layer.objects.active=next(o for o in new if o.type=='CURVE')
+bpy.ops.object.convert(target='MESH')
+batches={}
+for o in list(new):
+ if o.type=='MESH':batches.setdefault((o.parent.name,o.data.materials[0].name),[]).append(o)
+for (parent,mat),objects in batches.items():
+ if len(objects)<2:continue
+ for o in bpy.context.selected_objects:o.select_set(False)
+ for o in objects:o.select_set(True)
+ bpy.context.view_layer.objects.active=objects[0];bpy.ops.object.join();objects[0].name=parent+'__'+mat
+new=[o for o in bpy.data.objects if o.name.startswith('upgrade_') or (o.parent and o.parent.name.startswith('upgrade_'))]
+for o in new:
+ if o.type!='MESH':continue
+ mesh=bmesh.new();mesh.from_mesh(o.data)
+ bmesh.ops.recalc_face_normals(mesh,faces=list(mesh.faces))
+ mesh.to_mesh(o.data);mesh.free();o.data.update()
+
+# Remove the superseded assemblies from the editable full vehicle as well.
+old=bpy.data.objects.get('rear_tailored_trim')
+if old:
+ for o in list(old.children_recursive)+[old]:bpy.data.objects.remove(o,do_unlink=True)
+for name in ['seat_driver','seat_passenger']:
+ old=bpy.data.objects.get(name)
+ if old:
+  for o in list(old.children_recursive)+[old]:bpy.data.objects.remove(o,do_unlink=True)
+for label in ['L','R']:
+ old=bpy.data.objects.get('door_'+label)
+ for o in list(old.children_recursive):
+  if o.name.startswith(('body_door','chrome_door','interior_dark_door')):continue
+  if o.name in bpy.data.objects:bpy.data.objects.remove(o,do_unlink=True)
+for o in list(bpy.data.objects):
+ if o.type!='MESH' or not o.parent or o.parent.name!='closed_cabin':continue
+ points=[W(o.matrix_world@v.co) for v in o.data.vertices]
+ if not points:continue
+ lo=[min(p[i] for p in points) for i in range(3)];hi=[max(p[i] for p in points) for i in range(3)]
+ if .05<lo[0]<.10 and .30<hi[0]<.36 and .34<lo[1]<.38 and .82<hi[1]<.85:bpy.data.objects.remove(o,do_unlink=True)
+
+# Preserve the full editable vehicle, but export only the replacement assemblies.
+for o in bpy.context.selected_objects:o.select_set(False)
+for o in new:o.select_set(True)
+output=os.path.join(BASE,'../apex/public/models/ferrari-fitted-interior.glb')
+bpy.ops.export_scene.gltf(filepath=output,export_format='GLB',use_selection=True,export_apply=True,export_draco_mesh_compression_enable=True,export_draco_mesh_compression_level=6)
+for side in ['L','R']:
+ o=bpy.data.objects['upgrade_door_'+side];world=o.matrix_world.copy()
+ o.parent=bpy.data.objects['door_'+side];o.matrix_world=world
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'Ferrari-458-fitted.blend'))
+print('EXPORTED FITTED ASSEMBLIES',output)
+
