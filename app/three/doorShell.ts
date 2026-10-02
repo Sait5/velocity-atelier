@@ -2,7 +2,9 @@ import * as T from 'three'
 
 /** Use the door's own silhouette and perimeter: inner skin and returns meet the painted skin exactly. */
 export function buildJoinedDoorShell(door:T.Group,side:number,leather:T.Material,edgeMaterial:T.Material){
- const skin=door.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&o.name==='body_door').sort((a,b)=>b.geometry.getAttribute('position').count-a.geometry.getAttribute('position').count)[0]
+ const panels=door.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&o.name==='body_door')
+ const projectedArea=(mesh:T.Mesh)=>{mesh.geometry.computeBoundingBox();const size=mesh.geometry.boundingBox!.getSize(new T.Vector3());return size.x*size.y}
+ const skin=panels.sort((a,b)=>projectedArea(b)-projectedArea(a))[0]
  if(!skin)throw new Error('Door exterior skin missing')
  const source=skin.geometry,attribute=source.getAttribute('position'),outer:T.Vector3[]=[],inner:T.Vector3[]=[],weld=new Map<string,number>(),ids:number[]=[]
  for(let i=0;i<attribute.count;i++){const p=new T.Vector3().fromBufferAttribute(attribute,i),key=p.toArray().map(v=>Math.round(v*1e6)).join(',');let id=weld.get(key);if(id===undefined){id=outer.length;weld.set(key,id);outer.push(p);inner.push(new T.Vector3(p.x,p.y,side*.725-door.position.z))}ids.push(id)}

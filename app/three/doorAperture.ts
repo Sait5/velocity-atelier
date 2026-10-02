@@ -3,10 +3,11 @@ import * as T from 'three'
 /** Subtract an aperture from shared trim without tearing adjoining body panels. */
 export function clearDoorApertures(root:T.Group){
  root.updateMatrixWorld(true)
- const apertures=[-1,1].map(side=>new T.Box3(new T.Vector3(-.72,.285,side<0?-1.01:.60),new T.Vector3(.46,.88,side<0?-.60:1.01)))
- apertures.push(new T.Box3(new T.Vector3(.29,.22,-.92),new T.Vector3(.72,.985,.92)))
- const meshes:T.Mesh[]=[];root.traverse(o=>{if(o instanceof T.Mesh&&/^(interior_dark|carpet)$/.test(o.name))meshes.push(o)})
+ const doorOpenings=[-1,1].map(side=>new T.Box3(new T.Vector3(-.72,.285,side<0?-1.01:.60),new T.Vector3(.46,.88,side<0?-.60:1.01)))
+ const rearClosure=new T.Box3(new T.Vector3(.29,.22,-.92),new T.Vector3(.72,.985,.92))
+ const meshes:T.Mesh[]=[];root.traverse(o=>{if(o instanceof T.Mesh&&/^(interior_dark|interior_light|leather|trim|carpet)$/.test(o.name))meshes.push(o)})
  for(const mesh of meshes){
+  const apertures=/^(interior_dark|carpet)$/.test(mesh.name)?[...doorOpenings,rearClosure]:[rearClosure]
   const g=mesh.geometry,attrs=Object.entries(g.attributes),position=g.getAttribute('position'),inverse=mesh.matrixWorld.clone().invert(),output:Record<string,number[]>={}
   attrs.forEach(([name])=>output[name]=[])
   type Vertex={world:T.Vector3,values:Record<string,number[]>}
