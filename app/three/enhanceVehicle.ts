@@ -3,8 +3,9 @@ import {rebuildCabin} from './cabin'
 import {rebuildWheels} from './wheels'
 import {addCockpitDetails} from './cockpitDetails'
 import {addPedalBox} from './pedals'
+import {leatherGrain} from './upholsteryDetail'
 export function enhanceVehicle(root:T.Group,wheels:T.Group[],rim:T.MeshStandardMaterial,leather:T.MeshStandardMaterial){
- const grainCanvas=document.createElement('canvas');grainCanvas.width=grainCanvas.height=128;const ctx=grainCanvas.getContext('2d')!;const pixels=ctx.createImageData(128,128);for(let i=0;i<pixels.data.length;i+=4){const g=115+Math.round(Math.sin(i*12.9898)*18);pixels.data.set([g,g,g,255],i)}ctx.putImageData(pixels,0,0);const grain=new T.CanvasTexture(grainCanvas);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.repeat.set(10,10);leather.bumpMap=grain;leather.bumpScale=.0035
+ leather.bumpMap=leatherGrain();leather.bumpScale=.00065
  const rubber=new T.MeshStandardMaterial({color:'#090b0a',roughness:.96,metalness:0,envMapIntensity:.04})
  const treadCanvas=document.createElement('canvas');treadCanvas.width=256;treadCanvas.height=128;const tread=treadCanvas.getContext('2d')!;tread.fillStyle='#888';tread.fillRect(0,0,256,128);tread.strokeStyle='#303030';tread.lineWidth=4;for(let i=-2;i<18;i++){tread.beginPath();tread.moveTo(i*20,0);tread.lineTo(i*20+36,64);tread.lineTo(i*20,128);tread.stroke()}for(const y of [25,48,80,103]){tread.fillStyle='#484848';tread.fillRect(0,y,256,3)}const treadTexture=new T.CanvasTexture(treadCanvas);treadTexture.wrapS=treadTexture.wrapT=T.RepeatWrapping;treadTexture.repeat.set(4,1);rubber.bumpMap=treadTexture;rubber.bumpScale=.006
  const carbon=new T.MeshStandardMaterial({color:'#151a17',roughness:.65,metalness:.12,envMapIntensity:.25})
