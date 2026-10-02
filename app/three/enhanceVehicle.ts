@@ -2,6 +2,7 @@ import * as T from 'three'
 import {rebuildCabin} from './cabin'
 import {rebuildWheels} from './wheels'
 import {addCockpitDetails} from './cockpitDetails'
+import {addPedalBox} from './pedals'
 export function enhanceVehicle(root:T.Group,wheels:T.Group[],rim:T.MeshStandardMaterial,leather:T.MeshStandardMaterial){
  const grainCanvas=document.createElement('canvas');grainCanvas.width=grainCanvas.height=128;const ctx=grainCanvas.getContext('2d')!;const pixels=ctx.createImageData(128,128);for(let i=0;i<pixels.data.length;i+=4){const g=115+Math.round(Math.sin(i*12.9898)*18);pixels.data.set([g,g,g,255],i)}ctx.putImageData(pixels,0,0);const grain=new T.CanvasTexture(grainCanvas);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.repeat.set(10,10);leather.bumpMap=grain;leather.bumpScale=.0035
  const rubber=new T.MeshStandardMaterial({color:'#090b0a',roughness:.96,metalness:0,envMapIntensity:.04})
@@ -21,10 +22,10 @@ export function enhanceVehicle(root:T.Group,wheels:T.Group[],rim:T.MeshStandardM
   else if(['Carbon_Fiber','Carpet','Interior_dark'].includes(original.name)&&!o.name.startsWith('steering_red'))o.material=carbon
  })
  const precision=rebuildWheels(root,wheels,rim);wheels.splice(0,wheels.length,...precision.wheels);rebuildCabin(root,leather)
- const pedalMaterial=new T.MeshStandardMaterial({color:'#7e8680',metalness:.85,roughness:.4}),gripMaterial=new T.MeshStandardMaterial({color:'#090c0a',roughness:.9})
- for(const [z,height,width] of [[.22,.14,.045],[.33,.09,.08],[.46,.16,.075]] as [number,number,number][]){const pedal=new T.Mesh(new T.BoxGeometry(.022,height,width),pedalMaterial);pedal.position.set(-.59,.30,z);pedal.rotation.z=.18;pedal.name='pedal';root.add(pedal);const arm=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3([new T.Vector3(-.82,.40,z),new T.Vector3(-.70,.37,z),new T.Vector3(-.60,.30,z)]),16,.007,8,false),pedalMaterial);root.add(arm);for(let i=0;i<4;i++){const grip=new T.Mesh(new T.BoxGeometry(.008,.006,width*.7),gripMaterial);grip.position.set(.014,-height/2+.025+i*height/5,0);pedal.add(grip)}}
+ addPedalBox(root)
  addCockpitDetails(root)
  // Preserve and refine the model's actual cockpit; do not add fake dashboard screens.
  const displayLight=new T.PointLight('#d9dfbf',.16,1.6);displayLight.position.set(-.45,.92,.32);root.add(displayLight)
  const used=new Set<T.Material>();root.traverse(o=>{if(o instanceof T.Mesh)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>used.add(m))});materials.forEach(m=>{if(!used.has(m))m.dispose()})
 }
+

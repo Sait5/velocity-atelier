@@ -1,5 +1,6 @@
 import * as T from 'three'
 import {addDoorInterior} from './doorInterior'
+import {clearDoorApertures} from './doorAperture'
 
 /** Discover complete disconnected panels without cutting through body triangles. */
 export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Material){
@@ -27,8 +28,9 @@ export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Mat
    const exterior=mesh.name==='body'&&inDoorArea
    const mirror=/^(chrome|interior_dark)$/.test(mesh.name)&&part.min.x>-.5&&part.max.x<-.35&&part.min.y>.78&&part.max.y<.94&&Math.min(Math.abs(part.min.z),Math.abs(part.max.z))>.9
    const oldInner=inDoorArea&&/^(leather|trim|interior_light|interior_dark|carbon_fibre_trim|metal|chrome)$/.test(mesh.name)
+   const upperDoorRail=inDoorArea&&/^(leather|trim)$/.test(mesh.name)&&part.min.y>.73
    const ids=part.triangles.flat()
-   if(!exterior&&!mirror){if(!oldInner)for(const id of ids)kept.push(id);continue}
+   if(!exterior&&!mirror&&!upperDoorRail){if(!oldInner)for(const id of ids)kept.push(id);continue}
    const panel=new T.BufferGeometry()
    for(const [name,attribute] of Object.entries(geometry.attributes)){
     const values:number[]=[]
@@ -40,6 +42,7 @@ export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Mat
   if(kept.length===triangles.length*3)continue
   const replacement=geometry.clone();replacement.setIndex(kept);replacement.clearGroups();mesh.geometry=replacement;geometry.dispose()
  }
+ clearDoorApertures(root)
  doors.forEach((d,i)=>addDoorInterior(d,i===0?-1:1,leather))
  return doors
 }

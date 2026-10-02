@@ -7,7 +7,8 @@ export const interiorDetails=[
  {id:'instruments',ru:'Приборы',en:'Instruments',point:[-.64,.86,.36],ruText:'Оригинальная приборная панель модели: центральный тахометр и боковые шкалы. Это обзор деталей, а не имитация действующего дисплея.',enText:'The model’s original instrument cluster, with a central tachometer and auxiliary gauges. This is a detail view, not a simulated display.'},
  {id:'seats',ru:'Сиденья',en:'Seats',point:[-.02,.53,-.35],ruText:'Спортивные кресла с выраженной боковой поддержкой. Выберите цвет обивки в конфигураторе — материал сидений изменится в 3D.',enText:'Supportive sport seats. Choose an upholstery finish to change their actual 3D material.'},
  {id:'console',ru:'Консоль',en:'Center console',point:[-.03,.58,0],ruText:'Центральная консоль и органы управления трансмиссией. Этот режим показывает геометрию и отделку салона.',enText:'The central console and transmission controls. This view reveals the cockpit geometry and finishes.'},
- {id:'pedals',ru:'Педали',en:'Pedals',point:[-.59,.30,.33],ruText:'Металлические педали тормоза и акселератора с противоскользящими накладками. В режиме поездки используйте W/S или экранные кнопки.',enText:'Metal brake and accelerator pedals with grip inserts. In Drive, use W/S or the touch controls.'}
+ {id:'pedals',ru:'Педали',en:'Pedals',point:[-.65,.34,.365],ruText:'Металлические педали тормоза и акселератора с противоскользящими накладками. В режиме поездки используйте W/S или экранные кнопки.',enText:'Metal brake and accelerator pedals with grip inserts. In Drive, use W/S or the touch controls.'}
 ]
 
-export const environments=[{id:'studio',ru:'Студия',en:'Studio'},{id:'field',ru:'Загородная дорога',en:'Country road'},{id:'alpine',ru:'Горная долина',en:'Alpine valley'},{id:'coast',ru:'Побережье',en:'Coast'},{id:'sunset',ru:'Закат в поле',en:'Sunset fields'}]
+export const environments=[{id:'studio',ru:'Студия',en:'Studio'},{id:'field',ru:'Загородная дорога',en:'Country road'},{id:'alpine',ru:'Альпы · фотопанорама',en:'Alps · photographic panorama'},{id:'coast',ru:'Побережье',en:'Coast'},{id:'sunset',ru:'Закат в поле',en:'Sunset fields'}]
+
