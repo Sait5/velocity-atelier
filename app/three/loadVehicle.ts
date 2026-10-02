@@ -12,7 +12,7 @@ export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
  const wheels:T.Group[]=[],spokes:T.Group[]=[]
  const originals=new Set<T.Material>();model.traverse((o:T.Object3D)=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;if(o.name==='body'||o.name==='glass'){originals.add(o.material as T.Material);o.material=o.name==='body'?body:glass}else if(o.name==='leds'){originals.add(o.material as T.Material);o.material=white}}if(o.name.startsWith('wheel_'))wheels.push(o as T.Group)})
  root.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(root);const center=bounds.getCenter(new T.Vector3());model.position.x-=center.x;model.position.z-=center.z;model.position.y-=bounds.min.y
- body.envMapIntensity=.65;rim.envMapIntensity=.6;enhanceVehicle(root,wheels,rim,leather);originals.forEach(m=>m.dispose());const doors=rigDoors(root,body)
+ body.envMapIntensity=.65;rim.envMapIntensity=.6;enhanceVehicle(root,wheels,rim,leather);originals.forEach(m=>m.dispose());const doors=rigDoors(root,body,leather)
  return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes,dispose(){const gs=new Set<T.BufferGeometry>(),ms=new Set<T.Material>(),textures=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){gs.add(o.geometry);if(o instanceof T.InstancedMesh)o.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>ms.add(m))}});gs.forEach(g=>g.dispose());ms.forEach(m=>{for(const value of Object.values(m))if(value instanceof T.Texture)textures.add(value);m.dispose()});textures.forEach(t=>t.dispose());[body,rim,brake,glass,leather,white].forEach(m=>m.dispose())}}
  }finally{decoder.dispose()}
 }
