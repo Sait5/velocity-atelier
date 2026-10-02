@@ -1,11 +1,11 @@
 import * as T from 'three'
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
+import {buildJoinedDoorShell} from './doorShell'
 export function addDoorInterior(door:T.Group,side:number,leather:T.Material){
  const trim=new T.MeshStandardMaterial({color:'#171c1a',roughness:.72}),metal=new T.MeshStandardMaterial({color:'#59615e',metalness:.9,roughness:.32}),thread=new T.MeshStandardMaterial({color:'#a4977e',roughness:.9})
  const hinge=door.position.clone();function mesh(g:T.BufferGeometry,m:T.Material,x:number,y:number,z:number){const o=new T.Mesh(g,m);o.position.set(x-hinge.x,y-hinge.y,z-hinge.z);o.castShadow=true;o.receiveShadow=true;door.add(o);return o}
  function box(w:number,h:number,d:number,m:T.Material,x:number,y:number,z:number,r=.012){return mesh(new RoundedBoxGeometry(w,h,d,3,r),m,x,y,z)}
- const outline=new T.Shape();outline.moveTo(-.67,.34);outline.bezierCurveTo(-.71,.4,-.69,.68,-.61,.765);outline.lineTo(.44,.765);outline.quadraticCurveTo(.52,.73,.51,.64);outline.lineTo(.44,.335);outline.quadraticCurveTo(.05,.28,-.67,.34)
- const panel=mesh(new T.ExtrudeGeometry(outline,{depth:.048,bevelEnabled:true,bevelSize:.009,bevelThickness:.008,bevelSegments:3,curveSegments:32}),leather,0,0,side>0?.735:-.783);panel.name='door_inner_shell'
+ buildJoinedDoorShell(door,side,leather,trim)
  box(.84,.105,.085,trim,-.10,.61,side*.698,.025)
  box(.60,.045,.105,leather,-.02,.58,side*.67,.018)
  box(.53,.105,.05,trim,.03,.405,side*.718,.018)
