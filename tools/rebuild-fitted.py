@@ -18,6 +18,11 @@ thread=material('Fitted saddle thread',(.12,.105,.082),.95)
 metal=material('Fitted satin aluminium',(.32,.36,.33),.3,.8)
 red=material('Fitted red reflector',(.4,.016,.009),.3)
 glass=material('Fitted side glass',(.16,.22,.19),.055)
+carbon=material('Fitted carbon shell',(.032,.037,.035),.49,.12)
+cn=carbon.node_tree.nodes.get('Principled BSDF');cn.inputs['Coat Weight'].default_value=.22
+tree=carbon.node_tree;check=tree.nodes.new('ShaderNodeTexChecker');check.inputs['Scale'].default_value=650
+check.inputs['Color1'].default_value=(.018,.022,.020,1);check.inputs['Color2'].default_value=(.040,.045,.042,1)
+uvnode=tree.nodes.new('ShaderNodeTexCoord');tree.links.new(uvnode.outputs['UV'],check.inputs['Vector']);tree.links.new(check.outputs['Color'],cn.inputs['Base Color'])
 gn=glass.node_tree.nodes.get('Principled BSDF');gn.inputs['Alpha'].default_value=.24;gn.inputs['Transmission Weight'].default_value=.72;gn.inputs['IOR'].default_value=1.45
 new=[]
 def group(name,origin=(0,0,0)):
@@ -119,45 +124,46 @@ solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.
 tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
 solid('rear_upper_full_width_join',lambda u,v:(.589+.016*v,.874+.124*v,-.708+1.416*u),56,24,black,rear,.008)
 
-# Repair the original curved rollbar lining itself, keeping its measured 3D contour.
-source=bpy.data.objects['interior_light'];source.data.calc_loop_triangles()
+# One rear carbon bridge with oval fairings, moved rearward and fused into the deck.
+carbon_parts=[]
+start=len(new)
+def bridge_top(u,v):
+ z=-.735+u*1.47;edge=(abs(z)/.735)**6;x=.445+.080*edge+(.240-.080*edge)*v;y=.995-.045*(abs(z)/.735)**5+.015*math.sin(v*math.pi)
+ return (x,y,z)
+solid('carbon_cross_car_bridge',bridge_top,72,24,carbon,rear,-.108,1)
 for side in [-1,1]:
- verts=[];faces=[];mapping={}
- for tri in source.data.loop_triangles:
-  pp=[W(source.matrix_world@source.data.vertices[i].co) for i in tri.vertices]
-  c=sum(pp,Vector())/3
-  if not (.43<c.x<.72 and c.y>.88 and .20<c.z*side<.80):continue
-  ids=[]
-  for p in pp:
-   key=tuple(round(v,6) for v in p)
-   if key not in mapping:mapping[key]=len(verts);verts.append(tuple(p))
-   ids.append(mapping[key])
-  faces.append(tuple(ids))
- # A single closed volume fills the complete original rollbar contour.
- # Continue its lower legs into the existing bulkhead so there is no light slit.
- ymin=min(p[1] for p in verts)
- verts.extend([(x,.878,z) for x,y,z in list(verts) if y<ymin+.008])
- lining=obj('rear_sealed_rollbar_volume_'+str(side),verts,[],black,rear)
- bm=bmesh.new();bm.from_mesh(lining.data)
- bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.00001)
- result=bmesh.ops.convex_hull(bm,input=list(bm.verts),use_existing_faces=False)
- loose=[v for v in bm.verts if not v.link_faces]
- if loose:bmesh.ops.delete(bm,geom=loose,context='VERTS')
- bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
- assert not any(e.is_boundary for e in bm.edges),'Rear closure must be watertight'
- bm.to_mesh(lining.data);bm.free()
- for f in lining.data.polygons:f.use_smooth=True
- # Seal the outer slot between the padded arch and the painted quarter opening.
- def upper_return(u,v,side=side):
-  y=.874+v*.126
-  return (.567+.023*u,y,side*((.801-.084*v)*(1-u)+.625*u))
- solid('rear_outer_upper_seal_'+str(side),upper_return,32,32,black,rear,.006)
+ vs=[];fs=[];nu=64;nv=40
+ # Elliptical, gently leaned fairing; no box-like corners.
+ for j in range(nv+1):
+  phi=-math.pi/2+j*math.pi/nv;y=1.038+.154*math.sin(phi);r=math.cos(phi)
+  for i in range(nu):
+   theta=i*math.tau/nu;vs.append((.628+.100*r*math.cos(theta)+.020*math.sin(phi),y,side*.525+.164*r*math.sin(theta)))
+ for j in range(nv):
+  for i in range(nu):a=j*nu+i;b=j*nu+(i+1)%nu;fs.append((a,b,b+nu,a+nu))
+ obj('carbon_oval_fairing_'+str(side),vs,fs,carbon,rear)
+ # Closed swept side return overlaps both the body aperture and the lower trim.
+ def outer_return(u,v,side=side):return (.50+.12*u,.875+.095*v,side*((.755-.050*v)*(1-u)+.625*u))
+ solid('carbon_body_return_'+str(side),outer_return,32,32,carbon,rear,.012)
+carbon_parts=[o for o in new[start:] if o.type=='MESH']
+# Fuse the bridge, fairings and returns into a single continuous manufactured shell.
+for o in bpy.context.selected_objects:o.select_set(False)
+for o in carbon_parts:o.select_set(True)
+bpy.context.view_layer.objects.active=carbon_parts[0];bpy.ops.object.join()
+shell=carbon_parts[0];shell.name='carbon_unified_rear_shell'
+rem=shell.modifiers.new('Continuous closed carbon shell','REMESH');rem.mode='VOXEL';rem.voxel_size=.003;rem.use_smooth_shade=True
+bpy.ops.object.modifier_apply(modifier=rem.name)
+smooth=shell.modifiers.new('Rounded junctions','SMOOTH');smooth.factor=.55;smooth.iterations=3;bpy.ops.object.modifier_apply(modifier=smooth.name)
+# Remeshing removes UVs; project metres for the fine woven material.
+uv=shell.data.uv_layers.new(name='Carbon weave UV') if not shell.data.uv_layers else shell.data.uv_layers[0]
+for loop in shell.data.loops:
+ p=W(shell.matrix_world@shell.data.vertices[loop.vertex_index].co);uv.data[loop.index].uv=(p.z,p.y+p.x*.25)
+new=[o for o in bpy.data.objects if o.name.startswith('upgrade_') or (o.parent and o.parent.name.startswith('upgrade_'))]
 # Remove the original overlapping upper linings only in the repaired region.
 for name in ['interior_light','interior_dark']:
  source=bpy.data.objects[name];mesh=bmesh.new();mesh.from_mesh(source.data);remove=[]
  for f in mesh.faces:
   p=W(source.matrix_world@f.calc_center_median())
-  if .43<p.x<.72 and p.y>.88 and .20<abs(p.z)<.80:remove.append(f)
+  if .38<p.x<.78 and p.y>.88 and abs(p.z)<.85:remove.append(f)
  bmesh.ops.delete(mesh,geom=remove,context='FACES');mesh.to_mesh(source.data);mesh.free()
 # Closed bucket seats, with one continuous headrest/back rather than intersecting shells.
 seats=group('upgrade_seats')
@@ -354,13 +360,16 @@ for o in list(bpy.data.objects):
 # Preserve the full editable vehicle, but export only the replacement assemblies.
 for o in bpy.context.selected_objects:o.select_set(False)
 for o in new:o.select_set(True)
-output=os.path.join(BASE,'../apex/public/models/ferrari-fitted-interior.glb')
+output=os.path.join(BASE,'../apex/public/models/ferrari-carbon-interior.glb')
 bpy.ops.export_scene.gltf(filepath=output,export_format='GLB',use_selection=True,export_apply=True,export_draco_mesh_compression_enable=True,export_draco_mesh_compression_level=6)
 for side in ['L','R']:
  o=bpy.data.objects['upgrade_door_'+side];world=o.matrix_world.copy()
  o.parent=bpy.data.objects['door_'+side];o.matrix_world=world
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'Ferrari-458-fitted.blend'))
 print('EXPORTED FITTED ASSEMBLIES',output)
+
+
+
 
 
 
