@@ -1,0 +1,9 @@
+node_modules
+.nuxt
+.output
+.sites-runtime
+dist
+
+.npm-cache
+reference-car.html
+audit.json

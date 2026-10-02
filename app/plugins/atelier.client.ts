@@ -1,0 +1,8 @@
+export default defineNuxtPlugin(()=>{
+ const s=useAtelier(),lifecycle=new AbortController()
+ const context=(document as Document & {modelContext?:{registerTool:(tool:unknown,options:{signal:AbortSignal})=>Promise<void>|void}}).modelContext
+ if(!context)return
+ const colors=['#a2b368','#b4ca54','#181c1d','#ac252a','#e4e2d8','#254d73','#747875']
+ void Promise.resolve(context.registerTool({name:'configure_vehicle',description:'Change the visible vehicle paint, wheel finish and studio lighting.',inputSchema:{type:'object',properties:{paint:{type:'string',enum:colors},wheels:{type:'integer',minimum:0,maximum:2},lighting:{type:'string',enum:['Studio','Night','Sunset','Dark Room','Garage']}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute(input:unknown){const p=input as Record<string,unknown>;if(!p||typeof p!=='object'||Object.keys(p).some(k=>!['paint','wheels','lighting'].includes(k)))throw new Error('Invalid configuration');if(p.paint!==undefined&&!colors.includes(String(p.paint)))throw new Error('Invalid paint');if(p.wheels!==undefined&&(!Number.isInteger(p.wheels)||Number(p.wheels)<0||Number(p.wheels)>2))throw new Error('Invalid wheels');if(p.lighting!==undefined&&!['Studio','Night','Sunset','Dark Room','Garage'].includes(String(p.lighting)))throw new Error('Invalid lighting');if(p.paint!==undefined)s.paint.value=String(p.paint);if(p.wheels!==undefined)s.wheels.value=Number(p.wheels);if(p.lighting!==undefined)s.lighting.value=String(p.lighting);return {vehicle:s.car.value.name,paint:s.paint.value,wheels:s.wheels.value,lighting:s.lighting.value}}},{signal:lifecycle.signal})).catch(()=>{})
+ window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})
+})
