@@ -128,8 +128,8 @@ solid('rear_upper_full_width_join',lambda u,v:(.589+.016*v,.874+.124*v,-.708+1.4
 carbon_parts=[]
 start=len(new)
 def bridge_top(u,v):
- z=-.722+u*1.444;edge=(abs(z)/.722)**6
- return (.525+.032*edge+(.153-.032*edge)*v,1.005-.048*edge+.006*math.sin(v*math.pi),z)
+ z=-.726+u*1.452;edge=(abs(z)/.726)**6
+ return (.531+.032*edge+(.167-.032*edge)*v,1.005-.048*edge+.006*math.sin(v*math.pi),z)
 solid('carbon_cross_car_bridge',bridge_top,72,24,carbon,rear,-.038,1)
 for side in [-1,1]:
  # Shallow cover with the tapered arch boundary, tucked under the painted lip.
@@ -143,14 +143,14 @@ for side in [-1,1]:
  vs=[];fs=[];n=len(border)
  for layer in range(2):
   for z,y in border:
-   x=.545+.052*max(0,(y-.947)/.211)+layer*.031
-   vs.append((x,y,side*z))
-  vs.append((.566+layer*.031,1.031,side*.490))
+   x=.551+.052*max(0,(y-.947)/.211)+layer*.031
+   vs.append((x,y,side*(.490+(z-.490)*1.035)))
+  vs.append((.572+layer*.031,1.031,side*.490))
  for i in range(n):
   j=(i+1)%n;fs.extend([(n,i,j),(2*n+1,n+1+j,n+1+i),(i,n+1+i,n+1+j,j)])
  obj('carbon_contoured_rollbar_liner_'+str(side),vs,fs,carbon,rear)
  # Closed swept side return overlaps both the body aperture and the lower trim.
- def outer_return(u,v,side=side):return (.542+.095*u,.892+.072*v,side*((.752-.020*v)*(1-u)+.645*u))
+ def outer_return(u,v,side=side):return (.548+.095*u,.892+.072*v,side*((.756-.020*v)*(1-u)+.645*u))
  solid('carbon_body_return_'+str(side),outer_return,32,32,carbon,rear,.010)
 carbon_parts=[o for o in new[start:] if o.type=='MESH']
 # Fuse the bridge, fairings and returns into a single continuous manufactured shell.
@@ -166,6 +166,11 @@ uv=shell.data.uv_layers.new(name='Carbon weave UV') if not shell.data.uv_layers 
 for loop in shell.data.loops:
  p=W(shell.matrix_world@shell.data.vertices[loop.vertex_index].co);uv.data[loop.index].uv=(p.z,p.y+p.x*.25)
 new=[o for o in bpy.data.objects if o.name.startswith('upgrade_') or (o.parent and o.parent.name.startswith('upgrade_'))]
+# A narrow rubber binding delineates the carbon/leather junction without coplanar faces.
+binding=[]
+for i in range(181):
+ x,y,z=bridge_top(i/180,.035);binding.append((x,y+.0012,z))
+tube('rear_carbon_fine_bound_edge',binding,.0009,black,rear)
 # Remove the original overlapping upper linings only in the repaired region.
 for name in ['interior_light','interior_dark']:
  source=bpy.data.objects[name];mesh=bmesh.new();mesh.from_mesh(source.data);remove=[]
