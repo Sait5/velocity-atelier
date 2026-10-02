@@ -13,7 +13,7 @@ export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.M
  if(!rear||!seats||replacements.some(o=>!o))throw new Error('Fitted interior assembly missing')
  // Remove the old rollbar lining where the authored closed return replaces it.
  root.updateMatrixWorld(true)
- root.traverse(o=>{if(!(o instanceof T.Mesh)||o.name!=='interior_light')return
+ root.traverse(o=>{if(!(o instanceof T.Mesh)||!['interior_light','interior_dark'].includes(o.name))return
   const g=o.geometry,p=g.getAttribute('position'),kept:number[]=[],a=new T.Vector3(),b=new T.Vector3(),c=new T.Vector3()
   const total=g.index?.count||p.count
   for(let i=0;i<total;i+=3){const ids=[0,1,2].map(k=>g.index?g.index.getX(i+k):i+k)

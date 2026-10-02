@@ -1,4 +1,5 @@
 import bpy, bmesh, os, math, json
+from functools import lru_cache
 from mathutils import Vector, Matrix
 from mathutils.bvhtree import BVHTree
 BASE=os.path.abspath(os.path.join(os.path.dirname(__file__),"../../blender"))
@@ -71,6 +72,7 @@ for f in body.data.polygons:
  vv=[ids[i] for i in f.vertices]
  for i,a in enumerate(vv):b=vv[(i+1)%len(vv)];key=tuple(sorted((a,b)));edge_counts[key]=edge_counts.get(key,0)+1
 boundary=[(points[a],points[b]) for (a,b),n in edge_counts.items() if n==1]
+@lru_cache(maxsize=512)
 def aperture(y,side):
  candidates=[]
  for a,b in boundary:
@@ -115,6 +117,7 @@ for side in [-1,1]:
  solid('seatbelt_webbing_fitted',belt_surface,4,48,felt,rear,.002)
 solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.pi),-.705+v*1.41),40,32,felt,rear,.012,1)
 tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
+solid('rear_upper_full_width_join',lambda u,v:(.589+.016*v,.874+.124*v,-.708+1.416*u),56,24,black,rear,.008)
 
 # Repair the original curved rollbar lining itself, keeping its measured 3D contour.
 source=bpy.data.objects['interior_light'];source.data.calc_loop_triangles()
@@ -130,36 +133,32 @@ for side in [-1,1]:
    if key not in mapping:mapping[key]=len(verts);verts.append(tuple(p))
    ids.append(mapping[key])
   faces.append(tuple(ids))
- # Recessed backing closes the opening inside the arch without changing its rim.
- q=sorted(set((round(p[2]*side,5),round(p[1],5)) for p in verts))
- q+= [(min(p[0] for p in q),.884),(max(p[0] for p in q),.884)];q=sorted(set(q))
- def cross(a,b,c):return (b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
- lower=[];upper=[]
- for p in q:
-  while len(lower)>1 and cross(lower[-2],lower[-1],p)<=0:lower.pop()
-  lower.append(p)
- for p in reversed(q):
-  while len(upper)>1 and cross(upper[-2],upper[-1],p)<=0:upper.pop()
-  upper.append(p)
- hull=lower[:-1]+upper[:-1];cz=sum(p[0] for p in hull)/len(hull);cy=sum(p[1] for p in hull)/len(hull)
- # Keep the backing recessed within the opening, below the original arch rim.
- outline=[(.582,cy+(y-cy)*.84,side*(cz+(z-cz)*.84)) for z,y in hull];vv=outline+[(x+.006,y,z) for x,y,z in outline];n=len(hull)
- ff=[tuple(range(n)),tuple(range(n,2*n))]
- ff.extend((i,(i+1)%n,(i+1)%n+n,i+n) for i in range(n))
- obj('rollbar_recessed_backing_'+str(side),vv,ff,black,rear)
- lining=obj('rear_original_contour_closed_'+str(side),verts,faces,black,rear)
+ # A single closed volume fills the complete original rollbar contour.
+ # Continue its lower legs into the existing bulkhead so there is no light slit.
+ ymin=min(p[1] for p in verts)
+ verts.extend([(x,.878,z) for x,y,z in list(verts) if y<ymin+.008])
+ lining=obj('rear_sealed_rollbar_volume_'+str(side),verts,[],black,rear)
  bm=bmesh.new();bm.from_mesh(lining.data)
  bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.00001)
- edges=[e for e in bm.edges if e.is_boundary]
- bmesh.ops.holes_fill(bm,edges=edges,sides=0)
+ result=bmesh.ops.convex_hull(bm,input=list(bm.verts),use_existing_faces=False)
+ loose=[v for v in bm.verts if not v.link_faces]
+ if loose:bmesh.ops.delete(bm,geom=loose,context='VERTS')
  bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+ assert not any(e.is_boundary for e in bm.edges),'Rear closure must be watertight'
  bm.to_mesh(lining.data);bm.free()
-# Remove only the superseded source surfaces, now present in the closed repair.
-mesh=bmesh.new();mesh.from_mesh(source.data);remove=[]
-for f in mesh.faces:
- p=W(source.matrix_world@f.calc_center_median())
- if .43<p.x<.72 and p.y>.88 and .20<abs(p.z)<.80:remove.append(f)
-bmesh.ops.delete(mesh,geom=remove,context='FACES');mesh.to_mesh(source.data);mesh.free()
+ for f in lining.data.polygons:f.use_smooth=True
+ # Seal the outer slot between the padded arch and the painted quarter opening.
+ def upper_return(u,v,side=side):
+  y=.874+v*.126
+  return (.567+.023*u,y,side*((.801-.084*v)*(1-u)+.625*u))
+ solid('rear_outer_upper_seal_'+str(side),upper_return,32,32,black,rear,.006)
+# Remove the original overlapping upper linings only in the repaired region.
+for name in ['interior_light','interior_dark']:
+ source=bpy.data.objects[name];mesh=bmesh.new();mesh.from_mesh(source.data);remove=[]
+ for f in mesh.faces:
+  p=W(source.matrix_world@f.calc_center_median())
+  if .43<p.x<.72 and p.y>.88 and .20<abs(p.z)<.80:remove.append(f)
+ bmesh.ops.delete(mesh,geom=remove,context='FACES');mesh.to_mesh(source.data);mesh.free()
 # Closed bucket seats, with one continuous headrest/back rather than intersecting shells.
 seats=group('upgrade_seats')
 for side in [-1,1]:
@@ -281,9 +280,26 @@ for side,label in [(-1,'L'),(1,'R')]:
  solid('door_red_edge_reflector',lambda u,v:face(.388+u*.026,.357+v*.040,.005),6,8,red,door,side*.003,2)
  tube('door_lower_soft_binding',[face(-.55+i*.88/70,.315+.022*math.sin(i*math.pi/70),.001) for i in range(71)],.002,black,door)
  # Frameless, slightly inward-leaning window with a polished edge and rubber wiper.
+ edge_cache={}
+ def top_edge(x):
+  if x in edge_cache:return edge_cache[x]
+  ys=[]
+  for tri in tris:
+   for i,a in enumerate(tri):
+    b=tri[(i+1)%3]
+    if min(a.x,b.x)<=x<=max(a.x,b.x) and abs(b.x-a.x)>1e-7:ys.append(a.y+(b.y-a.y)*(x-a.x)/(b.x-a.x))
+  edge_cache[x]=max(ys) if ys else .87
+  return edge_cache[x]
+ aframe=[(.84,-.795,.805),(.918,-.626,.734),(.999,-.492,.709),(1.081,-.294,.665),(1.147,-.168,.604)]
+ def front_edge(y):
+  k=next((k for k in range(len(aframe)-1) if aframe[k+1][0]>=y),len(aframe)-2);a,b=aframe[k:k+2];t=max(0,min(1,(y-a[0])/(b[0]-a[0])))
+  return (a[1]*(1-t)+b[1]*t+.007,a[2]*(1-t)+b[2]*t)
  def window(u,v):
-  x=(-.60+.31*v)*(1-u)+(.45-.035*v)*u;bottom=.825+.098*u;y=bottom+(1.167-.025*u-bottom)*v
-  return (x,y,side*(.806+.018*math.sin(u*math.pi)-.070*v))
+  bx=-.71+u*1.14;bottom=top_edge(bx)-.004;fy=top_edge(-.71)-.004+(1.137-top_edge(-.71)+.004)*v
+  fx,fz=front_edge(fy);fx=max(-.718,fx);rx=.43-.038*v
+  x=fx*(1-u)+rx*u;y=bottom+(1.137-.011*u-bottom)*v
+  rz=outer(.425,top_edge(.425)-.01)-side*(.010+.118*v)
+  return (x,y,(side*fz)*(1-u)+rz*u)
  solid('door_side_window_'+label,window,64,40,glass,door,side*.003,2)
  tube('window_top_polished_edge',[window(i/100,1) for i in range(101)],.0014,glass,door)
  tube('window_lower_wiper',[window(i/100,0) for i in range(101)],.0035,black,door)
@@ -345,5 +361,6 @@ for side in ['L','R']:
  o.parent=bpy.data.objects['door_'+side];o.matrix_world=world
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'Ferrari-458-fitted.blend'))
 print('EXPORTED FITTED ASSEMBLIES',output)
+
 
 
