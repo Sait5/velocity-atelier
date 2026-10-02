@@ -16,6 +16,8 @@ felt=material('Fitted recessed felt',(.004,.007,.005),1)
 thread=material('Fitted saddle thread',(.12,.105,.082),.95)
 metal=material('Fitted satin aluminium',(.32,.36,.33),.3,.8)
 red=material('Fitted red reflector',(.4,.016,.009),.3)
+glass=material('Fitted side glass',(.16,.22,.19),.055)
+gn=glass.node_tree.nodes.get('Principled BSDF');gn.inputs['Alpha'].default_value=.24;gn.inputs['Transmission Weight'].default_value=.72;gn.inputs['IOR'].default_value=1.45
 new=[]
 def group(name,origin=(0,0,0)):
  o=bpy.data.objects.new(name,None);bpy.context.collection.objects.link(o);o.location=P(*origin);new.append(o);return o
@@ -114,31 +116,82 @@ for side in [-1,1]:
 solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.pi),-.705+v*1.41),40,32,felt,rear,.012,1)
 tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
 
+# Repair the original curved rollbar lining itself, keeping its measured 3D contour.
+source=bpy.data.objects['interior_light'];source.data.calc_loop_triangles()
+for side in [-1,1]:
+ verts=[];faces=[];mapping={}
+ for tri in source.data.loop_triangles:
+  pp=[W(source.matrix_world@source.data.vertices[i].co) for i in tri.vertices]
+  c=sum(pp,Vector())/3
+  if not (.43<c.x<.72 and c.y>.88 and .20<c.z*side<.80):continue
+  ids=[]
+  for p in pp:
+   key=tuple(round(v,6) for v in p)
+   if key not in mapping:mapping[key]=len(verts);verts.append(tuple(p))
+   ids.append(mapping[key])
+  faces.append(tuple(ids))
+ # Recessed backing closes the opening inside the arch without changing its rim.
+ q=sorted(set((round(p[2]*side,5),round(p[1],5)) for p in verts))
+ q+= [(min(p[0] for p in q),.884),(max(p[0] for p in q),.884)];q=sorted(set(q))
+ def cross(a,b,c):return (b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
+ lower=[];upper=[]
+ for p in q:
+  while len(lower)>1 and cross(lower[-2],lower[-1],p)<=0:lower.pop()
+  lower.append(p)
+ for p in reversed(q):
+  while len(upper)>1 and cross(upper[-2],upper[-1],p)<=0:upper.pop()
+  upper.append(p)
+ hull=lower[:-1]+upper[:-1];cz=sum(p[0] for p in hull)/len(hull);cy=sum(p[1] for p in hull)/len(hull)
+ # Keep the backing recessed within the opening, below the original arch rim.
+ outline=[(.582,cy+(y-cy)*.84,side*(cz+(z-cz)*.84)) for z,y in hull];vv=outline+[(x+.006,y,z) for x,y,z in outline];n=len(hull)
+ ff=[tuple(range(n)),tuple(range(n,2*n))]
+ ff.extend((i,(i+1)%n,(i+1)%n+n,i+n) for i in range(n))
+ obj('rollbar_recessed_backing_'+str(side),vv,ff,black,rear)
+ lining=obj('rear_original_contour_closed_'+str(side),verts,faces,black,rear)
+ bm=bmesh.new();bm.from_mesh(lining.data)
+ bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.00001)
+ edges=[e for e in bm.edges if e.is_boundary]
+ bmesh.ops.holes_fill(bm,edges=edges,sides=0)
+ bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+ bm.to_mesh(lining.data);bm.free()
+# Remove only the superseded source surfaces, now present in the closed repair.
+mesh=bmesh.new();mesh.from_mesh(source.data);remove=[]
+for f in mesh.faces:
+ p=W(source.matrix_world@f.calc_center_median())
+ if .43<p.x<.72 and p.y>.88 and .20<abs(p.z)<.80:remove.append(f)
+bmesh.ops.delete(mesh,geom=remove,context='FACES');mesh.to_mesh(source.data);mesh.free()
 # Closed bucket seats, with one continuous headrest/back rather than intersecting shells.
 seats=group('upgrade_seats')
 for side in [-1,1]:
  zc=side*.35
- rows=[(.39,.045,.056,.15),(.44,.055,.067,.205),(.54,.10,.065,.205),(.68,.155,.060,.175),(.82,.215,.062,.215),(.88,.245,.055,.225),(.93,.265,.048,.135),(1.00,.280,.052,.145),(1.075,.289,.042,.140),(1.10,.290,.025,.117)]
  def profile(y):
-  i=next((i for i in range(len(rows)-1) if rows[i+1][0]>=y),len(rows)-2);a,b=rows[i:i+2];t=max(0,min(1,(y-a[0])/(b[0]-a[0])));t=t*t*(3-2*t)
-  return tuple(a[k]*(1-t)+b[k]*t for k in range(1,4))
+  t=max(0,min(1,(y-.36)/.57))
+  width=.178+.025*math.exp(-((t-.18)/.24)**2)+.032*math.exp(-((t-.74)/.20)**2)
+  neck=max(0,(t-.84)/.16);width-=.054*(neck*neck*(3-2*neck))
+  return (.045+.235*t,.060+.009*math.sin(t*math.pi),width)
  vs=[];fs=[];rings=84;around=64
  for j in range(rings+1):
-  y=.39+j*.71/rings;x,depth,width=profile(y)
+  y=.36+j*.57/rings;x,depth,width=profile(y)
   for i in range(around):
-   a=i*math.tau/around;vs.append((x+.075+math.cos(a)*depth,y,zc+math.sin(a)*width))
+   a=i*math.tau/around;co=math.cos(a);si=math.sin(a);dz=math.copysign(abs(si)**.5,si)*width
+   bolster=.028*math.exp(-((abs(dz)/width-.85)/.12)**2)*math.sin(j/rings*math.pi) if co<0 else 0
+   vs.append((x+.075+math.copysign(abs(co)**.5,co)*depth-bolster,y,zc+dz))
  for j in range(rings):
   for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((a,a+around,b+around,b))
  for j in [0,rings]:
-  y=.39+j*.71/rings;x,depth,width=profile(y);center=len(vs);vs.append((x+.075,y,zc))
+  y=.36+j*.57/rings;x,depth,width=profile(y);center=len(vs);vs.append((x+.075,y,zc))
   for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((center,b,a) if j==rings else (center,a,b))
  obj('seat_continuous_closed_back',vs,fs,leather,seats)
  def padded(u,v):
-  y=.472+v*.402;x,d,w=profile(y);dz=(u-.5)*.23
-  return (x+.075-d*math.sqrt(max(0,1-(dz/w)**2))-.003-.005*math.sin(u*math.pi)*math.sin(v*math.pi),y,zc+dz)
+  y=.418+v*.435;x,d,w=profile(y);dz=(u-.5)*.235
+  return (x+.075-d*max(0,1-(dz/w)**4)**.25-.002-.003*math.sin(u*math.pi)*math.sin(v*math.pi),y,zc+dz)
  solid('seat_central_padded_insert',padded,48,64,leather,seats,.006)
  for u in [.014,.030,.970,.986]:stitch('seat_double_saddle_stitch',[(padded(u,j/160)[0]-.0008,*padded(u,j/160)[1:]) for j in range(161)],thread,seats)
- for v in [.17,.34,.51,.68,.85]:tube('seat_quilted_horizontal_seam',[(padded(i/80,v)[0]-.0008,*padded(i/80,v)[1:]) for i in range(81)],.00065,thread,seats)
+ for v in [.25,.5,.75]:tube('seat_quilted_horizontal_seam',[(padded(i/80,v)[0]-.0008,*padded(i/80,v)[1:]) for i in range(81)],.00065,thread,seats)
+ # Separate soft rectangular headrest matches the supplied Ferrari reference.
+ cuboid('seat_padded_headrest',(.368,1.026,zc),(.115,.185,.285),leather,seats,.041)
+ for dz in [-.072,.072]:cuboid('headrest_mount',(.36,.931,zc+dz),(.022,.043,.018),black,seats,.005)
+ tube('headrest_bound_edge',[(.309,1.026+.075*math.sin(i*math.tau/100),zc+.123*math.cos(i*math.tau/100)) for i in range(101)],.0008,thread,seats)
  cuboid('seat_structural_base',(-.055,.285,zc),(.61,.115,.46),black,seats,.033)
  def cushion(u,v):
   x=-.385+u*.53;dz=(v-.5)*.45;y=.342+.020*math.sin(u*math.pi)+.038*(abs(dz)/.225)**4
@@ -227,6 +280,15 @@ for side,label in [(-1,'L'),(1,'R')]:
   solid('door_window_switch',lambda u,v,x=x:face(x+u*.025,.687+v*.012,.017),8,4,metal,door,side*.005,2)
  solid('door_red_edge_reflector',lambda u,v:face(.388+u*.026,.357+v*.040,.005),6,8,red,door,side*.003,2)
  tube('door_lower_soft_binding',[face(-.55+i*.88/70,.315+.022*math.sin(i*math.pi/70),.001) for i in range(71)],.002,black,door)
+ # Frameless, slightly inward-leaning window with a polished edge and rubber wiper.
+ def window(u,v):
+  x=(-.60+.31*v)*(1-u)+(.45-.035*v)*u;bottom=.825+.098*u;y=bottom+(1.167-.025*u-bottom)*v
+  return (x,y,side*(.806+.018*math.sin(u*math.pi)-.070*v))
+ solid('door_side_window_'+label,window,64,40,glass,door,side*.003,2)
+ tube('window_top_polished_edge',[window(i/100,1) for i in range(101)],.0014,glass,door)
+ tube('window_lower_wiper',[window(i/100,0) for i in range(101)],.0035,black,door)
+ for x in [.38,.41]:
+  solid('door_latch_fastener',lambda u,v,x=x:face(x+u*.009,.57+v*.01,.001),4,4,metal,door,side*.004,2)
 
 # Batch microdetails per assembly and material; thousands of stitches do not become draw calls.
 for o in bpy.context.selected_objects:o.select_set(False)
@@ -234,6 +296,10 @@ for o in new:
  if o.type=='CURVE':o.select_set(True)
 bpy.context.view_layer.objects.active=next(o for o in new if o.type=='CURVE')
 bpy.ops.object.convert(target='MESH')
+for o in new:
+ if o.type!='MESH':continue
+ bpy.context.view_layer.objects.active=o
+ for mod in list(o.modifiers):bpy.ops.object.modifier_apply(modifier=mod.name)
 batches={}
 for o in list(new):
  if o.type=='MESH':batches.setdefault((o.parent.name,o.data.materials[0].name),[]).append(o)
@@ -279,4 +345,5 @@ for side in ['L','R']:
  o.parent=bpy.data.objects['door_'+side];o.matrix_world=world
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'Ferrari-458-fitted.blend'))
 print('EXPORTED FITTED ASSEMBLIES',output)
+
 

@@ -11,6 +11,18 @@ export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.M
  const rear=asset.getObjectByName('upgrade_rear'),seats=asset.getObjectByName('upgrade_seats')
  const replacements=doors.map((_,i)=>asset.getObjectByName(i===0?'upgrade_door_L':'upgrade_door_R'))
  if(!rear||!seats||replacements.some(o=>!o))throw new Error('Fitted interior assembly missing')
+ // Remove the old rollbar lining where the authored closed return replaces it.
+ root.updateMatrixWorld(true)
+ root.traverse(o=>{if(!(o instanceof T.Mesh)||o.name!=='interior_light')return
+  const g=o.geometry,p=g.getAttribute('position'),kept:number[]=[],a=new T.Vector3(),b=new T.Vector3(),c=new T.Vector3()
+  const total=g.index?.count||p.count
+  for(let i=0;i<total;i+=3){const ids=[0,1,2].map(k=>g.index?g.index.getX(i+k):i+k)
+   a.fromBufferAttribute(p,ids[0]!).applyMatrix4(o.matrixWorld);b.fromBufferAttribute(p,ids[1]!).applyMatrix4(o.matrixWorld);c.fromBufferAttribute(p,ids[2]!).applyMatrix4(o.matrixWorld);a.add(b).add(c).multiplyScalar(1/3)
+   if(a.x>.43&&a.x<.72&&a.y>.88&&Math.abs(a.z)>.20&&Math.abs(a.z)<.80)continue
+   kept.push(...ids)
+  }
+  if(kept.length!==total){const replacement=g.clone();replacement.setIndex(kept);replacement.clearGroups();o.geometry=replacement;g.dispose()}
+ })
  const removed:T.Object3D[]=[]
  const detach=(o:T.Object3D|undefined)=>{if(o){o.removeFromParent();removed.push(o)}}
  asset.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=o.receiveShadow=true;if(!Array.isArray(o.material)&&o.material.name==='Fitted upholstery')o.material=leather}})
