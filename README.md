@@ -1,13 +1,17 @@
-# Velocity 3 — development edition
+# Velocity 3 — interactive development edition
 
-Nuxt 4 / Vue 3 / TypeScript / Three.js / GSAP ScrollTrigger / Rapier.
+Nuxt 4 / Vue 3 / TypeScript / Three.js / GSAP / Rapier.
 
 Run `npm install`, `npm run dev`, `npm run typecheck`, `npm run build`.
 
-This is a working interaction prototype with a detailed Ferrari 458 preview and original procedural reference geometry, not a finished manufacturer-accurate automotive portfolio. The eight entries use distinct silhouette variants. The Ferrari 458 preview uses the Three.js example model by vicent091036 (see public/models/CREDITS.md). Its door panels are separated procedurally; production requires artist-authored pivots and clean door seams. Specifications are illustrative and must be verified for the exact production configuration before public marketing use.
+The Ferrari 458 preview uses the Three.js example model by vicent091036 (public/models/CREDITS.md). The eight Garage entries remain procedural silhouette prototypes; they do not represent finished licensed models.
 
-Implemented: shader-based paint, rim and caliper materials, animated door pivots, cockpit camera, hotspots, lighting presets, real initialization milestones, orbit/pinch/zoom, scroll camera, adaptive resolution, shadow settings, reduced motion, fullscreen, synthesized engine audio, garage selection, Rapier ground/barriers/rigid-body driving, three cameras, reset, keyboard and touch controls.
+Implemented: Russian/English interface and persisted language, physical paint and upholstery materials, six upholstery finishes, eight studio background colors, five lighting schemes, four outdoor locations, complete connected door components with outward hinges, fixed-position cabin look controls and entry transition, actual detail viewpoints, instrument graphics, leather/carbon grain, seat seams, pedals, wheel fasteners and tire tread. Removed scroll-controlled camera, filler story sections, rotor tint controls and continuous synthetic engine audio. Optional interface sounds are brief clicks.
 
-Remaining production requirements: licensed detailed GLBs for all eight cars; Blender optimization and model-specific door rigs; GLTF byte progress and retry for assets; compressed textures/LOD; accurate interiors; recorded per-vehicle audio; professional postprocessing and reflection passes; verified 60 FPS across target devices. TresJS is installed for migration to declarative scene ownership; this prototype owns its scene through the Three.js API.
+Driving uses Rapier ground contact, acceleration/braking/steering, physical WASD codes independent of keyboard layout, automatic seven-speed transmission with RPM telemetry, screen controls, optional sustained throttle, reset and three camera views. Country road, alpine valley, coast and sunset fields are shared with the showroom. The straight road wraps at its ends; driving is an interactive prototype, not a vehicle dynamics simulator.
 
-Vehicle geometry is isolated in `app/three/vehicle.ts`; renderer lifecycle is in `app/components/VehicleScene.client.vue`. `useAtelier` owns shared preferences and configuration. No backend is required.
+Verification for this revision: TypeScript; decoded GLB geometry test (all 358,788 triangles retained, complete door skins and window seals swing outward); fixed-seat camera stress test; automatic acceleration, shifts, braking and reset; browser checks of cabin, finishes, scenery and real driving telemetry.
+
+Remaining production requirements: licensed detailed GLBs for the eight Garage cars, artist-authored interior assets and rigs, detailed landscape assets, LOD/texture optimization, accurate vehicle dynamics, recorded audio and device performance profiling. The current scenery is generated geometry. Specifications are illustrative.
+
+Scene lifecycle: `app/components/VehicleScene.client.vue`. Ferrari preparation: `app/three/loadVehicle.ts`, `rigDoors.ts`, `enhanceVehicle.ts`, `cockpitDetails.ts`. Environment: `scenery.ts`. Transmission: `automaticDrive.ts`. Shared state: `useAtelier`. No backend is required.

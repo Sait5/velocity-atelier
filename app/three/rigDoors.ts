@@ -1,16 +1,40 @@
 import * as T from 'three'
-// Isolate side-panel triangles from the preview mesh. Production models should
-// provide artist-authored door objects and pivots instead of geometric regions.
-export function rigDoors(root:T.Group,body:T.MeshPhysicalMaterial){
- root.updateMatrixWorld(true);const doors=[new T.Group(),new T.Group()];doors.forEach((d,i)=>{d.position.set(-.65,.75,i===0?-.84:.84);root.add(d)})
- const buffers=[[] as number[],[] as number[]],normals=[[] as number[],[] as number[]]
- const meshes:T.Mesh[]=[];root.traverse(o=>{if(o instanceof T.Mesh&&o.name==='body')meshes.push(o)})
- for(const m of meshes){const g=m.geometry,p=g.getAttribute('position'),n=g.getAttribute('normal'),kept:number[]=[],keptNormals:number[]=[],normalMatrix=new T.Matrix3().getNormalMatrix(m.matrixWorld)
-  for(let i=0;i<(g.index?.count||p.count);i+=3){const ids=[0,1,2].map(j=>g.index?g.index.getX(i+j):i+j);const points=ids.map(id=>new T.Vector3().fromBufferAttribute(p,id).applyMatrix4(m.matrixWorld));const c=points.reduce((v,p)=>v.add(p),new T.Vector3()).multiplyScalar(1/3);const side=c.z<0?0:1;const door=c.x>-.65&&c.x<.72&&c.y>.38&&c.y<1.08&&Math.abs(c.z)>.75
-   ids.forEach((id,j)=>{if(door){const q=points[j]!.clone().sub(doors[side]!.position);buffers[side]!.push(q.x,q.y,q.z);const norm=new T.Vector3().fromBufferAttribute(n,id).applyMatrix3(normalMatrix).normalize();normals[side]!.push(norm.x,norm.y,norm.z)}else{kept.push(p.getX(id),p.getY(id),p.getZ(id));keptNormals.push(n.getX(id),n.getY(id),n.getZ(id))}})
+
+/** Discover complete disconnected panels without cutting through body triangles. */
+export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial){
+ root.updateMatrixWorld(true)
+ const doors=[new T.Group(),new T.Group()]
+ doors.forEach((d,i)=>{d.name=i===0?'door_L':'door_R';d.position.set(-.73,.65,i===0?-.83:.83);root.add(d)})
+ const meshes:T.Mesh[]=[]
+ root.traverse(o=>{if(o instanceof T.Mesh&&!/^(wheel|rim_|tire|brake|nuts|centre|steering)/.test(o.name))meshes.push(o)})
+ for(const mesh of meshes){
+  const geometry=mesh.geometry,position=geometry.getAttribute('position')
+  if(!position||Array.isArray(mesh.material))continue
+  const parent=Array.from({length:position.count},(_,i)=>i)
+  function find(i:number):number{let r=i;while(parent[r]!==r)r=parent[r]!;while(parent[i]!==i){const next=parent[i]!;parent[i]=r;i=next}return r}
+  const join=(a:number,b:number)=>{parent[find(a)]=find(b)}
+  const welded=new Map<string,number>(),worldPoints:T.Vector3[]=[]
+  for(let i=0;i<position.count;i++){const p=new T.Vector3().fromBufferAttribute(position,i).applyMatrix4(mesh.matrixWorld);worldPoints.push(p);const key=[p.x,p.y,p.z].map(v=>Math.round(v*1000000)).join(',');const existing=welded.get(key);if(existing!==undefined)join(i,existing);else welded.set(key,i)}
+  const triangles:number[][]=[]
+  for(let i=0;i<(geometry.index?.count||position.count);i+=3){const ids=[0,1,2].map(j=>geometry.index?geometry.index.getX(i+j):i+j);join(ids[0]!,ids[1]!);join(ids[1]!,ids[2]!);triangles.push(ids)}
+  const parts=new Map<number,{min:T.Vector3,max:T.Vector3,triangles:number[][]}>()
+  for(const ids of triangles){const key=find(ids[0]!);let p=parts.get(key);if(!p){p={min:new T.Vector3(Infinity,Infinity,Infinity),max:new T.Vector3(-Infinity,-Infinity,-Infinity),triangles:[]};parts.set(key,p)}p.triangles.push(ids);for(const id of ids){p.min.min(worldPoints[id]!);p.max.max(worldPoints[id]!)}}
+  const kept:number[]=[],normalMatrix=new T.Matrix3().getNormalMatrix(mesh.matrixWorld)
+  for(const part of parts.values()){
+   const windowTrim=mesh.name==='interior_dark'&&part.min.y>.8&&part.max.y<1.15&&part.min.x>-.7&&part.max.x<.46;const edge=windowTrim?.6:.65;const side=part.max.z<-edge?0:part.min.z>edge?1:-1
+   const isDoor=side!==-1&&part.min.x>-.735&&part.max.x<.6&&part.min.y>.2&&part.max.y<(windowTrim?1.15:1.0)
+   const ids=part.triangles.flat()
+   if(!isDoor){for(const id of ids)kept.push(id);continue}
+   const panel=new T.BufferGeometry()
+   for(const [name,attribute] of Object.entries(geometry.attributes)){
+    const values:number[]=[]
+    for(const id of ids){if(name==='position'){const p=worldPoints[id]!.clone().sub(doors[side]!.position);values.push(p.x,p.y,p.z)}else if(name==='normal'){const n=new T.Vector3().fromBufferAttribute(attribute,id).applyMatrix3(normalMatrix).normalize();values.push(n.x,n.y,n.z)}else for(let c=0;c<attribute.itemSize;c++)values.push(attribute.getComponent(id,c))}
+    panel.setAttribute(name,new T.Float32BufferAttribute(values,attribute.itemSize))
+   }
+   const item=new T.Mesh(panel,mesh.material);item.name=mesh.name+'_door';item.castShadow=true;item.receiveShadow=true;doors[side]!.add(item)
   }
-  const replacement=new T.BufferGeometry();replacement.setAttribute('position',new T.Float32BufferAttribute(kept,3));replacement.setAttribute('normal',new T.Float32BufferAttribute(keptNormals,3));m.geometry=replacement;g.dispose()
+  if(kept.length===triangles.length*3)continue
+  const replacement=geometry.clone();replacement.setIndex(kept);replacement.clearGroups();mesh.geometry=replacement;geometry.dispose()
  }
- doors.forEach((d,i)=>{const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.Float32BufferAttribute(buffers[i]!,3));geometry.setAttribute('normal',new T.Float32BufferAttribute(normals[i]!,3));const panel=new T.Mesh(geometry,body);panel.castShadow=true;panel.receiveShadow=true;d.add(panel)})
  return doors
 }
