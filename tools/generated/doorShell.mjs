@@ -14,7 +14,7 @@ export function buildJoinedDoorShell(door, side, leather, edgeMaterial) {
             id = outer.length;
             weld.set(key, id);
             outer.push(p);
-            inner.push(new T.Vector3(p.x, p.y, side * .725 - door.position.z));
+            inner.push(new T.Vector3(p.x, p.y, p.z - side * .042));
         }
         ids.push(id);
     }
@@ -72,5 +72,74 @@ export function buildJoinedDoorShell(door, side, leather, edgeMaterial) {
     panel.userData.perimeter = perimeter;
     panel.userData.outerFaces = faces;
     panel.userData.outerPositions = outer.map(p => p.toArray());
+    // Spatial bins keep mounted details on the curved skin without scanning every face per vertex.
+    const bounds = new T.Box3().setFromPoints(inner), size = bounds.getSize(new T.Vector3()), bins = new Map(), cells = 32;
+    const cell = (x, y) => [Math.floor((x - bounds.min.x) / size.x * cells), Math.floor((y - bounds.min.y) / size.y * cells)];
+    for (let i = 0; i < faces.length; i += 3) {
+        const points = faces.slice(i, i + 3).map(id => inner[id]);
+        const b = new T.Box3().setFromPoints(points), lo = cell(b.min.x, b.min.y), hi = cell(b.max.x, b.max.y);
+        for (let x = lo[0]; x <= hi[0]; x++)
+            for (let y = lo[1]; y <= hi[1]; y++) {
+                const key = x + ',' + y;
+                if (!bins.has(key))
+                    bins.set(key, []);
+                bins.get(key).push(i);
+            }
+    }
+    panel.userData.heightAt = (x, y) => { const key = cell(x, y).join(','); for (const i of bins.get(key) || []) {
+        const a = inner[faces[i]], b = inner[faces[i + 1]], c = inner[faces[i + 2]], den = (b.y - c.y) * (a.x - c.x) + (c.x - b.x) * (a.y - c.y);
+        if (Math.abs(den) < 1e-12)
+            continue;
+        const u = ((b.y - c.y) * (x - c.x) + (c.x - b.x) * (y - c.y)) / den, v = ((c.y - a.y) * (x - c.x) + (a.x - c.x) * (y - c.y)) / den;
+        if (u >= -1e-5 && v >= -1e-5 && u + v <= 1.00001)
+            return u * a.z + v * b.z + (1 - u - v) * c.z;
+    } let nearest = inner[0], distance = Infinity; for (const p of inner) {
+        const d = (x - p.x) ** 2 + (y - p.y) ** 2;
+        if (d < distance) {
+            distance = d;
+            nearest = p;
+        }
+    } return nearest.z; };
     return panel;
+}
+/** Conform armrest, pocket, stitching and hardware to the same curved inner surface. */
+export function fitDoorDetails(door, side) {
+    door.updateWorldMatrix(true, true);
+    const inverse = door.matrixWorld.clone().invert(), panel = door.getObjectByName('door_inner_shell'), heightAt = panel.userData.heightAt;
+    const meshes = [];
+    door.traverse(o => { if (o instanceof T.Mesh && !['body_door', 'leather_door', 'trim_door', 'chrome_door', 'interior_dark_door', 'door_inner_shell', 'door_edge_returns', 'door_contour_rubber_binding'].includes(o.name))
+        meshes.push(o); });
+    for (const mesh of meshes) {
+        const toDoor = new T.Matrix4().multiplyMatrices(inverse, mesh.matrixWorld), toMesh = toDoor.clone().invert(), baseline = side * .725 - door.position.z;
+        if (mesh instanceof T.InstancedMesh) {
+            const m = new T.Matrix4();
+            for (let i = 0; i < mesh.count; i++) {
+                mesh.getMatrixAt(i, m);
+                const p = new T.Vector3().setFromMatrixPosition(m).applyMatrix4(toDoor);
+                p.z += heightAt(p.x, p.y) - baseline;
+                p.applyMatrix4(toMesh);
+                m.setPosition(p);
+                mesh.setMatrixAt(i, m);
+            }
+            mesh.instanceMatrix.needsUpdate = true;
+            mesh.computeBoundingSphere();
+            continue;
+        }
+        const g = mesh.geometry.clone(), p = g.getAttribute('position');
+        let outward = -Infinity;
+        for (let i = 0; i < p.count; i++) {
+            const v = new T.Vector3().fromBufferAttribute(p, i).applyMatrix4(toDoor);
+            outward = Math.max(outward, side * (v.z - baseline));
+        }
+        const recess = side * Math.min(0, .034 - outward);
+        for (let i = 0; i < p.count; i++) {
+            const v = new T.Vector3().fromBufferAttribute(p, i).applyMatrix4(toDoor);
+            v.z += heightAt(v.x, v.y) - baseline + recess;
+            v.applyMatrix4(toMesh);
+            p.setXYZ(i, v.x, v.y, v.z);
+        }
+        g.computeVertexNormals();
+        g.computeBoundingSphere();
+        mesh.geometry = g;
+    }
 }

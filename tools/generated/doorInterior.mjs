@@ -1,6 +1,6 @@
 import * as T from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { buildJoinedDoorShell } from "./doorShell.mjs";
+import { buildJoinedDoorShell, fitDoorDetails } from "./doorShell.mjs";
 import { stitchedPath } from "./upholsteryDetail.mjs";
 import { addDoorPrecision } from "./doorPrecision.mjs";
 export function addDoorInterior(door, side, leather) {
@@ -63,4 +63,5 @@ export function addDoorInterior(door, side, leather) {
     const lamp = new T.MeshStandardMaterial({ color: '#dce6cf', emissive: '#dce6cf', emissiveIntensity: .3, roughness: .5 });
     box(.11, .014, .012, lamp, .32, .344, side * .718, .003);
     addDoorPrecision(door, side, leather);
+    fitDoorDetails(door, side);
 }

@@ -44,10 +44,16 @@ export function fittedPanel(parent, name, surface, material, thickness = .012, n
     for (let layer = 0; layer < 2; layer++)
         for (let j = 0; j <= nv; j++)
             for (let i = 0; i <= nu; i++) {
-                const point = surface(i / nu, j / nv);
-                point.x += layer * thickness;
+                const u = i / nu, v = j / nv, point = surface(u, v);
+                if (layer) {
+                    const du = surface(Math.min(1, u + .001), v).sub(surface(Math.max(0, u - .001), v)), dv = surface(u, Math.min(1, v + .001)).sub(surface(u, Math.max(0, v - .001)));
+                    const normal = new T.Vector3().crossVectors(dv, du).normalize();
+                    if (normal.x > 0)
+                        normal.negate();
+                    point.addScaledVector(normal, -thickness);
+                }
                 p.push(...point.toArray());
-                uv.push(i / nu, j / nv);
+                uv.push(u, v);
             }
     const stride = nu + 1, count = stride * (nv + 1);
     for (let j = 0; j < nv; j++)

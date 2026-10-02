@@ -32,7 +32,7 @@ export function addRearUpholstery(cabin, material, leather = material) {
             stitchedPath(rear, Array.from({ length: 40 }, (_, i) => surface(.04 + i * .92 / 39, v).add(new T.Vector3(-.0008, 0, 0))), thread);
         piping(rear, Array.from({ length: 35 }, (_, i) => surface(i / 34, 1)), material, .0016);
         // Slim tapered quarter return replaces the projecting rounded end caps.
-        const quarter = (u, v) => new T.Vector3(.421 + u * (.132 + .024 * v), .285 + v * .535, side * (.726 - .030 * v - .040 * u * u));
+        const quarter = (u, v) => new T.Vector3(.421 + u * (.132 + .024 * v) + .009 * Math.sin(v * Math.PI), .285 + v * .535, side * (.726 - .030 * v - .040 * u * u - .011 * Math.sin(u * Math.PI) * Math.sin(v * Math.PI)));
         fittedPanel(rear, 'rear_quarter_fitted_return', quarter, leather, .008, 20, 30);
         for (const u of [.10, .15])
             stitchedPath(rear, Array.from({ length: 28 }, (_, i) => quarter(u, .05 + i * .90 / 27).add(new T.Vector3(-.001, 0, -side * .001))), thread);
