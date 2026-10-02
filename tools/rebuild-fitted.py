@@ -124,26 +124,34 @@ solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.
 tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
 solid('rear_upper_full_width_join',lambda u,v:(.589+.016*v,.874+.124*v,-.708+1.416*u),56,24,black,rear,.008)
 
-# One rear carbon bridge with oval fairings, moved rearward and fused into the deck.
+# Thin deck binding and contoured liners follow the painted roll-bar aperture.
 carbon_parts=[]
 start=len(new)
 def bridge_top(u,v):
- z=-.735+u*1.47;edge=(abs(z)/.735)**6;x=.445+.080*edge+(.240-.080*edge)*v;y=.995-.045*(abs(z)/.735)**5+.015*math.sin(v*math.pi)
- return (x,y,z)
-solid('carbon_cross_car_bridge',bridge_top,72,24,carbon,rear,-.108,1)
+ z=-.722+u*1.444;edge=(abs(z)/.722)**6
+ return (.525+.032*edge+(.153-.032*edge)*v,1.005-.048*edge+.006*math.sin(v*math.pi),z)
+solid('carbon_cross_car_bridge',bridge_top,72,24,carbon,rear,-.038,1)
 for side in [-1,1]:
- vs=[];fs=[];nu=64;nv=40
- # Elliptical, gently leaned fairing; no box-like corners.
- for j in range(nv+1):
-  phi=-math.pi/2+j*math.pi/nv;y=1.038+.154*math.sin(phi);r=math.cos(phi)
-  for i in range(nu):
-   theta=i*math.tau/nu;vs.append((.628+.100*r*math.cos(theta)+.020*math.sin(phi),y,side*.525+.164*r*math.sin(theta)))
- for j in range(nv):
-  for i in range(nu):a=j*nu+i;b=j*nu+(i+1)%nu;fs.append((a,b,b+nu,a+nu))
- obj('carbon_oval_fairing_'+str(side),vs,fs,carbon,rear)
+ # Shallow cover with the tapered arch boundary, tucked under the painted lip.
+ outline=[(.264,.947),(.270,1.002),(.386,1.065),(.436,1.130),(.481,1.158),(.530,1.149),(.594,1.117),(.661,1.039),(.717,.963),(.700,.947),(.52,.942),(.36,.942)]
+ border=[]
+ for i in range(len(outline)):
+  p0=Vector(outline[(i-1)%len(outline)]);p1=Vector(outline[i]);p2=Vector(outline[(i+1)%len(outline)]);p3=Vector(outline[(i+2)%len(outline)])
+  for j in range(12):
+   t=j/12;v=.5*((2*p1)+(-p0+p2)*t+(2*p0-5*p1+4*p2-p3)*t*t+(-p0+3*p1-3*p2+p3)*t*t*t)
+   border.append(v)
+ vs=[];fs=[];n=len(border)
+ for layer in range(2):
+  for z,y in border:
+   x=.545+.052*max(0,(y-.947)/.211)+layer*.031
+   vs.append((x,y,side*z))
+  vs.append((.566+layer*.031,1.031,side*.490))
+ for i in range(n):
+  j=(i+1)%n;fs.extend([(n,i,j),(2*n+1,n+1+j,n+1+i),(i,n+1+i,n+1+j,j)])
+ obj('carbon_contoured_rollbar_liner_'+str(side),vs,fs,carbon,rear)
  # Closed swept side return overlaps both the body aperture and the lower trim.
- def outer_return(u,v,side=side):return (.50+.12*u,.875+.095*v,side*((.755-.050*v)*(1-u)+.625*u))
- solid('carbon_body_return_'+str(side),outer_return,32,32,carbon,rear,.012)
+ def outer_return(u,v,side=side):return (.542+.095*u,.892+.072*v,side*((.752-.020*v)*(1-u)+.645*u))
+ solid('carbon_body_return_'+str(side),outer_return,32,32,carbon,rear,.010)
 carbon_parts=[o for o in new[start:] if o.type=='MESH']
 # Fuse the bridge, fairings and returns into a single continuous manufactured shell.
 for o in bpy.context.selected_objects:o.select_set(False)
@@ -367,6 +375,7 @@ for side in ['L','R']:
  o.parent=bpy.data.objects['door_'+side];o.matrix_world=world
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'Ferrari-458-fitted.blend'))
 print('EXPORTED FITTED ASSEMBLIES',output)
+
 
 
 
