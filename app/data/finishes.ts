@@ -10,5 +10,5 @@ export const interiorDetails=[
  {id:'pedals',ru:'Педали',en:'Pedals',point:[-.65,.34,.365],ruText:'Металлические педали тормоза и акселератора с противоскользящими накладками. В режиме поездки используйте W/S или экранные кнопки.',enText:'Metal brake and accelerator pedals with grip inserts. In Drive, use W/S or the touch controls.'}
 ]
 
-export const environments=[{id:'studio',ru:'Студия',en:'Studio'},{id:'field',ru:'Загородная дорога',en:'Country road'},{id:'alpine',ru:'Альпы · фотопанорама',en:'Alps · photographic panorama'},{id:'coast',ru:'Побережье',en:'Coast'},{id:'sunset',ru:'Закат в поле',en:'Sunset fields'}]
+export const environments=[{id:'studio',ru:'Студия',en:'Studio'},{id:'field',ru:'Дорога · фотопанорама',en:'Road · photographic panorama'},{id:'alpine',ru:'Альпы · фотопанорама',en:'Alps · photographic panorama'},{id:'coast',ru:'Побережье',en:'Coast'},{id:'sunset',ru:'Закат в поле',en:'Sunset fields'}]
 

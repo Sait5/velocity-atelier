@@ -1,6 +1,7 @@
 import * as T from 'three'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import type {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js'
+import {removeGeometryParts} from './geometryParts'
 
 function carbonMaterial(){
  const size=64,pixels=new Uint8Array(size*size*4)
@@ -15,7 +16,7 @@ function carbonMaterial(){
 
 /** Authored and checked in Blender, with the original door pivots and body silhouette. */
 export async function installFittedInterior(root:T.Group,doors:T.Group[],leather:T.Material,decoder:DRACOLoader){
- const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-carbon-interior.glb?v=contoured-rear-3')
+ const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-carbon-interior.glb?v=interior-reference-4')
  installFittedAssemblies(root,doors,leather,asset.scene)
 }
 export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.Material,asset:T.Group){
@@ -24,6 +25,8 @@ export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.M
  if(!rear||!seats||replacements.some(o=>!o))throw new Error('Fitted interior assembly missing')
  // Remove the old rollbar lining where the authored closed return replaces it.
  root.updateMatrixWorld(true)
+ // Superseded source belt clips were loose in front of the replacement rear panels.
+ root.traverse(o=>{if(o instanceof T.Mesh&&['interior_light','interior_dark','chrome'].includes(o.name))removeGeometryParts(o,(a,b)=>a.x>.35&&b.x<.46&&a.y>.48&&b.y<.80&&Math.abs((a.z+b.z)/2)>.48&&Math.abs((a.z+b.z)/2)<.67)})
  root.traverse(o=>{if(!(o instanceof T.Mesh)||!['interior_light','interior_dark'].includes(o.name))return
   const g=o.geometry,p=g.getAttribute('position'),kept:number[]=[],a=new T.Vector3(),b=new T.Vector3(),c=new T.Vector3()
   const total=g.index?.count||p.count

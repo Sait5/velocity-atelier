@@ -10,4 +10,19 @@ export function addCockpitDetails(root:T.Group){
  const carbonCanvas=document.createElement('canvas');carbonCanvas.width=carbonCanvas.height=64;const ctx=carbonCanvas.getContext('2d')!;for(let y=0;y<8;y++)for(let x=0;x<8;x++){ctx.fillStyle=(x+y)%2?'#202823':'#384039';ctx.fillRect(x*8,y*8,8,8);ctx.strokeStyle='#111814';ctx.strokeRect(x*8,y*8,8,8)}const carbonTexture=new T.CanvasTexture(carbonCanvas);carbonTexture.wrapS=carbonTexture.wrapT=T.RepeatWrapping;carbonTexture.repeat.set(18,18)
  root.traverse(o=>{if(!(o instanceof T.Mesh))return;const m=o.material as T.MeshStandardMaterial;if(/carbon/i.test(o.name)){m.map=carbonTexture;m.roughness=.5;m.needsUpdate=true}if(o.name==='interior_dark'||o.name==='plastic_gray'){o.material=trim}})
  const floorMat=new T.MeshStandardMaterial({color:'#1e2420',roughness:1});for(const z of [-.34,.35]){const mat=new T.Mesh(new T.BoxGeometry(.52,.008,.4),floorMat);mat.position.set(-.45,.20,z);root.add(mat)}
+ // Bound carpet edges and console stitching are fitted to visible source surfaces.
+ for(const z of [-.34,.35]){
+  const corners=[[-.69,z-.18],[-.21,z-.18],[-.21,z+.18],[-.69,z+.18],[-.69,z-.18]].map(([x,dz])=>new T.Vector3(x!,.205,dz!))
+  const binding=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(corners,false,'centripetal'),96,.0015,6,false),trim);binding.name='fitted_carpet_binding';root.add(binding)
+ }
+ const consoleMeshes:T.Mesh[]=[];root.traverse(o=>{if(o instanceof T.Mesh&&['carbon fibre','carbon_fibre_trim','leather','interior_dark','trim'].includes(o.name))consoleMeshes.push(o)})
+ for(const side of [-1,1]){
+  const points:T.Vector3[]=[]
+  for(let i=0;i<65;i++){
+   ray.set(new T.Vector3(-.36+i*.49/64,1.20,side*.066),new T.Vector3(0,-1,0))
+   const hit=ray.intersectObjects(consoleMeshes,false).find(h=>h.point.y>.32&&h.point.y<.70)
+   if(hit)points.push(hit.point.clone().add(new T.Vector3(0,.0007,0)))
+  }
+  for(let i=0;i<points.length-1;i+=2){const a=points[i]!,b=points[i+1]!;if(a.distanceTo(b)>.025)continue;const seam=new T.Mesh(new T.TubeGeometry(new T.LineCurve3(a,b),1,.00045,5,false),thread);seam.name='console_fitted_stitch';root.add(seam)}
+ }
 }

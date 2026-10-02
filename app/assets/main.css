@@ -16,3 +16,5 @@
 
 
 .showroom-title{text-shadow:0 2px 14px #000b}.showroom-title small,.showroom-title p{color:#d6ddce}.cockpit-title p,.cockpit-title small{color:#d6ddce;text-shadow:0 1px 8px #000}.cockpit-title h3{text-shadow:0 1px 10px #000}
+
+.engine-credit{display:block;font-size:14px;letter-spacing:0;line-height:1.5;margin:5px 0 12px}.engine-credit a{text-decoration:underline}

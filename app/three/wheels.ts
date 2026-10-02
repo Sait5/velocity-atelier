@@ -1,4 +1,5 @@
 import * as T from 'three'
+import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js'
 export function rebuildWheels(root:T.Group,original:T.Group[],rim:T.MeshStandardMaterial){
  root.updateMatrixWorld(true);const locations=original.map(w=>w.getWorldPosition(new T.Vector3())),groups:T.Group[]=[],stationary:T.Group[]=[]
  const rubber=new T.MeshStandardMaterial({color:'#0c100e',roughness:.91,envMapIntensity:.12}),rotorMat=new T.MeshStandardMaterial({color:'#444b48',metalness:.72,roughness:.68}),dark=new T.MeshStandardMaterial({color:'#090d0b',roughness:.9}),alloy=new T.MeshStandardMaterial({color:'#89928d',metalness:1,roughness:.28}),caliperMat=new T.MeshPhysicalMaterial({color:'#762a23',metalness:.4,roughness:.37,clearcoat:.5})
@@ -15,10 +16,25 @@ export function rebuildWheels(root:T.Group,original:T.Group[],rim:T.MeshStandard
   cyl(.232,.021,rotorMat,side*.07,wheel);cyl(.09,.031,alloy,side*.066,wheel)
   const drill=new T.InstancedMesh(new T.CircleGeometry(.004,8),dark,90);for(let i=0;i<90;i++){const r=i<50?.212:.182,n=i<50?50:40,a=(i<50?i:i-50)*Math.PI*2/n;drill.setMatrixAt(i,new T.Matrix4().compose(new T.Vector3(Math.sin(a)*r,Math.cos(a)*r,side*.081),new T.Quaternion().setFromAxisAngle(new T.Vector3(0,1,0),side<0?Math.PI:0),new T.Vector3(1,1,1)))}wheel.add(drill)
   for(const radius of [.225,.15]){const ring=new T.Mesh(new T.TorusGeometry(radius,.0008,4,96),alloy);ring.position.z=side*.082;wheel.add(ring)}
+  // Concentric machining marks and cooling slots stay on the rotor surface.
+  for(const radius of [.164,.178,.191,.204,.216]){const ring=new T.Mesh(new T.TorusGeometry(radius,.00035,4,96),rotorMat);ring.position.z=side*.0818;wheel.add(ring)}
+  for(let i=0;i<12;i++){
+   const a=i*Math.PI*2/12,points=Array.from({length:12},(_,j)=>{const r=.16+j*.061/11,t=a+j*.035;return new T.Vector3(Math.sin(t)*r,Math.cos(t)*r,side*.0819)})
+   wheel.add(new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(points),12,.0007,4,false),dark))
+  }
+  for(const radius of [.286,.338]){const seam=new T.Mesh(new T.TorusGeometry(radius,.0012,6,128),rubber);seam.position.z=side*.124;wheel.add(seam)}
+  const valveAngle=.46,valve=cyl(.004,.023,alloy,side*.134,wheel);valve.position.x=Math.sin(valveAngle)*.253;valve.position.y=Math.cos(valveAngle)*.253
+  const valveCap=cyl(.005,.008,dark,side*.148,wheel);valveCap.position.x=valve.position.x;valveCap.position.y=valve.position.y
   const caliper=new T.Mesh(new T.CapsuleGeometry(.034,.115,6,16),caliperMat);caliper.position.set(.185,.03,side*.07);caliper.rotation.z=-.22;brakes.add(caliper);for(const y of [-.028,.066]){const bolt=cyl(.005,.004,alloy,side*.103,brakes);bolt.position.set(.19,y,side*.103)}for(const y of [-.012,.01,.032,.054]){const vent=new T.Mesh(new T.BoxGeometry(.04,.003,.003),dark);vent.position.set(.187,y,side*.104);brakes.add(vent)}
   const badgeCanvas=document.createElement('canvas');badgeCanvas.width=128;badgeCanvas.height=512;const badgeCtx=badgeCanvas.getContext('2d')!;badgeCtx.fillStyle='#eee9df';badgeCtx.textAlign='center';badgeCtx.font='bold 38px Arial';for(let i=0;i<8;i++)badgeCtx.fillText('VELOCITY'[i]!,64,44+i*58);const badgeTexture=new T.CanvasTexture(badgeCanvas);badgeTexture.colorSpace=T.SRGBColorSpace;const badge=new T.Mesh(new T.PlaneGeometry(.012,.076),new T.MeshStandardMaterial({map:badgeTexture,transparent:true,depthWrite:false,roughness:.6}));badge.position.set(.187,.025,side*.105);badge.rotation.y=side<0?Math.PI:0;brakes.add(badge)
   const labelCanvas=document.createElement('canvas');labelCanvas.width=512;labelCanvas.height=512;const l=labelCanvas.getContext('2d')!;l.translate(256,256);l.fillStyle='#444c45';l.textAlign='center';l.font='bold 17px Arial';for(const [word,start] of [['VELOCITY 3',-.48],['PERFORMANCE',2.34]] as [string,number][]){[...word].forEach((letter,i)=>{l.save();l.rotate(start+i*.085);l.fillText(letter,0,-227);l.restore()})}const label=new T.CanvasTexture(labelCanvas);label.colorSpace=T.SRGBColorSpace;const sidewall=new T.Mesh(new T.RingGeometry(.295,.345,96),new T.MeshStandardMaterial({map:label,transparent:true,depthWrite:false,roughness:1}));sidewall.position.z=side*.133;sidewall.rotation.y=side<0?Math.PI:0;wheel.add(sidewall)
   wheel.traverse(o=>{if(o instanceof T.Mesh)o.castShadow=o.receiveShadow=true});brakes.traverse(o=>{if(o instanceof T.Mesh)o.castShadow=true})
+  // Static details become a handful of material batches, preserving wheel/brake separation.
+  for(const parent of [wheel,brakes]){
+   const batches=new Map<T.Material,T.Mesh[]>()
+   for(const child of parent.children)if(child instanceof T.Mesh&&!(child instanceof T.InstancedMesh)&&!Array.isArray(child.material)){const group=batches.get(child.material)||[];group.push(child);batches.set(child.material,group)}
+   for(const [material,parts] of batches){if(parts.length<2)continue;const geometries=parts.map(part=>{part.updateMatrix();const geometry=part.geometry.index?part.geometry.toNonIndexed():part.geometry.clone();return geometry.applyMatrix4(part.matrix)}),merged=mergeGeometries(geometries,false);if(!merged){geometries.forEach(g=>g.dispose());continue}const mesh=new T.Mesh(merged,material);mesh.name=parent===wheel?'wheel_machined_details':'fixed_brake_details';mesh.castShadow=mesh.receiveShadow=true;parent.add(mesh);parts.forEach(part=>{part.removeFromParent();part.geometry.dispose()});geometries.forEach(g=>g.dispose())}
+  }
  }
  return {wheels:groups,brakes:stationary}
 }

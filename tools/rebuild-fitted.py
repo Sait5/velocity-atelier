@@ -15,6 +15,7 @@ leather=material('Fitted upholstery',(.024,.030,.027),.88)
 black=material('Fitted fixed black trim',(.012,.017,.014),.92)
 felt=material('Fitted recessed felt',(.004,.007,.005),1)
 thread=material('Fitted saddle thread',(.12,.105,.082),.95)
+seat_thread=material('Fitted red contrast stitch',(.29,.035,.025),.95)
 metal=material('Fitted satin aluminium',(.32,.36,.33),.3,.8)
 red=material('Fitted red reflector',(.4,.016,.009),.3)
 glass=material('Fitted side glass',(.16,.22,.19),.055)
@@ -113,13 +114,16 @@ for side in [-1,1]:
  for v in [.018,.034,.966,.982]:stitch('rear_double_stitch',[(inset(j/160,v)[0]-.001,*inset(j/160,v)[1:]) for j in range(161)],thread,rear)
  # Rounded belt guide and recessed lower service panel.
  edge=aperture(.81,side)
- cuboid('rear_belt_guide',(edge.x+.015,.80,side*.676),(.027,.048,.085),black,rear,.010)
+ cuboid('rear_belt_guide',(edge.x-.014,.80,side*.676),(.040,.056,.085),black,rear,.010)
  tube('rear_belt_mount_rim',[(edge.x-.004,.802,side*(.65+j*.003)) for j in range(19)],.002,metal,rear)
  # Broad, gently curved webbing connects the pillar to the seat buckle.
  def belt_surface(u,v,side=side,edge=edge):
-  t=v;cx=(edge.x+.007)*(1-t)+.15*t-.013*math.sin(t*math.pi);cy=.804*(1-t)+.365*t;cz=side*(.677*(1-t)+.602*t)
+  t=v;cx=(edge.x-.036)*(1-t)+.355*t-.010*math.sin(t*math.pi);cy=.802*(1-t)+.292*t;cz=side*(.677*(1-t)+.652*t)
   return (cx,cy,cz+side*(u-.5)*.042)
  solid('seatbelt_webbing_fitted',belt_surface,4,48,felt,rear,.002)
+ cuboid('belt_lower_fixed_anchor',(.355,.285,side*.652),(.056,.045,.072),black,rear,.008)
+ cuboid('belt_anchor_metal_fastener',(.324,.288,side*.652),(.006,.018,.025),metal,rear,.003)
+ cuboid('belt_stowed_latch_plate',(.413,.420,side*.659),(.012,.050,.055),metal,rear,.006)
 solid('rear_floor_luggage_well',lambda u,v:(.24+u*.37,.217+.015*math.sin(v*math.pi),-.705+v*1.41),40,32,felt,rear,.012,1)
 tube('rear_top_bound_seam',[rear_surface(i/100,1) for i in range(101)],.003,black,rear)
 solid('rear_upper_full_width_join',lambda u,v:(.589+.016*v,.874+.124*v,-.708+1.416*u),56,24,black,rear,.008)
@@ -144,7 +148,7 @@ for side in [-1,1]:
  for layer in range(2):
   for z,y in border:
    x=.551+.052*max(0,(y-.947)/.211)+layer*.031
-   vs.append((x,y,side*(.490+(z-.490)*1.035)))
+   vs.append((x+.003,y,side*(.490+(z-.490)*1.065)))
   vs.append((.572+layer*.031,1.031,side*.490))
  for i in range(n):
   j=(i+1)%n;fs.extend([(n,i,j),(2*n+1,n+1+j,n+1+i),(i,n+1+i,n+1+j,j)])
@@ -179,12 +183,26 @@ for name in ['interior_light','interior_dark']:
   if .38<p.x<.78 and p.y>.88 and abs(p.z)<.85:remove.append(f)
  bmesh.ops.delete(mesh,geom=remove,context='FACES');mesh.to_mesh(source.data);mesh.free()
 # Closed bucket seats, with one continuous headrest/back rather than intersecting shells.
+# Remove the original unattached belt clips that the mounted assembly supersedes.
+for name in ['interior_light','interior_dark','chrome']:
+ source=bpy.data.objects[name];bm=bmesh.new();bm.from_mesh(source.data);pending=set(bm.verts);discard=[]
+ while pending:
+  component=[pending.pop()];stack=list(component)
+  while stack:
+   v=stack.pop()
+   for e in v.link_edges:
+    q=e.other_vert(v)
+    if q in pending:pending.remove(q);component.append(q);stack.append(q)
+  ps=[W(source.matrix_world@v.co) for v in component];lo=[min(p[i] for p in ps) for i in range(3)];hi=[max(p[i] for p in ps) for i in range(3)]
+  if lo[0]>.35 and hi[0]<.46 and lo[1]>.48 and hi[1]<.80 and .48<abs((lo[2]+hi[2])/2)<.67:discard.extend(component)
+ bmesh.ops.delete(bm,geom=discard,context='VERTS');bm.to_mesh(source.data);bm.free()
 seats=group('upgrade_seats')
 for side in [-1,1]:
  zc=side*.35
+ seat_shell_parts=[]
  def profile(y):
   t=max(0,min(1,(y-.36)/.57))
-  width=.178+.025*math.exp(-((t-.18)/.24)**2)+.032*math.exp(-((t-.74)/.20)**2)
+  width=.168+.031*math.exp(-((t-.12)/.24)**2)+.047*math.exp(-((t-.75)/.19)**2)
   neck=max(0,(t-.84)/.16);width-=.054*(neck*neck*(3-2*neck))
   return (.045+.235*t,.060+.009*math.sin(t*math.pi),width)
  vs=[];fs=[];rings=84;around=64
@@ -199,23 +217,58 @@ for side in [-1,1]:
  for j in [0,rings]:
   y=.36+j*.57/rings;x,depth,width=profile(y);center=len(vs);vs.append((x+.075,y,zc))
   for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((center,b,a) if j==rings else (center,a,b))
- obj('seat_continuous_closed_back',vs,fs,leather,seats)
+ seat_shell_parts.append(obj('seat_continuous_closed_back',vs,fs,leather,seats))
+ # Continuous upholstered wings follow the shoulder and waist, like the reference.
+ for wing in [-1,1]:
+  vv=[];ff=[];nr=56;nc=40
+  for j in range(nr+1):
+   t=j/nr;y=.405+.492*t;x,d,w=profile(y);r=.010+.028*math.sin(t*math.pi)**.6
+   for i in range(nc):
+    a=i*math.tau/nc;vv.append((x+.075-d-.023+math.cos(a)*r*1.55,y,zc+wing*(w-.030)+math.sin(a)*r))
+  for j in range(nr):
+   for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((a,a+nc,b+nc,b))
+  for j in [0,nr]:
+   y=.405+.492*j/nr;x,d,w=profile(y);at=len(vv);vv.append((x+.075-d-.023,y,zc+wing*(w-.030)))
+   for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((at,b,a) if j==nr else (at,a,b))
+  seat_shell_parts.append(obj('seat_sculpted_side_wing',vv,ff,leather,seats))
+  for inset in [0,.003]:
+   stitch('seat_wing_red_double_stitch',[(profile(.413+j*.477/160)[0]+.075-profile(.413+j*.477/160)[1]-.023-(.010+.028*math.sin((.008+j*.477/160)/.492*math.pi)**.6)*1.55-.001,.413+j*.477/160,zc+wing*(profile(.413+j*.477/160)[2]-.030+inset)) for j in range(161)],seat_thread,seats)
+ # Weld the wings into the backrest, so their roots cannot float above the leather.
+ for o in bpy.context.selected_objects:o.select_set(False)
+ for o in seat_shell_parts:o.select_set(True)
+ bpy.context.view_layer.objects.active=seat_shell_parts[0];bpy.ops.object.join()
+ seat_shell=seat_shell_parts[0];rem=seat_shell.modifiers.new('Continuous seat shoulders','REMESH');rem.mode='VOXEL';rem.voxel_size=.003;rem.use_smooth_shade=True;bpy.ops.object.modifier_apply(modifier=rem.name)
+ sm=seat_shell.modifiers.new('Soft leather transitions','SMOOTH');sm.factor=.5;sm.iterations=2;bpy.ops.object.modifier_apply(modifier=sm.name)
+ uv=seat_shell.data.uv_layers.new(name='Seat leather metres')
+ for loop in seat_shell.data.loops:
+  p=W(seat_shell.matrix_world@seat_shell.data.vertices[loop.vertex_index].co);uv.data[loop.index].uv=(p.z,p.y)
+ new=[o for o in bpy.data.objects if o.name.startswith('upgrade_') or (o.parent and o.parent.name.startswith('upgrade_'))]
  def padded(u,v):
   y=.418+v*.435;x,d,w=profile(y);dz=(u-.5)*.235
   return (x+.075-d*max(0,1-(dz/w)**4)**.25-.002-.003*math.sin(u*math.pi)*math.sin(v*math.pi),y,zc+dz)
  solid('seat_central_padded_insert',padded,48,64,leather,seats,.006)
- for u in [.014,.030,.970,.986]:stitch('seat_double_saddle_stitch',[(padded(u,j/160)[0]-.0008,*padded(u,j/160)[1:]) for j in range(161)],thread,seats)
+ for u in [.014,.030,.970,.986]:stitch('seat_double_saddle_stitch',[(padded(u,j/160)[0]-.0008,*padded(u,j/160)[1:]) for j in range(161)],seat_thread,seats)
  for v in [.25,.5,.75]:tube('seat_quilted_horizontal_seam',[(padded(i/80,v)[0]-.0008,*padded(i/80,v)[1:]) for i in range(81)],.00065,thread,seats)
  # Separate soft rectangular headrest matches the supplied Ferrari reference.
- cuboid('seat_padded_headrest',(.368,1.026,zc),(.115,.185,.285),leather,seats,.041)
+ headrest=cuboid('seat_padded_headrest',(.345,1.024,zc),(.125,.192,.262),leather,seats,.045)
  for dz in [-.072,.072]:cuboid('headrest_mount',(.36,.931,zc+dz),(.022,.043,.018),black,seats,.005)
- tube('headrest_bound_edge',[(.309,1.026+.075*math.sin(i*math.tau/100),zc+.123*math.cos(i*math.tau/100)) for i in range(101)],.0008,thread,seats)
+ bpy.context.view_layer.update();tree=BVHTree.FromObject(headrest,bpy.context.evaluated_depsgraph_get())
+ for offset in [0,.003]:
+  path=[]
+  for i in range(161):
+   a=i*math.tau/160;sy=math.sin(a);cz=math.cos(a);y=1.024+(.077-offset)*math.copysign(abs(sy)**.5,sy);z=zc+(.103-offset)*math.copysign(abs(cz)**.5,cz)
+   hit=tree.ray_cast(P(0,y,z),P(1,0,0))[0]
+   if hit:path.append((hit.x-.00065,y,z))
+  tube('headrest_fitted_double_stitch',path,.00055,seat_thread,seats)
  cuboid('seat_structural_base',(-.055,.285,zc),(.61,.115,.46),black,seats,.033)
  def cushion(u,v):
-  x=-.385+u*.53;dz=(v-.5)*.45;y=.342+.020*math.sin(u*math.pi)+.038*(abs(dz)/.225)**4
+  x=-.385+u*.53;dz=(v-.5)*.45;y=.345+.023*math.sin(u*math.pi)+.060*(abs(dz)/.225)**4
   return (x,y,zc+dz)
  solid('seat_contoured_cushion',cushion,56,48,leather,seats,-.055,1)
- for v in [.15,.18,.82,.85]:stitch('seat_cushion_double_stitch',[(cushion(i/140,v)[0],cushion(i/140,v)[1]+.001,cushion(i/140,v)[2]) for i in range(141)],thread,seats)
+ for v in [.15,.18,.82,.85]:stitch('seat_cushion_double_stitch',[(cushion(i/140,v)[0],cushion(i/140,v)[1]+.001,cushion(i/140,v)[2]) for i in range(141)],seat_thread,seats)
+ for dz in [-.235,.235]:
+  cuboid('seat_base_adjustment_recess',(.020,.285,zc+dz),(.145,.062,.013),black,seats,.012)
+  cuboid('seat_electric_adjustment_rocker',(.015,.285,zc+dz*1.02),(.061,.018,.010),metal,seats,.004)
  for dz in [-.18,.18]:cuboid('seat_adjustment_slide',(-.04,.222,zc+dz),(.51,.026,.026),metal,seats,.004)
  cuboid('seat_buckle',(-.044,.406,zc-side*.25),(.036,.068,.046),black,seats,.006)
  cuboid('seat_red_release',(-.044,.441,zc-side*.25),(.030,.008,.038),red,seats,.002)
@@ -278,6 +331,12 @@ for side,label in [(-1,'L'),(1,'R')]:
  # Release handle and recess follow the same curved skin; every point has a support.
  solid('door_release_recess',lambda u,v:face(-.19+u*.25,.64+v*.042,.011),40,12,felt,door,side*.006,2)
  tube('door_release_handle',[face(-.17+i*.23/40,.66+.012*math.sin(i*math.pi/40),.024+.004*math.sin(i*math.pi/40)) for i in range(41)],.006,metal,door)
+ # Rubber sealing and countersunk latch hardware stay on the measured door skin.
+ for y in [.574,.607]:
+  cx=.399
+  tube('door_latch_screw_bezel',[face(cx+.004*math.cos(i*math.tau/24),y+.004*math.sin(i*math.tau/24),.005) for i in range(25)],.0006,metal,door)
+  tube('door_latch_screw_slot',[face(cx-.002+j*.004/8,y,.0058) for j in range(9)],.0004,felt,door)
+ for y in [.498,.724]:stitch('door_additional_inset_stitch',[face(-.49+i*.70/160,y+.009*math.sin(i*math.pi/160),.006) for i in range(161)],thread,door)
  # Mounted perforated speaker with a circular leather surround.
  center=(-.46,.442)
  def disc(r):
