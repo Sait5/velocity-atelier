@@ -33,3 +33,7 @@ The impact starts near the end of the closing animation. The previous Peugeot cl
 
 ## Background music
 atelier-ambient.wav: original harmonic ambient loop composed for this project; no third-party recording. Quiet four-chord pads, 32 seconds.
+
+## Current cabin playback and braking
+The former short cabin loops are inactive. ferrari-cabin-acceleration.wav uses the supplied interior acceleration recording, 0.750–10.800 s, with DC removal, static level adjustment and fades. The full 10.05-second take plays once per accelerator press (or entering the moving cockpit), without looping or changing its pitch. The steady exterior bed is muffled inside.
+car-braking.wav: Screeching Tires #1, Dorian CLAIR / BigSoundBank, CC0. https://bigsoundbank.com/crissement-de-pneus-1-s2368.html . Source WAV: https://bigsoundbank.com/UPLOAD/bwf-en/2368.wav . Recorded car tires, 2.15 s; fades and level adjustment. Plays once when braking above 6 m/s, stops on brake release or standstill. Not identified as a Ferrari-specific recording.

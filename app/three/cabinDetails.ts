@@ -8,6 +8,7 @@ export function enhanceCabin(root:T.Group,leather:T.MeshStandardMaterial){
   const map=new T.CanvasTexture(canvas);map.wrapS=map.wrapT=T.RepeatWrapping;map.repeat.set(28,28);map.anisotropy=16;leather.roughnessMap=map;leather.roughness=.82;leather.normalScale?.set(1.35,1.35)
  }
  root.traverse(o=>{if(!(o instanceof T.Mesh))return;for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){if(/carbon/.test(m.name)){m.roughness=.36;m.metalness=.18;m.envMapIntensity=.7}if(/stitch/.test(m.name)){m.roughness=.85;m.envMapIntensity=.25}}})
- const light=new T.PointLight('#fff2dc',1.1,2.1,2);light.name='Soft cabin bounce';light.position.set(.1,1.03,0);root.add(light)
+ const light=new T.PointLight('#fff2dc',.38,1.8,2);light.name='Soft cabin bounce';light.position.set(.1,.85,0);root.add(light)
+ const seat=new T.PointLight('#e4e9ed',.55,1.45,2);seat.name='Driver cabin fill';seat.position.set(.25,.63,.4);root.add(seat)
  const footwell=new T.PointLight('#dce7ef',.4,1.25,2);footwell.name='Footwell fill';footwell.position.set(-.55,.5,.35);root.add(footwell)
 }

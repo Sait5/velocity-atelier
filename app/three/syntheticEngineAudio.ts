@@ -10,10 +10,11 @@ export function createSyntheticEngineAudio(){
   const buffer=context.createBuffer(1,context.sampleRate*2,context.sampleRate),data=buffer.getChannelData(0);let previous=0;for(let i=0;i<data.length;i++){previous=(previous+(Math.random()*2-1)*.1)/1.03;data[i]=previous}
   noise=context.createBufferSource();noise.buffer=buffer;noise.loop=true;air=context.createGain();air.gain.value=.035;noise.connect(air);air.connect(filter);noise.start();void context.resume()
  }
- function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,_shifting=false,_inside=false){if(!context)return;const time=context.currentTime;pulse.frequency.setTargetAtTime(rpm/15,time,.065);bass.frequency.setTargetAtTime(rpm/60,time,.085);filter.frequency.setTargetAtTime(350+rpm*.38+(throttle?500:0),time,.12);air.gain.setTargetAtTime(.025+speed*.001,time,.2);master.gain.setTargetAtTime(enabled?volume*(throttle?.26:.13):0,time,.13)}
+ function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,_shifting=false,_inside=false,_braking=false){if(!context)return;const time=context.currentTime;pulse.frequency.setTargetAtTime(rpm/15,time,.065);bass.frequency.setTargetAtTime(rpm/60,time,.085);filter.frequency.setTargetAtTime(350+rpm*.38+(throttle?500:0),time,.12);air.gain.setTargetAtTime(.025+speed*.001,time,.2);master.gain.setTargetAtTime(enabled?volume*(throttle?.26:.13):0,time,.13)}
  function dispose(){if(!context)return;noise.stop();pulse.stop();bass.stop();void context.close();context=undefined}
  return {start,update,dispose}
 }
+
 
 
 

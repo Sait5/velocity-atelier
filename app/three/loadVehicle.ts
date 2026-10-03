@@ -18,7 +18,7 @@ export function prepareCompleteItalia(root:T.Group){
  const leather=material('bump_leather_cp') as T.MeshPhysicalMaterial
  leather.color.set('#242826');leather.metalness=0;leather.roughness=.72;leather.normalScale?.multiplyScalar(1.2)
  const glass=material('window') as T.MeshPhysicalMaterial
- glass.color.set('#b9ceca');glass.metalness=0;glass.roughness=.06;glass.transmission=0;glass.transparent=true;glass.opacity=.22;glass.depthWrite=false
+ glass.color.set('#a9c5c1');glass.metalness=.12;glass.roughness=.055;glass.transmission=0;glass.transparent=true;glass.opacity=.24;glass.depthWrite=false;glass.side=T.DoubleSide;glass.envMapIntensity=1.25
  const rim=material('rim_bump_metal'),brake=material('brake_bump_metal2')
  const carpet=material('mottled');carpet.color.set('#222422');carpet.metalness=0;carpet.roughness=1
  const lampGlass=material('glass') as T.MeshPhysicalMaterial
@@ -27,7 +27,7 @@ export function prepareCompleteItalia(root:T.Group){
  const retired=new Set<T.Material>()
  root.traverse(o=>{
   if(!(o instanceof T.Mesh))return
-  o.castShadow=true;o.receiveShadow=true
+  o.castShadow=!(Array.isArray(o.material)?o.material:[o.material]).some(m=>m.name==='window'||m.name==='glass');o.receiveShadow=true
   for(const m of Array.isArray(o.material)?o.material:[o.material])for(const value of Object.values(m))if(value instanceof T.Texture)value.anisotropy=16
   if(Array.isArray(o.material))return
   if(o.material.name==='carpaint'){retired.add(o.material);o.material=body}
@@ -43,10 +43,16 @@ export function prepareCompleteItalia(root:T.Group){
  // Outer hinge seam avoids sweeping the front edge into the tyre.
  for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
+ // Only the two door panes retract. Clip the hidden portion at the belt seal.
+ const windows=doors.flatMap(door=>door.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&!Array.isArray(o.material)&&o.material.name==='window').map(mesh=>{
+  const pane=glass.clone();pane.clippingPlanes=[new T.Plane(new T.Vector3(0,1,0),-.795)];mesh.material=pane;mesh.castShadow=false
+  return {mesh,closed:mesh.position.clone(),side:Math.sign(door.position.z),pane}
+ }))
+ function setWindows(progress:number){const p=T.MathUtils.clamp(progress,0,1);for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=p*.35;w.mesh.position.z+=w.side*p*.23;w.mesh.visible=p<.995;w.pane.clippingPlanes![0]!.constant=-.795-root.position.y}}
  enhanceCabin(root,leather)
  function setUpholstery(color:string){leather.color.set(color);leather.color.r+=.022;leather.color.g+=.022;leather.color.b+=.022}
  const {updateInstruments}=installInstruments(root)
- return {setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
+ return {setWindows,setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))}})
   geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))
