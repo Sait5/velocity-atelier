@@ -12,7 +12,7 @@ export function createDriveLook(camera:T.PerspectiveCamera){
    offset.set(.02,1.04,.35).applyAxisAngle(up,heading);camera.position.copy(position).add(offset)
    camera.quaternion.setFromEuler(new T.Euler(-.08-pitch,Math.PI/2+heading+yaw,0,'YXZ'))
   }else{
-   const radius=view===2?13:8.6,elevation=T.MathUtils.clamp((view===2?.74:.35)+pitch,.12,1.25),azimuth=(view===2?Math.PI/2:.52)+yaw
+   const radius=view===2?13:8.6,elevation=T.MathUtils.clamp((view===2?.74:.35)+pitch,.12,1.25),azimuth=(view===2?Math.PI/2:2.55)+yaw
    offset.set(Math.cos(azimuth)*Math.cos(elevation)*radius,Math.sin(elevation)*radius,Math.sin(azimuth)*Math.cos(elevation)*radius).applyAxisAngle(up,heading)
    camera.position.copy(position).add(offset);target.copy(position);target.y+=.65;camera.lookAt(target)
   }

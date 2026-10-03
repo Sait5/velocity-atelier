@@ -37,6 +37,8 @@ export function prepareCompleteItalia(root:T.Group){
   return part as T.Group
  }
  const doors=[group('door_L'),group('door_R')],wheels=[0,1,2,3].map(i=>group('wheel_'+i)),spokes:T.Group[]=[]
+ // Outer hinge seam avoids sweeping the front edge into the tyre.
+ for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
  return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()

@@ -12,7 +12,7 @@ Files and original ranges:
 - ferrari-458-user-mid.wav: 15.200–16.200 s.
 - ferrari-458-user-high.wav: 16.850–17.550 s.
 Processing: DC removal, equal-power head/tail crossfades, static volume normalization, PCM16 WAV at 44.1 kHz.
-Quiet/low/mid/high are relative playback bands. Their RPM control anchors are estimates, not measured source RPM.
+Low/mid/high are relative playback bands. The earlier quiet tail is inactive; stationary playback is silent. Their RPM control anchors are estimates, not measured source RPM.
 Runtime pitch change is limited to 0.92–1.10; the quiet band plays at its original speed.
 The supplied Ferrari 246 Dino recording was excluded.
 
@@ -28,3 +28,6 @@ https://zvukipro.com/transport/2600-zvuki-avtomobilja-ferrari.html .
 Exact Ferrari model and recording authorship remain unverified.
 DC removal, static normalization, 0.5 ms onset and 10 ms release fades; PCM16 WAV.
 The impact starts near the end of the closing animation. The previous Peugeot clip is inactive.
+
+## Background music
+atelier-ambient.wav: original harmonic ambient loop composed for this project; no third-party recording. Quiet four-chord pads, 32 seconds.

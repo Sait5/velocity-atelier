@@ -24,7 +24,7 @@ export function createEngineAudio(recorded458=true){
   desired={rpm,throttle,volume,enabled,speed};if(!context||!master)return
   const t=context.currentTime,r=Math.max(900,Math.min(8500,rpm))
   // These are controls for crossfading uncalibrated recordings, not measured RPM.
-  const anchors=[900,2400,4800,7200],interval=r<2400?0:r<4800?1:2
+  const anchors=[900,1250,4200,6800],interval=r<4200?1:2
   const mix=Math.max(0,Math.min(1,(r-anchors[interval]!)/(anchors[interval+1]!-anchors[interval]!)))
   const weights=[0,0,0,0];weights[interval]=Math.cos(mix*Math.PI/2);weights[interval+1]=Math.sin(mix*Math.PI/2)
   if(layers.length===4)layers.forEach((layer,i)=>{
@@ -34,7 +34,7 @@ export function createEngineAudio(recorded458=true){
    layer.source.playbackRate.setTargetAtTime(rate,t,.075)
   })
   filter?.frequency.setTargetAtTime(throttle?12000:4200,t,.13)
-  master.gain.setTargetAtTime(enabled?Math.max(0,Math.min(1,volume))*(throttle?1.15:.58):0,t,.12)
+  master.gain.setTargetAtTime(enabled&&Math.abs(speed)>.35?Math.max(0,Math.min(1,volume))*(throttle?1.15:.58):0,t,.12)
  }
  function dispose(){disposed=true;abort.abort();layers.forEach(l=>l.source.stop());layers.length=0;if(context)void context.close();context=undefined}
  return {start,update,dispose}
