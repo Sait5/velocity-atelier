@@ -44,8 +44,9 @@ export function prepareCompleteItalia(root:T.Group){
  for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
  enhanceCabin(root,leather)
+ function setUpholstery(color:string){leather.color.set(color);leather.color.r+=.022;leather.color.g+=.022;leather.color.b+=.022}
  const {updateInstruments}=installInstruments(root)
- return {updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
+ return {setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))}})
   geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))

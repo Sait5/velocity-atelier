@@ -31,7 +31,8 @@ function blur(){keys.clear();pointer=null}
 function applyBackground(){if(!scene)return;if(studioFloor)studioFloor.visible=!props.drive;scene.background=new T.Color(props.drive?'#05070a':state.background.value);scene.fog=new T.Fog(props.drive?'#05070a':state.background.value,18,props.drive?100:65);(floor.material as T.MeshStandardMaterial).color.set(props.drive?'#080a0d':state.background.value).multiplyScalar(.28);scene.environment=env;if(camera){camera.far=160;camera.updateProjectionMatrix()}}
 function applyLighting(){if(!key)return;const preset=state.lighting.value;key.intensity=preset==='Dark Room'?.65:preset==='Night'?.8:preset==='Soft Day'?2.2:2.7;key.color.set(preset==='Sunset'?'#ffdda9':'#ffffff');fill.color.set(preset==='Sunset'?'#ffd0a3':preset==='Night'?'#a5b9df':'#ffffff');fill.intensity=preset==='Dark Room'?8:preset==='Night'?11:26;ambient.intensity=preset==='Dark Room'?.18:preset==='Night'?.25:preset==='Soft Day'?.65:.38;scene.environmentIntensity=preset==='Dark Room'?.6:preset==='Night'?.7:1}
 function applyLights(){if(!car)return;if('setLights' in car&&typeof car.setLights==='function')car.setLights(state.headlights.value,state.taillights.value);else car.white.emissiveIntensity=state.headlights.value?2:0}
-function applyConfiguration(){car.body.color.set(state.paint.value);car.leather.color.set(state.upholstery.value);applyLights();applyBackground();applyLighting()}
+function applyUpholstery(color:string){if(!car)return;if("setUpholstery" in car&&typeof car.setUpholstery==="function")car.setUpholstery(color);else car.leather.color.set(color)}
+function applyConfiguration(){car.body.color.set(state.paint.value);applyUpholstery(state.upholstery.value);applyLights();applyBackground();applyLighting()}
 function cycleCamera(){cam=(cam+1)%3;driveLook?.reset();if(camera){camera.fov=cam===1?76:camera.aspect<.8?65:36;camera.updateProjectionMatrix()}}
 function reset(){driveLook?.reset();motionSpeed=0;transmission.reset();car?.wheels.forEach(w=>w.rotation.z=0);motionRoad?.update(0,0,0);emit('speed',0);emit('telemetry',{gear:1,rpm:900})}
 function keyboard(e:KeyboardEvent){if(['INPUT','SELECT','TEXTAREA'].includes((e.target as HTMLElement)?.tagName))return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();const physical:Record<string,string>={KeyW:'w',KeyS:'s',KeyA:'a',KeyD:'d',KeyB:'b',KeyR:'r',KeyC:'c',Space:' '};keys.add(physical[e.code]||e.key.toLowerCase());if(e.code==='KeyR'||e.key.toLowerCase()==='r')reset();if(e.code==='KeyC'||e.key.toLowerCase()==='c')cycleCamera();if(e.key==='Escape')paused=!paused;if(state.engine.value)engineAudio.start()}
@@ -61,7 +62,7 @@ onMounted(async()=>{try{
  }catch(e){emit('error',e instanceof Error?e.message:'WebGL unavailable')}})
 watch(()=>state.volume.value,v=>doorAudio.setVolume(v))
 watch(()=>state.engine.value,v=>{if(props.drive&&v)engineAudio.start();if(!v)engineAudio.update(900,false,state.volume.value,false)},{flush:'sync'})
-watch(()=>state.paint.value,v=>car?.body.color.set(v));watch(()=>state.upholstery.value,v=>car?.leather.color.set(v));watch(()=>state.headlights.value,applyLights);watch(()=>state.taillights.value,applyLights)
+watch(()=>state.paint.value,v=>car?.body.color.set(v));watch(()=>state.upholstery.value,v=>applyUpholstery(v));watch(()=>state.headlights.value,applyLights);watch(()=>state.taillights.value,applyLights)
 watch(()=>state.doors.value,v=>{if(car)void doorAudio.play(v,state.volume.value,v||reduced()?0:1.08);car?.doors.forEach((d,i)=>gsap.to(d.rotation,{y:state.car.value.shape===8&&v?(i===0?1.02:-1.02):0,z:state.car.value.shape!==8&&v?-1.05:0,x:state.car.value.shape!==8&&v?(i===0?-.15:.15):0,duration:reduced()?.01:1.2,ease:'power2.inOut'}))})
 watch(()=>state.interior.value,v=>{
  if(stopped||!camera||props.drive)return;transition?.kill();gsap.killTweensOf(camera.position);cockpitActive=false;pointer=null;controls.enabled=false
@@ -86,6 +87,7 @@ onBeforeUnmount(()=>{stopped=true;engineAudio.dispose();doorAudio.dispose();canc
 defineExpose({reset,cycleCamera,setKey(key:string,down:boolean){down?keys.add(key):keys.delete(key);if(down&&state.engine.value)engineAudio.start()}})
 </script>
 <template><div ref="el" class="vehicle-canvas" tabindex="0" :aria-label="props.drive?t('Перетаскивайте для осмотра дороги. C меняет камеру.','Drag to look around the road. C changes the camera.'):t('Интерактивная 3D-модель. Перетаскивайте для поворота, используйте колесо для масштаба.','Interactive three-dimensional vehicle. Drag to rotate, scroll to zoom.')" /></template>
+
 
 
 
