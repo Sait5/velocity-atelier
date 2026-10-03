@@ -1,4 +1,16 @@
-# Ferrari 458 Italia
+# Active Ferrari 458 Italia — complete model
+
+**2011 Ferrari 458 Italia**, Ddiaz Design (@ddiaz-design):
+https://sketchfab.com/3d-models/2011-ferrari-458-italia-bb6c7fa565c04ec59cd9d0e0a4d0098c
+
+CC Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+Uploader identifies the source as Forza Motorsport 4, crediting https://vk.com/free_3d_car_models .
+
+`ferrari-italia-complete.glb` now replaces the prior assembled vehicle in both showroom and drive. All source exterior, roof, interior, glass, tires, rims, brakes, lights and trim are retained together. Changes: orientation and floor centering, named door hinges including native cards/windows/mirrors, rotating wheel groups with stationary calipers, physical finish adjustments and a tintable leather albedo. Native geometry, UVs and detail textures are preserved. Full source triangle count is retained.
+
+Build: `tools/prepare-full-italia.py`; inventory: `tools/complete-italia-manifest.json`. No affiliation with Ferrari. Attribution records uploader provenance without independently asserting clearance of underlying game rights.
+
+## Previous base and donor versions (no longer loaded)
 
 Model by **vicent091036**.
 Original: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6

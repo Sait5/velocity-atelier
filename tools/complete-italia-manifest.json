@@ -1,0 +1,1204 @@
+{
+  "offset": [
+    0.0022430419921875,
+    0.00030303001403808594,
+    0.15146920084953308
+  ],
+  "parts": [
+    {
+      "source": "fer_f142_10_caliperlf_s_lod0_caliperLF_brake_bump_metal2__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 4877
+    },
+    {
+      "source": "fer_f142_10_caliperlf_s_lod0_caliperLF_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 2899
+    },
+    {
+      "source": "fer_f142_10_caliperlr_s_lod0_caliperLR_brake_bump_metal2__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 5030
+    },
+    {
+      "source": "fer_f142_10_caliperlr_s_lod0_caliperLR_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 1294
+    },
+    {
+      "source": "fer_f142_10_caliperrf_s_lod0_caliperRF_brake_bump_metal2__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 4877
+    },
+    {
+      "source": "fer_f142_10_caliperrf_s_lod0_caliperRF_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 2899
+    },
+    {
+      "source": "fer_f142_10_caliperrr_s_lod0_caliperRR_brake_bump_metal2__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 5028
+    },
+    {
+      "source": "fer_f142_10_caliperrr_s_lod0_caliperRR_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "ferrari_complete",
+      "faces": 1295
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_glassF_black_glass__black_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 264
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_glassF_window__window_0",
+      "assembly": "ferrari_complete",
+      "faces": 294
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_glassLF_window__window_0",
+      "assembly": "door_R",
+      "faces": 192
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_glassRF_window__window_0",
+      "assembly": "door_L",
+      "faces": 191
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 3458
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 52
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_matte_colors__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 184
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_plastic__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 15862
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_pistonLower1_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 520
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_hooda_pistonUpper1_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1656
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorL_body__carpaint_0",
+      "assembly": "door_R",
+      "faces": 3501
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorL_brushed_metal__emblem_0",
+      "assembly": "door_R",
+      "faces": 27
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorL_mirrorLeft__mirrorLeft_0",
+      "assembly": "door_R",
+      "faces": 46
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorL_misc__emblem_0",
+      "assembly": "door_R",
+      "faces": 192
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorR_body__carpaint_0",
+      "assembly": "door_L",
+      "faces": 3501
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorR_brushed_metal__emblem_0",
+      "assembly": "door_L",
+      "faces": 27
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorR_mirrorRight__mirrorLeft_0",
+      "assembly": "door_L",
+      "faces": 46
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_mirrorR_misc__emblem_0",
+      "assembly": "door_L",
+      "faces": 192
+    },
+    {
+      "source": "fer_f142_10_rotorlf_s_lod0_rotorLF_brake_bump_metal__brake_bump_metal2_0",
+      "assembly": "wheel_2",
+      "faces": 1140
+    },
+    {
+      "source": "fer_f142_10_rotorlf_s_lod0_rotorLF_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "wheel_2",
+      "faces": 3128
+    },
+    {
+      "source": "fer_f142_10_rotorlr_s_lod0_rotorLR_brake_bump_metal__brake_bump_metal2_0",
+      "assembly": "wheel_1",
+      "faces": 2260
+    },
+    {
+      "source": "fer_f142_10_rotorlr_s_lod0_rotorLR_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "wheel_1",
+      "faces": 2726
+    },
+    {
+      "source": "fer_f142_10_rotorrf_s_lod0_rotorRF_brake_bump_metal__brake_bump_metal2_0",
+      "assembly": "wheel_3",
+      "faces": 1140
+    },
+    {
+      "source": "fer_f142_10_rotorrf_s_lod0_rotorRF_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "wheel_3",
+      "faces": 3128
+    },
+    {
+      "source": "fer_f142_10_rotorrr_s_lod0_rotorRR_brake_bump_metal__brake_bump_metal2_0",
+      "assembly": "wheel_0",
+      "faces": 2260
+    },
+    {
+      "source": "fer_f142_10_rotorrr_s_lod0_rotorRR_brake_smooth_metal__brake_bump_metal2_0",
+      "assembly": "wheel_0",
+      "faces": 2728
+    },
+    {
+      "source": "fer_f142_10_s_lod0_badgeLF_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 86
+    },
+    {
+      "source": "fer_f142_10_s_lod0_badgeRF_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 86
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 1048
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 24282
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_body_2__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 793
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_detail_glass_amber__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 420
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_grille1__grille1_0",
+      "assembly": "ferrari_complete",
+      "faces": 172
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_matte_colors__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 21
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_metal__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 7316
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_plastic__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 2299
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_rubber_trim__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 8109
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_textured_reflector__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 56
+    },
+    {
+      "source": "fer_f142_10_s_lod0_body_window__window_0",
+      "assembly": "ferrari_complete",
+      "faces": 20
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 574
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 6206
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_bottom__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 60
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 982
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_grille1__grille1_0",
+      "assembly": "ferrari_complete",
+      "faces": 60
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 316
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperFa_plastic__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 3642
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 72
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 5326
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_detail_glass_red__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 270
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 982
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_frame__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 586
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_grille1__grille1_0",
+      "assembly": "ferrari_complete",
+      "faces": 460
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_matte_colors__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1296
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 4184
+    },
+    {
+      "source": "fer_f142_10_s_lod0_bumperRa_textured_reflector__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 150
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_body__carpaint_0",
+      "assembly": "door_R",
+      "faces": 860
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_body_2__carpaint_0",
+      "assembly": "door_R",
+      "faces": 5776
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_emblem__emblem_0",
+      "assembly": "door_R",
+      "faces": 74
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_metal__emblem_0",
+      "assembly": "door_R",
+      "faces": 330
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_misc__emblem_0",
+      "assembly": "door_R",
+      "faces": 60
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_plastic__emblem_0",
+      "assembly": "door_R",
+      "faces": 678
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorLF_rubber_trim__rubber_0",
+      "assembly": "door_R",
+      "faces": 1638
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_body__carpaint_0",
+      "assembly": "door_L",
+      "faces": 860
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_body_2__carpaint_0",
+      "assembly": "door_L",
+      "faces": 5664
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_metal__emblem_0",
+      "assembly": "door_L",
+      "faces": 330
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_misc__emblem_0",
+      "assembly": "door_L",
+      "faces": 60
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_plastic__emblem_0",
+      "assembly": "door_L",
+      "faces": 678
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorRF_rubber_trim__rubber_0",
+      "assembly": "door_L",
+      "faces": 1638
+    },
+    {
+      "source": "fer_f142_10_s_lod0_exhausta_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 178
+    },
+    {
+      "source": "fer_f142_10_s_lod0_exhausta_chrome__chrome2_0",
+      "assembly": "ferrari_complete",
+      "faces": 2400
+    },
+    {
+      "source": "fer_f142_10_s_lod0_exhausta_matte_colors__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 708
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassLHL_glass__glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 726
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassLR_black_glass__black_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 63
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassLR_window__window_0",
+      "assembly": "ferrari_complete",
+      "faces": 30
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassLTL_detail_glass_clear__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 120
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassLTL_detail_glass_red__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 793
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassR_window__window_0",
+      "assembly": "ferrari_complete",
+      "faces": 114
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassRHL_glass__glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 726
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassRR_black_glass__black_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 63
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassRR_window__window_0",
+      "assembly": "ferrari_complete",
+      "faces": 30
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassRTL_detail_glass_clear__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 120
+    },
+    {
+      "source": "fer_f142_10_s_lod0_glassRTL_detail_glass_red__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 796
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightL_brushed_metal__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 5
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightL_detail_glass_clear__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 160
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightL_head_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 80
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightL_lights_plastic__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 10022
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightL_reflector__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 1220
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightR_detail_glass_clear__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 160
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightR_head_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 80
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightR_lights_plastic__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 10027
+    },
+    {
+      "source": "fer_f142_10_s_lod0_headlightR_reflector__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 1220
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtLa_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 115
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtLa_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 619
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtLa_chrome2__chrome2_0",
+      "assembly": "ferrari_complete",
+      "faces": 782
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtLa_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 136
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtLa_rubber_trim__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 206
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtRa_black__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 115
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtRa_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 619
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtRa_chrome2__chrome2_0",
+      "assembly": "ferrari_complete",
+      "faces": 782
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtRa_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 136
+    },
+    {
+      "source": "fer_f142_10_s_lod0_skirtRa_rubber_trim__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 206
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightL_head_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 160
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightL_lights_glass__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 4020
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightL_tail_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 1536
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightL_textured_reflector__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 3736
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightR_lights_glass__lights_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 4020
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightR_reverse_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 160
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightR_tail_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 1536
+    },
+    {
+      "source": "fer_f142_10_s_lod0_taillightR_textured_reflector__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 3736
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_black_glass__black_glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 614
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 562
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_emblem__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1313
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_grille1__grille1_0",
+      "assembly": "ferrari_complete",
+      "faces": 356
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 30892
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_plastic__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 934
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_pistonLower1_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 652
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_pistonLower2_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 652
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_pistonUpper1_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1030
+    },
+    {
+      "source": "fer_f142_10_s_lod0_trunk_pistonUpper2_misc__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1030
+    },
+    {
+      "source": "fer_f142_10_s_lod0_winga_body__carpaint_0",
+      "assembly": "ferrari_complete",
+      "faces": 1985
+    },
+    {
+      "source": "fer_f142_10_s_lod0_winga_brushed_metal__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 112
+    },
+    {
+      "source": "fer_f142_10_s_lod0_winga_detail_glass_red__detail_glass_clear_0",
+      "assembly": "ferrari_complete",
+      "faces": 376
+    },
+    {
+      "source": "fer_f142_10_s_lod0_winga_tail_light__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 693
+    },
+    {
+      "source": "fer_f142_10_s_lod0_winga_textured_reflector__tail_light_0",
+      "assembly": "ferrari_complete",
+      "faces": 448
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_badge__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 42
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_body__emblem_0",
+      "assembly": "ferrari_complete",
+      "faces": 1740
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_metal__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 35997
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_metal2__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 82
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_metal3__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 1041
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_metal4__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 13158
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_plastic2__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 6152
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_plastic4__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 34134
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_bump_plastic5__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 11760
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_chrome__chrome2_0",
+      "assembly": "ferrari_complete",
+      "faces": 5279
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_chrome_bump__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 120
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_embossed_metal__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 732
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_rubber__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 7322
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_smooth_metal__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 5208
+    },
+    {
+      "source": "fer_f142_10_s_lod0_engine_smooth_plastic__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 3966
+    },
+    {
+      "source": "fer_f142_10_s_lod0_enginebay_S_bump_metal4__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 312
+    },
+    {
+      "source": "fer_f142_10_s_lod0_enginebay_S_bump_plastic4__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 13694
+    },
+    {
+      "source": "fer_f142_10_s_lod0_enginebay_S_smooth_metal__bump_plastic4_en_0",
+      "assembly": "ferrari_complete",
+      "faces": 2884
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_badge__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 253
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_bump_leather__bump_leather_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 32281
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_bump_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 21948
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_bump_plastic3__bump_plastic3_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 328
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_bump_plastic4__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 28119
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_bump_stitchingA__bump_stitchingA_0",
+      "assembly": "ferrari_complete",
+      "faces": 2949
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_chrome__chrome2_0",
+      "assembly": "ferrari_complete",
+      "faces": 2476
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_digital_gauge__digital_gauge_0",
+      "assembly": "ferrari_complete",
+      "faces": 106
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_embossed_badge__embossed_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 46
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_embossed_metal__embossed_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 18
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_gauge_emissive__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 756
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_glass__glass_0",
+      "assembly": "ferrari_complete",
+      "faces": 292
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_headliner__headliner_0",
+      "assembly": "ferrari_complete",
+      "faces": 64
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_mirrorMiddle__mirrorLeft_0",
+      "assembly": "ferrari_complete",
+      "faces": 40
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_mottled__mottled_0",
+      "assembly": "ferrari_complete",
+      "faces": 4960
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_plastic__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 3967
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_rubber__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 656
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_smooth_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 12
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_smooth_plastic__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 520
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_interior_solid__black_0",
+      "assembly": "ferrari_complete",
+      "faces": 562
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_bump_leather__bump_leather_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 7018
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_bump_plastic4__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 2866
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_bump_stitchingA__bump_stitchingA_0",
+      "assembly": "ferrari_complete",
+      "faces": 984
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_embossed_leather__embossed_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 16
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_smooth_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 2977
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatL_tiling_cloth__tiling_cloth_0",
+      "assembly": "ferrari_complete",
+      "faces": 419
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_bump_leather__bump_leather_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 7018
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_bump_plastic4__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 2866
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_bump_stitchingA__bump_stitchingA_0",
+      "assembly": "ferrari_complete",
+      "faces": 984
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_embossed_leather__embossed_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 16
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_smooth_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 2977
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_seatR_tiling_cloth__tiling_cloth_0",
+      "assembly": "ferrari_complete",
+      "faces": 419
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_anodized_aluminum__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 476
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_badge__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 364
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather__bump_leather_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 18778
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather2__embossed_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 3586
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather3__bump_leather3_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 3316
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 10529
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_plastic__bump_plastic_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 72
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_bump_stitchingE__bump_stitchingE_0",
+      "assembly": "ferrari_complete",
+      "faces": 178
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_plastic__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 5949
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_steering_wheel_smooth_plastic__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 1104
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_max_bump_plastic5__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 172
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_max_gauge_needle__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 36
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_mid_bump_plastic5__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 172
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_mid_gauge_needle__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 36
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_min_bump_plastic5__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 172
+    },
+    {
+      "source": "fer_f142_10_cockpit_s_tach_min_gauge_needle__gauge_needle_0",
+      "assembly": "ferrari_complete",
+      "faces": 36
+    },
+    {
+      "source": "fer_f142_10_s_lod0_boot_bump_plastic5__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 5109
+    },
+    {
+      "source": "fer_f142_10_s_lod0_boot_mottled__mottled_0",
+      "assembly": "ferrari_complete",
+      "faces": 1210
+    },
+    {
+      "source": "fer_f142_10_s_lod0_boot_rubber__rubber_0",
+      "assembly": "ferrari_complete",
+      "faces": 2705
+    },
+    {
+      "source": "fer_f142_10_s_lod0_boot_smooth_metal__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 2370
+    },
+    {
+      "source": "fer_f142_10_s_lod0_boot_smooth_plastic__bump_metal_cp_0",
+      "assembly": "ferrari_complete",
+      "faces": 68
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_bump_leather__bump_leather_cp_0",
+      "assembly": "door_R",
+      "faces": 7703
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_bump_plastic4__bump_metal_cp_0",
+      "assembly": "door_R",
+      "faces": 1764
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_bump_stitchingA__bump_stitchingA_0",
+      "assembly": "door_R",
+      "faces": 868
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_mottled__mottled_0",
+      "assembly": "door_R",
+      "faces": 490
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_smooth_plastic__bump_metal_cp_0",
+      "assembly": "door_R",
+      "faces": 18
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardLF_tiling_cloth2__tiling_cloth2_0",
+      "assembly": "door_R",
+      "faces": 328
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_bump_leather__bump_leather_cp_0",
+      "assembly": "door_L",
+      "faces": 8800
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_bump_plastic4__bump_metal_cp_0",
+      "assembly": "door_L",
+      "faces": 2468
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_bump_stitchingA__bump_stitchingA_0",
+      "assembly": "door_L",
+      "faces": 1084
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_mottled__mottled_0",
+      "assembly": "door_L",
+      "faces": 490
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_smooth_plastic__bump_metal_cp_0",
+      "assembly": "door_L",
+      "faces": 18
+    },
+    {
+      "source": "fer_f142_10_s_lod0_doorcardRF_tiling_cloth2__tiling_cloth2_0",
+      "assembly": "door_L",
+      "faces": 328
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_inner_rim__inner_rim_0",
+      "assembly": "wheel_2",
+      "faces": 1506
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_outer_rim__outer_rim_0",
+      "assembly": "wheel_2",
+      "faces": 960
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal__rim_bump_metal_0",
+      "assembly": "wheel_2",
+      "faces": 20624
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem__rim_bump_metal_0",
+      "assembly": "wheel_2",
+      "faces": 298
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_wheel_black__black_0",
+      "assembly": "wheel_2",
+      "faces": 320
+    },
+    {
+      "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+      "assembly": "wheel_0",
+      "faces": 1320
+    },
+    {
+      "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+      "assembly": "wheel_1",
+      "faces": 1320
+    },
+    {
+      "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+      "assembly": "wheel_2",
+      "faces": 1320
+    },
+    {
+      "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+      "assembly": "wheel_3",
+      "faces": 1320
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_inner_rim_1_inner_rim_0",
+      "assembly": "wheel_3",
+      "faces": 1506
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_outer_rim_1_outer_rim_0",
+      "assembly": "wheel_3",
+      "faces": 960
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_1_rim_bump_metal_0",
+      "assembly": "wheel_3",
+      "faces": 20624
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_1_rim_bump_metal_0",
+      "assembly": "wheel_3",
+      "faces": 298
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_wheel_black_1_black_0",
+      "assembly": "wheel_3",
+      "faces": 320
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_wheel_black_2_black_0",
+      "assembly": "wheel_0",
+      "faces": 320
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_2_rim_bump_metal_0",
+      "assembly": "wheel_0",
+      "faces": 298
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_2_rim_bump_metal_0",
+      "assembly": "wheel_0",
+      "faces": 20624
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_outer_rim_2_outer_rim_0",
+      "assembly": "wheel_0",
+      "faces": 960
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_inner_rim_2_inner_rim_0",
+      "assembly": "wheel_0",
+      "faces": 1506
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_wheel_black_3_black_0",
+      "assembly": "wheel_1",
+      "faces": 320
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_3_rim_bump_metal_0",
+      "assembly": "wheel_1",
+      "faces": 298
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_3_rim_bump_metal_0",
+      "assembly": "wheel_1",
+      "faces": 20624
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_outer_rim_3_outer_rim_0",
+      "assembly": "wheel_1",
+      "faces": 960
+    },
+    {
+      "source": "fer_f142_10_s_wheel_wheel_inner_rim_3_inner_rim_0",
+      "assembly": "wheel_1",
+      "faces": 1506
+    }
+  ]
+}

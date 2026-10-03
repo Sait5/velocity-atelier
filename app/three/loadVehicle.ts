@@ -2,22 +2,52 @@ import * as T from 'three'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js'
 import {createVehicle} from './vehicle'
-import {rigDoors} from './rigDoors'
-import {enhanceVehicle} from './enhanceVehicle'
-import {installFittedInterior} from './fittedInterior'
-import {applyLeatherMaps} from './surfaceMaps'
-import {collectFerrariWheels,installDonorWheels} from './donorWheels'
-import {addPedalBox} from './pedals'
+
+/** Use the complete authored Italia, with its native cabin and exterior. */
+export function prepareCompleteItalia(root:T.Group){
+ const material=(name:string)=>{
+  let found:T.MeshStandardMaterial|undefined
+  root.traverse(o=>{if(o instanceof T.Mesh)for(const m of Array.isArray(o.material)?o.material:[o.material])if(m.name===name)found=m as T.MeshStandardMaterial})
+  if(!found)throw new Error('Italia material missing: '+name)
+  return found
+ }
+ const body=new T.MeshPhysicalMaterial({name:'Italia paint',color:'#a2b368',metalness:.45,roughness:.23,clearcoat:1,clearcoatRoughness:.12})
+ const leather=material('bump_leather_cp') as T.MeshPhysicalMaterial
+ leather.color.set('#242826');leather.metalness=0;leather.roughness=.78
+ const glass=material('window') as T.MeshPhysicalMaterial
+ glass.color.set('#b9ceca');glass.metalness=0;glass.roughness=.06;glass.transmission=0;glass.transparent=true;glass.opacity=.22;glass.depthWrite=false
+ const rim=material('rim_bump_metal'),brake=material('brake_bump_metal2')
+ const white=material('lights_glass').clone();white.name='Italia headlight reflectors';white.emissive.set('#f1ffed');white.emissiveMap=white.map;white.emissiveIntensity=2
+ const retired=new Set<T.Material>()
+ root.traverse(o=>{
+  if(!(o instanceof T.Mesh))return
+  o.castShadow=true;o.receiveShadow=true
+  if(Array.isArray(o.material))return
+  if(o.material.name==='carpaint'){retired.add(o.material);o.material=body}
+  else if(o.material.name==='lights_glass'&&/headlight.*reflector/.test(o.name))o.material=white
+  if(/leather|stitching|mottled|headliner|cloth/.test(o.material.name)){(o.material as T.MeshStandardMaterial).metalness=0}
+ })
+ retired.forEach(m=>m.dispose())
+ const group=(name:string)=>{
+  const part=root.getObjectByName(name)
+  if(!part||part instanceof T.Mesh||!part.children.length)throw new Error('Italia assembly missing: '+name)
+  return part as T.Group
+ }
+ const doors=[group('door_L'),group('door_R')],wheels=[0,1,2,3].map(i=>group('wheel_'+i)),spokes:T.Group[]=[]
+ root.updateMatrixWorld(true)
+ return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes,dispose(){
+  const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
+  root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))}})
+  geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))
+  materials.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())
+ }}
+}
+
 export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
  if(shape!==8)return createVehicle(shape)
  const decoder=new DRACOLoader().setDecoderPath('/draco/'),loader=new GLTFLoader().setDRACOLoader(decoder)
- try{const gltf=await new Promise<any>((resolve,reject)=>loader.load('/models/ferrari.glb',resolve,e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))},reject));const model=gltf.scene,root=new T.Group();model.rotation.y=Math.PI/2;root.add(model)
- const body=new T.MeshPhysicalMaterial({color:'#a2b368',metalness:.8,roughness:.25,clearcoat:1}),rim=new T.MeshStandardMaterial({color:'#828983',metalness:1,roughness:.33}),brake=new T.MeshStandardMaterial({color:'#555957',metalness:.85,roughness:.5}),glass=new T.MeshPhysicalMaterial({color:'#161d1b',metalness:.25,roughness:.08,transparent:true,opacity:.72}),leather=new T.MeshPhysicalMaterial({color:'#242826',roughness:.82,metalness:0,sheen:.28,sheenRoughness:.85,sheenColor:'#77746c',clearcoat:.03}),white=new T.MeshStandardMaterial({color:'#f3fff2',emissive:'#eaffda',emissiveIntensity:2})
- const wheels=collectFerrariWheels(model),spokes:T.Group[]=[]
- const originals=new Set<T.Material>();model.traverse((o:T.Object3D)=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;if(o.name==='body'||o.name==='glass'){originals.add(o.material as T.Material);o.material=o.name==='body'?body:glass}else if(o.name==='leds'){originals.add(o.material as T.Material);o.material=white}}})
- root.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(root);const center=bounds.getCenter(new T.Vector3());model.position.x-=center.x;model.position.z-=center.z;model.position.y-=bounds.min.y
- body.envMapIntensity=.8;rim.envMapIntensity=.75;const doors=rigDoors(root,body,leather,false);enhanceVehicle(root,wheels,rim,leather);applyLeatherMaps(leather);await installFittedInterior(root,doors,leather,decoder);addPedalBox(root);await installDonorWheels(root,wheels,decoder);originals.forEach(m=>m.dispose())
- return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes,dispose(){const gs=new Set<T.BufferGeometry>(),ms=new Set<T.Material>(),textures=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){gs.add(o.geometry);if(o instanceof T.InstancedMesh)o.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>ms.add(m))}});gs.forEach(g=>g.dispose());ms.forEach(m=>{for(const value of Object.values(m))if(value instanceof T.Texture)textures.add(value);m.dispose()});textures.forEach(t=>t.dispose());[body,rim,brake,glass,leather,white].forEach(m=>m.dispose())}}
+ try{
+  const gltf=await loader.loadAsync('/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
+  return prepareCompleteItalia(gltf.scene)
  }finally{decoder.dispose()}
 }
-
