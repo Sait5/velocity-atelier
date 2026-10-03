@@ -1,0 +1,1 @@
+Previous model assemblies and photographic environments, retained outside public delivery for recovery. The active vehicle is public/models/ferrari-italia-complete.glb. Legacy authoring scripts refer to their former public paths.
