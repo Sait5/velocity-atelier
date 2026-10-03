@@ -3,7 +3,7 @@ import {addDoorInterior} from './doorInterior'
 import {clearDoorApertures} from './doorAperture'
 
 /** Discover complete disconnected panels without cutting through body triangles. */
-export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Material){
+export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Material,addInterior=true){
  root.updateMatrixWorld(true)
  const doors=[new T.Group(),new T.Group()]
  doors.forEach((d,i)=>{d.name=i===0?'door_L':'door_R';d.position.set(-.73,.65,i===0?-.83:.83);root.add(d)})
@@ -43,6 +43,6 @@ export function rigDoors(root:T.Group,_body:T.MeshPhysicalMaterial,leather:T.Mat
   const replacement=geometry.clone();replacement.setIndex(kept);replacement.clearGroups();mesh.geometry=replacement;geometry.dispose()
  }
  clearDoorApertures(root)
- doors.forEach((d,i)=>addDoorInterior(d,i===0?-1:1,leather))
+ if(addInterior)doors.forEach((d,i)=>addDoorInterior(d,i===0?-1:1,leather))
  return doors
 }

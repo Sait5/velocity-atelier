@@ -1,21 +1,22 @@
 /** One latch/release for the paired-door action, with the close impact at the end. */
 export function createDoorAudio(){
  let context:AudioContext|undefined,output:GainNode|undefined,disposed=false,serial=0
- const buffers=new Map<boolean,AudioBuffer>(),sources=new Set<AudioBufferSourceNode>()
+ const buffers=new Map<boolean|'seat',AudioBuffer>(),sources=new Set<AudioBufferSourceNode>()
  let loading:Promise<void>|undefined
  function unlock(){
   if(disposed)return
   context??=new AudioContext();if(!output){output=context.createGain();output.connect(context.destination)}
   void context.resume().catch(()=>{})
-  loading??=Promise.all([true,false].map(async opening=>{
-   const response=await fetch(opening?'/audio/car-door-open.wav':'/audio/car-door-close.wav')
+  loading??=Promise.all(([true,false,'seat'] as const).map(async clip=>{
+   const url=clip==='seat'?'/audio/seat-creak-entry.wav':clip?'/audio/car-door-open.wav':'/audio/car-door-close.wav'
+   const response=await fetch(url)
    if(!response.ok)throw new Error('Door recording unavailable')
-   const decoded=await context!.decodeAudioData(await response.arrayBuffer());if(!disposed)buffers.set(opening,decoded)
+   const decoded=await context!.decodeAudioData(await response.arrayBuffer());if(!disposed)buffers.set(clip,decoded)
   })).then(()=>{}).catch(()=>{})
  }
- async function play(opening:boolean,volume:number,delay=0,offset=0){
+ async function play(clip:boolean|'seat',volume:number,delay=0,offset=0){
   unlock();const request=++serial;await loading
-  const buffer=buffers.get(opening);if(disposed||request!==serial||!context||!output||!buffer)return
+  const buffer=buffers.get(clip);if(disposed||request!==serial||!context||!output||!buffer)return
   for(const source of sources){try{source.stop()}catch{}}sources.clear()
   if(volume<=0)return
   output.gain.setValueAtTime(Math.min(1,Math.max(0,volume))*.65,context.currentTime)

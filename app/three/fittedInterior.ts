@@ -16,45 +16,46 @@ function carbonMaterial(){
 
 /** Authored and checked in Blender, with the original door pivots and body silhouette. */
 export async function installFittedInterior(root:T.Group,doors:T.Group[],leather:T.Material,decoder:DRACOLoader){
- const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-carbon-interior.glb?v=interior-sculpted-5')
+ const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-donor-interior.glb?v=donor-fit-1')
  installFittedAssemblies(root,doors,leather,asset.scene)
 }
 export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.Material,asset:T.Group){
  const rear=asset.getObjectByName('upgrade_rear'),seats=asset.getObjectByName('upgrade_seats')
+ const cockpit=asset.getObjectByName('upgrade_cockpit')
  const replacements=doors.map((_,i)=>asset.getObjectByName(i===0?'upgrade_door_L':'upgrade_door_R'))
- if(!rear||!seats||replacements.some(o=>!o))throw new Error('Fitted interior assembly missing')
- // Remove the old rollbar lining where the authored closed return replaces it.
+ if(!rear||!seats||!cockpit||replacements.some(o=>!o))throw new Error('Fitted interior assembly missing')
  root.updateMatrixWorld(true)
- // Superseded source belt clips were loose in front of the replacement rear panels.
- root.traverse(o=>{if(o instanceof T.Mesh&&['interior_light','interior_dark','chrome'].includes(o.name))removeGeometryParts(o,(a,b)=>a.x>.35&&b.x<.46&&a.y>.48&&b.y<.80&&Math.abs((a.z+b.z)/2)>.48&&Math.abs((a.z+b.z)/2)<.67)})
- root.traverse(o=>{if(!(o instanceof T.Mesh)||!['interior_light','interior_dark'].includes(o.name))return
-  const g=o.geometry,p=g.getAttribute('position'),kept:number[]=[],a=new T.Vector3(),b=new T.Vector3(),c=new T.Vector3()
-  const total=g.index?.count||p.count
-  for(let i=0;i<total;i+=3){const ids=[0,1,2].map(k=>g.index?g.index.getX(i+k):i+k)
-   a.fromBufferAttribute(p,ids[0]!).applyMatrix4(o.matrixWorld);b.fromBufferAttribute(p,ids[1]!).applyMatrix4(o.matrixWorld);c.fromBufferAttribute(p,ids[2]!).applyMatrix4(o.matrixWorld);a.add(b).add(c).multiplyScalar(1/3)
-   if(a.x>.38&&a.x<.78&&a.y>.88&&Math.abs(a.z)<.85)continue
-   kept.push(...ids)
-  }
-  if(kept.length!==total){const replacement=g.clone();replacement.setIndex(kept);replacement.clearGroups();o.geometry=replacement;g.dispose()}
- })
  const removed:T.Object3D[]=[]
  const detach=(o:T.Object3D|undefined)=>{if(o){o.removeFromParent();removed.push(o)}}
+ // Clear the superseded interior only. Exterior paint, glass, grille and lights
+ // retain their original triangles; donor roof and exterior panels are absent.
+ const sourceInterior=new Set(['trim','plastic_gray','leather','interior_light','interior_dark','carpet','carbon_fibre_trim','carbon fibre','yellow_trim','blue'])
+ const sourcePanels:T.Object3D[]=[]
+ root.traverse(o=>{if(o instanceof T.Mesh&&sourceInterior.has(o.name))sourcePanels.push(o)
+  else if(o instanceof T.Mesh&&['metal','chrome'].includes(o.name))removeGeometryParts(o,(a,b)=>{
+   const c=a.clone().add(b).multiplyScalar(.5)
+   return c.x> -1.21&&c.x<.58&&c.y>.12&&c.y<1.14&&Math.abs(c.z)<.82
+  })
+ });sourcePanels.forEach(detach)
+ const superseded:T.Object3D[]=[];root.traverse(o=>{if(o.name.startsWith('steering_')||['cockpit_detail','dashboard_stitch','console_fitted_stitch','fitted_carpet_binding','closed_cabin','mounted_pedal_box'].includes(o.name))superseded.push(o)});superseded.forEach(detach)
  let carbon:T.Material|undefined
- asset.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=o.receiveShadow=true;if(!Array.isArray(o.material)){if(o.material.name==='Fitted upholstery')o.material=leather;else if(o.material.name==='Fitted carbon shell')o.material=carbon??=carbonMaterial()}}})
+ asset.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=o.receiveShadow=true;if(!Array.isArray(o.material)){if(o.material.name==='Fitted upholstery')o.material=leather;else if(o.material.name==='Fitted carbon shell')o.material=carbon??=carbonMaterial();else if(o.material.name==='bump_leather_cp'&&leather instanceof T.MeshStandardMaterial){o.material.color=leather.color;o.material.metalness=0;o.material.roughness=.78}else if(o.material.name==='mottled'&&o.material instanceof T.MeshStandardMaterial){o.material.color.set('#222422');o.material.roughness=1}else if(o.material.name==='bump_stitchingA'&&o.material instanceof T.MeshStandardMaterial){o.material.color.set('#a6342a');o.material.metalness=0;o.material.roughness=.9}}}})
  detach(root.getObjectByName('rear_tailored_trim'))
  const belts:T.Object3D[]=[];root.traverse(o=>{if(o.name==='seatbelt_webbing')belts.push(o)});belts.forEach(detach)
  rear.removeFromParent();root.add(rear)
  detach(root.getObjectByName('seat_driver'));detach(root.getObjectByName('seat_passenger'));seats.removeFromParent();root.add(seats)
+ cockpit.removeFromParent();root.add(cockpit)
  for(let i=0;i<doors.length;i++){
   const door=doors[i]!,replacement=replacements[i]!
   for(const child of [...door.children])if(!['body_door','chrome_door','interior_dark_door'].includes(child.name))detach(child)
   replacement.removeFromParent();replacement.position.set(0,0,0);door.add(replacement)
  }
- const liveGeometry=new Set<T.BufferGeometry>(),liveMaterials=new Set<T.Material>([leather])
+ const liveGeometry=new Set<T.BufferGeometry>(),liveMaterials=new Set<T.Material>([leather]),liveTextures=new Set<T.Texture>()
  root.traverse(o=>{if(o instanceof T.Mesh){liveGeometry.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])liveMaterials.add(m)}})
+ for(const m of liveMaterials)for(const v of Object.values(m))if(v instanceof T.Texture)liveTextures.add(v)
  const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>()
  removed.forEach(o=>o.traverse(child=>{if(child instanceof T.Mesh){geometries.add(child.geometry);for(const m of Array.isArray(child.material)?child.material:[child.material])materials.add(m)}}))
- geometries.forEach(g=>{if(!liveGeometry.has(g))g.dispose()});materials.forEach(m=>{if(!liveMaterials.has(m))m.dispose()})
+ geometries.forEach(g=>{if(!liveGeometry.has(g))g.dispose()});materials.forEach(m=>{if(!liveMaterials.has(m)){for(const v of Object.values(m))if(v instanceof T.Texture&&!liveTextures.has(v))v.dispose();m.dispose()}})
  root.updateMatrixWorld(true)
 }
 

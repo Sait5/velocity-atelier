@@ -1,0 +1,202 @@
+[
+  {
+    "source": "fer_f142_10_caliperlf_s_lod0_caliperLF_brake_bump_metal2__brake_bump_metal2_0",
+    "assembly": "donor_caliper_2",
+    "faces": 4877
+  },
+  {
+    "source": "fer_f142_10_caliperlf_s_lod0_caliperLF_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_caliper_2",
+    "faces": 2899
+  },
+  {
+    "source": "fer_f142_10_caliperlr_s_lod0_caliperLR_brake_bump_metal2__brake_bump_metal2_0",
+    "assembly": "donor_caliper_1",
+    "faces": 5030
+  },
+  {
+    "source": "fer_f142_10_caliperlr_s_lod0_caliperLR_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_caliper_1",
+    "faces": 1294
+  },
+  {
+    "source": "fer_f142_10_caliperrf_s_lod0_caliperRF_brake_bump_metal2__brake_bump_metal2_0",
+    "assembly": "donor_caliper_3",
+    "faces": 4877
+  },
+  {
+    "source": "fer_f142_10_caliperrf_s_lod0_caliperRF_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_caliper_3",
+    "faces": 2899
+  },
+  {
+    "source": "fer_f142_10_caliperrr_s_lod0_caliperRR_brake_bump_metal2__brake_bump_metal2_0",
+    "assembly": "donor_caliper_0",
+    "faces": 5028
+  },
+  {
+    "source": "fer_f142_10_caliperrr_s_lod0_caliperRR_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_caliper_0",
+    "faces": 1295
+  },
+  {
+    "source": "fer_f142_10_rotorlf_s_lod0_rotorLF_brake_bump_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_2",
+    "faces": 1140
+  },
+  {
+    "source": "fer_f142_10_rotorlf_s_lod0_rotorLF_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_2",
+    "faces": 3128
+  },
+  {
+    "source": "fer_f142_10_rotorlr_s_lod0_rotorLR_brake_bump_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_1",
+    "faces": 2260
+  },
+  {
+    "source": "fer_f142_10_rotorlr_s_lod0_rotorLR_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_1",
+    "faces": 2726
+  },
+  {
+    "source": "fer_f142_10_rotorrf_s_lod0_rotorRF_brake_bump_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_3",
+    "faces": 1140
+  },
+  {
+    "source": "fer_f142_10_rotorrf_s_lod0_rotorRF_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_3",
+    "faces": 3128
+  },
+  {
+    "source": "fer_f142_10_rotorrr_s_lod0_rotorRR_brake_bump_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_0",
+    "faces": 2260
+  },
+  {
+    "source": "fer_f142_10_rotorrr_s_lod0_rotorRR_brake_smooth_metal__brake_bump_metal2_0",
+    "assembly": "donor_wheel_0",
+    "faces": 2728
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_inner_rim_1_inner_rim_0",
+    "assembly": "donor_wheel_3",
+    "faces": 1506
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_inner_rim_2_inner_rim_0",
+    "assembly": "donor_wheel_0",
+    "faces": 1506
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_inner_rim_3_inner_rim_0",
+    "assembly": "donor_wheel_1",
+    "faces": 1506
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_inner_rim__inner_rim_0",
+    "assembly": "donor_wheel_2",
+    "faces": 1506
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_outer_rim_1_outer_rim_0",
+    "assembly": "donor_wheel_3",
+    "faces": 960
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_outer_rim_2_outer_rim_0",
+    "assembly": "donor_wheel_0",
+    "faces": 960
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_outer_rim_3_outer_rim_0",
+    "assembly": "donor_wheel_1",
+    "faces": 960
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_outer_rim__outer_rim_0",
+    "assembly": "donor_wheel_2",
+    "faces": 960
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_1_rim_bump_metal_0",
+    "assembly": "donor_wheel_3",
+    "faces": 20624
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_2_rim_bump_metal_0",
+    "assembly": "donor_wheel_0",
+    "faces": 20624
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal_3_rim_bump_metal_0",
+    "assembly": "donor_wheel_1",
+    "faces": 20624
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_bump_metal__rim_bump_metal_0",
+    "assembly": "donor_wheel_2",
+    "faces": 20624
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_1_rim_bump_metal_0",
+    "assembly": "donor_wheel_3",
+    "faces": 298
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_2_rim_bump_metal_0",
+    "assembly": "donor_wheel_0",
+    "faces": 298
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem_3_rim_bump_metal_0",
+    "assembly": "donor_wheel_1",
+    "faces": 298
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_rim_wheel_emblem__rim_bump_metal_0",
+    "assembly": "donor_wheel_2",
+    "faces": 298
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_wheel_black_1_black_0",
+    "assembly": "donor_wheel_3",
+    "faces": 320
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_wheel_black_2_black_0",
+    "assembly": "donor_wheel_0",
+    "faces": 320
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_wheel_black_3_black_0",
+    "assembly": "donor_wheel_1",
+    "faces": 320
+  },
+  {
+    "source": "fer_f142_10_s_wheel_wheel_wheel_black__black_0",
+    "assembly": "donor_wheel_2",
+    "faces": 320
+  },
+  {
+    "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+    "assembly": "donor_wheel_0",
+    "faces": 1320
+  },
+  {
+    "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+    "assembly": "donor_wheel_1",
+    "faces": 1320
+  },
+  {
+    "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+    "assembly": "donor_wheel_2",
+    "faces": 1320
+  },
+  {
+    "source": "w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0",
+    "assembly": "donor_wheel_3",
+    "faces": 1320
+  }
+]

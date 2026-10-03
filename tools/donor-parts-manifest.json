@@ -1,0 +1,266 @@
+[
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_smooth_plastic__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 1104
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_plastic__gauge_needle_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 5949
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_stitchingE__bump_stitchingE_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 178
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_plastic__bump_plastic_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 72
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_metal__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 10529
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather__bump_leather_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 18778
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather3__bump_leather3_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 3316
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_bump_leather2__embossed_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 3586
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_badge__gauge_needle_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 364
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_steering_wheel_anodized_aluminum__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 476
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_tiling_cloth__tiling_cloth_0",
+    "assembly": "upgrade_seats",
+    "faces": 419
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_smooth_metal__bump_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 2977
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_embossed_leather__embossed_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 16
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_bump_stitchingA__bump_stitchingA_0",
+    "assembly": "upgrade_seats",
+    "faces": 984
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_bump_plastic4__bump_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 2866
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatR_bump_leather__bump_leather_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 7018
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_tiling_cloth__tiling_cloth_0",
+    "assembly": "upgrade_seats",
+    "faces": 419
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_smooth_metal__bump_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 2977
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_embossed_leather__embossed_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 16
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_bump_stitchingA__bump_stitchingA_0",
+    "assembly": "upgrade_seats",
+    "faces": 984
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_bump_plastic4__bump_metal_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 2866
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_seatL_bump_leather__bump_leather_cp_0",
+    "assembly": "upgrade_seats",
+    "faces": 7018
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_solid__black_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 458
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_smooth_plastic__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 520
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_smooth_metal__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 12
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_rubber__rubber_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 656
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_plastic__gauge_needle_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 3687
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_mottled__mottled_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 4960
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_gauge_emissive__gauge_needle_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 756
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_embossed_metal__embossed_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 18
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_embossed_badge__embossed_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 46
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_digital_gauge__digital_gauge_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 106
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_chrome__chrome2_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 2476
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_stitchingA__bump_stitchingA_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 2709
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_plastic4__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 21803
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_plastic3__bump_plastic3_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 328
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_metal__bump_metal_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 21530
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_leather__bump_leather_cp_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 23295
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_bump_leather__bump_leather_cp_0",
+    "assembly": "upgrade_rear",
+    "faces": 2752
+  },
+  {
+    "donor": "italia",
+    "source": "fer_f142_10_cockpit_s_interior_badge__gauge_needle_0",
+    "assembly": "upgrade_cockpit",
+    "faces": 215
+  },
+  {
+    "donor": "speciale",
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Ferrari_458Speciale_2014InteriorA_Material__Ferrari_458Speciale_2014InteriorA_Material1_0",
+    "assembly": "upgrade_door_L",
+    "faces": 605
+  },
+  {
+    "donor": "speciale",
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Ferrari_458Speciale_2014InteriorA_Material__Ferrari_458Speciale_2014InteriorA_Material1_0",
+    "assembly": "upgrade_door_R",
+    "faces": 952
+  },
+  {
+    "donor": "speciale",
+    "source": "_Carbon2_Geo_lodA_Carbon2_Geo_lodA_Ferrari_458Speciale_2014Carbon2_Material__Ferrari_458Speciale_2014Carbon2_Material1_0",
+    "assembly": "upgrade_door_L",
+    "faces": 1062
+  },
+  {
+    "donor": "speciale",
+    "source": "_Carbon2_Geo_lodA_Carbon2_Geo_lodA_Ferrari_458Speciale_2014Carbon2_Material__Ferrari_458Speciale_2014Carbon2_Material1_0",
+    "assembly": "upgrade_door_R",
+    "faces": 1110
+  }
+]

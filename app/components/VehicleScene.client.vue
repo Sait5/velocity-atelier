@@ -75,7 +75,7 @@ watch(()=>state.doors.value,v=>{if(car)void doorAudio.play(v,state.volume.value,
 watch(()=>state.interior.value,v=>{
  if(stopped||!camera||props.drive)return;transition?.kill();gsap.killTweensOf(camera.position);cockpitActive=false;pointer=null;controls.enabled=false
  const target=new T.Vector3(-.55,.97,.35),begin=camera.position.clone(),progress={value:0}
- transition=gsap.timeline({onComplete(){if(v){look.reset();const selected=interiorDetails.find(d=>d.id===state.detail.value);if(selected)look.aim(new T.Vector3(...selected.point as [number,number,number]));cockpitActive=true}else{controls.target.set(0,.65,0);controls.minDistance=3;controls.maxDistance=13;controls.enabled=true}}})
+ transition=gsap.timeline({onComplete(){if(v){if(!reduced())void doorAudio.play('seat',state.volume.value*.35);look.reset();const selected=interiorDetails.find(d=>d.id===state.detail.value);if(selected)look.aim(new T.Vector3(...selected.point as [number,number,number]));cockpitActive=true}else{controls.target.set(0,.65,0);controls.minDistance=3;controls.maxDistance=13;controls.enabled=true}}})
  if(v){
   state.doors.value=true
   const approach=new T.Vector3(-.13,1.18,1.75),entry=new T.CubicBezierCurve3(approach,new T.Vector3(-.22,1.17,1.15),new T.Vector3(-.18,1.12,.54),look.anchor.clone())
