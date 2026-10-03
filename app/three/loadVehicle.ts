@@ -22,6 +22,7 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
  glass.color.set('#a9c5c1');glass.metalness=.12;glass.roughness=.055;glass.transmission=0;glass.transparent=true;glass.opacity=.24;glass.depthWrite=false;glass.side=T.DoubleSide;glass.envMapIntensity=1.25
  const rim=material('rim_bump_metal'),brake=material('brake_bump_metal2')
  const carpet=material('mottled');carpet.color.set('#222422');carpet.metalness=0;carpet.roughness=1
+ const headliner=material('headliner');headliner.color.set('#080909');headliner.map=null;headliner.normalMap=null;headliner.roughnessMap=null;headliner.metalness=0;headliner.roughness=1;headliner.envMapIntensity=0;headliner.emissive.set('#000000');headliner.needsUpdate=true
  const lampGlass=material('glass') as T.MeshPhysicalMaterial
  lampGlass.color.set('#d3dfde');lampGlass.transmission=0;lampGlass.transparent=true;lampGlass.opacity=.14;lampGlass.roughness=.06;lampGlass.depthWrite=false
  const {white,setLights}=installItaliaLamps(root,material('lights_glass'))
