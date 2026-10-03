@@ -55,7 +55,7 @@ onMounted(async()=>{try{
  emit('progress',90);await doorReady;if(stopped)return;renderer.compile(scene,camera);emit('progress',100);emit('ready')
  let last=performance.now(),count=0,sum=0
  function tick(now:number){if(stopped)return;frame=requestAnimationFrame(tick);const dt=Math.min((now-last)/1000,.1);last=now
-  if(props.drive&&!paused){const throttle=keys.has('w')||keys.has('arrowup'),braking=keys.has('s')||keys.has('arrowdown')||keys.has(' '),reverse=keys.has('b');const movement=transmission.step(dt,throttle,braking,reverse);motionSpeed=movement.speed;emit('telemetry',{gear:movement.gear,rpm:movement.rpm});car.wheels.forEach(w=>{w.rotation.z+=motionSpeed*dt/.36});motionRoad?.update(movement.distance,motionSpeed,now/1000);car.root.position.y=state.motion.value?Math.sin(now*.012)*Math.min(Math.abs(motionSpeed)*.00015,.006):0;engineAudio.update(movement.rpm,throttle,state.volume.value,state.engine.value,motionSpeed,movement.shifting);if("updateInstruments" in car&&typeof car.updateInstruments==="function")car.updateInstruments(motionSpeed,movement.rpm,movement.gear);emit('speed',Math.round(Math.abs(motionSpeed)*3.6));}else if(!props.drive&&controls.enabled)controls.update()
+  if(props.drive&&!paused){const throttle=keys.has('w')||keys.has('arrowup'),braking=keys.has('s')||keys.has('arrowdown')||keys.has(' '),reverse=keys.has('b');const movement=transmission.step(dt,throttle,braking,reverse);motionSpeed=movement.speed;emit('telemetry',{gear:movement.gear,rpm:movement.rpm});car.wheels.forEach(w=>{w.rotation.z+=motionSpeed*dt/.36});motionRoad?.update(movement.distance,motionSpeed,now/1000);car.root.position.y=state.motion.value?Math.sin(now*.012)*Math.min(Math.abs(motionSpeed)*.00015,.006):0;engineAudio.update(movement.rpm,throttle,state.volume.value,state.engine.value,motionSpeed,movement.shifting,cam===1);if("updateInstruments" in car&&typeof car.updateInstruments==="function")car.updateInstruments(motionSpeed,movement.rpm,movement.gear);emit('speed',Math.round(Math.abs(motionSpeed)*3.6));}else if(!props.drive&&controls.enabled)controls.update()
   if(props.drive&&car)driveLook.apply(car.root.position,angle,cam,dt);if(props.drive&&paused)engineAudio.update(900,false,state.volume.value,false);if(cockpitActive)look.apply();post?.render(state.quality.value);sum+=dt;count++;if(count===120){if(sum>4&&state.quality.value==='High'){renderer.setPixelRatio(1);post?.resize(el.value!.clientWidth,el.value!.clientHeight)}sum=0;count=0}
  }frame=requestAnimationFrame(tick)
  }catch(e){emit('error',e instanceof Error?e.message:'WebGL unavailable')}})
@@ -86,6 +86,7 @@ onBeforeUnmount(()=>{stopped=true;engineAudio.dispose();doorAudio.dispose();canc
 defineExpose({reset,cycleCamera,setKey(key:string,down:boolean){down?keys.add(key):keys.delete(key);if(down&&state.engine.value)engineAudio.start()}})
 </script>
 <template><div ref="el" class="vehicle-canvas" tabindex="0" :aria-label="props.drive?t('Перетаскивайте для осмотра дороги. C меняет камеру.','Drag to look around the road. C changes the camera.'):t('Интерактивная 3D-модель. Перетаскивайте для поворота, используйте колесо для масштаба.','Interactive three-dimensional vehicle. Drag to rotate, scroll to zoom.')" /></template>
+
 
 
 

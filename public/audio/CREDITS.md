@@ -7,13 +7,15 @@ Exact external authorship and Ferrari model provenance were not provided or inde
 Source: zvuk-dvigatelja-ferrari-458-spider.mp3.
 Its second supplied copy, 1630989687_zvuk-dvigatelja-ferrari-458-spider.mp3, is byte-identical.
 Files and original ranges:
-- ferrari-458-user-quiet.wav: 20.700–21.500 s, quieter deceleration-tail segment; not a verified steady idle recording.
-- ferrari-458-user-low.wav: 14.050–14.950 s.
-- ferrari-458-user-mid.wav: 15.200–16.200 s.
-- ferrari-458-user-high.wav: 16.850–17.550 s.
-Processing: DC removal, equal-power head/tail crossfades, static volume normalization, PCM16 WAV at 44.1 kHz.
-Low/mid/high are relative playback bands. The earlier quiet tail is inactive; stationary playback is silent. Their RPM control anchors are estimates, not measured source RPM.
-Runtime pitch change is limited to 0.92–1.10; the quiet band plays at its original speed.
+- ferrari-458-user-low.wav: 14.000–16.000 s.
+- ferrari-458-user-mid.wav: 15.000–17.000 s.
+- ferrari-458-user-high.wav: 16.500–18.500 s.
+Inside-camera source: Звук разгона машины изнутри записано внутри салона Феррари.mp3.
+- ferrari-cabin-low.wav: 1.400–3.500 s.
+- ferrari-cabin-mid.wav: 3.700–5.800 s.
+- ferrari-cabin-high.wav: 6.200–8.500 s.
+Processing: DC/high-pass removal, dominant-band pitch stabilization, envelope leveling, 160 ms equal-power loop crossfade, peak limit 0.65, PCM16 stereo 44.1 kHz. Source authorship and exact vehicle provenance are not independently verified. These are processed sound bands, not measured engine RPM.
+Runtime pitch range 0.88–1.18; exterior/cabin crossfade 220 ms. Stationary playback is silent. Old quiet tail is inactive.
 The supplied Ferrari 246 Dino recording was excluded.
 
 ## Opening and entering

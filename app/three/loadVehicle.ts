@@ -4,6 +4,7 @@ import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js'
 import {createVehicle} from './vehicle'
 import {installItaliaLamps} from './vehicleLamps'
 import {installInstruments} from './instruments'
+import {enhanceCabin} from './cabinDetails'
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
 export function prepareCompleteItalia(root:T.Group){
@@ -42,6 +43,7 @@ export function prepareCompleteItalia(root:T.Group){
  // Outer hinge seam avoids sweeping the front edge into the tyre.
  for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
+ enhanceCabin(root,leather)
  const {updateInstruments}=installInstruments(root)
  return {updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
@@ -59,4 +61,5 @@ export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
   return prepareCompleteItalia(gltf.scene)
  }finally{decoder.dispose()}
 }
+
 
