@@ -17,6 +17,7 @@ export function prepareCompleteItalia(root:T.Group){
  const glass=material('window') as T.MeshPhysicalMaterial
  glass.color.set('#b9ceca');glass.metalness=0;glass.roughness=.06;glass.transmission=0;glass.transparent=true;glass.opacity=.22;glass.depthWrite=false
  const rim=material('rim_bump_metal'),brake=material('brake_bump_metal2')
+ const carpet=material('mottled');carpet.color.set('#222422');carpet.metalness=0;carpet.roughness=1
  const white=material('lights_glass').clone();white.name='Italia headlight reflectors';white.emissive.set('#f1ffed');white.emissiveMap=white.map;white.emissiveIntensity=2
  const retired=new Set<T.Material>()
  root.traverse(o=>{
