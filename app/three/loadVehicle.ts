@@ -37,7 +37,7 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
  })
  retired.forEach(m=>m.dispose())
  const rearPane=root.getObjectByName('fer_f142_10_s_lod0_body_window__window_0')
- if(rearPane instanceof T.Mesh){const rearGlass=glass.clone();rearGlass.name='Italia rear cabin glass';rearGlass.color.set('#808b8a');rearGlass.opacity=.38;rearGlass.roughness=.18;rearGlass.envMapIntensity=.25;rearGlass.forceSinglePass=true;rearGlass.depthWrite=false;rearGlass.polygonOffset=true;rearGlass.polygonOffsetFactor=-1;rearGlass.polygonOffsetUnits=-1;rearPane.material=rearGlass;rearPane.renderOrder=2}
+ if(rearPane instanceof T.Mesh){const rearGlass=glass.clone();rearGlass.name='Italia rear cabin glass';rearGlass.color.set('#111719');rearGlass.opacity=1;rearGlass.transparent=false;rearGlass.roughness=.18;rearGlass.envMapIntensity=.25;rearGlass.forceSinglePass=true;rearGlass.depthWrite=false;rearGlass.polygonOffset=true;rearGlass.polygonOffsetFactor=-1;rearGlass.polygonOffsetUnits=-1;rearPane.material=rearGlass;rearPane.renderOrder=2}
  const group=(name:string)=>{
   const part=root.getObjectByName(name)
   if(!part||part instanceof T.Mesh||!part.children.length)throw new Error('Italia assembly missing: '+name)
