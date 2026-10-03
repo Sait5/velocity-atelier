@@ -20,7 +20,7 @@ export function createEngineAudio(recorded458=true){
   })).then(()=>{layers.sort((a,b)=>a.index-b.index);update(desired.rpm,desired.throttle,desired.volume,desired.enabled,desired.speed)}).catch(()=>{if(!disposed)master?.gain.setValueAtTime(0,ctx.currentTime)})
   void ctx.resume()
  }
- function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0){
+ function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false){
   desired={rpm,throttle,volume,enabled,speed};if(!context||!master)return
   const t=context.currentTime,r=Math.max(900,Math.min(8500,rpm))
   // These are controls for crossfading uncalibrated recordings, not measured RPM.
@@ -34,8 +34,9 @@ export function createEngineAudio(recorded458=true){
    layer.source.playbackRate.setTargetAtTime(rate,t,.075)
   })
   filter?.frequency.setTargetAtTime(throttle?12000:4200,t,.13)
-  master.gain.setTargetAtTime(enabled&&Math.abs(speed)>.35?Math.max(0,Math.min(1,volume))*(throttle?1.15:.58):0,t,.12)
+  master.gain.setTargetAtTime(enabled&&Math.abs(speed)>.35?Math.max(0,Math.min(1,volume))*(throttle?1.05:.5)*(shifting?.55:1):0,t,.12)
  }
  function dispose(){disposed=true;abort.abort();layers.forEach(l=>l.source.stop());layers.length=0;if(context)void context.close();context=undefined}
  return {start,update,dispose}
 }
+

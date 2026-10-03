@@ -3,6 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js'
 import {createVehicle} from './vehicle'
 import {installItaliaLamps} from './vehicleLamps'
+import {installInstruments} from './instruments'
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
 export function prepareCompleteItalia(root:T.Group){
@@ -14,7 +15,7 @@ export function prepareCompleteItalia(root:T.Group){
  }
  const body=new T.MeshPhysicalMaterial({name:'Italia paint',color:'#a2b368',metalness:.18,roughness:.2,clearcoat:1,clearcoatRoughness:.075,envMapIntensity:1.2})
  const leather=material('bump_leather_cp') as T.MeshPhysicalMaterial
- leather.color.set('#242826');leather.metalness=0;leather.roughness=.78
+ leather.color.set('#242826');leather.metalness=0;leather.roughness=.72;leather.normalScale?.multiplyScalar(1.2)
  const glass=material('window') as T.MeshPhysicalMaterial
  glass.color.set('#b9ceca');glass.metalness=0;glass.roughness=.06;glass.transmission=0;glass.transparent=true;glass.opacity=.22;glass.depthWrite=false
  const rim=material('rim_bump_metal'),brake=material('brake_bump_metal2')
@@ -26,6 +27,7 @@ export function prepareCompleteItalia(root:T.Group){
  root.traverse(o=>{
   if(!(o instanceof T.Mesh))return
   o.castShadow=true;o.receiveShadow=true
+  for(const m of Array.isArray(o.material)?o.material:[o.material])for(const value of Object.values(m))if(value instanceof T.Texture)value.anisotropy=16
   if(Array.isArray(o.material))return
   if(o.material.name==='carpaint'){retired.add(o.material);o.material=body}
   if(/leather|stitching|mottled|headliner|cloth/.test(o.material.name)){(o.material as T.MeshStandardMaterial).metalness=0}
@@ -40,7 +42,8 @@ export function prepareCompleteItalia(root:T.Group){
  // Outer hinge seam avoids sweeping the front edge into the tyre.
  for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
- return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
+ const {updateInstruments}=installInstruments(root)
+ return {updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))}})
   geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))
@@ -56,3 +59,4 @@ export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
   return prepareCompleteItalia(gltf.scene)
  }finally{decoder.dispose()}
 }
+

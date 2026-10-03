@@ -20,7 +20,7 @@ import {interiorDetails} from '~/data/finishes'
 const props=defineProps<{drive?:boolean}>(),emit=defineEmits<{ready:[],progress:[number],speed:[number],telemetry:[{gear:number,rpm:number}],error:[string]}>()
 const {t}=useLocale();const el=ref<HTMLDivElement>(),state=useAtelier();let renderer:T.WebGLRenderer,scene:T.Scene,camera:T.PerspectiveCamera,controls:OrbitControls,car:Awaited<ReturnType<typeof loadVehicle>>,frame=0,pmrem:T.PMREMGenerator,env:T.Texture
 let studioFloor:ReturnType<typeof createStudioFloor>|undefined;let post:ReturnType<typeof createVehiclePost>|undefined;
-let motionRoad:ReturnType<typeof createMotionRoad>|undefined;const transmission=createStraightMotion();let motionSpeed=0,engineAudio=createEngineAudio(state.car.value.shape===8);let stopped=false,angle=0,cam=0,paused=false;const keys=new Set<string>();const reduced=()=>!state.motion.value;let resize:ResizeObserver;let floor:T.Mesh,key:T.DirectionalLight,fill:T.PointLight,ambient:T.HemisphereLight,envTarget:T.WebGLRenderTarget
+let motionRoad:ReturnType<typeof createMotionRoad>|undefined;const transmission=createStraightMotion(parseFloat(state.car.value.speed)||325);let motionSpeed=0,engineAudio=createEngineAudio(state.car.value.shape===8);let stopped=false,angle=0,cam=0,paused=false;const keys=new Set<string>();const reduced=()=>!state.motion.value;let resize:ResizeObserver;let floor:T.Mesh,key:T.DirectionalLight,fill:T.PointLight,ambient:T.HemisphereLight,envTarget:T.WebGLRenderTarget
 let look:ReturnType<typeof createCockpitLook>,cockpitActive=false,resizeFrame=0,transition:gsap.core.Timeline|undefined
 let driveLook:ReturnType<typeof createDriveLook>;const doorAudio=createDoorAudio()
 let pointer:number|null=null,previousX=0,previousY=0
@@ -29,7 +29,7 @@ function pointerMove(e:PointerEvent){if(e.pointerId!==pointer)return;const dx=e.
 function pointerUp(e:PointerEvent){if(e.pointerId===pointer){pointer=null;if(renderer.domElement.hasPointerCapture(e.pointerId))renderer.domElement.releasePointerCapture(e.pointerId)}}
 function blur(){keys.clear();pointer=null}
 function applyBackground(){if(!scene)return;if(studioFloor)studioFloor.visible=!props.drive;scene.background=new T.Color(props.drive?'#05070a':state.background.value);scene.fog=new T.Fog(props.drive?'#05070a':state.background.value,18,props.drive?100:65);(floor.material as T.MeshStandardMaterial).color.set(props.drive?'#080a0d':state.background.value).multiplyScalar(.28);scene.environment=env;if(camera){camera.far=160;camera.updateProjectionMatrix()}}
-function applyLighting(){if(!key)return;const preset=state.lighting.value;key.intensity=preset==='Dark Room'?.65:preset==='Night'?.8:preset==='Soft Day'?2.2:2.7;key.color.set(preset==='Sunset'?'#ffdda9':'#ffffff');fill.color.set(preset==='Sunset'?'#ffd0a3':preset==='Night'?'#a5b9df':'#ffffff');fill.intensity=preset==='Dark Room'?8:preset==='Night'?11:30;ambient.intensity=preset==='Dark Room'?.18:preset==='Night'?.25:preset==='Soft Day'?.8:.65;scene.environmentIntensity=preset==='Dark Room'?.6:preset==='Night'?.7:1}
+function applyLighting(){if(!key)return;const preset=state.lighting.value;key.intensity=preset==='Dark Room'?.65:preset==='Night'?.8:preset==='Soft Day'?2.2:2.7;key.color.set(preset==='Sunset'?'#ffdda9':'#ffffff');fill.color.set(preset==='Sunset'?'#ffd0a3':preset==='Night'?'#a5b9df':'#ffffff');fill.intensity=preset==='Dark Room'?8:preset==='Night'?11:26;ambient.intensity=preset==='Dark Room'?.18:preset==='Night'?.25:preset==='Soft Day'?.65:.38;scene.environmentIntensity=preset==='Dark Room'?.6:preset==='Night'?.7:1}
 function applyLights(){if(!car)return;if('setLights' in car&&typeof car.setLights==='function')car.setLights(state.headlights.value,state.taillights.value);else car.white.emissiveIntensity=state.headlights.value?2:0}
 function applyConfiguration(){car.body.color.set(state.paint.value);car.leather.color.set(state.upholstery.value);applyLights();applyBackground();applyLighting()}
 function cycleCamera(){cam=(cam+1)%3;driveLook?.reset();if(camera){camera.fov=cam===1?76:camera.aspect<.8?65:36;camera.updateProjectionMatrix()}}
@@ -54,8 +54,8 @@ onMounted(async()=>{try{
  resize=new ResizeObserver(()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(sizeScene)});resize.observe(el.value!);sizeScene()
  emit('progress',90);await doorReady;if(stopped)return;renderer.compile(scene,camera);emit('progress',100);emit('ready')
  let last=performance.now(),count=0,sum=0
- function tick(now:number){if(stopped)return;frame=requestAnimationFrame(tick);const dt=Math.min((now-last)/1000,.04);last=now
-  if(props.drive&&!paused){const throttle=keys.has('w')||keys.has('arrowup'),braking=keys.has('s')||keys.has('arrowdown')||keys.has(' '),reverse=keys.has('b');const movement=transmission.step(dt,throttle,braking,reverse);motionSpeed=movement.speed;emit('telemetry',{gear:movement.gear,rpm:movement.rpm});car.wheels.forEach(w=>{w.rotation.z+=motionSpeed*dt/.36});motionRoad?.update(movement.distance,motionSpeed,now/1000);car.root.position.y=state.motion.value?Math.sin(now*.012)*Math.min(Math.abs(motionSpeed)*.00015,.006):0;engineAudio.update(movement.rpm,throttle,state.volume.value,state.engine.value,motionSpeed);emit('speed',Math.round(Math.abs(motionSpeed)*3.6));}else if(!props.drive&&controls.enabled)controls.update()
+ function tick(now:number){if(stopped)return;frame=requestAnimationFrame(tick);const dt=Math.min((now-last)/1000,.1);last=now
+  if(props.drive&&!paused){const throttle=keys.has('w')||keys.has('arrowup'),braking=keys.has('s')||keys.has('arrowdown')||keys.has(' '),reverse=keys.has('b');const movement=transmission.step(dt,throttle,braking,reverse);motionSpeed=movement.speed;emit('telemetry',{gear:movement.gear,rpm:movement.rpm});car.wheels.forEach(w=>{w.rotation.z+=motionSpeed*dt/.36});motionRoad?.update(movement.distance,motionSpeed,now/1000);car.root.position.y=state.motion.value?Math.sin(now*.012)*Math.min(Math.abs(motionSpeed)*.00015,.006):0;engineAudio.update(movement.rpm,throttle,state.volume.value,state.engine.value,motionSpeed,movement.shifting);if("updateInstruments" in car&&typeof car.updateInstruments==="function")car.updateInstruments(motionSpeed,movement.rpm,movement.gear);emit('speed',Math.round(Math.abs(motionSpeed)*3.6));}else if(!props.drive&&controls.enabled)controls.update()
   if(props.drive&&car)driveLook.apply(car.root.position,angle,cam,dt);if(props.drive&&paused)engineAudio.update(900,false,state.volume.value,false);if(cockpitActive)look.apply();post?.render(state.quality.value);sum+=dt;count++;if(count===120){if(sum>4&&state.quality.value==='High'){renderer.setPixelRatio(1);post?.resize(el.value!.clientWidth,el.value!.clientHeight)}sum=0;count=0}
  }frame=requestAnimationFrame(tick)
  }catch(e){emit('error',e instanceof Error?e.message:'WebGL unavailable')}})
@@ -86,6 +86,8 @@ onBeforeUnmount(()=>{stopped=true;engineAudio.dispose();doorAudio.dispose();canc
 defineExpose({reset,cycleCamera,setKey(key:string,down:boolean){down?keys.add(key):keys.delete(key);if(down&&state.engine.value)engineAudio.start()}})
 </script>
 <template><div ref="el" class="vehicle-canvas" tabindex="0" :aria-label="props.drive?t('Перетаскивайте для осмотра дороги. C меняет камеру.','Drag to look around the road. C changes the camera.'):t('Интерактивная 3D-модель. Перетаскивайте для поворота, используйте колесо для масштаба.','Interactive three-dimensional vehicle. Drag to rotate, scroll to zoom.')" /></template>
+
+
 
 
 
