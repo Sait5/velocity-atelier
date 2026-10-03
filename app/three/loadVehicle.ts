@@ -5,9 +5,10 @@ import {createVehicle} from './vehicle'
 import {installItaliaLamps} from './vehicleLamps'
 import {installInstruments} from './instruments'
 import {enhanceCabin} from './cabinDetails'
+import {installWheelShutter} from './wheelShutter'
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
-export function prepareCompleteItalia(root:T.Group){
+export function prepareCompleteItalia(root:T.Group,driving=false){
  const material=(name:string)=>{
   let found:T.MeshStandardMaterial|undefined
   root.traverse(o=>{if(o instanceof T.Mesh)for(const m of Array.isArray(o.material)?o.material:[o.material])if(m.name===name)found=m as T.MeshStandardMaterial})
@@ -52,20 +53,22 @@ export function prepareCompleteItalia(root:T.Group){
  enhanceCabin(root,leather)
  function setUpholstery(color:string){leather.color.set(color);leather.color.r+=.022;leather.color.g+=.022;leather.color.b+=.022}
  const {updateInstruments}=installInstruments(root)
- return {setWindows,setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
+ const shutter=driving?installWheelShutter(wheels):undefined
+ function updateWheelMotion(speed:number){shutter?.update(speed)}
+ return {updateWheelMotion,setWindows,setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
-  root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))}})
+  root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));if(o instanceof T.InstancedMesh)o.dispose()}})
   geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))
   materials.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())
  }}
 }
 
-export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
+export async function loadVehicle(shape:number,onProgress:(n:number)=>void,driving=false){
  if(shape!==8)return createVehicle(shape)
  const decoder=new DRACOLoader().setDecoderPath('/draco/'),loader=new GLTFLoader().setDRACOLoader(decoder)
  try{
   const gltf=await loader.loadAsync('/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
-  return prepareCompleteItalia(gltf.scene)
+  return prepareCompleteItalia(gltf.scene,driving)
  }finally{decoder.dispose()}
 }
 

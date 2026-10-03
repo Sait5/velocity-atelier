@@ -30,10 +30,11 @@ export function createEngineAudio(recorded458=true){
   if(!stopping&&lastBrake){fade(brake);brake=undefined}lastBrake=stopping
   const r=Math.max(900,Math.min(9000,rpm)),anchors=[1600,4200,7200],interval=r<4200?0:1
   const mix=Math.max(0,Math.min(1,(r-anchors[interval]!)/(anchors[interval+1]!-anchors[interval]!))),weights=[0,0,0];weights[interval]=Math.cos(mix*Math.PI/2);weights[interval+1]=Math.sin(mix*Math.PI/2)
-  for(const layer of layers){const band=layer.index;layer.gain.gain.setTargetAtTime(weights[band]!*(acceleration?.35:inside?.7:1),t,.22);const rate=Math.max(.88,Math.min(1.18,1+(r-anchors[band]!)/15000));layer.source.playbackRate.setTargetAtTime(rate,t,.14)}
-  filter?.frequency.setTargetAtTime(inside?(throttle?3200:2100):(throttle?10000:5600),t,.25)
-  master.gain.setTargetAtTime(enabled&&moving?Math.max(0,Math.min(1,volume))*(throttle?1:.62)*(inside?.85:1)*(shifting?.83:1):0,t,.16)
+  for(const layer of layers){const band=layer.index;layer.gain.gain.setTargetAtTime(weights[band]!*(acceleration?.35:inside?.7:1),t,inside?.22:.32);const rate=inside?Math.max(.88,Math.min(1.18,1+(r-anchors[band]!)/15000)):Math.max(.94,Math.min(1.12,1+(r-anchors[band]!)/22000));layer.source.playbackRate.setTargetAtTime(rate,t,inside?.14:.26)}
+  filter?.frequency.setTargetAtTime(inside?(throttle?3200:2100):(throttle?8800:4800),t,.25)
+  master.gain.setTargetAtTime(enabled&&moving?Math.max(0,Math.min(1,volume))*(throttle?1:.62)*(inside?.85:1)*(shifting?(inside?.83:.94):1):0,t,.16)
  }
  function dispose(){disposed=true;abort.abort();layers.forEach(l=>l.source.stop());acceleration?.source.stop();brake?.source.stop();layers.length=0;if(context)void context.close();context=undefined}
  return {start,update,dispose}
 }
+
