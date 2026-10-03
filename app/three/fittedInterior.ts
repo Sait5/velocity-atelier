@@ -16,7 +16,7 @@ function carbonMaterial(){
 
 /** Authored and checked in Blender, with the original door pivots and body silhouette. */
 export async function installFittedInterior(root:T.Group,doors:T.Group[],leather:T.Material,decoder:DRACOLoader){
- const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-carbon-interior.glb?v=interior-reference-4')
+ const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-carbon-interior.glb?v=interior-sculpted-5')
  installFittedAssemblies(root,doors,leather,asset.scene)
 }
 export function installFittedAssemblies(root:T.Group,doors:T.Group[],leather:T.Material,asset:T.Group){

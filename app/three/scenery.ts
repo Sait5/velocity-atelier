@@ -1,6 +1,7 @@
 import * as T from 'three'
 import {ROAD_BARRIER_Z} from './roadBounds'
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
+import {applyAsphaltMaps} from './surfaceMaps'
 export function createScenery(scene:T.Scene,drive=false){
  const root=new T.Group();root.name='detailed_environment';scene.add(root);let seed=72981;function random(){seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296}
  function noise(x:number,z:number){return (Math.sin(x*.034+Math.cos(z*.043)*2)+Math.sin(z*.025+x*.016)*.7+Math.cos(x*.083-z*.055)*.25)/1.95}
@@ -10,6 +11,7 @@ export function createScenery(scene:T.Scene,drive=false){
  const grassTexture=texture(256,c=>{c.fillStyle='#747a54';c.fillRect(0,0,256,256);for(let i=0;i<22000;i++){c.strokeStyle=['#515b39','#858563','#939279','#667346'][i%4]!;const x=random()*256,y=random()*256;c.beginPath();c.moveTo(x,y);c.lineTo(x+(random()-.5)*4,y-2-random()*4);c.stroke()}},220,85)
  const gravel=texture(256,c=>{c.fillStyle='#716d5e';c.fillRect(0,0,256,256);for(let i=0;i<7000;i++){const x=random()*256,y=random()*256,r=1+random()*3;c.fillStyle=['#a39a84','#5c5d53','#8f8978','#454b43'][i%4]!;c.beginPath();c.ellipse(x,y,r,r*.65,random()*3,0,7);c.fill()}},600,1)
  const roadMat=new T.MeshStandardMaterial({color:'#737c7a',map:asphalt,bumpMap:asphalt,bumpScale:.006,roughness:.92,metalness:.015}),grassMat=new T.MeshStandardMaterial({color:'#829172',map:grassTexture,bumpMap:grassTexture,bumpScale:.025,roughness:1,vertexColors:true}),shoulderMat=new T.MeshStandardMaterial({color:'#b5ad98',map:gravel,bumpMap:gravel,bumpScale:.035,roughness:1}),white=new T.MeshStandardMaterial({color:'#d2d3bd',roughness:.92})
+ applyAsphaltMaps(roadMat);asphalt.dispose()
  function plane(w:number,h:number,m:T.Material,x:number,z:number,y=.012){const mesh=new T.Mesh(new T.PlaneGeometry(w,h),m);mesh.rotation.x=-Math.PI/2;mesh.position.set(x,y,z);mesh.receiveShadow=true;root.add(mesh);return mesh}
  const terrainGeometry=new T.PlaneGeometry(2200,800,330,120);terrainGeometry.rotateX(-Math.PI/2);const terrain=new T.Mesh(terrainGeometry,grassMat);terrain.receiveShadow=true;root.add(terrain);const terrainColors=new Float32Array(terrainGeometry.getAttribute('position').count*3);terrainGeometry.setAttribute('color',new T.BufferAttribute(terrainColors,3))
  plane(2200,12,roadMat,0,0,.024);for(const z of [-6.7,6.7])plane(2200,1.4,shoulderMat,0,z,.019);for(const z of [-5.55,5.55])plane(2200,.115,white,0,z,.030)

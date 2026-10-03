@@ -33,7 +33,7 @@ def obj(name,verts,faces,mat,parent=None,smooth=True,bevel=0):
  g=bpy.data.meshes.new(name);g.from_pydata([P(*v) for v in verts],[],faces);g.update()
  uv=g.uv_layers.new(name='Upholstery UV')
  for loop in g.loops:
-  x,y,z=verts[loop.vertex_index];uv.data[loop.index].uv=(z,y) if parent and parent.name=='upgrade_rear' else (x,y)
+  x,y,z=verts[loop.vertex_index];uv.data[loop.index].uv=(x,z) if 'thigh_cushion' in name else (z,y) if parent and parent.name in ['upgrade_rear','upgrade_seats'] else (x,y)
  o=bpy.data.objects.new(name,g);bpy.context.collection.objects.link(o);o.data.materials.append(mat)
  if parent:o.parent=parent;o.matrix_parent_inverse=parent.matrix_world.inverted()
  for p in g.polygons:p.use_smooth=smooth
@@ -162,9 +162,9 @@ for o in bpy.context.selected_objects:o.select_set(False)
 for o in carbon_parts:o.select_set(True)
 bpy.context.view_layer.objects.active=carbon_parts[0];bpy.ops.object.join()
 shell=carbon_parts[0];shell.name='carbon_unified_rear_shell'
-rem=shell.modifiers.new('Continuous closed carbon shell','REMESH');rem.mode='VOXEL';rem.voxel_size=.003;rem.use_smooth_shade=True
+rem=shell.modifiers.new('Continuous closed carbon shell','REMESH');rem.mode='VOXEL';rem.voxel_size=.0015;rem.use_smooth_shade=True
 bpy.ops.object.modifier_apply(modifier=rem.name)
-smooth=shell.modifiers.new('Rounded junctions','SMOOTH');smooth.factor=.55;smooth.iterations=3;bpy.ops.object.modifier_apply(modifier=smooth.name)
+smooth=shell.modifiers.new('Rounded junctions','SMOOTH');smooth.factor=.5;smooth.iterations=8;bpy.ops.object.modifier_apply(modifier=smooth.name)
 # Remeshing removes UVs; project metres for the fine woven material.
 uv=shell.data.uv_layers.new(name='Carbon weave UV') if not shell.data.uv_layers else shell.data.uv_layers[0]
 for loop in shell.data.loops:
@@ -199,56 +199,52 @@ for name in ['interior_light','interior_dark','chrome']:
 seats=group('upgrade_seats')
 for side in [-1,1]:
  zc=side*.35
- seat_shell_parts=[]
+ # A single loft describes the complete upholstered back, including its broad bolsters.
+ # The side support grows out of the seating surface; there are no separate tubes.
+ def smoothstep(a,b,x):
+  t=max(0,min(1,(x-a)/(b-a)));return t*t*(3-2*t)
  def profile(y):
-  t=max(0,min(1,(y-.36)/.57))
-  width=.168+.031*math.exp(-((t-.12)/.24)**2)+.047*math.exp(-((t-.75)/.19)**2)
-  neck=max(0,(t-.84)/.16);width-=.054*(neck*neck*(3-2*neck))
-  return (.045+.235*t,.060+.009*math.sin(t*math.pi),width)
- vs=[];fs=[];rings=84;around=64
- for j in range(rings+1):
-  y=.36+j*.57/rings;x,depth,width=profile(y)
-  for i in range(around):
-   a=i*math.tau/around;co=math.cos(a);si=math.sin(a);dz=math.copysign(abs(si)**.5,si)*width
-   bolster=.028*math.exp(-((abs(dz)/width-.85)/.12)**2)*math.sin(j/rings*math.pi) if co<0 else 0
-   vs.append((x+.075+math.copysign(abs(co)**.5,co)*depth-bolster,y,zc+dz))
- for j in range(rings):
-  for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((a,a+around,b+around,b))
- for j in [0,rings]:
-  y=.36+j*.57/rings;x,depth,width=profile(y);center=len(vs);vs.append((x+.075,y,zc))
-  for i in range(around):a=j*around+i;b=j*around+(i+1)%around;fs.append((center,b,a) if j==rings else (center,a,b))
- seat_shell_parts.append(obj('seat_continuous_closed_back',vs,fs,leather,seats))
- # Continuous upholstered wings follow the shoulder and waist, like the reference.
+  t=max(0,min(1,(y-.345)/.60))
+  width=.187-.018*math.exp(-((t-.40)/.20)**2)+.039*math.exp(-((t-.77)/.19)**2)-.066*smoothstep(.84,1,t)
+  # Round the ends in the vertical silhouette rather than capping a straight slab.
+  end=1
+  return (.112+.205*t+.016*math.sin(t*math.pi),width*end,t)
+ def front(y,r):
+  x,width,t=profile(y);r=max(-1,min(1,r));edge=abs(r)
+  # Wide sculpted side support, with a soft return at the outermost edge.
+  side_lobe=.092*math.exp(-((edge-.80)/.235)**2)*math.sin(t*math.pi)**.38
+  center_pad=.011*math.exp(-(r/.48)**6)*math.sin(t*math.pi)**.5
+  separator=.004*math.exp(-((edge-.52)/.025)**2)
+  quilt=0
+  for q in [.25,.46,.67]:quilt+=.0038*math.exp(-((t-q)/.008)**2)*math.exp(-(r/.50)**8)
+  return x-.052*max(0,1-edge**4)**.25-side_lobe-center_pad+separator+quilt
+ vv=[];ff=[];nr=120;nc=96
+ for j in range(nr+1):
+  y=.345+.60*j/nr;x,width,t=profile(y)
+  for i in range(nc):
+   a=math.tau*i/nc;co=math.cos(a);si=math.sin(a);r=math.copysign(abs(si)**.5,si)
+   xx=front(y,r) if co<0 else x+.048*abs(co)**.5
+   vv.append((xx,y,zc+r*width))
+ for j in range(nr):
+  for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((a,a+nc,b+nc,b))
+ for j in [0,nr]:
+  y=.345+.60*j/nr;x,width,t=profile(y);at=len(vv);vv.append((x,y,zc))
+  for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((at,b,a) if j==nr else (at,a,b))
+ obj('seat_single_sculpted_upholstery',vv,ff,leather,seats)
  for wing in [-1,1]:
-  vv=[];ff=[];nr=56;nc=40
-  for j in range(nr+1):
-   t=j/nr;y=.405+.492*t;x,d,w=profile(y);r=.010+.028*math.sin(t*math.pi)**.6
-   for i in range(nc):
-    a=i*math.tau/nc;vv.append((x+.075-d-.023+math.cos(a)*r*1.55,y,zc+wing*(w-.030)+math.sin(a)*r))
-  for j in range(nr):
-   for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((a,a+nc,b+nc,b))
-  for j in [0,nr]:
-   y=.405+.492*j/nr;x,d,w=profile(y);at=len(vv);vv.append((x+.075-d-.023,y,zc+wing*(w-.030)))
-   for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((at,b,a) if j==nr else (at,a,b))
-  seat_shell_parts.append(obj('seat_sculpted_side_wing',vv,ff,leather,seats))
-  for inset in [0,.003]:
-   stitch('seat_wing_red_double_stitch',[(profile(.413+j*.477/160)[0]+.075-profile(.413+j*.477/160)[1]-.023-(.010+.028*math.sin((.008+j*.477/160)/.492*math.pi)**.6)*1.55-.001,.413+j*.477/160,zc+wing*(profile(.413+j*.477/160)[2]-.030+inset)) for j in range(161)],seat_thread,seats)
- # Weld the wings into the backrest, so their roots cannot float above the leather.
- for o in bpy.context.selected_objects:o.select_set(False)
- for o in seat_shell_parts:o.select_set(True)
- bpy.context.view_layer.objects.active=seat_shell_parts[0];bpy.ops.object.join()
- seat_shell=seat_shell_parts[0];rem=seat_shell.modifiers.new('Continuous seat shoulders','REMESH');rem.mode='VOXEL';rem.voxel_size=.003;rem.use_smooth_shade=True;bpy.ops.object.modifier_apply(modifier=rem.name)
- sm=seat_shell.modifiers.new('Soft leather transitions','SMOOTH');sm.factor=.5;sm.iterations=2;bpy.ops.object.modifier_apply(modifier=sm.name)
- uv=seat_shell.data.uv_layers.new(name='Seat leather metres')
- for loop in seat_shell.data.loops:
-  p=W(seat_shell.matrix_world@seat_shell.data.vertices[loop.vertex_index].co);uv.data[loop.index].uv=(p.z,p.y)
- new=[o for o in bpy.data.objects if o.name.startswith('upgrade_') or (o.parent and o.parent.name.startswith('upgrade_'))]
- def padded(u,v):
-  y=.418+v*.435;x,d,w=profile(y);dz=(u-.5)*.235
-  return (x+.075-d*max(0,1-(dz/w)**4)**.25-.002-.003*math.sin(u*math.pi)*math.sin(v*math.pi),y,zc+dz)
- solid('seat_central_padded_insert',padded,48,64,leather,seats,.006)
- for u in [.014,.030,.970,.986]:stitch('seat_double_saddle_stitch',[(padded(u,j/160)[0]-.0008,*padded(u,j/160)[1:]) for j in range(161)],seat_thread,seats)
- for v in [.25,.5,.75]:tube('seat_quilted_horizontal_seam',[(padded(i/80,v)[0]-.0008,*padded(i/80,v)[1:]) for i in range(81)],.00065,thread,seats)
+  for inset in [0,.013]:
+   path=[]
+   for j in range(201):
+    y=.387+j*.514/200;x,w,t=profile(y);r=wing*(.535+inset)
+    path.append((front(y,r)-.0008,y,zc+r*w))
+   stitch('seat_fitted_red_double_seam',path,seat_thread,seats)
+  path=[]
+  for j in range(151):
+   y=.390+j*.507/150;x,w,t=profile(y);r=wing*.93;path.append((front(y,r)-.0008,y,zc+r*w))
+  tube('seat_outer_bound_edge',path,.001,black,seats)
+ for t in [.25,.46,.67]:
+  y=.345+.6*t;x,w,t=profile(y)
+  tube('seat_central_panel_recessed_seam',[(front(y,r)-.0003,y,zc+r*w) for r in [-.50+i/100 for i in range(101)]],.00045,black,seats)
  # Separate soft rectangular headrest matches the supplied Ferrari reference.
  headrest=cuboid('seat_padded_headrest',(.345,1.024,zc),(.125,.192,.262),leather,seats,.045)
  for dz in [-.072,.072]:cuboid('headrest_mount',(.36,.931,zc+dz),(.022,.043,.018),black,seats,.005)
@@ -261,11 +257,31 @@ for side in [-1,1]:
    if hit:path.append((hit.x-.00065,y,z))
   tube('headrest_fitted_double_stitch',path,.00055,seat_thread,seats)
  cuboid('seat_structural_base',(-.055,.285,zc),(.61,.115,.46),black,seats,.033)
- def cushion(u,v):
-  x=-.385+u*.53;dz=(v-.5)*.45;y=.345+.023*math.sin(u*math.pi)+.060*(abs(dz)/.225)**4
-  return (x,y,zc+dz)
- solid('seat_contoured_cushion',cushion,56,48,leather,seats,-.055,1)
- for v in [.15,.18,.82,.85]:stitch('seat_cushion_double_stitch',[(cushion(i/140,v)[0],cushion(i/140,v)[1]+.001,cushion(i/140,v)[2]) for i in range(141)],seat_thread,seats)
+ # The cushion is another closed loft with an upholstered front roll and broad thigh supports.
+ def cushion_top(x,r):
+  u=(x+.397)/.552
+  return .354+.017*math.sin(u*math.pi)+.074*math.exp(-((abs(r)-.85)/.26)**2)*math.sin(u*math.pi)**.3+.010*math.exp(-(r/.51)**6)*math.sin(u*math.pi)
+ vv=[];ff=[];nr=100;nc=96
+ for j in range(nr+1):
+  u=j/nr;x=-.397+.552*u;width=.225-.006*math.cos(u*math.pi)
+  end=min(1,math.sqrt(max(.012,u/.037)),math.sqrt(max(.012,(1-u)/.037)))
+  for i in range(nc):
+   a=math.tau*i/nc;si=math.sin(a);co=math.cos(a);r=math.copysign(abs(si)**.5,si)*end
+   y=cushion_top(x,r)-.020*(1-abs(co)**.5) if co>0 else .310-.025*abs(co)**.5
+   vv.append((x,y,zc+r*width))
+ for j in range(nr):
+  for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((a,b,b+nc,a+nc))
+ for j in [0,nr]:
+  x=-.397+.552*j/nr;at=len(vv);vv.append((x,.333,zc))
+  for i in range(nc):a=j*nc+i;b=j*nc+(i+1)%nc;ff.append((at,b,a) if j==0 else (at,a,b))
+ obj('seat_sculpted_thigh_cushion',vv,ff,leather,seats)
+ for wing in [-1,1]:
+  for inset in [0,.014]:
+   path=[]
+   for j in range(161):
+    u=.045+j*.91/160;x=-.397+.552*u;r=wing*(.57+inset);width=.225-.006*math.cos(u*math.pi)
+    co=math.sqrt(max(0,1-r**4));path.append((x,cushion_top(x,r)-.020*(1-co**.5)+.0008,zc+r*width))
+   stitch('seat_cushion_fitted_double_seam',path,seat_thread,seats)
  for dz in [-.235,.235]:
   cuboid('seat_base_adjustment_recess',(.020,.285,zc+dz),(.145,.062,.013),black,seats,.012)
   cuboid('seat_electric_adjustment_rocker',(.015,.285,zc+dz*1.02),(.061,.018,.010),metal,seats,.004)
