@@ -2,6 +2,16 @@ import * as T from 'three'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import type {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js'
 
+export function collectFerrariWheels(model:T.Object3D):T.Group[]{
+ // GLTFLoader renames repeated child meshes to wheel_1, wheel_2, etc.
+ // Only these four parent assemblies correspond to the donor wheel order.
+ return ['wheel_rr','wheel_rl','wheel_fl','wheel_fr'].map(name=>{
+  const wheel=model.getObjectByName(name)
+  if(!wheel||wheel instanceof T.Mesh||wheel.children.length===0)throw new Error('Ferrari wheel assembly missing: '+name)
+  return wheel as T.Group
+ })
+}
+
 export async function installDonorWheels(root:T.Group,wheels:T.Group[],decoder:DRACOLoader){
  const asset=await new GLTFLoader().setDRACOLoader(decoder).loadAsync('/models/ferrari-donor-wheels.glb?v=donor-fit-1')
  installDonorWheelAssemblies(root,wheels,asset.scene)
