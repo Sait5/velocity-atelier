@@ -19,7 +19,7 @@ export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
  }
  function setLights(frontOn:boolean,rearOn:boolean){
   front.emissiveIntensity=frontOn?4:0;projector.emissiveIntensity=frontOn?6:0
-  rear.emissiveIntensity=rearOn?6:0;rearLens.emissiveIntensity=rearOn?2:0
+  rear.emissiveIntensity=rearOn?1.3:0;rearLens.emissiveIntensity=rearOn?.7:0
   headlights.forEach(l=>l.intensity=frontOn?14:0);taillights.forEach(l=>l.intensity=rearOn?.8:0)
  }
  setLights(true,true)

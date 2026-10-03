@@ -73,7 +73,7 @@ onMounted(async()=>{try{
 watch(()=>state.volume.value,v=>doorAudio.setVolume(v))
 watch(()=>state.engine.value,v=>{if(props.drive&&v)engineAudio.start();if(!v)engineAudio.update(900,false,state.volume.value,false)},{flush:'sync'})
 watch(()=>state.paint.value,v=>car?.body.color.set(v));watch(()=>state.upholstery.value,v=>car?.leather.color.set(v));watch(()=>state.headlights.value,applyLights);watch(()=>state.taillights.value,applyLights)
-watch(()=>state.doors.value,v=>{if(car)void doorAudio.play(v,state.volume.value,v||reduced()?0:.04,!v&&reduced()?1.01:0);car?.doors.forEach((d,i)=>gsap.to(d.rotation,{y:state.car.value.shape===8&&v?(i===0?1.12:-1.12):0,z:state.car.value.shape!==8&&v?-1.05:0,x:state.car.value.shape!==8&&v?(i===0?-.15:.15):0,duration:reduced()?.01:1.2,ease:'power2.inOut'}))})
+watch(()=>state.doors.value,v=>{if(car)void doorAudio.play(v,state.volume.value,v||reduced()?0:1.08);car?.doors.forEach((d,i)=>gsap.to(d.rotation,{y:state.car.value.shape===8&&v?(i===0?1.12:-1.12):0,z:state.car.value.shape!==8&&v?-1.05:0,x:state.car.value.shape!==8&&v?(i===0?-.15:.15):0,duration:reduced()?.01:1.2,ease:'power2.inOut'}))})
 watch(()=>state.interior.value,v=>{
  if(stopped||!camera||props.drive)return;transition?.kill();gsap.killTweensOf(camera.position);cockpitActive=false;pointer=null;controls.enabled=false
  const target=new T.Vector3(-.55,.97,.35),begin=camera.position.clone(),progress={value:0}

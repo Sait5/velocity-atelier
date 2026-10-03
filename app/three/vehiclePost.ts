@@ -6,7 +6,7 @@ import {OutputPass} from 'three/addons/postprocessing/OutputPass.js'
 
 export function createVehiclePost(renderer:T.WebGLRenderer,scene:T.Scene,camera:T.PerspectiveCamera){
  const composer=new EffectComposer(renderer),renderPass=new RenderPass(scene,camera)
- const bloom=new UnrealBloomPass(new T.Vector2(640,480),.3,.35,1.25),output=new OutputPass()
+ const bloom=new UnrealBloomPass(new T.Vector2(640,480),.18,.3,2.5),output=new OutputPass()
  composer.addPass(renderPass);composer.addPass(bloom);composer.addPass(output)
  return {
   resize(width:number,height:number){composer.setPixelRatio(Math.min(renderer.getPixelRatio(),1.25));composer.setSize(width,height)},

@@ -22,6 +22,9 @@ The supplied Ferrari 246 Dino recording was excluded.
 No precise Ferrari recording provenance has been verified from the filenames.
 
 ## Door closing
-car-door-close.wav remains the real Peugeot 107 door recording by Joseph SARDIN, CC0.
-Source: https://bigsoundbank.com/portiere-de-voiture-4-s1526.html . Selected 2.300–3.8294375 s with 10 ms end fades.
-It is not a Ferrari door recording. No supplied clip could be confidently identified as a better closing recording.
+car-door-close-ferrari.wav: supplied 1630988380_9b3e134585b048543.mp3, 0.000–0.320 s.
+The publisher labels this exact file “Захлопнули дверь” in its Ferrari collection:
+https://zvukipro.com/transport/2600-zvuki-avtomobilja-ferrari.html .
+Exact Ferrari model and recording authorship remain unverified.
+DC removal, static normalization, 0.5 ms onset and 10 ms release fades; PCM16 WAV.
+The impact starts near the end of the closing animation. The previous Peugeot clip is inactive.

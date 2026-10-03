@@ -1,0 +1,14 @@
+{
+  "source": "1630988380_9b3e134585b048543.mp3",
+  "sha256": "281a0eb71c39d95876aceab1346004f5a4479c876652a37837ffc2f8da1bb1d0",
+  "range_seconds": [
+    0,
+    0.32
+  ],
+  "sample_rate": 44100,
+  "publisher_page": "https://zvukipro.com/transport/2600-zvuki-avtomobilja-ferrari.html",
+  "publisher_label": "Захлопнули дверь",
+  "exact_vehicle_model_verified": false,
+  "peak_dbfs": -3.0,
+  "impact_seconds": 0.06950113378684808
+}

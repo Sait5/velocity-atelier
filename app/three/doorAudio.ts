@@ -8,20 +8,20 @@ export function createDoorAudio(){
   context??=new AudioContext();if(!output){output=context.createGain();output.connect(context.destination)}
   void context.resume().catch(()=>{})
   loading??=Promise.all(([true,false,'seat'] as const).map(async clip=>{
-   const url=clip==='seat'?'/audio/seat-creak-entry.wav':clip?'/audio/car-door-open.wav':'/audio/car-door-close.wav'
+   const url=clip==='seat'?'/audio/seat-creak-entry.wav':clip?'/audio/car-door-open.wav':'/audio/car-door-close-ferrari.wav'
    const response=await fetch(url)
    if(!response.ok)throw new Error('Door recording unavailable')
    const decoded=await context!.decodeAudioData(await response.arrayBuffer());if(!disposed)buffers.set(clip,decoded)
   })).then(()=>{}).catch(()=>{})
  }
  async function play(clip:boolean|'seat',volume:number,delay=0,offset=0){
-  unlock();const request=++serial;await loading
+  unlock();const request=++serial,scheduledTime=(context?.currentTime??0)+delay;await loading
   const buffer=buffers.get(clip);if(disposed||request!==serial||!context||!output||!buffer)return
   for(const source of sources){try{source.stop()}catch{}}sources.clear()
   if(volume<=0)return
   output.gain.setValueAtTime(Math.min(1,Math.max(0,volume))*.65,context.currentTime)
   const source=context.createBufferSource();source.buffer=buffer;source.connect(output);sources.add(source)
-  source.onended=()=>{source.disconnect();sources.delete(source)};source.start(context.currentTime+delay,offset)
+  source.onended=()=>{source.disconnect();sources.delete(source)};source.start(Math.max(context.currentTime,scheduledTime),offset)
  }
  function setVolume(volume:number){if(context&&output)output.gain.setValueAtTime(Math.min(1,Math.max(0,volume))*.65,context.currentTime)}
  function dispose(){disposed=true;serial++;for(const source of sources){try{source.stop()}catch{}}sources.clear();output?.disconnect();void context?.close().catch(()=>{})}
