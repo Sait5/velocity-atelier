@@ -212,3 +212,7 @@ Published checks for this update: the cinematic tour was visible after loading a
 ![Actual scene previews for both maps](docs/images/real-map-previews.jpg)
 
 ![Eight music selections](docs/images/eight-music-themes.jpg)
+
+Final published road check: auto-acceleration reached the configured 370 km/h limit in gear 8 without console errors. Static map previews load from local 720×400 WebP assets. A live scene measurement on the test machine reported 123 FPS / 7.7 ms render time on Ultra at device pixel ratio 1; this is device- and view-dependent, not a cross-device benchmark.
+
+![Final road at 370 km/h](docs/images/final-continuous-road.jpg)
