@@ -1,7 +1,7 @@
 /** Straight presentation motion with vehicle-specific gears and a configurable speed limit. */
-export function createStraightMotion(maxKph=325){
+export function createStraightMotion(maxKph=325,gearCount:7|8=maxKph>350?8:7){
  let speed=0,distance=0,gear=1,shiftCooldown=0,rpm=900
- const maximum=maxKph/3.6,ratios=maxKph>350?[3.9,2.7,2.1,1.72,1.45,1.24,1.05,.88]:[3.4,2.2,1.6,1.25,1.02,.85,.72]
+ const maximum=maxKph/3.6,ratios=gearCount===8?[3.9,2.7,2.1,1.72,1.45,1.24,1.05,.88]:[3.4,2.2,1.6,1.25,1.02,.85,.72]
  function step(dt:number,forward:boolean,brake:boolean,reverse:boolean){
   dt=Math.max(0,Math.min(dt,.15));shiftCooldown=Math.max(0,shiftCooldown-dt)
   const acceleration=forward?Math.max(.4,9.2*(1-Math.pow(Math.max(0,speed)/maximum,1.5))):reverse?-4*(1-Math.max(0,-speed)/8):0

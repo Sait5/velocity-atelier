@@ -57,3 +57,11 @@ Night Pulse, Soft Horizon, Midnight Glass, Afterglow: original synthesized instr
 License: https://creativecommons.org/licenses/by/4.0/
 Original full mixes are included without edits. Playback gain is reduced in the app.
 Credits are visible in Settings. CC BY permits use with attribution; it does not waive copyright.
+
+## Further album tracks
+
+- 'Electric Dreams' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au. https://www.scottbuckley.com.au/library/electric-dreams/
+
+- 'Twilight Echo' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au. https://www.scottbuckley.com.au/library/twilight-echo/
+
+- 'Supernova' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au. https://www.scottbuckley.com.au/library/supernova/

@@ -40,6 +40,18 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   float pool=pow(.5+.5*cos(p.x*.5236),6.);
   vec3 c=vec3(.012,.015,.019)+aggregate*(.17+.15*diffuse+italian*.38)+pool*(1.-italian)*vec3(.018,.022,.028)+sheen*vec3(.7,.8,1.);
   c=mix(c,vec3(.38,.40,.41),clamp(lane*dash+edge,0.,1.));
+  // Recessed service covers and cast-iron drainage are part of the road
+  // shader, so they cannot fight with the asphalt depth or add draw calls.
+  vec2 cover=vec2(mod(p.x+20.,40.)-20.,p.y+2.75);
+  float radius=length(cover);
+  float rim=(1.-smoothstep(.39,.41,radius))*smoothstep(.34,.36,radius);
+  float lid=1.-smoothstep(.34,.36,radius);
+  float grip=step(.5,fract((cover.x+cover.y)*15.));
+  c=mix(c,vec3(.13,.14,.145)+grip*.015,lid*italian*.7);
+  c=mix(c,vec3(.08,.085,.09),rim*italian);
+  vec2 drain=vec2(mod(p.x+9.,18.)-9.,abs(p.y)-3.7);
+  float grate=(1.-smoothstep(.4,.43,abs(drain.x)))*(1.-smoothstep(.16,.18,abs(drain.y)));
+  c=mix(c,vec3(.055)+step(.35,fract(drain.x*15.))*.035,grate*italian);
   float fade=exp(-abs(world.x)*mix(.022,0.,italian));
   gl_FragColor=vec4(c*fade,1.);
   #include <tonemapping_fragment>
@@ -62,7 +74,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   // the vertical face read as concrete rather than a dark gap or metal rail.
   const curbMaterial=new T.MeshStandardMaterial({color:'#b5b1a6',roughness:.93})
   const curbGeometry=new T.BoxGeometry(1.995,.145,.24)
-  for(const side of [-1,1]){const curb=new T.InstancedMesh(curbGeometry,curbMaterial,400);curb.name='Jointed concrete pavement kerb';curb.userData.side=side;curb.receiveShadow=true;curb.frustumCulled=false;group.add(curb);concreteCurbs.push(curb)}
+  for(const side of [-1,1]){const curb=new T.InstancedMesh(curbGeometry,curbMaterial,400);curb.name='Jointed concrete pavement kerb';curb.userData.side=side;curb.receiveShadow=true;curb.frustumCulled=false;const block=new T.Object3D();for(let i=0;i<400;i++){block.position.set(i*2-399,.045,side*4.91);block.updateMatrix();curb.setMatrixAt(i,block.matrix)}group.add(curb);concreteCurbs.push(curb)}
   const courtyardMaterial=pavementMaterial.clone()
   courtyardMaterial.onBeforeCompile=shader=>{shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float courtyardZ;').replace('#include <worldpos_vertex>','#include <worldpos_vertex>\ncourtyardZ=(modelMatrix*vec4(transformed,1.)).z;');shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying float courtyardZ;').replace('#include <fog_fragment>','#include <fog_fragment>\n#ifdef USE_FOG\ngl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,smoothstep(18.,30.,abs(courtyardZ)));\n#endif')}
   courtyardMaterial.customProgramCacheKey=()=> 'courtyard-rear-haze-v1'
@@ -78,7 +90,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
  const contact=new T.Mesh(new T.PlaneGeometry(5.4,2.8),new T.ShaderMaterial({transparent:true,depthWrite:false,vertexShader:`varying vec2 p;void main(){p=uv*2.-1.;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,fragmentShader:`varying vec2 p;void main(){float r=dot(p,p);gl_FragColor=vec4(0.,0.,0.,.55*exp(-r*3.)*(1.-smoothstep(.7,1.,r)));}`}));contact.rotation.x=-Math.PI/2;contact.position.y=.009;group.add(contact)
  panels.visible=poles.visible=arms.visible=!italian
  const lights=[new T.PointLight('#d8e6ef',24,13,2),new T.PointLight('#d8e6ef',24,13,2)];lights.forEach(l=>{l.visible=!italian;group.add(l)});const dummy=new T.Object3D()
- function update(distance:number,_speed:number,_time:number){street?.update(distance);for(const texture of paving)texture.offset.x=-(distance/3.2)%1;uniforms.travel.value=distance%624;for(const curb of concreteCurbs){for(let i=0;i<400;i++){dummy.position.set(i*2-399+((distance%2)+2)%2,.045,curb.userData.side*4.91);dummy.updateMatrix();curb.setMatrixAt(i,dummy.matrix)}curb.instanceMatrix.needsUpdate=true}for(let i=0;i<20;i++){const x=((i*12+distance)%240+240)%240-120,side=i%2?1:-1;dummy.position.set(x,4.45,0);dummy.updateMatrix();panels.setMatrixAt(i,dummy.matrix);dummy.position.set(x,2.325,side*6.3);dummy.updateMatrix();poles.setMatrixAt(i,dummy.matrix);dummy.position.set(x,4.5,side*3.15);dummy.updateMatrix();arms.setMatrixAt(i,dummy.matrix)}panels.instanceMatrix.needsUpdate=poles.instanceMatrix.needsUpdate=arms.instanceMatrix.needsUpdate=true;lights.forEach((l,i)=>l.position.set(((distance+i*12)%24+24)%24-12,4,0))}
+ function update(distance:number,_speed:number,_time:number){street?.update(distance);for(const texture of paving)texture.offset.x=-(distance/3.2)%1;uniforms.travel.value=distance%624;for(const curb of concreteCurbs)curb.position.x=((distance%2)+2)%2;for(let i=0;i<20;i++){const x=((i*12+distance)%240+240)%240-120,side=i%2?1:-1;dummy.position.set(x,4.45,0);dummy.updateMatrix();panels.setMatrixAt(i,dummy.matrix);dummy.position.set(x,2.325,side*6.3);dummy.updateMatrix();poles.setMatrixAt(i,dummy.matrix);dummy.position.set(x,4.5,side*3.15);dummy.updateMatrix();arms.setMatrixAt(i,dummy.matrix)}panels.instanceMatrix.needsUpdate=poles.instanceMatrix.needsUpdate=arms.instanceMatrix.needsUpdate=true;lights.forEach((l,i)=>l.position.set(((distance+i*12)%24+24)%24-12,4,0))}
  update(0,0,0)
  return {ready:Promise.all([...textureReady,street?.ready??Promise.resolve()]),setVisible(visible:boolean){group.visible=visible},update,dispose(){street?.dispose();scene.remove(group);[asphalt,normal,roughness,...paving].forEach(t=>t.dispose());const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();group.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));if(o instanceof T.InstancedMesh)o.dispose()}});geometries.forEach(g=>g.dispose());const textures=new Set<T.Texture>();materials.forEach(m=>{for(const value of Object.values(m))if(value instanceof T.Texture)textures.add(value);m.dispose()});textures.forEach(t=>t.dispose())}}
 }

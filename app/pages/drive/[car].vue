@@ -2,13 +2,14 @@
 const {t}=useLocale();const s=useAtelier(),route=useRoute(),speed=ref(0),telemetry=ref({gear:1,rpm:900}),ready=ref(false),progress=ref(0),error=ref(''),cruise=ref(false),scene=ref<any>(),retry=ref(0)
 s.select(String(route.params.car));const gear=computed(()=>telemetry.value.gear)
 const roadMap=useState<'italy'|'night'>('drive-map-'+s.car.value.id,()=>s.car.value.shape===0?'italy':'night')
+const mapsOpen=ref(false)
 const mapDialog=ref<HTMLDialogElement>(),mapButton=ref<HTMLButtonElement>()
 const mapName=computed(()=>roadMap.value==='italy'?t('Италия · Рим','Italy · Rome'):t('Ночная дорога','Night road'))
 function auto(){cruise.value=!cruise.value;scene.value?.setKey('w',cruise.value)}
 function resetDrive(){cruise.value=false;scene.value?.setKey('w',false);scene.value?.reset()}
 function beginLoading(){clearTimeout(revealTimer);ready.value=false;progress.value=0;error.value='';cruise.value=false}
-function openMaps(){scene.value?.setPaused(true);mapDialog.value?.showModal()}
-function onMapClose(){scene.value?.setPaused(false);scene.value?.setKey('w',cruise.value);mapButton.value?.focus()}
+function openMaps(){mapsOpen.value=true;scene.value?.setPaused(true);mapDialog.value?.showModal()}
+function onMapClose(){mapsOpen.value=false;scene.value?.setPaused(false);scene.value?.setKey('w',cruise.value);mapButton.value?.focus()}
 function closeMaps(){mapDialog.value?.close()}
 function chooseMap(map:'italy'|'night'){closeMaps();if(map===roadMap.value)return;resetDrive();beginLoading();roadMap.value=map}
 let revealTimer:ReturnType<typeof setTimeout>|undefined
@@ -40,8 +41,8 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
   <dialog ref="mapDialog" class="drive-map-dialog" aria-labelledby="map-heading" @close="onMapClose">
    <div class="map-dialog-heading"><div><small>VELOCITY / {{t('МАРШРУТЫ','ROUTES')}}</small><h2 id="map-heading">{{t('Выберите карту','Choose a map')}}</h2></div><button :aria-label="t('Закрыть','Close')" @click="closeMaps">×</button></div>
    <div class="drive-map-options">
-    <button :class="{selected:roadMap==='italy'}" :aria-pressed="roadMap==='italy'" @click="chooseMap('italy')"><div class="map-preview map-preview-city" aria-hidden="true"><i/><i/><i/><span/></div><strong>{{t('Италия · Рим','Italy · Rome')}}</strong><small>{{t('Тихая улица · ясный день','Quiet streets · clear daylight')}}</small><b>{{roadMap==='italy'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
-    <button :class="{selected:roadMap==='night'}" :aria-pressed="roadMap==='night'" @click="chooseMap('night')"><div class="map-preview map-preview-night" aria-hidden="true"><i/><i/><i/><span/></div><strong>{{t('Ночная дорога','Night road')}}</strong><small>{{t('Тёмный фон · свет фонарей','Dark backdrop · overhead lights')}}</small><b>{{roadMap==='night'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
+    <button :class="{selected:roadMap==='italy'}" :aria-pressed="roadMap==='italy'" @click="chooseMap('italy')"><ClientOnly><RoadMapPreview v-if="mapsOpen" map="italy" /></ClientOnly><strong>{{t('Италия · Рим','Italy · Rome')}}</strong><small>{{t('Тихая улица · ясный день','Quiet streets · clear daylight')}}</small><b>{{roadMap==='italy'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
+    <button :class="{selected:roadMap==='night'}" :aria-pressed="roadMap==='night'" @click="chooseMap('night')"><ClientOnly><RoadMapPreview v-if="mapsOpen" map="night" /></ClientOnly><strong>{{t('Ночная дорога','Night road')}}</strong><small>{{t('Тёмный фон · свет фонарей','Dark backdrop · overhead lights')}}</small><b>{{roadMap==='night'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
    </div>
   </dialog>
  </div>
@@ -58,10 +59,6 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
 .map-dialog-heading{display:flex;justify-content:space-between;align-items:start}.map-dialog-heading h2{font-size:27px;letter-spacing:-.5px;margin:14px 0 24px}.map-dialog-heading>button{font-size:25px;width:32px;height:32px}
 .drive-map-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.drive-map-options>button{border:1px solid #ffffff24;border-radius:12px;padding:8px;text-align:left;background:#ffffff03}.drive-map-options>button.selected{border-color:#d9ec8a90}
 .drive-map-options strong,.drive-map-options small,.drive-map-options b{display:block;margin:14px 8px}.drive-map-options strong{font-size:17px;font-weight:500}.drive-map-options small{font-size:9px;letter-spacing:.5px}.drive-map-options b{font-size:9px;color:#d9ec8a;letter-spacing:1px}
-.map-preview{height:135px;position:relative;border-radius:7px;overflow:hidden}.map-preview-city{background:linear-gradient(#94c9e5,#e4eff2 58%,#c4bda8 59%)}.map-preview-city i{position:absolute;bottom:31%;left:4%;width:24%;height:60%;background:repeating-linear-gradient(90deg,transparent 0 13px,#333f3d 14px 19px,transparent 20px 28px),#b88767;box-shadow:inset 0 -5px #86725d}.map-preview-city i:nth-child(2){left:30%;height:42%;background-color:#dbceb0}.map-preview-city i:nth-child(3){left:68%;height:70%;background-color:#899780}
-.map-preview span{position:absolute;bottom:-25px;left:15%;width:70%;height:70px;background:#343734;transform:perspective(60px) rotateX(30deg)}.map-preview span:after{content:'';position:absolute;left:50%;top:0;height:100%;border-left:2px dashed #c4cab8}
-.map-preview-night{background:radial-gradient(ellipse at 50% 100%,#253038,#040707 80%)}.map-preview-night i{position:absolute;top:20%;left:18%;width:14%;height:3px;background:#e8f2ed;box-shadow:0 0 20px #d8e9e4}.map-preview-night i:nth-child(2){left:43%;top:35%;width:12%}.map-preview-night i:nth-child(3){left:68%;top:20%}
-
 @media(max-width:650px){.drive-controls{left:16px;bottom:18px;width:260px;padding:10px}.drive-controls .drive-hints{font-size:8px}.drive-controls button{font-size:9px;min-height:39px}.drive-hud{bottom:220px;right:16px}.drive-map-dialog{padding:18px}.drive-map-options{gap:8px}.map-preview{height:100px}.drive-map-options strong{font-size:14px}.drive-map-options small{font-size:8px}.drive-map-options b{font-size:8px}}
 
 </style>

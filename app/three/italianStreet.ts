@@ -10,6 +10,20 @@ export function createItalianStreet(parent:T.Group){
  const housePose=(variant:number,side:number)=>new T.Vector3(-24+(side===1?2-variant:variant)*24,.255,side*(variant===0?18:19))
  const foundationGeometry=new T.BoxGeometry(1,1,1),foundationMaterial=new T.MeshStandardMaterial({color:'#777873',roughness:.95})
  for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.105;dummy.scale.set(12.7*width(variant),.26,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
+
+ // Small street details stay instanced and travel with each existing section.
+ const potGeometry=new T.CylinderGeometry(.32,.24,.48,10),potMaterial=new T.MeshStandardMaterial({color:'#a16b4f',roughness:.95}),foliageGeometry=new T.IcosahedronGeometry(.38,1),foliageMaterial=new T.MeshStandardMaterial({color:'#536c38',roughness:1}),pipeGeometry=new T.CylinderGeometry(.045,.045,1,6),pipeMaterial=new T.MeshStandardMaterial({color:'#5e625e',metalness:.45,roughness:.6})
+ for(const chunk of chunks){
+  const pots=new T.InstancedMesh(potGeometry,potMaterial,12),plants=new T.InstancedMesh(foliageGeometry,foliageMaterial,12),pipes=new T.InstancedMesh(pipeGeometry,pipeMaterial,12),dummy=new T.Object3D();let index=0
+  pots.name='Terracotta street planters';plants.name='Compact Mediterranean shrubs';pipes.name='Facade rainwater downpipes'
+  for(const side of [-1,1])for(let variant=0;variant<3;variant++)for(const edge of [-1,1]){
+   const pos=housePose(variant,side),front=side*(Math.abs(pos.z)-4.95),height=(variant+1)*3.6+.5
+   dummy.position.set(pos.x+edge*4.8*width(variant),.37,front-side*.2);dummy.scale.setScalar(1);dummy.updateMatrix();pots.setMatrixAt(index,dummy.matrix)
+   dummy.position.y=.78;dummy.scale.set(1,.95+variant*.15,1);dummy.updateMatrix();plants.setMatrixAt(index,dummy.matrix)
+   dummy.position.set(pos.x+edge*5.95*width(variant),.3+height/2,front+side*.15);dummy.scale.set(1,height,1);dummy.updateMatrix();pipes.setMatrixAt(index,dummy.matrix);index++
+  }
+  for(const mesh of [pots,plants,pipes]){mesh.receiveShadow=true;mesh.computeBoundingSphere();chunk.add(mesh)}
+ }
  let disposed=false
  const roofLoader=new T.TextureLoader(),roofLoads:Promise<T.Texture>[]=[]
  const roofMap=(suffix:string,color=false)=>{const task=roofLoader.loadAsync('/textures/italian-roof-'+suffix+'.webp').then(t=>{t.wrapS=t.wrapT=T.RepeatWrapping;t.anisotropy=16;t.colorSpace=color?T.SRGBColorSpace:T.NoColorSpace;return t});roofLoads.push(task);return task}

@@ -186,3 +186,16 @@ The published drive was checked at 370 km/h in exterior, cockpit and overhead vi
 ![Camera recovers upward at 370 km/h](docs/images/revuelto-roofs-drive.jpg)
 
 ![Completed model previews in the garage](docs/images/garage-real-models.jpg)
+
+
+## Presentation, live garage and album (2026-10-04)
+
+The showroom starts its introduction after `SceneLoading` finishes its fade. The car rolls 7.5 m onto the stage with rotating wheels, then the camera visits front, side, rear, overhead and wheel views before returning to OrbitControls. Dragging, scrolling, opening doors, entering the cabin, disabling camera animation or the Skip button interrupts the sequence and restores the car transform. Reduced-motion users bypass it. The sequence uses `app/three/showroomIntro.ts`; `node tools/verify-intro.mjs` verifies interruption and replay without displaced body/wheels.
+
+`paintFinish.ts` adds a restrained viewing-angle pearl tint, thin-film iridescence and a polished clearcoat to the selected paint. Studio reflections drift slowly, retaining the selected color. Paint chips also show a gradient. Garage cards for the completed Revuelto and 458 now load the actual authored models with transparent WebGL canvases; they render on reveal, resize and pointer movement rather than continuously. Six future cars still have concept silhouettes.
+
+Map thumbnails depict the actual map without a car or HUD. Italy adds instanced terracotta planters, shrubs and downpipes. Service covers and drain grates are integrated into the asphalt shader to avoid depth conflicts. Kerb instances are prepared once and moved as a group rather than rebuilding 800 matrices every frame. Clear daylight and existing road-depth separation remain.
+
+Eight music selections are available. Electric Dreams, Twilight Echo and Supernova by Scott Buckley join the previous five; full mixes, CC BY 4.0, artist credits in Settings and `public/audio/CREDITS.md`. These are licensed tracks, not copyright-free recordings.
+
+The real Revuelto uses an eight-speed dual-clutch gearbox ([official brochure](https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/revuelto/2024/brochure/07_23/REVUELTO_DIGITAL_BROCHURE_EN_2024.pdf)); the scene now passes its gear count explicitly. Numerical ratios and acceleration remain a presentation simulation.

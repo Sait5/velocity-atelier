@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props=defineProps<{active:boolean,progress:number,title:string,vehicle:string,error?:string}>()
-const emit=defineEmits<{retry:[],complete:[]}>();const {t}=useLocale();const shown=ref(1)
+const emit=defineEmits<{retry:[],complete:[],revealed:[]}>();const {t}=useLocale();const shown=ref(1)
 let timer:ReturnType<typeof setInterval>|undefined,completed=false
 function restart(){shown.value=1;completed=false}
 watch(()=>props.progress,value=>{if(value===0)restart()})
@@ -14,7 +14,7 @@ onMounted(()=>{timer=setInterval(()=>{
 onBeforeUnmount(()=>clearInterval(timer))
 </script>
 <template>
- <Transition name="scene-reveal">
+ <Transition name="scene-reveal" @after-leave="emit('revealed')">
   <div v-if="active||error" class="scene-loader" role="status" aria-live="polite">
    <div class="scene-load-orbit" aria-hidden="true"><i/><i/><i/></div>
    <small>VELOCITY / {{t('ATELIER','ATELIER')}}</small>
