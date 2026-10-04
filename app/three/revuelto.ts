@@ -52,7 +52,9 @@ export function prepareRevuelto(source:T.Group){
  for(const [side,code] of [[1,'L'],[-1,'R']] as const){
   const door=new T.Group();door.name='Revuelto door '+code;door.position.set(-.915,.77,side*.91);root.add(door);root.updateMatrixWorld(true)
   const parts:T.Object3D[]=[]
-  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorJamb${code}F_|DoorCard${code}F|WingMirror${code}_|MirrorBase${code}_|Glass${code}[FM]_)`).test(o.name))parts.push(o)})
+  // The front quarter glass and mirror pedestal belong to the fixed A-pillar.
+  // Only the main retractable pane follows the scissor door.
+  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorJamb${code}F_|DoorCard${code}F|Glass${code}M_)`).test(o.name))parts.push(o)})
   for(const part of parts)door.attach(part)
   door.traverse(o=>{if(o instanceof T.Mesh&&o.name===`Glass${code}M_GlassSide`){const pane=glass.clone();pane.clippingPlanes=[new T.Plane()];o.material=pane;windows.push({mesh:o,closed:o.position.clone(),pane,door,side})}})
   doors.push(door)
@@ -71,7 +73,7 @@ export function prepareRevuelto(source:T.Group){
   for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
  }
  function setDoors(progress:number){const p=T.MathUtils.clamp(progress,0,1),release=T.MathUtils.smoothstep(p,0,.22);doors.forEach((door,i)=>{const side=i===0?1:-1;door.position.z=side*(.91+.045*release);door.rotation.set(side*.055*p,-side*.12*release,1.12*T.MathUtils.smoothstep(p,.08,1),'YXZ')});setWindows(windowProgress)}
- function setLights(front:boolean,rear:boolean){white.emissiveIntensity=front?2:0;frontEmitter.emissiveIntensity=front?2:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2:0}
+ function setLights(front:boolean,rear:boolean){white.emissiveIntensity=front?2.7:0;frontEmitter.emissiveIntensity=front?2.7:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
  function setUpholstery(color:string){leather.color.set(color)}
  return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,dispose(){
   const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([...materials.values(),body]),textures=new Set<T.Texture>()
