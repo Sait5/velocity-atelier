@@ -7,5 +7,5 @@ These are generic scanned surfaces, not Ferrari-specific material scans.
 
 ## Итальянское окружение
 
-- [Vatican Road](https://polyhaven.com/a/vatican_road) — Greg Zaal / Poly Haven, CC0. Настоящая панорама улицы Рима: 8K JPG для фона, 1K HDR для освещения и отражений.
+- [Vatican Road](https://polyhaven.com/a/vatican_road) — Greg Zaal / Poly Haven, CC0. Панорама улицы Рима: 1K HDR применяется для освещения и отражений. Сохранённая 8K JPG не используется как видимый фон.
 - [Pavement 03](https://polyhaven.com/a/pavement_03) — Poly Haven, CC0. Карты цвета, нормалей и шероховатости тротуара 2K, преобразованы в WebP.
