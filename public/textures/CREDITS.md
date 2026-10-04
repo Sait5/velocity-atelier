@@ -9,3 +9,5 @@ These are generic scanned surfaces, not Ferrari-specific material scans.
 
 - [Vatican Road](https://polyhaven.com/a/vatican_road) — Greg Zaal / Poly Haven, CC0. Панорама улицы Рима: 1K HDR применяется для освещения и отражений. Сохранённая 8K JPG не используется как видимый фон.
 - [Pavement 03](https://polyhaven.com/a/pavement_03) — Poly Haven, CC0. Цветовая карта тротуара 4K; нормали и шероховатость 2K. Преобразованы в WebP; 4K карта используется на тротуарах и в дворах.
+
+- [Roof Tiles](https://polyhaven.com/a/roof_tiles) — Poly Haven, CC0. 2K diffuse, OpenGL normal and roughness converted to WebP, used on new pitched roofs. Geometry, chimneys and gutters are authored for this project.

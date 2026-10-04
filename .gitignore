@@ -13,3 +13,6 @@ model-license.json
 .env
 .env.*
 !.env.example
+
+tools/generated/driveLook.mjs
+tools/generated/straightMotion.mjs

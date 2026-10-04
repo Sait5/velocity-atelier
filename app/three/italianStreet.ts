@@ -11,6 +11,26 @@ export function createItalianStreet(parent:T.Group){
  const foundationGeometry=new T.BoxGeometry(1,1,1),foundationMaterial=new T.MeshStandardMaterial({color:'#777873',roughness:.95})
  for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.105;dummy.scale.set(12.7*width(variant),.26,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
  let disposed=false
+ const roofLoader=new T.TextureLoader(),roofLoads:Promise<T.Texture>[]=[]
+ const roofMap=(suffix:string,color=false)=>{const task=roofLoader.loadAsync('/textures/italian-roof-'+suffix+'.webp').then(t=>{t.wrapS=t.wrapT=T.RepeatWrapping;t.anisotropy=16;t.colorSpace=color?T.SRGBColorSpace:T.NoColorSpace;return t});roofLoads.push(task);return task}
+ const roofsReady=Promise.all([roofMap('diff',true),roofMap('normal'),roofMap('rough')]).then(([map,normalMap,roughnessMap])=>{
+  if(disposed){[map,normalMap,roughnessMap].forEach(t=>t.dispose());return}
+  const roofMaterial=new T.MeshStandardMaterial({map,normalMap,roughnessMap,normalScale:new T.Vector2(.65,.65),roughness:.9,color:'#cab3a0',side:T.DoubleSide})
+  const vertices=[-6.25,0,-4.85,6.25,0,-4.85,6.25,1.25,0,-6.25,1.25,0,-6.25,1.25,0,6.25,1.25,0,6.25,0,4.85,-6.25,0,4.85,-6.25,0,-4.85,-6.25,0,4.85,-6.25,1.25,0,6.25,0,-4.85,6.25,0,4.85,6.25,1.25,0]
+  const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.Float32BufferAttribute(vertices,3));geometry.setIndex([0,2,1,0,3,2,4,6,5,4,7,6,8,9,10,11,13,12]);geometry.computeVertexNormals();const uv=[];for(let i=0;i<vertices.length;i+=3)uv.push(vertices[i]!/2.8,vertices[i+2]!/2.8);geometry.setAttribute('uv',new T.Float32BufferAttribute(uv,2))
+  const chimneyMaterial=new T.MeshStandardMaterial({color:'#9b8370',roughness:1}),gutterMaterial=new T.MeshStandardMaterial({color:'#4d514d',metalness:.55,roughness:.5}),dummy=new T.Object3D()
+  for(const chunk of chunks){
+   const roofs=new T.InstancedMesh(geometry,roofMaterial,6),chimneys=new T.InstancedMesh(new T.BoxGeometry(.6,1.3,.7),chimneyMaterial,6),caps=new T.InstancedMesh(new T.BoxGeometry(.79,.12,.88),gutterMaterial,6),gutters=new T.InstancedMesh(new T.BoxGeometry(12.5,.08,.09),gutterMaterial,12)
+   roofs.name='Scanned terracotta pitched roofs';chimneys.name='Masonry roof chimneys';let i=0
+   for(const side of [-1,1])for(let variant=0;variant<3;variant++){
+    const pos=housePose(variant,side);pos.y+=(variant+1)*3.6+.76;dummy.position.copy(pos);dummy.rotation.set(0,0,0);dummy.scale.set(width(variant),1,1);dummy.updateMatrix();roofs.setMatrixAt(i,dummy.matrix);roofs.setColorAt(i,new T.Color(['#eee2d1','#c7a693','#d9c0a6'][variant]!))
+    dummy.position.set(pos.x+3*width(variant),pos.y+1.25,pos.z+1.3);dummy.scale.setScalar(1);dummy.updateMatrix();chimneys.setMatrixAt(i,dummy.matrix);dummy.position.y+=.71;dummy.updateMatrix();caps.setMatrixAt(i,dummy.matrix)
+    for(let k=0;k<2;k++){dummy.position.set(pos.x,pos.y+.03,pos.z+(k?4.85:-4.85));dummy.scale.set(width(variant),1,1);dummy.updateMatrix();gutters.setMatrixAt(i*2+k,dummy.matrix)}i++
+   }
+   for(const mesh of [roofs,chimneys,caps,gutters]){mesh.castShadow=mesh.receiveShadow=true;mesh.computeBoundingSphere();chunk.add(mesh)}
+  }
+ })
+
  const ready=Promise.all([loader.loadAsync('/models/italian-urban-facade.glb'),loader.loadAsync('/models/italian-roadside-tree.glb')]).then(([facade,tree])=>{
   const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0}]
   for(const {asset,kind,variant} of assets){
@@ -51,5 +71,5 @@ export function createItalianStreet(parent:T.Group){
  })
  function update(distance:number){chunks.forEach((chunk,i)=>{chunk.position.x=((i*80+distance+40)%640+640)%640-320})}
  update(0)
- return {ready,update,dispose(){disposed=true}}
+ return {ready:Promise.all([ready,roofsReady]),update,dispose(){disposed=true}}
 }

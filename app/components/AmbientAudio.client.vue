@@ -4,7 +4,7 @@ const s=useAtelier(),route=useRoute(),first=ref<HTMLAudioElement>(),second=ref<H
 const selected=computed(()=>musicThemes.find(t=>t.id===(s.musicTheme.value==='auto'?(s.car.value.id==='revuelto'?'pulse':'atelier'):s.musicTheme.value))??musicThemes[0]!)
 let active=0,started=false,fade=0,disposed=false
 function channels(){return [first.value,second.value]}
-function level(){return Math.max(0,Math.min(1,s.volume.value*(route.path.startsWith('/drive')?.35:.9)))}
+function level(){return Math.max(0,Math.min(1,s.volume.value*selected.value.gain*(route.path.startsWith('/drive')?.35:.9)))}
 function volume(){const audio=channels()[active];if(audio&&!fade)audio.volume=level()}
 function begin(){if(disposed||document.hidden||!s.music.value)return;const audio=channels()[active];if(!audio)return;if(!audio.getAttribute("src"))audio.src=selected.value.src;volume();void audio.play().then(()=>{started=true}).catch(()=>{})}
 function change(){const pair=channels(),old=pair[active],next=pair[1-active];if(!next)return;cancelAnimationFrame(fade);fade=0;next.pause();next.src=selected.value.src;next.load();next.volume=0;active=1-active

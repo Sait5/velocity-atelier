@@ -43,3 +43,17 @@ Exterior acceleration: ferrari-exterior-acceleration.wav uses 3.000–20.000 s o
 
 ## Additional original music themes
 Night Pulse, Soft Horizon, Midnight Glass, Afterglow: original synthesized instrumental compositions made for Velocity Atelier. No third-party samples or recordings. Reproducible generator: tools/compose-music.py. Atelier Ambient remains available.
+
+
+## New full-length music selections (2026-10-04)
+
+- 'Neon' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au
+  https://www.scottbuckley.com.au/library/neon/
+- 'Machina' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au
+  https://www.scottbuckley.com.au/library/machina/
+- 'Chasing Daylight' by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au
+  https://www.scottbuckley.com.au/library/chasing-daylight/
+
+License: https://creativecommons.org/licenses/by/4.0/
+Original full mixes are included without edits. Playback gain is reduced in the app.
+Credits are visible in Settings. CC BY permits use with attribution; it does not waive copyright.

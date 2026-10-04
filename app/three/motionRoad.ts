@@ -23,6 +23,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   vec2 p=vec2(world.x-travel,world.z);
   vec2 surfaceUV=p/mix(2.08,3.8,italian);
   vec3 aggregate=texture2D(asphalt,surfaceUV).rgb;
+  aggregate=mix(aggregate,vec3(dot(aggregate,vec3(.2126,.7152,.0722))),italian*.65);
   aggregate=mix(aggregate,clamp((aggregate-.10)*1.45+.10,0.,1.),italian);
   vec3 n=normalize(mix(vec3(0.,0.,1.),texture2D(surfaceNormal,surfaceUV).xyz*2.-1.,.65));
   float rough=texture2D(surfaceRoughness,surfaceUV).r;

@@ -155,3 +155,18 @@ Door assemblies include inner painted shells, edge seals and latches; the two-ph
 ![Меню автомобиля и обновлённый приборный экран](docs/images/revuelto-vehicle-menu-instruments.png)
 
 ![Проверка дороги при авторазгоне 370 км/ч](docs/images/revuelto-stable-road-370.png)
+
+
+## Revuelto: screens, music, camera and Italian roofs (2026-10-04)
+
+The native cluster surface now shows a circular 0–10 tachometer with red zone, moving needle, outlined central gear, speed, battery/fuel columns and chassis widget. The central screen uses a staggered hexagonal vehicle/media/settings launcher based on production Revuelto interior photographs and the [official HMI article](https://www.lamborghini.com/en-en/news/the-new-human-machine-interface-of-lamborghini-revuelto). The screen artwork is original; showroom screenshots supply the vehicle preview. The menu remains decorative.
+
+The first and third original ambient tracks remain. Slots 2/4/5 now use full-length Neon, Machina and Chasing Daylight by Scott Buckley (CC BY 4.0 with visible Settings credits; see public/audio/CREDITS.md). They are distinct full mixes, not variations of the same short loop. Playback gain and the existing crossfade keep music quieter in Drive.
+
+Cool and warm architectural galleries are selectable under Environment. Upholstery gains subtle grain while retaining imported maps, paint reflections are softened, and headlight floor spill is slightly brighter without extending its reach. Garage cards for the two completed cars now use screenshots of the actual model. The About navigation button is removed.
+
+Italy uses instanced pitched tile roofs with scanned 2K PBR surfaces, gutters and chimneys; asphalt is less brown. Roofs share geometry and maps across street chunks. Existing depth separation and clear daylight remain intact.
+
+Drive clamps its target pitch rather than only the displayed angle, preventing accumulated drag beyond the limit. Revuelto uses eight presentation gears with a brief torque cut on shifts; Ferrari retains seven. Revuelto audio is procedural V12 audio, not an authentic recording: it now responds to load, shifts, cabin/exterior views, airflow and braking. Ferrari's recorded audio remains unchanged.
+
+Validation: npm run typecheck; npm run build; node tools/verify-drive.mjs (camera reversibility in three views, both speed limits, gear counts and braking). New MP3s decode at 44.1 kHz: Neon 259 s, Machina 291 s, Chasing Daylight 274 s.
