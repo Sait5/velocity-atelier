@@ -6,6 +6,7 @@ import {installItaliaLamps} from './vehicleLamps'
 import {installInstruments} from './instruments'
 import {enhanceCabin} from './cabinDetails'
 import {installWheelShutter} from './wheelShutter'
+import {prepareRevuelto} from './revuelto'
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
 export function prepareCompleteItalia(root:T.Group,driving=false){
@@ -67,11 +68,11 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
 }
 
 export async function loadVehicle(shape:number,onProgress:(n:number)=>void,driving=false){
- if(shape!==8)return createVehicle(shape)
+ if(shape!==8&&shape!==0)return createVehicle(shape)
  const decoder=new DRACOLoader().setDecoderPath('/draco/'),loader=new GLTFLoader().setDRACOLoader(decoder)
  try{
-  const gltf=await loader.loadAsync('/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
-  return prepareCompleteItalia(gltf.scene,driving)
+  const gltf=await loader.loadAsync(shape===0?'/models/lamborghini-revuelto.glb':'/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
+  return shape===0?prepareRevuelto(gltf.scene):prepareCompleteItalia(gltf.scene,driving)
  }finally{decoder.dispose()}
 }
 

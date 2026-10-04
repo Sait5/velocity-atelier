@@ -44,3 +44,9 @@ Part inventories: `tools/donor-parts-manifest.json` and `tools/donor-wheel-manif
 Alps Field photographic HDR panorama — Andreas Mischok / Poly Haven, CC0. Source: https://polyhaven.com/a/alps_field ; License: https://polyhaven.com/license
 
 Evening Road 01 photographic HDR panorama — Sergej Majboroda / Poly Haven, CC0. Source: https://polyhaven.com/a/evening_road_01 ; License: https://polyhaven.com/license
+
+## Lamborghini Revuelto
+
+Author: Anatolian Studios. Source: https://sketchfab.com/3d-models/lamborghini-revuelto-099b60042519463ead19ce054d479724
+License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+File: lamborghini-revuelto.glb. Adaptations: coordinate alignment, scissor-door groups, retractable side windows, wheel pivots with stationary calipers, paint and lamp controls. Original geometry and texture maps retained.
