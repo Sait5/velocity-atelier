@@ -18,3 +18,5 @@ tools/generated/driveLook.mjs
 tools/generated/straightMotion.mjs
 
 tools/generated/*-full.jpg
+
+tools/generated/showroomIntro.mjs

@@ -25,12 +25,14 @@ async function initialize(){
  }catch{status.value='error'}
 }
 function size(){if(!host.value||!renderer)return;const {width,height}=host.value.getBoundingClientRect();if(!width||!height)return;renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();draw()}
-onMounted(()=>{
+onMounted(async()=>{
+ await nextTick();if(!host.value||disposed)return
  observer=new IntersectionObserver(entries=>{visible=!!entries[0]?.isIntersecting;if(visible){void initialize();draw()}},{rootMargin:'160px'});observer.observe(host.value!)
  resize=new ResizeObserver(size);resize.observe(host.value!)
  // No continuous animation: the two heavy authored models render only on
  // reveal, resize or pointer movement, leaving the GPU idle while browsing.
 })
+watch(()=>props.color,color=>{vehicle?.body.color.set(color);draw()})
 onBeforeUnmount(()=>{disposed=true;observer?.disconnect();resize?.disconnect();vehicle?.dispose();environment?.dispose();renderer?.dispose()})
 </script>
 <template><div ref="host" class="garage-model" role="img" :aria-label="name+' · '+t('3D-модель','3D model')" @pointermove="turn" @pointerleave="leave"><span v-if="status==='loading'" class="model-status">{{t('ЗАГРУЗКА МОДЕЛИ','LOADING MODEL')}}<i/></span><span v-else-if="status==='error'" class="model-status">{{t('Модель доступна в шоуруме','Open the model in the showroom')}}</span></div></template>
