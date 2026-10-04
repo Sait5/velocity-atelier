@@ -10,6 +10,8 @@ export function prepareRevuelto(source:T.Group){
  const originalPaint=material('car_paint_v3_03')
  const body=new T.MeshPhysicalMaterial({name:'Revuelto paint',color:originalPaint.color,metalness:.35,roughness:.24,clearcoat:1,clearcoatRoughness:.09,envMapIntensity:1.15})
  const leather=material('M_Leather'),rim=material('M_WheelRim'),brake=material('M_Caliper')
+ material('M_Alcantara').color.set('#1a1b1e')
+ const cabinFill=new T.PointLight('#e9efff',.45,1.8,2);cabinFill.position.set(.12,.94,0);root.add(cabinFill)
  const glass=material('M_GlassSide') as T.MeshPhysicalMaterial
  const white=material('HeadLights'),frontEmitter=material('M_Emitter'),rearEmitter=material('Emission Red')
  source.traverse(o=>{if(!(o instanceof T.Mesh))return
@@ -26,7 +28,7 @@ export function prepareRevuelto(source:T.Group){
  for(const [side,code] of [[1,'L'],[-1,'R']] as const){
   const door=new T.Group();door.name='Revuelto door '+code;door.position.set(-.915,.77,side*.91);root.add(door);root.updateMatrixWorld(true)
   const parts:T.Object3D[]=[]
-  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorCard${code}F|WingMirror${code}_|MirrorBase${code}_|Glass${code}[FM]_)`).test(o.name))parts.push(o)})
+  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorJamb${code}F_|DoorCard${code}F|WingMirror${code}_|MirrorBase${code}_|Glass${code}[FM]_)`).test(o.name))parts.push(o)})
   for(const part of parts)door.attach(part)
   door.traverse(o=>{if(o instanceof T.Mesh&&o.name===`Glass${code}M_GlassSide`){const pane=glass.clone();pane.clippingPlanes=[new T.Plane()];o.material=pane;windows.push({mesh:o,closed:o.position.clone(),pane,door,side})}})
   doors.push(door)
@@ -40,10 +42,10 @@ export function prepareRevuelto(source:T.Group){
   wheels.push(wheel)
  }
  let windowProgress=0
- function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1);root.updateMatrixWorld(true)
-  for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.04).applyMatrix4(w.door.matrixWorld)}
+ function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1)
+  for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
  }
- function setDoors(progress:number){const p=T.MathUtils.clamp(progress,0,1);doors.forEach((door,i)=>{const side=i===0?1:-1;door.rotation.set(side*.08*p,-side*.18*p,1.16*p,'YXZ')});setWindows(windowProgress)}
+ function setDoors(progress:number){const p=T.MathUtils.clamp(progress,0,1),release=T.MathUtils.smoothstep(p,0,.22);doors.forEach((door,i)=>{const side=i===0?1:-1;door.position.z=side*(.91+.045*release);door.rotation.set(side*.055*p,-side*.12*release,1.12*T.MathUtils.smoothstep(p,.08,1),'YXZ')});setWindows(windowProgress)}
  function setLights(front:boolean,rear:boolean){white.emissiveIntensity=front?2:0;frontEmitter.emissiveIntensity=front?2:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2:0}
  function setUpholstery(color:string){leather.color.set(color)}
  return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,dispose(){

@@ -40,3 +40,6 @@ car-braking.wav: Screeching Tires #1, Dorian CLAIR / BigSoundBank, CC0. https://
 
 Exterior acceleration: ferrari-exterior-acceleration.wav uses 3.000–20.000 s of the supplied zvuk-dvigatelja-ferrari-458-spider.mp3. High-pass/DC removal, fixed level normalization, onset/release fades. The 17-second exterior take plays once per accelerator press, without looping or pitch changes. Short steady bands remain quieter beneath it and receive subtle exterior-only pitch drift.
 
+
+## Additional original music themes
+Night Pulse, Soft Horizon, Midnight Glass, Afterglow: original synthesized instrumental compositions made for Velocity Atelier. No third-party samples or recordings. Reproducible generator: tools/compose-music.py. Atelier Ambient remains available.

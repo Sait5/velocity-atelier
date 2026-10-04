@@ -86,3 +86,6 @@ npm run build
 ## Lamborghini Revuelto — этап модели
 
 Подключена модель Anatolian Studios (CC BY 4.0), выбранная владельцем. Прямой вход: `/?car=revuelto#showroom`. Сохранены исходные салон, кузов, текстуры и геометрия; добавлены группы дверей с подъёмом вверх, опускание основных боковых стёкол, оси вращения колёс и неподвижные суппорты. Адаптер: `app/three/revuelto.ts`. Звуки двигателя и окончательный свет для Revuelto — следующий этап; текущий режим движения использует временный синтезированный звук. Записи Ferrari на Revuelto не используются.
+
+### Revuelto: cabin and music refinement
+Door assemblies include inner painted shells, edge seals and latches; the two-phase opening first releases the door outward before lifting. A vehicle-specific driver anchor is used in showroom and drive. Five original instrumental themes are selectable in Settings, including the existing Atelier Ambient; Auto chooses Night Pulse for Revuelto. Theme choice is saved, track changes crossfade, and hidden tabs pause audio. Revuelto uses a darker studio floor and shorter background fog.
