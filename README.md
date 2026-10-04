@@ -109,3 +109,5 @@ Door assemblies include inner painted shells, edge seals and latches; the two-ph
 ![Выбор пяти музыкальных тем](docs/images/revuelto-music-settings.png)
 
 ![Скачанные фасады и деревья в поездке Revuelto](docs/images/revuelto-italy-road.png)
+
+![Исправленные основания, 4K тротуар и граница дворов в дымке](docs/images/revuelto-street-grounding.png)
