@@ -12,7 +12,14 @@ export function createItalianStreet(parent:T.Group){
  for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.105;dummy.scale.set(12.7*width(variant),.26,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
 
  // Small street details stay instanced and travel with each existing section.
- const potGeometry=new T.CylinderGeometry(.32,.24,.48,10),potMaterial=new T.MeshStandardMaterial({color:'#a16b4f',roughness:.95}),foliageGeometry=new T.IcosahedronGeometry(.38,1),foliageMaterial=new T.MeshStandardMaterial({color:'#536c38',roughness:1}),pipeGeometry=new T.CylinderGeometry(.045,.045,1,6),pipeMaterial=new T.MeshStandardMaterial({color:'#5e625e',metalness:.45,roughness:.6})
+ const potGeometry=new T.CylinderGeometry(.32,.24,.48,24),potMaterial=new T.MeshStandardMaterial({color:'#a16b4f',roughness:.95}),foliageGeometry=new T.IcosahedronGeometry(.38,2),foliageMaterial=new T.MeshStandardMaterial({color:'#425d35',roughness:1}),pipeGeometry=new T.CylinderGeometry(.045,.045,1,6),pipeMaterial=new T.MeshStandardMaterial({color:'#5e625e',metalness:.45,roughness:.6})
+ foliageMaterial.onBeforeCompile=shader=>{
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 leafPoint;').replace('#include <begin_vertex>','#include <begin_vertex>\nleafPoint=position;')
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 leafPoint;').replace('#include <map_fragment>',`#include <map_fragment>
+   vec3 leafCell=floor(leafPoint*65.);
+   float leafShade=fract(sin(dot(leafCell,vec3(12.9898,78.233,37.719)))*43758.5453);
+   diffuseColor.rgb*=.55+leafShade*.8;`)
+ };foliageMaterial.customProgramCacheKey=()=> 'mediterranean-leaf-grain-v1'
  for(const chunk of chunks){
   const pots=new T.InstancedMesh(potGeometry,potMaterial,12),plants=new T.InstancedMesh(foliageGeometry,foliageMaterial,12),pipes=new T.InstancedMesh(pipeGeometry,pipeMaterial,12),dummy=new T.Object3D();let index=0
   pots.name='Terracotta street planters';plants.name='Compact Mediterranean shrubs';pipes.name='Facade rainwater downpipes'

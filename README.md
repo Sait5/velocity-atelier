@@ -199,3 +199,5 @@ Map thumbnails depict the actual map without a car or HUD. `public/images/maps/i
 Eight music selections are available. Electric Dreams, Twilight Echo and Supernova by Scott Buckley join the previous five; full mixes, CC BY 4.0, artist credits in Settings and `public/audio/CREDITS.md`. These are licensed tracks, not copyright-free recordings.
 
 The real Revuelto uses an eight-speed dual-clutch gearbox ([official brochure](https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/revuelto/2024/brochure/07_23/REVUELTO_DIGITAL_BROCHURE_EN_2024.pdf)); the scene now passes its gear count explicitly. Numerical ratios and acceleration remain a presentation simulation.
+
+Road albedo scrolling uses an independent fractional texture phase. Markings and service-cover repeat on a shared 360 m interval, removing the previous asphalt phase jump every 624 m while keeping shader coordinates small. Shrubs have dense leaf grain rather than a flat green surface.

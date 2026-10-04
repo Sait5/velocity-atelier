@@ -11,17 +11,17 @@ export function createMotionRoad(scene:T.Scene,italian=false){
  const paving:T.Texture[]=[]
  const concreteCurbs:T.InstancedMesh[]=[]
  const street=italian?createItalianStreet(group):undefined
- const uniforms={...T.UniformsUtils.clone(T.UniformsLib.fog),italian:{value:italian?1:0},travel:{value:0},asphalt:{value:asphalt},surfaceNormal:{value:normal},surfaceRoughness:{value:roughness}}
+ const uniforms={...T.UniformsUtils.clone(T.UniformsLib.fog),italian:{value:italian?1:0},travel:{value:0},surfaceTravel:{value:0},asphalt:{value:asphalt},surfaceNormal:{value:normal},surfaceRoughness:{value:roughness}}
  const road=new T.Mesh(new T.PlaneGeometry(italian?1200:240,10),new T.ShaderMaterial({uniforms,fog:true,vertexShader:`varying vec3 world;
  #include <fog_pars_vertex>
  void main(){vec4 p=modelMatrix*vec4(position,1.);world=p.xyz;vec4 mvPosition=viewMatrix*p;gl_Position=projectionMatrix*mvPosition;
  #include <fog_vertex>
  }`,fragmentShader:`
  #include <fog_pars_fragment>
- varying vec3 world;uniform float travel;uniform float italian;uniform sampler2D asphalt;uniform sampler2D surfaceNormal;uniform sampler2D surfaceRoughness;
+ varying vec3 world;uniform float travel;uniform float surfaceTravel;uniform float italian;uniform sampler2D asphalt;uniform sampler2D surfaceNormal;uniform sampler2D surfaceRoughness;
  void main(){
   vec2 p=vec2(world.x-travel,world.z);
-  vec2 surfaceUV=p/mix(2.08,3.8,italian);
+  vec2 surfaceUV=world.xz/mix(2.08,3.8,italian)-vec2(surfaceTravel,0.);
   vec3 aggregate=texture2D(asphalt,surfaceUV).rgb;
   aggregate=mix(aggregate,vec3(dot(aggregate,vec3(.2126,.7152,.0722))),italian*.65);
   aggregate=mix(aggregate,clamp((aggregate-.10)*1.45+.10,0.,1.),italian);
@@ -90,7 +90,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
  const contact=new T.Mesh(new T.PlaneGeometry(5.4,2.8),new T.ShaderMaterial({transparent:true,depthWrite:false,vertexShader:`varying vec2 p;void main(){p=uv*2.-1.;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,fragmentShader:`varying vec2 p;void main(){float r=dot(p,p);gl_FragColor=vec4(0.,0.,0.,.55*exp(-r*3.)*(1.-smoothstep(.7,1.,r)));}`}));contact.rotation.x=-Math.PI/2;contact.position.y=.009;group.add(contact)
  panels.visible=poles.visible=arms.visible=!italian
  const lights=[new T.PointLight('#d8e6ef',24,13,2),new T.PointLight('#d8e6ef',24,13,2)];lights.forEach(l=>{l.visible=!italian;group.add(l)});const dummy=new T.Object3D()
- function update(distance:number,_speed:number,_time:number){street?.update(distance);for(const texture of paving)texture.offset.x=-(distance/3.2)%1;uniforms.travel.value=distance%624;for(const curb of concreteCurbs)curb.position.x=((distance%2)+2)%2;for(let i=0;i<20;i++){const x=((i*12+distance)%240+240)%240-120,side=i%2?1:-1;dummy.position.set(x,4.45,0);dummy.updateMatrix();panels.setMatrixAt(i,dummy.matrix);dummy.position.set(x,2.325,side*6.3);dummy.updateMatrix();poles.setMatrixAt(i,dummy.matrix);dummy.position.set(x,4.5,side*3.15);dummy.updateMatrix();arms.setMatrixAt(i,dummy.matrix)}panels.instanceMatrix.needsUpdate=poles.instanceMatrix.needsUpdate=arms.instanceMatrix.needsUpdate=true;lights.forEach((l,i)=>l.position.set(((distance+i*12)%24+24)%24-12,4,0))}
+ function update(distance:number,_speed:number,_time:number){street?.update(distance);for(const texture of paving)texture.offset.x=-(distance/3.2)%1;uniforms.travel.value=((distance%360)+360)%360;uniforms.surfaceTravel.value=((distance/(italian?3.8:2.08))%1+1)%1;for(const curb of concreteCurbs)curb.position.x=((distance%2)+2)%2;for(let i=0;i<20;i++){const x=((i*12+distance)%240+240)%240-120,side=i%2?1:-1;dummy.position.set(x,4.45,0);dummy.updateMatrix();panels.setMatrixAt(i,dummy.matrix);dummy.position.set(x,2.325,side*6.3);dummy.updateMatrix();poles.setMatrixAt(i,dummy.matrix);dummy.position.set(x,4.5,side*3.15);dummy.updateMatrix();arms.setMatrixAt(i,dummy.matrix)}panels.instanceMatrix.needsUpdate=poles.instanceMatrix.needsUpdate=arms.instanceMatrix.needsUpdate=true;lights.forEach((l,i)=>l.position.set(((distance+i*12)%24+24)%24-12,4,0))}
  update(0,0,0)
  return {ready:Promise.all([...textureReady,street?.ready??Promise.resolve()]),setVisible(visible:boolean){group.visible=visible},update,dispose(){street?.dispose();scene.remove(group);[asphalt,normal,roughness,...paving].forEach(t=>t.dispose());const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();group.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));if(o instanceof T.InstancedMesh)o.dispose()}});geometries.forEach(g=>g.dispose());const textures=new Set<T.Texture>();materials.forEach(m=>{for(const value of Object.values(m))if(value instanceof T.Texture)textures.add(value);m.dispose()});textures.forEach(t=>t.dispose())}}
 }
