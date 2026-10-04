@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as T from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import {installPaintFinish} from '~/three/paintFinish'
+import {installPaintFinish,updatePaintFinish} from '~/three/paintFinish'
 import {createShowroomIntro} from '~/three/showroomIntro'
 import {createStudioEnvironment} from '~/three/studioEnvironment'
 import {createVehiclePost} from '~/three/vehiclePost'
@@ -31,9 +31,10 @@ let look:ReturnType<typeof createCockpitLook>,cockpitActive=false,resizeFrame=0,
 let driveLook:ReturnType<typeof createDriveLook>;const doorAudio=createDoorAudio()
 let pointer:number|null=null,previousX=0,previousY=0,lastHud=0,lastAudio=0,lastShadow=0
 const performanceState=useState('scene-performance',()=>({fps:0,renderMs:0,drawCalls:0,triangles:0,pixelRatio:0,visible:false}));let renderCost=0,slowSeconds=0
+const introFade=ref(0)
 let intro:ReturnType<typeof createShowroomIntro>|undefined,introActive=false
 function stopIntro(){if(car)car.root.visible=true;if(introActive)intro?.stop()}
-function playIntro(){if(car)car.root.visible=true;if(!props.drive&&car&&state.motion.value&&!state.interior.value&&!matchMedia('(prefers-reduced-motion: reduce)').matches){intro?.stop();intro=createShowroomIntro(car,camera,controls.target,active=>{introActive=active;controls.enabled=!active&&!cockpitActive;emit('intro',active)});intro.play()}}
+function playIntro(){if(car)car.root.visible=true;if(!props.drive&&car&&state.motion.value&&!state.interior.value&&!matchMedia('(prefers-reduced-motion: reduce)').matches){intro?.stop();intro=createShowroomIntro(car,camera,controls.target,active=>{introActive=active;controls.enabled=!active&&!cockpitActive;emit('intro',active)},opacity=>introFade.value=opacity);intro.play()}}
 const doorMotion={value:0}
 function animateDoors(open:boolean){if(!car)return;if("setDoors" in car&&typeof car.setDoors==="function"){gsap.to(doorMotion,{value:open?1:0,duration:reduced()?.01:1.2,ease:"power2.inOut",overwrite:true,onUpdate(){if("setDoors" in car&&typeof car.setDoors==="function")car.setDoors(doorMotion.value)}})}else car.doors.forEach((d,i)=>gsap.to(d.rotation,{y:state.car.value.shape===8&&open?(i===0?1.02:-1.02):0,z:state.car.value.shape!==8&&open?-1.05:0,x:state.car.value.shape!==8&&open?(i===0?-.15:.15):0,duration:reduced()?.01:1.2,ease:"power2.inOut"}))}
 const windowMotion={value:state.windowsDown.value?1:0}
@@ -75,7 +76,7 @@ onMounted(async()=>{try{
  let last=performance.now(),count=0,sum=0
  function tick(now:number){if(stopped)return;frame=requestAnimationFrame(tick);const rawDt=(now-last)/1000,dt=Math.min(rawDt,.1);last=now
   if(props.drive&&!paused&&!mapLoading){const throttle=keys.has('w')||keys.has('arrowup'),braking=keys.has('s')||keys.has('arrowdown')||keys.has(' '),reverse=keys.has('b');const movement=transmission.step(dt,throttle,braking,reverse);motionSpeed=movement.speed;if(now-lastHud>=100){lastHud=now;emit('telemetry',{gear:movement.gear,rpm:movement.rpm});emit('speed',Math.round(Math.abs(motionSpeed)*3.6))}car.wheels.forEach((w,i)=>{const physicalRate=motionSpeed/(i<2?.365:.335);const displayRate=18*Math.tanh(physicalRate/18);wheelPhase[i]=((wheelPhase[i]??0)+displayRate*dt)%(Math.PI*2);w.rotation.z=wheelPhase[i]!});motionRoad?.update(movement.distance,motionSpeed,now/1000);car.root.position.y=state.motion.value?Math.sin(now*.012)*Math.min(Math.abs(motionSpeed)*.00015,.006):0;if(now-lastAudio>=50){lastAudio=now;engineAudio.update(movement.rpm,throttle,state.volume.value,state.engine.value,motionSpeed,movement.shifting,cam===1,braking)}if('updateWheelMotion' in car&&typeof car.updateWheelMotion==='function')car.updateWheelMotion(motionSpeed);if("updateInstruments" in car&&typeof car.updateInstruments==="function")car.updateInstruments(motionSpeed,movement.rpm,movement.gear);applyWindows();}else if(!props.drive&&controls.enabled)controls.update()
-  if(props.drive&&car)driveLook.apply(car.root.position,angle,cam,dt);if(props.drive&&(paused||mapLoading))engineAudio.update(900,false,state.volume.value,false);if(cockpitActive)look.apply();if(!props.drive&&!isItalian()&&!cockpitActive&&state.motion.value)scene.environmentRotation.y=Math.sin(now*.00014)*.065;if(studioFloor)studioFloor.visible=!props.drive&&!cockpitActive&&!state.interior.value&&['High','Ultra'].includes(state.quality.value);const renderStart=performance.now();if(props.drive){if(now-lastShadow>=100){lastShadow=now;renderer.shadowMap.needsUpdate=true}renderer.render(scene,camera)}else post?.render(state.quality.value)
+  if(props.drive&&car)driveLook.apply(car.root.position,angle,cam,dt);if(props.drive&&(paused||mapLoading))engineAudio.update(900,false,state.volume.value,false);if(cockpitActive)look.apply();if(!props.drive&&!isItalian()&&!cockpitActive&&state.motion.value){scene.environmentRotation.y=Math.sin(now*.00024)*.24;updatePaintFinish(car.body,now/1000)};if(studioFloor)studioFloor.visible=!props.drive&&!cockpitActive&&!state.interior.value&&['High','Ultra'].includes(state.quality.value);const renderStart=performance.now();if(props.drive){if(now-lastShadow>=100){lastShadow=now;renderer.shadowMap.needsUpdate=true}renderer.render(scene,camera)}else post?.render(state.quality.value)
   if(document.hidden||rawDt>.25){sum=count=renderCost=slowSeconds=0;performanceState.value.visible=false}else{sum+=rawDt;count++;renderCost+=performance.now()-renderStart;if(sum>=1){const fps=count/sum;performanceState.value={fps:Math.round(fps),renderMs:Math.round(renderCost/count*10)/10,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,pixelRatio:renderer.getPixelRatio(),visible:true};if(props.drive&&!paused&&!mapLoading){slowSeconds=fps<55?slowSeconds+1:0;if(slowSeconds>=2&&renderer.getPixelRatio()>1){renderer.setPixelRatio(Math.max(1,renderer.getPixelRatio()-.125));post?.resize(el.value!.clientWidth,el.value!.clientHeight);slowSeconds=0}}sum=count=renderCost=0}}
  }frame=requestAnimationFrame(tick)
  }catch(e){emit('error',e instanceof Error?e.message:'WebGL unavailable')}})
@@ -108,7 +109,7 @@ watch(()=>state.car.value.id,()=>{if(!scene||!car)return;stopIntro();const old=c
 onBeforeUnmount(()=>{intro?.stop();stopped=true;gsap.killTweensOf(windowMotion);gsap.killTweensOf(doorMotion);engineAudio.dispose();doorAudio.dispose();cancelAnimationFrame(frame);cancelAnimationFrame(resizeFrame);transition?.kill();resize?.disconnect();window.removeEventListener('keydown',keyboard);window.removeEventListener('keyup',release);window.removeEventListener('blur',blur);controls?.dispose();if(renderer){renderer.domElement.removeEventListener('pointerdown',pointerDown);renderer.domElement.removeEventListener('pointermove',pointerMove);renderer.domElement.removeEventListener('pointerup',pointerUp);renderer.domElement.removeEventListener('pointercancel',pointerUp)}gsap.killTweensOf(camera?.position);if(car){car.doors.forEach(d=>gsap.killTweensOf(d.rotation));scene.remove(car.root);car.dispose()}scene?.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();if(o instanceof T.InstancedMesh)o.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{for(const value of Object.values(m))if(value instanceof T.Texture)value.dispose();m.dispose()})}});motionRoad?.dispose();studioFloor?.dispose();envTarget?.dispose();italianEnvironment?.dispose();post?.dispose();pmrem?.dispose();renderer?.dispose()})
 defineExpose({playIntro,stopIntro,reset,cycleCamera,setPaused(value:boolean){paused=value;keys.clear()},setKey(key:string,down:boolean){down?keys.add(key):keys.delete(key);if(down&&state.engine.value)engineAudio.start()}})
 </script>
-<template><div ref="el" class="vehicle-canvas" tabindex="0" :aria-label="props.drive?t('Перетаскивайте для осмотра дороги. C меняет камеру.','Drag to look around the road. C changes the camera.'):t('Интерактивная 3D-модель. Перетаскивайте для поворота, используйте колесо для масштаба.','Interactive three-dimensional vehicle. Drag to rotate, scroll to zoom.')" /></template>
+<template><div ref="el" class="vehicle-canvas" tabindex="0" :aria-label="props.drive?t('Перетаскивайте для осмотра дороги. C меняет камеру.','Drag to look around the road. C changes the camera.'):t('Интерактивная 3D-модель. Перетаскивайте для поворота, используйте колесо для масштаба.','Interactive three-dimensional vehicle. Drag to rotate, scroll to zoom.')"><div class="intro-curtain" :style="{opacity:introFade}" aria-hidden="true" /></div></template>
 
 
 
@@ -119,3 +120,5 @@ defineExpose({playIntro,stopIntro,reset,cycleCamera,setPaused(value:boolean){pau
 
 
 
+
+<style scoped>.intro-curtain{position:absolute;inset:0;background:#000;pointer-events:none;z-index:2}</style>

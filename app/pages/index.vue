@@ -4,6 +4,7 @@ const s=useAtelier(),audio=useAudio(),{t}=useLocale(),ready=ref(false),progress=
 const vehicleScene=ref<{playIntro:()=>void,stopIntro:()=>void}>(),introPlaying=ref(false)
 function revealScene(){ready.value=true}
 function startIntro(){vehicleScene.value?.playIntro()}
+s.background.value='#030505';s.environment.value='studio';s.lighting.value='Studio'
 const requestedCar=useRoute().query.car;if(typeof requestedCar==='string')s.select(requestedCar)
 const tabs=[{id:'paint',ru:'Кузов',en:'Paint'},{id:'interior',ru:'Салон',en:'Interior'},{id:'environment',ru:'Окружение',en:'Environment'},{id:'details',ru:'Детали',en:'Details'}]
 const paintName=computed(()=>{const p=paints.find(p=>p.hex===s.paint.value);return p?t(p.ru,p.en):t('Индивидуальный цвет','Custom finish')})

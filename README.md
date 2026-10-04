@@ -222,3 +222,9 @@ Final published road check: auto-acceleration reached the configured 370 km/h li
 The introduction now rolls in over 4.2 seconds and uses longer eased camera passes. Canvas clicks and scroll no longer dismiss it; use the Skip intro button. Italy is a driving map only. Street planters were removed and rear paving replaced by plain ground. Paint has stronger neutral softbox reflections and an angle-dependent pearl coat. Map thumbnails are brighter. At driving speed, wheel display rotation is smoothly bounded to avoid temporal spoke aliasing; this presentation filter does not alter speed, gearing or road distance. Wheel pivots are derived from authored tyre geometry.
 
 ![Street cleanup and smooth wheel presentation](docs/images/smooth-driving-update.jpg)
+
+
+### Editorial camera tour and clean studio
+Intro: 3.4-second arrival, followed by independent close-up camera drifts with short fades masking viewpoint changes. Skip remains explicit. Studio background and lighting reset when returning to the showroom; saved paint and upholstery remain. Removed warm/cool backdrop ribs. The pearl shader now animates its viewing-angle tint alongside slowly moving environment reflections while motion is enabled. Removed the rear street boundary wall and desert-coloured paving; the distant ground blends into the sky without adding fog to the road or facades.
+
+![Editorial camera close-up](docs/images/editorial-intro.jpg)

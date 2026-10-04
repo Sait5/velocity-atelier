@@ -75,13 +75,13 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   const curbMaterial=new T.MeshStandardMaterial({color:'#b5b1a6',roughness:.93})
   const curbGeometry=new T.BoxGeometry(1.995,.145,.24)
   for(const side of [-1,1]){const curb=new T.InstancedMesh(curbGeometry,curbMaterial,400);curb.name='Jointed concrete pavement kerb';curb.userData.side=side;curb.receiveShadow=true;curb.frustumCulled=false;const block=new T.Object3D();for(let i=0;i<400;i++){block.position.set(i*2-399,.045,side*4.91);block.updateMatrix();curb.setMatrixAt(i,block.matrix)}group.add(curb);concreteCurbs.push(curb)}
-  const courtyardMaterial=pavementMaterial.clone()
-  courtyardMaterial.onBeforeCompile=shader=>{shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float courtyardZ;').replace('#include <worldpos_vertex>','#include <worldpos_vertex>\ncourtyardZ=(modelMatrix*vec4(transformed,1.)).z;');shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying float courtyardZ;').replace('#include <fog_fragment>','#include <fog_fragment>\n#ifdef USE_FOG\ngl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,smoothstep(18.,30.,abs(courtyardZ)));\n#endif')}
-  courtyardMaterial.customProgramCacheKey=()=> 'courtyard-rear-haze-v1'
-  // Keep courtyard paving outside the road and raised sidewalk. A full plane
-  // beneath the asphalt competed for depth at long distances without fog.
-  const rearGround=new T.MeshStandardMaterial({color:'#776e5b',roughness:1});for(const side of [-1,1])pavingSurface(1200,585,side*307.5,-.025,rearGround)
-  for(const side of [-1,1]){const geometry=new T.BoxGeometry(1200,1.1,.24),position=geometry.getAttribute('position'),normals=geometry.getAttribute('normal'),uv=geometry.getAttribute('uv');for(let i=0;i<uv.count;i++)uv.setXY(i,position.getX(i)/3.2,(Math.abs(normals.getY(i))>.5?position.getZ(i)+side*24:position.getY(i)+.525)/3.2);const wall=new T.Mesh(geometry,courtyardMaterial);wall.name='Textured rear courtyard boundary fading into mist';wall.position.set(0,.525,side*24);wall.receiveShadow=true;group.add(wall)}
+  // No rear wall or desert terrain. Only a soft, untextured transition into the sky.
+  const rearGround=new T.ShaderMaterial({depthWrite:true,toneMapped:false,uniforms:{horizon:{value:new T.Color('#b1d3e4')},nearColor:{value:new T.Color('#7d8587')}},vertexShader:`varying float rearZ;void main(){vec4 world=modelMatrix*vec4(position,1.);rearZ=abs(world.z);gl_Position=projectionMatrix*viewMatrix*world;}`,fragmentShader:`varying float rearZ;uniform vec3 nearColor;uniform vec3 horizon;void main(){gl_FragColor=vec4(mix(nearColor,horizon,smoothstep(15.,32.,rearZ)),1.);
+#include <tonemapping_fragment>
+#include <colorspace_fragment>
+}`});
+  for(const side of [-1,1])pavingSurface(1200,585,side*307.5,-.025,rearGround)
+
  }
  if(!italian){const curbGeometry=new T.BoxGeometry(240,.12,.22);for(const side of [-1,1]){const curb=new T.Mesh(curbGeometry,metal);curb.position.set(0,.06,side*4.65);group.add(curb)}}
  const panels=new T.InstancedMesh(new T.BoxGeometry(1.8,.045,2.8),lightMaterial,20);panels.frustumCulled=false;group.add(panels)
