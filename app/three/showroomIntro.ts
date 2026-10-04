@@ -16,10 +16,10 @@ export function createShowroomIntro(car:{root:T.Group,wheels:T.Object3D[]},camer
   timeline=gsap.timeline({onUpdate(){camera.lookAt(target);fade(curtain.value)},onComplete:stop})
   timeline.to(car.root.position,{x:home.x,duration:3.4,ease:'sine.inOut',onUpdate(){car.wheels.forEach((w,i)=>w.rotation.z=wheelStarts[i]!+(7.5-(car.root.position.x-home.x))/(i<2?.365:.335))}},0)
   const shots:[number[],number[],number[],number][]=[
-   [[-4.5,.95,1.9],[-4.0,1.02,2.15],[-1,.55,0],2.5],
-   [[-.5,1.18,4.8],[.25,1.35,4.65],[0,.58,0],2.7],
-   [[4.4,1.0,2.4],[4.1,1.15,2.8],[1,.6,0],2.7],
-   [[.2,5.4,1.1],[.65,5.2,1.55],[0,.4,0],2.5],
+   [[-4.5,.95,1.65],[-3.2,1.6,2.7],[-1,.55,0],2.8],
+   [[-1.25,1.18,4.8],[1.15,1.4,4.65],[0,.58,0],3.0],
+   [[4.4,1.0,1.9],[3.75,1.45,3.2],[1,.6,0],2.9],
+   [[-.8,5.4,.85],[1.1,5.2,1.8],[0,.4,0],2.5],
    [[-1.8,.65,2.05],[-1.55,.7,2.15],[-1.2,.37,.85],2.5],
    [[-5.7,2.35,6.3],[-5.7,2.35,6.3],[0,.65,0],1.1]
   ]

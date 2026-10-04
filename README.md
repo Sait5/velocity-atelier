@@ -228,3 +228,26 @@ The introduction now rolls in over 4.2 seconds and uses longer eased camera pass
 Intro: 3.4-second arrival, followed by independent close-up camera drifts with short fades masking viewpoint changes. Skip remains explicit. Studio background and lighting reset when returning to the showroom; saved paint and upholstery remain. Removed warm/cool backdrop ribs. The pearl shader now animates its viewing-angle tint alongside slowly moving environment reflections while motion is enabled. Removed the rear street boundary wall and desert-coloured paving; the distant ground blends into the sky without adding fog to the road or facades.
 
 ![Editorial camera close-up](docs/images/editorial-intro.jpg)
+
+
+### Последние изменения — пояснения к истории GitHub
+
+Короткий код слева — идентификатор коммита Git, а не комментарий. Описания новых изменений пишем по-русски. Цвет кузова и обивка сохраняются, студия при входе возвращается к стандартному виду.
+
+| Версия | Что изменено |
+| --- | --- |
+| f57f638 | Осмотр отдельными крупными планами с затемнением; чистая студия; убраны задняя стена и песочный фон |
+| 5e1d646 | Исправлено отображение снимка проверки в README |
+| 07ccaf0 | Добавлен снимок проверки дороги и описание выполненных изменений |
+| 5076b95 | Плавный въезд и осмотр; убраны кусты; сглажено видимое вращение колёс; усилены отражения кузова |
+| a76b847 | Записаны результаты проверки дороги и восьмой передачи |
+| 5c36559 | Описаны осмотр, модели гаража и проверка музыкальных тем |
+| 4856333 | Исправлен скачок текстуры асфальта при прокрутке дороги |
+| e180538 | Настоящие рендеры карт вместо схематичных превью; исправлен размер моделей в гараже |
+
+Текущее обновление: камера проходит дальше вдоль капота и боковин; мощение продолжается под зданиями до их заднего края; превью двух карт заново отрендерены в 1600×900 с более читаемым освещением. Параметр версии в адресах картинок предотвращает показ старых превью из браузерного кеша.
+
+
+![Новые светлые превью карт](docs/images/bright-map-previews.jpg)
+
+![Основание под зданиями](docs/images/building-ground.jpg)

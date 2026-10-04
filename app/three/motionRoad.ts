@@ -75,12 +75,14 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   const curbMaterial=new T.MeshStandardMaterial({color:'#b5b1a6',roughness:.93})
   const curbGeometry=new T.BoxGeometry(1.995,.145,.24)
   for(const side of [-1,1]){const curb=new T.InstancedMesh(curbGeometry,curbMaterial,400);curb.name='Jointed concrete pavement kerb';curb.userData.side=side;curb.receiveShadow=true;curb.frustumCulled=false;const block=new T.Object3D();for(let i=0;i<400;i++){block.position.set(i*2-399,.045,side*4.91);block.updateMatrix();curb.setMatrixAt(i,block.matrix)}group.add(curb);concreteCurbs.push(curb)}
+  // Paving continues under each facade footprint, and stops at the rear of the buildings.
+  for(const side of [-1,1]){const base=new T.Mesh(new T.BoxGeometry(1200,.22,9.5),slabMaterial);base.name='Continuous building ground';base.position.set(0,.005,side*19.75);base.receiveShadow=true;group.add(base);pavingSurface(1200,9.5,side*19.75,.122,pavementMaterial)}
   // No rear wall or desert terrain. Only a soft, untextured transition into the sky.
-  const rearGround=new T.ShaderMaterial({depthWrite:true,toneMapped:false,uniforms:{horizon:{value:new T.Color('#b1d3e4')},nearColor:{value:new T.Color('#7d8587')}},vertexShader:`varying float rearZ;void main(){vec4 world=modelMatrix*vec4(position,1.);rearZ=abs(world.z);gl_Position=projectionMatrix*viewMatrix*world;}`,fragmentShader:`varying float rearZ;uniform vec3 nearColor;uniform vec3 horizon;void main(){gl_FragColor=vec4(mix(nearColor,horizon,smoothstep(15.,32.,rearZ)),1.);
+  const rearGround=new T.ShaderMaterial({depthWrite:true,toneMapped:false,uniforms:{horizon:{value:new T.Color('#b1d3e4')},nearColor:{value:new T.Color('#7d8587')}},vertexShader:`varying float rearZ;void main(){vec4 world=modelMatrix*vec4(position,1.);rearZ=abs(world.z);gl_Position=projectionMatrix*viewMatrix*world;}`,fragmentShader:`varying float rearZ;uniform vec3 nearColor;uniform vec3 horizon;void main(){gl_FragColor=vec4(mix(nearColor,horizon,smoothstep(24.5,38.,rearZ)),1.);
 #include <tonemapping_fragment>
 #include <colorspace_fragment>
 }`});
-  for(const side of [-1,1])pavingSurface(1200,585,side*307.5,-.025,rearGround)
+  for(const side of [-1,1])pavingSurface(1200,575.5,side*312.25,-.025,rearGround)
 
  }
  if(!italian){const curbGeometry=new T.BoxGeometry(240,.12,.22);for(const side of [-1,1]){const curb=new T.Mesh(curbGeometry,metal);curb.position.set(0,.06,side*4.65);group.add(curb)}}
