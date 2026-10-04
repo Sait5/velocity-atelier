@@ -10,14 +10,21 @@ export function createMotionRoad(scene:T.Scene,italian=false){
  const paving:T.Texture[]=[]
  const street=italian?createItalianStreet(group):undefined
  if(italian){const ground=new T.Mesh(new T.PlaneGeometry(240,100),new T.MeshStandardMaterial({color:'#69685b',roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-.025;group.add(ground)}
- const uniforms={italian:{value:italian?1:0},travel:{value:0},asphalt:{value:asphalt},surfaceNormal:{value:normal},surfaceRoughness:{value:roughness}}
- const road=new T.Mesh(new T.PlaneGeometry(240,10),new T.ShaderMaterial({uniforms,vertexShader:`varying vec3 world;void main(){vec4 p=modelMatrix*vec4(position,1.);world=p.xyz;gl_Position=projectionMatrix*viewMatrix*p;}`,fragmentShader:`
+ const uniforms={...T.UniformsUtils.clone(T.UniformsLib.fog),italian:{value:italian?1:0},travel:{value:0},asphalt:{value:asphalt},surfaceNormal:{value:normal},surfaceRoughness:{value:roughness}}
+ const road=new T.Mesh(new T.PlaneGeometry(240,10),new T.ShaderMaterial({uniforms,fog:true,vertexShader:`varying vec3 world;
+ #include <fog_pars_vertex>
+ void main(){vec4 p=modelMatrix*vec4(position,1.);world=p.xyz;vec4 mvPosition=viewMatrix*p;gl_Position=projectionMatrix*mvPosition;
+ #include <fog_vertex>
+ }`,fragmentShader:`
+ #include <fog_pars_fragment>
  varying vec3 world;uniform float travel;uniform float italian;uniform sampler2D asphalt;uniform sampler2D surfaceNormal;uniform sampler2D surfaceRoughness;
  void main(){
   vec2 p=vec2(world.x-travel,world.z);
-  vec3 aggregate=texture2D(asphalt,p/2.08).rgb;
-  vec3 n=normalize(mix(vec3(0.,0.,1.),texture2D(surfaceNormal,p/2.08).xyz*2.-1.,.65));
-  float rough=texture2D(surfaceRoughness,p/2.08).r;
+  vec2 surfaceUV=p/mix(2.08,3.8,italian);
+  vec3 aggregate=texture2D(asphalt,surfaceUV).rgb;
+  aggregate=mix(aggregate,clamp((aggregate-.10)*1.45+.10,0.,1.),italian);
+  vec3 n=normalize(mix(vec3(0.,0.,1.),texture2D(surfaceNormal,surfaceUV).xyz*2.-1.,.65));
+  float rough=texture2D(surfaceRoughness,surfaceUV).r;
   vec3 light=normalize(vec3(-(mod(p.x+6.,12.)-6.),-p.y,4.45));
   vec3 view=normalize(vec3(cameraPosition.x-world.x,cameraPosition.z-world.z,cameraPosition.y-world.y));
   float diffuse=max(dot(n,light),0.);
@@ -29,12 +36,13 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   float dashPixel=max(fwidth(p.x),.005);
   float dash=1.-smoothstep(2.-dashPixel,2.+dashPixel,dashDistance);
   float pool=pow(.5+.5*cos(p.x*.5236),6.);
-  vec3 c=vec3(.012,.015,.019)+aggregate*(.17+.15*diffuse+italian*.24)+pool*vec3(.018,.022,.028)+sheen*vec3(.7,.8,1.);
+  vec3 c=vec3(.012,.015,.019)+aggregate*(.17+.15*diffuse+italian*.30)+pool*(1.-italian)*vec3(.018,.022,.028)+sheen*vec3(.7,.8,1.);
   c=mix(c,vec3(.38,.40,.41),clamp(lane*dash+edge,0.,1.));
   float fade=exp(-abs(world.x)*mix(.022,.007,italian));
   gl_FragColor=vec4(c*fade,1.);
   #include <tonemapping_fragment>
   #include <colorspace_fragment>
+  #include <fog_fragment>
  }`}));road.name='Scanned asphalt motion surface';road.rotation.x=-Math.PI/2;road.position.y=.007;group.add(road)
  const metal=new T.MeshStandardMaterial({color:'#363c43',roughness:.42,metalness:.55}),lightMaterial=new T.MeshBasicMaterial({color:new T.Color(2.4,2.65,2.9),toneMapped:false})
  if(italian){const [map,normalMap,roughnessMap]=['diff','normal','rough'].map((name,i)=>{const texture=roadMap('/textures/italian-pavement-'+name+'.webp',i===0);texture.repeat.set(120,5);paving.push(texture);return texture});const pavementMaterial=new T.MeshStandardMaterial({color:'#ffffff',map,normalMap,roughnessMap,normalScale:new T.Vector2(.45,.45),roughness:1});for(const side of [-1,1]){const pavement=new T.Mesh(new T.BoxGeometry(240,.14,10),pavementMaterial);pavement.position.set(0,.045,side*10);group.add(pavement)}}
