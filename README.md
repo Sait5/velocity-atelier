@@ -89,3 +89,11 @@ npm run build
 
 ### Revuelto: cabin and music refinement
 Door assemblies include inner painted shells, edge seals and latches; the two-phase opening first releases the door outward before lifting. A vehicle-specific driver anchor is used in showroom and drive. Five original instrumental themes are selectable in Settings, including the existing Atelier Ambient; Auto chooses Night Pulse for Revuelto. Theme choice is saved, track changes crossfade, and hidden tabs pause audio. Revuelto uses a darker studio floor and shorter background fog.
+
+### Проверенный вид Revuelto
+
+![Revuelto: собранные двери и тёмная студия](docs/images/revuelto-doors.jpg)
+
+![Revuelto: положение камеры водителя](docs/images/revuelto-cabin.jpg)
+
+Неподвижные непрозрачные поверхности объединяются в адаптере для отрисовки: 270 видимых объектов вместо 560, без изменения 547 717 треугольников. Стёкла, двери и вращающиеся колёса остаются отдельными. Исходные узлы сохраняются для работы с моделью, но часть статических узлов скрыта в пользу объединённых поверхностей.
