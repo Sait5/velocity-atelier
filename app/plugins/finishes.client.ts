@@ -5,7 +5,7 @@ export default defineNuxtPlugin(()=>{
  try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(saved&&typeof saved==='object'){
   for(const [id,entry] of Object.entries(saved.finishes??{})){const e=entry as {paint:string,upholstery:string};if([previewVehicle,...vehicles].some(v=>v.id===id)&&paints.some(p=>p.hex===e?.paint)&&upholsteryColors.some(p=>p.hex===e?.upholstery))s.finishes.value[id]={paint:e.paint,upholstery:e.upholstery}}
   const car=[previewVehicle,...vehicles].find(v=>v.id===saved.car);if(car)s.car.value=car
-  const finish=s.finishes.value[s.car.value.id];if(finish){s.paint.value=finish.paint;s.upholstery.value=finish.upholstery}
+  const finish=s.finishes.value[s.car.value.id];s.paint.value=finish?.paint??s.car.value.color;s.upholstery.value=finish?.upholstery??'#242826'
   if(backgrounds.some(p=>p.hex===saved.background))s.background.value=saved.background
   if(lightPresets.some(p=>p.id===saved.lighting))s.lighting.value=saved.lighting
  }}catch{}
