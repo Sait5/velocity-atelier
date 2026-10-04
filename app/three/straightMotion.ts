@@ -1,4 +1,4 @@
-/** Straight presentation motion with seven gears and a 325 km/h limit. */
+/** Straight presentation motion with seven gears and a configurable speed limit. */
 export function createStraightMotion(maxKph=325){
  let speed=0,distance=0,gear=1,shiftCooldown=0,rpm=900
  const maximum=maxKph/3.6,ratios=[3.4,2.2,1.6,1.25,1.02,.85,.72]
