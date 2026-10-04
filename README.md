@@ -201,3 +201,14 @@ Eight music selections are available. Electric Dreams, Twilight Echo and Superno
 The real Revuelto uses an eight-speed dual-clutch gearbox ([official brochure](https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/revuelto/2024/brochure/07_23/REVUELTO_DIGITAL_BROCHURE_EN_2024.pdf)); the scene now passes its gear count explicitly. Numerical ratios and acceleration remain a presentation simulation.
 
 Road albedo scrolling uses an independent fractional texture phase. Markings and service-cover repeat on a shared 360 m interval, removing the previous asphalt phase jump every 624 m while keeping shader coordinates small. Shrubs have dense leaf grain rather than a flat green surface.
+
+
+Published checks for this update: the cinematic tour was visible after loading and returned to the normal showroom; transparent Revuelto/458 garage previews load fully and fit their cards; the map picker shows actual Italy/night scenery. The three additional tracks were observed playing with advancing playback time and no media errors (291.60, 286.86, 247.58 s). Typecheck, production generation, camera/transmission checks and intro interruption/replay checks pass.
+
+![Showroom after the cinematic tour](docs/images/showroom-after-intro.jpg)
+
+![Live models with transparent canvases](docs/images/garage-transparent-models.jpg)
+
+![Actual scene previews for both maps](docs/images/real-map-previews.jpg)
+
+![Eight music selections](docs/images/eight-music-themes.jpg)
