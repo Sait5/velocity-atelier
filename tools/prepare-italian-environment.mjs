@@ -19,7 +19,7 @@ function facade(columns,offsetX,offsetZ,rotation=[0,0,0,1]){
   add(door?'door_centered_small_01':'window_centered_small_01',x,y,offsetZ,[1,1,1],rotation);
   add('wall_standard_standard_01',x,y+3,offsetZ,[1,.2,1],rotation);
   add('cornice_standard_standard_01',x,y+3.4,offsetZ,[1,1,1],rotation);
-  if(!floor)add('dado_standard_standard_01',x,.05,offsetZ,[1,1,1],rotation);
+
   if(floor===floors-1)add('crown_standard_standard_01',x,floors*3.6,offsetZ,[1,1,1],rotation);
  }
 }

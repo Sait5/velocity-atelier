@@ -6,6 +6,10 @@ import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js'
 export function createItalianStreet(parent:T.Group){
  const chunks=Array.from({length:3},(_,i)=>{const chunk=new T.Group();chunk.name='Downloaded Italian street section '+i;parent.add(chunk);return chunk})
  const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder)
+ const width=(variant:number)=>variant===0?.85:variant===2?1.05:1
+ const housePose=(variant:number,side:number)=>new T.Vector3(-24+(side===1?2-variant:variant)*24,.255,side*(variant===0?18:19))
+ const foundationGeometry=new T.BoxGeometry(1,1,1),foundationMaterial=new T.MeshStandardMaterial({color:'#777873',roughness:.95})
+ for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.185;dummy.scale.set(12.7*width(variant),.14,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
  let disposed=false
  const ready=Promise.all([loader.loadAsync('/models/italian-urban-facade.glb'),loader.loadAsync('/models/italian-roadside-tree.glb')]).then(([facade,tree])=>{
   const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0}]
@@ -26,7 +30,7 @@ export function createItalianStreet(parent:T.Group){
      for(let i=0;i<count;i++){
       const side=i<2?-1:1,slot=i%2
       dummy.scale.setScalar(scale)
-      if(kind==='facade'){const buildingSide=i===0?-1:1;dummy.rotation.y=buildingSide===1?Math.PI:0;dummy.scale.set(variant===0?.85:variant===2?1.05:1,1,1);dummy.position.set(-24+(buildingSide===1?2-variant:variant)*24,.14,buildingSide*(variant===0?18:19))}
+      if(kind==='facade'){const buildingSide=i===0?-1:1;dummy.rotation.y=buildingSide===1?Math.PI:0;dummy.scale.set(width(variant),1,1);dummy.position.copy(housePose(variant,buildingSide))}
       else{const treeScale=scale*(.88+i*.08);dummy.scale.setScalar(treeScale);dummy.rotation.y=i*1.7;dummy.position.set(slot?-37:3,-bounds.min.y*treeScale+.14,side*8.7)}
       dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix.clone().multiply(o.matrixWorld))
      }

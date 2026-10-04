@@ -14,3 +14,5 @@ await download(hdr.hdri['1k'].hdr.url,'public/textures/vatican-road-lighting.hdr
 
 const pavingResponse=await fetch('https://api.polyhaven.com/files/pavement_03',{headers:{'User-Agent':'Mozilla/5.0'}});if(!pavingResponse.ok)throw new Error('Pavement metadata '+pavingResponse.status);const paving=await pavingResponse.json(),{default:sharp}=await import('sharp');
 for(const [key,name] of [['Diffuse','diff'],['nor_gl','normal'],['Rough','rough']]){const image=await fetch(paving[key]['2k'].jpg.url);if(!image.ok)throw new Error('Pavement '+image.status);await sharp(Buffer.from(await image.arrayBuffer())).webp({quality:88}).toFile('public/textures/italian-pavement-'+name+'.webp')}
+
+const paving4k=await fetch(paving.Diffuse['4k'].jpg.url);if(!paving4k.ok)throw new Error('Pavement 4K '+paving4k.status);await sharp(Buffer.from(await paving4k.arrayBuffer())).webp({quality:94}).toFile('public/textures/italian-pavement-diff-4k.webp');
