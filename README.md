@@ -220,4 +220,5 @@ Final published road check: auto-acceleration reached the configured 370 km/h li
 
 ### Showroom pacing and street cleanup
 The introduction now rolls in over 4.2 seconds and uses longer eased camera passes. Canvas clicks and scroll no longer dismiss it; use the Skip intro button. Italy is a driving map only. Street planters were removed and rear paving replaced by plain ground. Paint has stronger neutral softbox reflections and an angle-dependent pearl coat. Map thumbnails are brighter. At driving speed, wheel display rotation is smoothly bounded to avoid temporal spoke aliasing; this presentation filter does not alter speed, gearing or road distance. Wheel pivots are derived from authored tyre geometry.
-`n![Street cleanup and smooth wheel presentation](docs/images/smooth-driving-update.jpg)
+
+![Street cleanup and smooth wheel presentation](docs/images/smooth-driving-update.jpg)
