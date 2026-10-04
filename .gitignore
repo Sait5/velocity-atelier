@@ -20,3 +20,5 @@ tools/generated/straightMotion.mjs
 tools/generated/*-full.jpg
 
 tools/generated/showroomIntro.mjs
+
+/tools/generated/verify-*.mjs
