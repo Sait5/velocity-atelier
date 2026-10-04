@@ -176,3 +176,13 @@ Published browser checks: all three new music tracks play with decoded durations
 ![Updated music selections](docs/images/revuelto-new-music.jpg)
 
 ![Warm showroom gallery](docs/images/revuelto-warm-gallery.jpg)
+
+The published drive was checked at 370 km/h in exterior, cockpit and overhead views. Three downward camera drags followed by one upward drag raised the view without dead travel. No WebGL or media errors were reported during these checks. Italy's asphalt remained continuous in the inspected views. This is a presentation simulation, not a full vehicle physics model.
+
+![Revuelto production-inspired cockpit](docs/images/revuelto-production-cockpit.jpg)
+
+![Italy roofs and street](docs/images/revuelto-italian-roofs.jpg)
+
+![Camera recovers upward at 370 km/h](docs/images/revuelto-roofs-drive.jpg)
+
+![Completed model previews in the garage](docs/images/garage-real-models.jpg)
