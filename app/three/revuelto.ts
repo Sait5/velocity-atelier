@@ -1,4 +1,28 @@
 import * as T from 'three'
+import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js'
+
+/** Batch only fixed opaque surfaces; door, wheel and transparent assemblies stay separate. */
+function batchStaticSurfaces(source:T.Group,root:T.Group){
+ const batches=new Map<string,T.Mesh[]>()
+ source.traverse(o=>{if(!(o instanceof T.Mesh)||Array.isArray(o.material)||o instanceof T.SkinnedMesh)return
+  const m=o.material as T.MeshPhysicalMaterial
+  if(m.transparent||m.transmission>0||Object.keys(o.geometry.morphAttributes).length)return
+  const attributes=Object.entries(o.geometry.attributes as Record<string,T.BufferAttribute|T.InterleavedBufferAttribute>).map(([name,a])=>`${name}:${a.itemSize}:${a.normalized}:${a.array.constructor.name}`).sort().join('|')
+  const key=`${m.uuid}:${!!o.geometry.index}:${o.castShadow}:${o.receiveShadow}:${attributes}`
+  const batch=batches.get(key)??[];batch.push(o);batches.set(key,batch)
+ })
+ root.updateMatrixWorld(true)
+ for(const meshes of batches.values()){
+  if(meshes.length<3)continue
+  const geometries=meshes.map(mesh=>{const g=mesh.geometry.clone().applyMatrix4(mesh.matrixWorld)
+   if(mesh.matrixWorld.determinant()<0&&g.index){for(let i=0;i<g.index.count;i+=3){const second=g.index.getX(i+1);g.index.setX(i+1,g.index.getX(i+2));g.index.setX(i+2,second)}}
+   return g
+  })
+  const geometry=mergeGeometries(geometries,false);geometries.forEach(g=>g.dispose());if(!geometry)continue
+  const first=meshes[0]!,mesh=new T.Mesh(geometry,first.material);mesh.name='Revuelto fixed surfaces '+(first.material as T.Material).name;mesh.castShadow=first.castShadow;mesh.receiveShadow=first.receiveShadow;root.add(mesh)
+  meshes.forEach(m=>{m.visible=false})
+ }
+}
 
 /** Authored Anatolian Studios model: metres, with +Z forward in the source. */
 export function prepareRevuelto(source:T.Group){
@@ -41,6 +65,7 @@ export function prepareRevuelto(source:T.Group){
   for(const caliper of calipers)root.attach(caliper)
   wheels.push(wheel)
  }
+ batchStaticSurfaces(source,root)
  let windowProgress=0
  function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1)
   for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
