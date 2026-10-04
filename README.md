@@ -6,6 +6,8 @@
 
 ![Салон Ferrari](docs/images/cabin.jpg)
 
+![Режим движения](docs/images/drive.jpg)
+
 ## Что готово
 
 Детализированная Ferrari, открывающиеся двери, поднимающиеся боковые окна, плавный вход в салон, приборная панель, переключаемые фары, отражения и свет на полу. Цвет кузова и обивки сохраняется через localStorage. Есть ночная дорога, семь передач, газ, тормоз, задний ход и максимальная скорость 325 км/ч. Внешний звук двигателя отличается от записи в салоне; добавлены звуки дверей, торможения и музыка.
@@ -76,4 +78,7 @@ npm run build
 
 Репозиторий: https://github.com/Sait5/velocity-atelier
 Панель Vercel: https://vercel.com/saits-projects-f4e494ad/velocity-atelier
+
+
+Закрытый сайт: https://velocity-atelier-saits-projects-f4e494ad.vercel.app/
 
