@@ -27,8 +27,8 @@ export function installRevueltoDisplays(source:T.Group){
   for(let y=0;y<1024;y+=42)for(let x=0;x<768;x+=48){hex(x+(Math.floor(y/42)%2)*24,y,27);c.stroke()}
   c.fillStyle='#eff3f4';c.font='26px Arial';c.fillText('AUTO   22°   A/C',35,50);c.textAlign='right';c.fillText('22°    ▰',730,50);c.textAlign='center'
   c.strokeStyle='#aab9c5';c.lineWidth=2;c.beginPath();c.moveTo(24,84);c.lineTo(744,84);c.stroke()
-  const carPicture=new Image();carPicture.onload=()=>{c.drawImage(carPicture,144,105,480,227);map.needsUpdate=true};carPicture.src='/images/garage/revuelto.png'
-  c.fillStyle='#eff3f4';c.font='25px Arial';c.fillText('VEHICLE',384,357)
+  const carPicture=new Image();carPicture.onload=()=>{c.drawImage(carPicture,205,105,358,169);map.needsUpdate=true};carPicture.src='/images/garage/revuelto.png'
+  c.fillStyle='#eff3f4';c.font='25px Arial';c.fillText('VEHICLE',384,318)
   function tile(x:number,y:number,label:string,icon:string,active=false){
    hex(x,y,142);c.fillStyle=active?'#15222a':'#080e14';c.fill();c.strokeStyle=active?'#c3d3df':'#586b7c';c.lineWidth=2;c.stroke()
    hex(x,y,133);c.strokeStyle='#243746';c.lineWidth=1;c.stroke()
