@@ -13,16 +13,11 @@ export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
   else if(/glass[LR]TL_detail_glass_red/.test(o.name))o.material=rearLens
  })
  const headlights:T.SpotLight[]=[],taillights:T.PointLight[]=[]
- const spill=new T.Mesh(new T.PlaneGeometry(4,3),new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,
-  vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
-  fragmentShader:'varying vec2 v;void main(){float d=(1.-v.x)*4.;float z=(v.y-.5)*3.;float w=.23+d*.13;float lobes=exp(-2.*pow((z-.67)/w,2.))+exp(-2.*pow((z+.67)/w,2.));float falloff=exp(-d*.6)*smoothstep(0.,.5,d)*(1.-smoothstep(2.2,4.,d));gl_FragColor=vec4(.8,.88,1.,.12*lobes*falloff);}'
- }));spill.name='Headlight floor spill';spill.rotation.x=-Math.PI/2;spill.position.set(-3.9,.012,0);root.add(spill)
  for(const side of [-1,1]){
-  const light=new T.SpotLight('#dceaff',18,9,.28,.8,2);light.position.set(-1.92,.57,side*.67);light.target.position.set(-7,.04,side*.9);root.add(light,light.target);headlights.push(light)
+  const light=new T.SpotLight('#dceaff',14,9,.28,.8,2);light.position.set(-1.92,.57,side*.67);light.target.position.set(-7,.04,side*.9);root.add(light,light.target);headlights.push(light)
   const tail=new T.PointLight('#ff260a',.8,1.8,2);tail.position.set(2.1,.77,side*.76);root.add(tail);taillights.push(tail)
  }
  function setLights(frontOn:boolean,rearOn:boolean){
-  spill.visible=frontOn
   front.emissiveIntensity=frontOn?5:0;projector.emissiveIntensity=frontOn?7.5:0
   rear.emissiveIntensity=rearOn?1.6:0;rearLens.emissiveIntensity=rearOn?.9:0
   headlights.forEach(l=>l.intensity=frontOn?18:0);taillights.forEach(l=>l.intensity=rearOn?.8:0)
