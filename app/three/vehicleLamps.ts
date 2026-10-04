@@ -1,4 +1,5 @@
 import * as T from 'three'
+import {installTailGlow} from './tailGlow'
 
 /** Illuminate existing lamp geometry; light pools remain attached to the car. */
 export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
@@ -12,6 +13,7 @@ export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
   else if(/taillight.*lights_glass/.test(o.name))o.material=rear
   else if(/glass[LR]TL_detail_glass_red/.test(o.name))o.material=rearLens
  })
+ const tailGlow=installTailGlow(root,2.1)
  const headlights:T.SpotLight[]=[],taillights:T.PointLight[]=[]
  const spill=new T.Mesh(new T.PlaneGeometry(4,3),new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,
   vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
@@ -22,6 +24,7 @@ export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
   const tail=new T.PointLight('#ff260a',.8,1.8,2);tail.position.set(2.1,.77,side*.76);root.add(tail);taillights.push(tail)
  }
  function setLights(frontOn:boolean,rearOn:boolean){
+  tailGlow.set(rearOn)
   spill.visible=frontOn
   front.emissiveIntensity=frontOn?5.3:0;projector.emissiveIntensity=frontOn?8:0
   rear.emissiveIntensity=rearOn?1.6:0;rearLens.emissiveIntensity=rearOn?.9:0

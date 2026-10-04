@@ -1,4 +1,5 @@
 import * as T from 'three'
+import {installTailGlow} from './tailGlow'
 import {installRevueltoDisplays} from './revueltoDisplays'
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js'
 
@@ -83,11 +84,12 @@ export function prepareRevuelto(source:T.Group){
  function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1)
   for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
  }
- function setDoors(progress:number){const p=T.MathUtils.clamp(progress,0,1),release=T.MathUtils.smoothstep(p,0,.22);doors.forEach((door,i)=>{const side=i===0?1:-1;door.position.z=side*(.86+.06*release);door.rotation.set(side*.055*p,-side*.16*release,1.12*T.MathUtils.smoothstep(p,.16,1),'YXZ')});setWindows(windowProgress)}
+ function setDoors(progress:number,rightProgress=progress){doors.forEach((door,i)=>{const p=T.MathUtils.clamp(i===0?progress:rightProgress,0,1),release=T.MathUtils.smoothstep(p,0,.22);const side=i===0?1:-1;door.position.z=side*(.86+.06*release);door.rotation.set(side*.055*p,-side*.16*release,1.12*T.MathUtils.smoothstep(p,.16,1),'YXZ')});setWindows(windowProgress)}
+ const tailGlow=installTailGlow(root,2.15)
  const headlights:T.SpotLight[]=[]
  const spill=new T.Mesh(new T.PlaneGeometry(3.2,2.4),new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 v;void main(){float d=(1.-v.x)*3.2;float z=(v.y-.5)*2.4;float width=.22+d*.14;float lobes=exp(-2.*pow((z-.74)/width,2.))+exp(-2.*pow((z+.74)/width,2.));float fade=exp(-d*.8)*smoothstep(0.,.3,d)*(1.-smoothstep(2.,3.2,d));gl_FragColor=vec4(.82,.9,1.,.25*lobes*fade);}'}));spill.name='Revuelto short headlight floor spill';spill.rotation.x=-Math.PI/2;spill.position.set(-3.6,.014,0);root.add(spill)
  for(const side of [-1,1]){const light=new T.SpotLight('#e4efff',14,5.5,.32,.9,2);light.position.set(-2.12,.61,side*.76);light.target.position.set(-5.1,.025,side*.9);root.add(light,light.target);headlights.push(light)}
- function setLights(front:boolean,rear:boolean){spill.visible=front;headlights.forEach(light=>light.intensity=front?14:0);white.emissiveIntensity=front?2.55:0;frontEmitter.emissiveIntensity=front?2.55:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
+ function setLights(front:boolean,rear:boolean){tailGlow.set(rear);spill.visible=front;headlights.forEach(light=>light.intensity=front?14:0);white.emissiveIntensity=front?2.55:0;frontEmitter.emissiveIntensity=front?2.55:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
  function setUpholstery(color:string){leather.color.set(color)}
  return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments:displays.updateInstruments,dispose(){
   const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([...materials.values(),body]),textures=new Set<T.Texture>()
