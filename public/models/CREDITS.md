@@ -50,3 +50,10 @@ Evening Road 01 photographic HDR panorama — Sergej Majboroda / Poly Haven, CC0
 Author: Anatolian Studios. Source: https://sketchfab.com/3d-models/lamborghini-revuelto-099b60042519463ead19ce054d479724
 License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
 File: lamborghini-revuelto.glb. Adaptations: coordinate alignment, scissor-door groups, retractable side windows, wheel pivots with stationary calipers, paint and lamp controls. Original geometry and texture maps retained.
+
+## Объёмное окружение Revuelto — Poly Haven, CC0
+
+- [Modular Urban Apartments Facade](https://polyhaven.com/a/modular_urban_apartments_facade) — James Ray Cock. Фасады собраны из исходных модулей, объединены, текстуры сжаты в WebP, геометрия — Meshopt. Файл: `italian-urban-facade.glb`.
+- [Island Tree 01](https://polyhaven.com/a/island_tree_01) — Rico Cilliers, Rob Tuytel. Подготовлен уровень детализации для браузера, восстановлена маска листьев, сохранены PBR-текстуры. Файл: `italian-roadside-tree.glb`.
+
+Оба ресурса используются по [CC0](https://polyhaven.com/license), без обязательной атрибуции.

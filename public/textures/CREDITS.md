@@ -4,3 +4,8 @@ PBR material maps from Poly Haven, CC0. Downloaded through the official API.
 - Asphalt 01 — Charlotte Baglioni / Dario Barresi, https://polyhaven.com/a/asphalt_01 . 2.08 × 2.08 metre tile. 4096 px diffuse and 2048 px OpenGL normal and roughness for the motion road.
 
 These are generic scanned surfaces, not Ferrari-specific material scans.
+
+## Итальянское окружение
+
+- [Vatican Road](https://polyhaven.com/a/vatican_road) — Greg Zaal / Poly Haven, CC0. Настоящая панорама улицы Рима: 8K JPG для фона, 1K HDR для освещения и отражений.
+- [Pavement 03](https://polyhaven.com/a/pavement_03) — Poly Haven, CC0. Карты цвета, нормалей и шероховатости тротуара 2K, преобразованы в WebP.
