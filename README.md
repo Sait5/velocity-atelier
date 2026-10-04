@@ -1,19 +1,75 @@
-# Velocity 3 — interactive development edition
+# Velocity Atelier
 
-Nuxt 4 / Vue 3 / TypeScript / Three.js / GSAP / Rapier.
+Приватный 3D-шоурум на Nuxt 4, Vue 3, TypeScript и Three.js. Первый этап — Ferrari 458 Italia: осмотр, настройка отделки, салон и движение со звуком двигателя.
 
-Run `npm install`, `npm run dev`, `npm run typecheck`, `npm run build`.
+![Ferrari в студии](docs/images/showroom.jpg)
 
-The Ferrari 458 preview uses the Three.js example model by vicent091036 (public/models/CREDITS.md). The eight Garage entries remain procedural silhouette prototypes; they do not represent finished licensed models.
+![Салон Ferrari](docs/images/cabin.jpg)
 
-Implemented: Russian/English interface and persisted language, physical paint and upholstery materials, six upholstery finishes, eight studio background colors, five lighting schemes, four outdoor locations including a CC0 photographic Alps HDR panorama used for background and reflections, reconstructed closed inner door panels with outward hinges, clipped shared trim/carpet apertures and closed quarter panels, fixed-position cabin look controls and curved door-entry transition and smooth detail look/zoom, actual detail viewpoints, instrument graphics, leather/carbon grain, closed rounded seat volumes, rear cabin bulkhead, surface-bound stitching, mounted pedals, rebuilt fork-spoke wheels, machined rotors and stationary calipers. Removed scroll-controlled camera, filler story sections, rotor tint controls and continuous synthetic engine audio. Optional interface sounds are brief clicks. Drive has a separate V8-style procedural engine audio control, with RPM/throttle response, volume and cleanup on exit.
+## Что готово
 
-Driving uses Rapier ground contact, acceleration/braking/steering, physical WASD codes independent of keyboard layout, automatic seven-speed transmission with RPM telemetry and a maximum speed matching the selected car specification, screen controls, optional sustained throttle, reset and three camera views. Country road, alpine valley, coast and sunset fields are shared with the showroom. The straight road wraps at its ends; driving is an interactive prototype, not a vehicle dynamics simulator.
+Детализированная Ferrari, открывающиеся двери, поднимающиеся боковые окна, плавный вход в салон, приборная панель, переключаемые фары, отражения и свет на полу. Цвет кузова и обивки сохраняется через localStorage. Есть ночная дорога, семь передач, газ, тормоз, задний ход и максимальная скорость 325 км/ч. Внешний звук двигателя отличается от записи в салоне; добавлены звуки дверей, торможения и музыка.
 
-Verification for this revision: TypeScript; decoded GLB geometry test (exterior skins preserved, obsolete inner frames removed, outward doors, bounded wheel assemblies and two watertight seat backrests); fixed-seat camera stress test; automatic acceleration, shifts, braking and reset; browser checks of cabin, finishes, scenery and real driving telemetry. Rapier collider integration at 30/60 FPS reaches 325 km/h in seventh gear; aperture tests reject trim/carpet triangles spanning the doorway.
+Это визуальный режим движения, а не гоночный симулятор. Для производительности используются адаптивное разрешение, ограниченная частота обновления звука/приборов, оптимизация теней и вращающихся дисков.
 
-Remaining production requirements: licensed detailed GLBs for the eight Garage cars, artist-authored interior assets and rigs, detailed landscape assets, LOD/texture optimization, accurate vehicle dynamics, recorded audio and device performance profiling. The generated scenery includes rolling terrain, branched trees, grass, textured asphalt, gravel shoulders, guardrails and reflector posts. Specifications are illustrative.
+Следующий этап по плану владельца — **ещё семь машин**. Сейчас `app/data/vehicles.ts` содержит восемь черновых карточек; состав следующего этапа ещё предстоит согласовать. Процедурные модели каталога не являются готовыми автомобилями.
 
-Scene lifecycle: `app/components/VehicleScene.client.vue`. Ferrari preparation: `app/three/loadVehicle.ts`, `rigDoors.ts`, `enhanceVehicle.ts`, `cockpitDetails.ts`. Environment: `scenery.ts`. Transmission: `automaticDrive.ts`. Shared state: `useAtelier`. No backend is required.
+## Запуск разработчику
 
+Рекомендуется Node.js 24 LTS и npm. Версии закреплены в package-lock.json.
 
+```sh
+npm ci
+npm run dev
+```
+
+```sh
+npm run typecheck
+npm run build
+```
+
+Результат — `.output/public`. Это статическое приложение (`ssr: false`), backend и база данных не требуются. Локальный просмотр сборки: `npx serve .output/public`. Хостинг должен обслуживать ресурсы напрямую и возвращать index.html для маршрутов приложения.
+
+## Карта проекта
+
+| Файл | Назначение |
+| --- | --- |
+| app/pages/index.vue | Шоурум |
+| app/pages/garage.vue | Черновой каталог |
+| app/pages/drive/[car].vue | Движение |
+| app/components/VehicleScene.client.vue | Сцена, камера, рендер и освобождение ресурсов |
+| app/composables/useAtelier.ts | Общие настройки автомобиля |
+| app/three/loadVehicle.ts | GLB, материалы, двери и окна |
+| app/three/instruments.ts | Приборы и показания |
+| app/three/vehicleLamps.ts | Фары и свет на полу |
+| app/three/motionRoad.ts | Дорога, разметка и фонари с опорами |
+| app/three/straightMotion.ts | Прямолинейное движение и трансмиссия |
+| app/three/wheelShutter.ts | Быстро вращающиеся диски |
+| app/three/engineAudio.ts, doorAudio.ts | Двигатель и двери |
+| public/models, public/audio, public/textures | Готовые ресурсы браузера |
+| tools/prepare-full-italia.py | Подготовка текущей модели; не требуется при сборке сайта |
+
+В app/three и tools сохранены ранние эксперименты. Проверяйте импорты из текущей сцены: не все файлы используются. legacy-assets — архив прежних моделей.
+
+## Добавление автомобиля
+
+1. Получить модель и записать происхождение, автора и лицензию.
+2. Настроить масштаб, ориентацию, положение на полу и группы материалов.
+3. Разделить двери/окна и вращающиеся колёса/неподвижные суппорты; проверить оси вращения.
+4. Подключить загрузчик и характеристики. Имена узлов Ferrari не переносить автоматически на другие модели.
+5. Настроить отделку, фары, приборы, камеры и подходящие аудиозаписи.
+6. Выполнить typecheck и сборку, визуально проверить зазоры, окна, двери, салон и движение. Проверить производительность и освобождение GPU/аудиоресурсов при смене страницы.
+
+## GitHub и Vercel
+
+Репозиторий остаётся **Private**. Vercel предназначен для защищённой preview-версии. До отдельного решения владельца не отключать Deployment Protection и не публиковать production. Автоматические Git-деплои пока отключены в vercel.json, чтобы push не создавал публичную production-версию.
+
+Сборка: npm run build; выходной каталог: .output/public. Локальная привязка .vercel и секреты исключены из Git. Собственной авторизации в приложении нет: закрытый доступ обеспечивает хостинг.
+
+## Ресурсы
+
+Текущая модель — 2011 Ferrari 458 Italia, Ddiaz Design. Геометрия и текстуры сохранены с подготовкой дверей, колёс и материалов. [Происхождение и лицензии моделей](public/models/CREDITS.md).
+
+Дорожные текстуры — Poly Haven. Записи двигателя и дверей предоставлены владельцем. [Кредиты текстур](public/textures/CREDITS.md), [кредиты аудио](public/audio/CREDITS.md). Лицензии ресурсов различаются; перед публичным или коммерческим запуском необходимо подтвердить права на исходные ресурсы. Общая лицензия на весь проект не заявлена.
+
+Для работы сайта готовые ресурсы уже находятся в public. Исходные донорские модели для повторной подготовки могут потребовать отдельного получения.

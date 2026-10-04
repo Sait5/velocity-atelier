@@ -8,3 +8,8 @@ dist
 reference-car.html
 audit.json
 model-license.json
+
+.vercel
+.env
+.env.*
+!.env.example
