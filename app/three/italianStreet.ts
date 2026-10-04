@@ -22,8 +22,18 @@ export function createItalianStreet(parent:T.Group){
     // Preserve dequantization in the instance matrix. Applying it to normalized
     // Int16 vertex buffers would wrap coordinates and collapse the imported mesh.
     const geometry=o.geometry
-    if(kind==='facade'){const tint=(m:T.Material)=>{if(!m.name.endsWith('_plaster'))return m;let shaded=finishes.get(m);if(!shaded){shaded=m.clone();(shaded as T.MeshStandardMaterial).color.multiply(new T.Color(['#e1d8c9','#ffffff','#d1b396'][variant]!));finishes.set(m,shaded)}return shaded};o.material=Array.isArray(o.material)?o.material.map(tint):tint(o.material)}
-    for(const m of Array.isArray(o.material)?o.material:[o.material]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=12;(m as T.MeshStandardMaterial).envMapIntensity=.75}
+    if(kind==='facade'){const tint=(m:T.Material)=>{if(!m.name.endsWith('_plaster'))return m;let shaded=finishes.get(m);if(!shaded){
+     shaded=m.clone();(shaded as T.MeshStandardMaterial).color.set(['#dfcba7','#b67858','#93977d'][variant]!)
+     // Remove the baked orange hue, preserving the photographed plaster grain,
+     // normal map and weathering so each finish has its own real albedo.
+     shaded.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#ifdef USE_MAP
+      vec4 sampledDiffuseColor=texture2D(map,vMapUv);
+      float plasterGrain=clamp(dot(sampledDiffuseColor.rgb,vec3(.2126,.7152,.0722))*2.6,.32,1.3);
+      diffuseColor*=vec4(vec3(plasterGrain),sampledDiffuseColor.a);
+     #endif`)}
+     shaded.customProgramCacheKey=()=> 'italian-plaster-neutral-grain-v1';finishes.set(m,shaded)
+    }return shaded};o.material=Array.isArray(o.material)?o.material.map(tint):tint(o.material)}
+    for(const m of Array.isArray(o.material)?o.material:[o.material]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=16;(m as T.MeshStandardMaterial).envMapIntensity=.75}
     for(const chunk of chunks){
      const count=kind==='facade'?2:4,instances=new T.InstancedMesh(geometry,o.material,count),dummy=new T.Object3D()
      instances.name=kind==='facade'?'Poly Haven detailed architectural modules':'Poly Haven detailed roadside trees';instances.receiveShadow=true;instances.castShadow=kind==='facade'

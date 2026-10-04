@@ -8,6 +8,15 @@ await Promise.all([MeshoptEncoder.ready,MeshoptSimplifier.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder});
 const base='../assets-research/italian-environment';
 const doc=await io.read(base+'/modular_urban_apartments_facade/modular_urban_apartments_facade.gltf');
+// Native 4K plaster albedo and relief retain grain in close roadside views.
+const facadeFiles=JSON.parse((await fs.readFile('../assets-research/facade-files.json','utf8')).replace(/^\uFEFF/,''));
+await Promise.all(['plaster_diff','plaster_nor_gl'].map(async name=>{
+ const cached=base+'/modular_urban_apartments_facade/'+name+'-4k.jpg';
+ let data;try{data=await fs.readFile(cached)}catch{const response=await fetch(facadeFiles[name]['4k'].jpg.url);if(!response.ok)throw new Error(name+' '+response.status);data=Buffer.from(await response.arrayBuffer());await fs.writeFile(cached,data)}
+ const texture=doc.getRoot().listTextures().find(t=>t.getName()==='modular_urban_apartments_facade_'+name);
+ if(!texture)throw new Error('Missing plaster texture '+name);
+ texture.setImage(data).setMimeType('image/jpeg');
+}));
 const scene=doc.getRoot().listScenes()[0],templates=new Map(scene.listChildren().map(n=>[n.getName(),n]));
 let building,face,floors=2;
 function add(name,x,y,z=0,scale=[1,1,1],rotation=[0,0,0,1]){const source=templates.get(name);if(!source)throw new Error('Missing '+name);const n=doc.createNode(name).setMesh(source.getMesh()).setTranslation([x,y,z]).setScale(scale).setRotation(rotation);face.addChild(n);}
@@ -35,7 +44,7 @@ building.addChild(doc.createNode('Solid roof').setMesh(doc.createMesh('Roof').ad
 }
 for(const node of templates.values())node.dispose();
 scene.dispose();doc.getRoot().setDefaultScene(doc.getRoot().listScenes()[1]);
-await doc.transform(prune(),dedup(),join(),weld(),simplify({simplifier:MeshoptSimplifier,ratio:.3,error:.002}),textureCompress({encoder:sharp,targetFormat:'webp',quality:87}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
+await doc.transform(prune(),dedup(),join(),weld(),simplify({simplifier:MeshoptSimplifier,ratio:.3,error:.002}),textureCompress({encoder:sharp,targetFormat:'webp',quality:92}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
 await io.write('public/models/italian-urban-facade.glb',doc);
 const tree=await io.read(base+'/island_tree_01/island_tree_01.gltf');
 const files=JSON.parse((await fs.readFile('../assets-research/island_tree_01-files.json','utf8')).replace(/^\uFEFF/,''));

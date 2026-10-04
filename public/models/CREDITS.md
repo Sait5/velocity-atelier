@@ -56,4 +56,6 @@ File: lamborghini-revuelto.glb. Adaptations: coordinate alignment, scissor-door 
 - [Modular Urban Apartments Facade](https://polyhaven.com/a/modular_urban_apartments_facade) — James Ray Cock. Небольшие одно-, двух- и трёхэтажные здания с четырьмя стенами и крышами собраны из исходных модулей, объединены, текстуры сжаты в WebP, геометрия — Meshopt. Файл: `italian-urban-facade.glb`.
 - [Island Tree 01](https://polyhaven.com/a/island_tree_01) — Rico Cilliers, Rob Tuytel. Подготовлен уровень детализации для браузера, восстановлена маска листьев, сохранены PBR-текстуры. Файл: `italian-roadside-tree.glb`.
 
+Для фасадов использованы исходные 4K карты цвета и нормалей штукатурки; остальные карты — 2K. Отделка меняется между кремовым, терракотовым и приглушённым оливковым: оттенок исходной фотографии нейтрализован шейдером с сохранением зерна, износа и рельефа.
+
 Оба ресурса используются по [CC0](https://polyhaven.com/license), без обязательной атрибуции.
