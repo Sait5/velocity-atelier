@@ -170,3 +170,9 @@ Italy uses instanced pitched tile roofs with scanned 2K PBR surfaces, gutters an
 Drive clamps its target pitch rather than only the displayed angle, preventing accumulated drag beyond the limit. Revuelto uses eight presentation gears with a brief torque cut on shifts; Ferrari retains seven. Revuelto audio is procedural V12 audio, not an authentic recording: it now responds to load, shifts, cabin/exterior views, airflow and braking. Ferrari's recorded audio remains unchanged.
 
 Validation: npm run typecheck; npm run build; node tools/verify-drive.mjs (camera reversibility in three views, both speed limits, gear counts and braking). New MP3s decode at 44.1 kHz: Neon 259 s, Machina 291 s, Chasing Daylight 274 s.
+
+Published browser checks: all three new music tracks play with decoded durations and no media errors; changing galleries works. Garage screenshots were recaptured from full viewport frames after detecting a crop error.
+
+![Updated music selections](docs/images/revuelto-new-music.jpg)
+
+![Warm showroom gallery](docs/images/revuelto-warm-gallery.jpg)

@@ -16,3 +16,5 @@ model-license.json
 
 tools/generated/driveLook.mjs
 tools/generated/straightMotion.mjs
+
+tools/generated/*-full.jpg
