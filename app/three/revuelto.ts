@@ -70,7 +70,9 @@ export function prepareRevuelto(source:T.Group){
  const wheels:T.Group[]=[]
  for(const name of ['FL','FR','RL','RR']){
   const original=source.getObjectByName('CTRL_Wheel_'+name);if(!original)throw new Error('Revuelto wheel missing: '+name)
-  const wheel=new T.Group();wheel.name='Revuelto wheel '+name;original.getWorldPosition(wheel.position);root.add(wheel);root.updateMatrixWorld(true);wheel.attach(original)
+  // Controllers can be offset from the authored tyre centre. Spin around geometry, not the rig handle.
+  const tyreBounds=new T.Box3();original.traverse(o=>{if(o instanceof T.Mesh){const mats=Array.isArray(o.material)?o.material:[o.material];if(mats.some(m=>/tyre|tire/i.test(m.name)))tyreBounds.expandByObject(o,true)}});if(tyreBounds.isEmpty())tyreBounds.setFromObject(original,true)
+  const wheel=new T.Group();wheel.name='Revuelto wheel '+name;tyreBounds.getCenter(wheel.position);root.add(wheel);root.updateMatrixWorld(true);wheel.attach(original)
   const calipers:T.Mesh[]=[];wheel.traverse(o=>{if(o instanceof T.Mesh&&!Array.isArray(o.material)&&o.material.name==='M_Caliper')calipers.push(o)})
   for(const caliper of calipers)root.attach(caliper)
   wheels.push(wheel)

@@ -10,4 +10,4 @@ export const interiorDetails=[
  {id:'pedals',ru:'Педали',en:'Pedals',point:[-.65,.34,.365],ruText:'Металлические педали тормоза и акселератора с противоскользящими накладками. В режиме поездки используйте W/S для прямого движения.',enText:'Metal brake and accelerator pedals with grip inserts. In Drive, use W/S for straight-line motion.'}
 ]
 
-export const environments=[{id:'studio',ru:'Студия',en:'Studio'},{id:'italy',ru:'Италия · Рим',en:'Italy · Rome'}]
+export const environments=[{id:'studio',ru:'Студия',en:'Studio'}]

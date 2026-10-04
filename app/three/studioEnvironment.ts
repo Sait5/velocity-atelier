@@ -9,8 +9,8 @@ export function createStudioEnvironment(){
   const mesh=new T.Mesh(new T.PlaneGeometry(width,height),material);mesh.position.copy(position);mesh.lookAt(0,.65,0);scene.add(mesh)
  }
  panel(9,1.7,new T.Vector3(0,5,0),6)
- panel(8,1.25,new T.Vector3(-.4,2.7,4.8),5)
- panel(7,1.1,new T.Vector3(.4,3.5,-4.5),4)
+ panel(8,1.25,new T.Vector3(-.4,2.7,4.8),6.5)
+ panel(7,1.1,new T.Vector3(.4,3.5,-4.5),5.5)
  panel(3,4,new T.Vector3(-5,2.5,-1),3)
  panel(2.5,3.5,new T.Vector3(5,2.3,1),3)
  return {scene,dispose(){scene.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();(o.material as T.Material).dispose()}})}}

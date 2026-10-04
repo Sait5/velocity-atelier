@@ -80,7 +80,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   courtyardMaterial.customProgramCacheKey=()=> 'courtyard-rear-haze-v1'
   // Keep courtyard paving outside the road and raised sidewalk. A full plane
   // beneath the asphalt competed for depth at long distances without fog.
-  for(const side of [-1,1])pavingSurface(1200,585,side*307.5,-.025,courtyardMaterial)
+  const rearGround=new T.MeshStandardMaterial({color:'#776e5b',roughness:1});for(const side of [-1,1])pavingSurface(1200,585,side*307.5,-.025,rearGround)
   for(const side of [-1,1]){const geometry=new T.BoxGeometry(1200,1.1,.24),position=geometry.getAttribute('position'),normals=geometry.getAttribute('normal'),uv=geometry.getAttribute('uv');for(let i=0;i<uv.count;i++)uv.setXY(i,position.getX(i)/3.2,(Math.abs(normals.getY(i))>.5?position.getZ(i)+side*24:position.getY(i)+.525)/3.2);const wall=new T.Mesh(geometry,courtyardMaterial);wall.name='Textured rear courtyard boundary fading into mist';wall.position.set(0,.525,side*24);wall.receiveShadow=true;group.add(wall)}
  }
  if(!italian){const curbGeometry=new T.BoxGeometry(240,.12,.22);for(const side of [-1,1]){const curb=new T.Mesh(curbGeometry,metal);curb.position.set(0,.06,side*4.65);group.add(curb)}}

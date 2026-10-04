@@ -216,3 +216,7 @@ Published checks for this update: the cinematic tour was visible after loading a
 Final published road check: auto-acceleration reached the configured 370 km/h limit in gear 8 without console errors. Static map previews load from local 720×400 WebP assets. A live scene measurement on the test machine reported 123 FPS / 7.7 ms render time on Ultra at device pixel ratio 1; this is device- and view-dependent, not a cross-device benchmark.
 
 ![Final road at 370 km/h](docs/images/final-continuous-road.jpg)
+
+
+### Showroom pacing and street cleanup
+The introduction now rolls in over 4.2 seconds and uses longer eased camera passes. Canvas clicks and scroll no longer dismiss it; use the Skip intro button. Italy is a driving map only. Street planters were removed and rear paving replaced by plain ground. Paint has stronger neutral softbox reflections and an angle-dependent pearl coat. Map thumbnails are brighter. At driving speed, wheel display rotation is smoothly bounded to avoid temporal spoke aliasing; this presentation filter does not alter speed, gearing or road distance. Wheel pivots are derived from authored tyre geometry.
