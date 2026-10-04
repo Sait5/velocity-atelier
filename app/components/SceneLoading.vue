@@ -1,8 +1,17 @@
 <script setup lang="ts">
 const props=defineProps<{active:boolean,progress:number,title:string,vehicle:string,error?:string}>()
-const emit=defineEmits<{retry:[]}>();const {t}=useLocale();const shown=ref(0);let frame=0
-watch(()=>props.progress,target=>{cancelAnimationFrame(frame);target=Math.max(0,Math.min(100,target));if(target===0){shown.value=0;return}const start=shown.value,time=performance.now();function step(now:number){const p=Math.min(1,(now-time)/500);shown.value=start+(target-start)*(1-Math.pow(1-p,3));if(p<1)frame=requestAnimationFrame(step)}frame=requestAnimationFrame(step)},{immediate:true})
-onBeforeUnmount(()=>cancelAnimationFrame(frame))
+const emit=defineEmits<{retry:[],complete:[]}>();const {t}=useLocale();const shown=ref(1)
+let timer:ReturnType<typeof setInterval>|undefined,completed=false
+function restart(){shown.value=1;completed=false}
+watch(()=>props.progress,value=>{if(value===0)restart()})
+watch(()=>props.active,value=>{if(value)restart()})
+onMounted(()=>{timer=setInterval(()=>{
+ if(props.error||!props.active)return
+ const target=Math.max(1,Math.min(100,Math.floor(props.progress)))
+ if(shown.value<target)shown.value++
+ if(shown.value===100&&!completed){completed=true;emit('complete')}
+},18)})
+onBeforeUnmount(()=>clearInterval(timer))
 </script>
 <template>
  <Transition name="scene-reveal">
@@ -28,7 +37,7 @@ onBeforeUnmount(()=>cancelAnimationFrame(frame))
 .scene-load-orbit i:nth-child(2){inset:25px;animation-direction:reverse;animation-duration:4s}
 .scene-load-orbit i:nth-child(3){inset:44px;border:0;background:#d9ec8a;box-shadow:0 0 28px #d9ec8a55;animation:none}
 .scene-load-track{height:2px;width:min(360px,76vw);background:#d9ec8a20;overflow:hidden}
-.scene-load-track i{display:block;height:100%;background:#d9ec8a;transition:width .6s ease}
+.scene-load-track i{display:block;height:100%;background:#d9ec8a;transition:width 18ms linear}
 .scene-load-status{display:flex;align-items:center;justify-content:space-between;width:min(360px,76vw);margin-top:16px;font-size:10px;color:#9aa693;gap:15px;text-align:left}
 .scene-load-status b{font-size:24px;font-weight:400;color:#e9efdf}.scene-load-status b small{margin-left:3px}
 .scene-reveal-leave-active{transition:opacity .7s ease}.scene-reveal-leave-to{opacity:0;pointer-events:none}

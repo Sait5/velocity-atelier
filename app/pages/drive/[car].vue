@@ -12,7 +12,7 @@ function onMapClose(){scene.value?.setPaused(false);scene.value?.setKey('w',crui
 function closeMaps(){mapDialog.value?.close()}
 function chooseMap(map:'italy'|'night'){closeMaps();if(map===roadMap.value)return;resetDrive();beginLoading();roadMap.value=map}
 let revealTimer:ReturnType<typeof setTimeout>|undefined
-function finishLoading(){clearTimeout(revealTimer);progress.value=100;revealTimer=setTimeout(()=>ready.value=true,350)}
+function finishLoading(){clearTimeout(revealTimer);progress.value=100;}
 function retryScene(){beginLoading();retry.value++}
 onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
 </script>
@@ -22,7 +22,7 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
   <ClientOnly><VehicleScene ref="scene" :key="retry" drive :road-map="roadMap" @loading="beginLoading" @ready="finishLoading" @progress="progress=Math.max(progress,$event)" @speed="speed=$event" @telemetry="telemetry=$event" @error="error=$event" /></ClientOnly>
   <div class="drive-title"><small>{{mapName}}</small><h2>{{s.car.value.brand}} {{s.car.value.name}}</h2></div>
   <NuxtLink to="/" class="drive-exit outline">{{t('ВЫЙТИ','EXIT')}} ↗</NuxtLink>
-  <SceneLoading :active="!ready" :progress="progress" :title="mapName" :vehicle="s.car.value.brand+' '+s.car.value.name" :error="error" @retry="retryScene" />
+  <SceneLoading @complete="ready=true" :active="!ready" :progress="progress" :title="mapName" :vehicle="s.car.value.brand+' '+s.car.value.name" :error="error" @retry="retryScene" />
   <div v-if="error" class="error-panel"><p>{{t('Не удалось запустить сцену:','Scene could not initialize:')}} {{error}}</p><button class="outline" @click="retryScene">{{t('ПОВТОРИТЬ','RETRY')}}</button></div>
   <div v-show="ready" class="drive-hud"><strong>{{String(speed).padStart(3,'0')}}</strong><small>{{t('КМ/Ч','KM/H')}}</small><div class="rpm"><i :style="{width:Math.min(100,telemetry.rpm/8500*100)+'%'}"/></div><small>{{t('ПЕРЕДАЧА','GEAR')}} {{gear}}</small></div>
   <div v-show="ready" class="drive-controls">

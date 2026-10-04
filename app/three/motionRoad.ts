@@ -50,13 +50,13 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   const skyMaterial=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,depthTest:false,toneMapped:false,uniforms:{horizon:{value:new T.Color('#b1d3e4')},zenith:{value:new T.Color('#669fc4')}},vertexShader:`varying vec3 skyDirection;void main(){skyDirection=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,fragmentShader:`varying vec3 skyDirection;uniform vec3 horizon;uniform vec3 zenith;void main(){float elevation=max(0.,normalize(skyDirection).y);gl_FragColor=vec4(mix(horizon,zenith,pow(elevation,.65)),1.);
   #include <colorspace_fragment>
   }`})
-  const sky=new T.Mesh(new T.SphereGeometry(150,24,12),skyMaterial);sky.name='Clear Italian daylight sky';sky.renderOrder=-100;sky.frustumCulled=false;group.add(sky)
+  const sky=new T.Mesh(new T.SphereGeometry(240,24,12),skyMaterial);sky.name='Clear Italian daylight sky';sky.renderOrder=-100;sky.frustumCulled=false;group.add(sky)
   const [map,normalMap,roughnessMap]=['diff-4k','normal','rough'].map((name,i)=>{const texture=roadMap('/textures/italian-pavement-'+name+'.webp',i===0);paving.push(texture);return texture})
-  const pavementMaterial=new T.MeshStandardMaterial({color:'#c0c3bf',map,normalMap,roughnessMap,normalScale:new T.Vector2(.6,.6),roughness:1})
+  const pavementMaterial=new T.MeshStandardMaterial({color:'#c0c3bf',map,normalMap,roughnessMap,normalScale:new T.Vector2(.6,.6),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1})
   // World-sized UVs preserve square pavers on the top face and through courtyards.
   const pavingSurface=(length:number,depth:number,z:number,y:number,material:T.Material)=>{const geometry=new T.PlaneGeometry(length,depth);geometry.rotateX(-Math.PI/2);const positions=geometry.getAttribute('position'),uv=geometry.getAttribute('uv');for(let i=0;i<uv.count;i++)uv.setXY(i,positions.getX(i)/3.2,(positions.getZ(i)+z)/3.2);const mesh=new T.Mesh(geometry,material);mesh.position.set(0,y,z);mesh.receiveShadow=true;group.add(mesh);return mesh}
   const slabMaterial=new T.MeshStandardMaterial({color:'#b9b7ad',roughness:.95})
-  for(const side of [-1,1]){const slab=new T.Mesh(new T.BoxGeometry(1200,.14,10),slabMaterial);slab.position.set(0,.045,side*10);slab.receiveShadow=true;group.add(slab);pavingSurface(1200,10,side*10,.116,pavementMaterial)}
+  for(const side of [-1,1]){const slab=new T.Mesh(new T.BoxGeometry(1200,.10,10),slabMaterial);slab.position.set(0,.045,side*10);slab.receiveShadow=true;group.add(slab);pavingSurface(1200,10,side*10,.116,pavementMaterial)}
   // The kerb meets the raised pavement directly. Individual stone blocks make
   // the vertical face read as concrete rather than a dark gap or metal rail.
   const curbMaterial=new T.MeshStandardMaterial({color:'#b5b1a6',roughness:.93})

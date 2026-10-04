@@ -2,14 +2,14 @@ import * as T from 'three'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js'
 
-/** CC0 Poly Haven models, shared across five streaming street sections. */
+/** CC0 Poly Haven models, shared across eight streaming street sections. */
 export function createItalianStreet(parent:T.Group){
- const chunks=Array.from({length:5},(_,i)=>{const chunk=new T.Group();chunk.name='Downloaded Italian street section '+i;parent.add(chunk);return chunk})
+ const chunks=Array.from({length:8},(_,i)=>{const chunk=new T.Group();chunk.name='Downloaded Italian street section '+i;parent.add(chunk);return chunk})
  const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder)
  const width=(variant:number)=>variant===0?.85:variant===2?1.05:1
  const housePose=(variant:number,side:number)=>new T.Vector3(-24+(side===1?2-variant:variant)*24,.255,side*(variant===0?18:19))
  const foundationGeometry=new T.BoxGeometry(1,1,1),foundationMaterial=new T.MeshStandardMaterial({color:'#777873',roughness:.95})
- for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.115;dummy.scale.set(12.7*width(variant),.28,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
+ for(const chunk of chunks){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side));dummy.position.y=.105;dummy.scale.set(12.7*width(variant),.26,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
  let disposed=false
  const ready=Promise.all([loader.loadAsync('/models/italian-urban-facade.glb'),loader.loadAsync('/models/italian-roadside-tree.glb')]).then(([facade,tree])=>{
   const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0}]
@@ -49,7 +49,7 @@ export function createItalianStreet(parent:T.Group){
    })
   }
  })
- function update(distance:number){chunks.forEach((chunk,i)=>{chunk.position.x=((i*80+distance+40)%400+400)%400-200})}
+ function update(distance:number){chunks.forEach((chunk,i)=>{chunk.position.x=((i*80+distance+40)%640+640)%640-320})}
  update(0)
  return {ready,update,dispose(){disposed=true}}
 }

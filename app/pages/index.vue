@@ -12,14 +12,14 @@ function action(fn:()=>void){fn();audio.click()}
 async function focus(id:string){s.focus.value='';await nextTick();s.focus.value=id}
 async function inspect(id:string){s.detail.value='';await nextTick();s.detail.value=id}
 let revealTimer:ReturnType<typeof setTimeout>|undefined
-function finishLoading(){clearTimeout(revealTimer);progress.value=100;revealTimer=setTimeout(()=>ready.value=true,350)}
+function finishLoading(){clearTimeout(revealTimer);progress.value=100;}
 watch(()=>s.car.value.id,()=>{clearTimeout(revealTimer);ready.value=false;progress.value=0})
 onBeforeUnmount(()=>clearTimeout(revealTimer))
 function retry(){clearTimeout(revealTimer);error.value='';ready.value=false;progress.value=0;viewer.value++}
 </script>
 <template><div class="experience" :class="{'in-cockpit':s.interior.value,'cabin-finishes':cabinFinishes}"><AtelierHeader />
  <div class="scene-wrap"><ClientOnly><VehicleScene :key="viewer" @ready="finishLoading" @progress="progress=$event; if($event<100)ready=false" @error="error=$event" /></ClientOnly><div class="scene-shade" /></div>
- <SceneLoading :active="!ready" :progress="progress" :title="s.car.value.name" :vehicle="s.car.value.brand+' / '+t('ШОУРУМ','SHOWROOM')" :error="error" @retry="retry" />
+ <SceneLoading @complete="ready=true" :active="!ready" :progress="progress" :title="s.car.value.name" :vehicle="s.car.value.brand+' / '+t('ШОУРУМ','SHOWROOM')" :error="error" @retry="retry" />
  <main><section class="hero"><div class="hero-heading"><h1>{{s.car.value.name.toUpperCase()}}</h1></div>
  <div class="hero-bottom"><div class="hero-specs"><div><strong>{{s.car.value.power}}<small>{{t('Л.С.','CV')}}</small></strong><span>{{t('МОЩНОСТЬ','POWER')}}</span></div><div><strong>{{s.car.value.accel}}<small>{{t('С','S')}}</small></strong><span>{{t('0—100 КМ/Ч','0—100 KM/H')}}</span></div><div><strong>{{s.car.value.speed}}<small>{{t('КМ/Ч','KM/H')}}</small></strong><span>{{t('МАКС. СКОРОСТЬ','TOP SPEED')}}</span></div></div><a href="#showroom" class="accent-button">{{t('ОТКРЫТЬ КОНФИГУРАТОР','ENTER SHOWROOM')}} <span>↗</span></a></div><div class="hero-foot"><a href="#showroom">↓ <span>{{t('К ВЫБОРУ ОТДЕЛКИ','EXPLORE THE FINISHES')}}</span></a><span>{{t('ПЕРЕТАЩИТЕ — ПОВОРОТ','DRAG TO ROTATE')}} <b>↔</b> {{t('КОЛЕСО — МАСШТАБ','WHEEL TO ZOOM')}}</span></div></section>
  <section id="showroom" class="showroom"><div class="configurator"><div class="config-heading"><span>{{s.car.value.name.toUpperCase()}} / {{t('КОНФИГУРАТОР','CONFIGURATOR')}}</span><span>↗</span></div><div class="config-tabs" role="tablist"><button v-for="item in tabs" :id="'tab-'+item.id" role="tab" :aria-selected="tab===item.id" :aria-controls="'panel-'+item.id" :class="{active:tab===item.id}" @click="tab=item.id">{{t(item.ru,item.en)}}</button></div><div class="config-content" role="tabpanel" :id="'panel-'+tab" :aria-labelledby="'tab-'+tab">
