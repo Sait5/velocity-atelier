@@ -1,4 +1,5 @@
 import * as T from 'three'
+import {installRevueltoDisplays} from './revueltoDisplays'
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js'
 
 /** Batch only fixed opaque surfaces; door, wheel and transparent assemblies stay separate. */
@@ -35,7 +36,7 @@ export function prepareRevuelto(source:T.Group){
  const body=new T.MeshPhysicalMaterial({name:'Revuelto paint',color:originalPaint.color,metalness:.35,roughness:.24,clearcoat:1,clearcoatRoughness:.09,envMapIntensity:1.15})
  const leather=material('M_Leather'),rim=material('M_WheelRim'),brake=material('M_Caliper')
  material('M_Alcantara').color.set('#1a1b1e')
- const cabinFill=new T.PointLight('#e9efff',.45,1.8,2);cabinFill.position.set(.12,.94,0);root.add(cabinFill)
+ const cabinFill=new T.PointLight('#e9efff',.6,1.8,2);cabinFill.position.set(.12,.94,0);root.add(cabinFill)
  const glass=material('M_GlassSide') as T.MeshPhysicalMaterial
  const white=material('HeadLights'),frontEmitter=material('M_Emitter'),rearEmitter=material('Emission Red')
  source.traverse(o=>{if(!(o instanceof T.Mesh))return
@@ -54,7 +55,7 @@ export function prepareRevuelto(source:T.Group){
   const parts:T.Object3D[]=[]
   // The front quarter pane and mirror travel with the scissor door. The hinge
   // sits ahead of the pane, so lifting it cannot sweep its leading corner down.
-  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorJamb${code}F_|DoorCard${code}F|WingMirror${code}_|MirrorBase${code}_|Glass${code}[FM]_)`).test(o.name))parts.push(o)})
+  source.traverse(o=>{if(o instanceof T.Mesh&&new RegExp(`^(Door${code}F_|DoorJamb${code}F_|DoorCard${code}F|WingMirror${code}_|MirrorBase${code}_|Glass${code}M_)`).test(o.name))parts.push(o)})
   for(const part of parts)door.attach(part)
   door.traverse(o=>{if(o instanceof T.Mesh&&o.name===`Glass${code}M_GlassSide`){const pane=glass.clone();pane.clippingPlanes=[new T.Plane()];o.material=pane;windows.push({mesh:o,closed:o.position.clone(),pane,door,side})}})
   doors.push(door)
@@ -67,15 +68,19 @@ export function prepareRevuelto(source:T.Group){
   for(const caliper of calipers)root.attach(caliper)
   wheels.push(wheel)
  }
+ const displays=installRevueltoDisplays(source)
  batchStaticSurfaces(source,root)
  let windowProgress=0
  function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1)
   for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
  }
  function setDoors(progress:number){const p=T.MathUtils.clamp(progress,0,1),release=T.MathUtils.smoothstep(p,0,.22);doors.forEach((door,i)=>{const side=i===0?1:-1;door.position.z=side*(.86+.06*release);door.rotation.set(side*.055*p,-side*.16*release,1.12*T.MathUtils.smoothstep(p,.16,1),'YXZ')});setWindows(windowProgress)}
- function setLights(front:boolean,rear:boolean){white.emissiveIntensity=front?2.7:0;frontEmitter.emissiveIntensity=front?2.7:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
+ const headlights:T.SpotLight[]=[]
+ const spill=new T.Mesh(new T.PlaneGeometry(3.2,2.4),new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 v;void main(){float d=(1.-v.x)*3.2;float z=(v.y-.5)*2.4;float width=.22+d*.14;float lobes=exp(-2.*pow((z-.74)/width,2.))+exp(-2.*pow((z+.74)/width,2.));float fade=exp(-d*.8)*smoothstep(0.,.3,d)*(1.-smoothstep(2.,3.2,d));gl_FragColor=vec4(.82,.9,1.,.22*lobes*fade);}'}));spill.name='Revuelto short headlight floor spill';spill.rotation.x=-Math.PI/2;spill.position.set(-3.6,.014,0);root.add(spill)
+ for(const side of [-1,1]){const light=new T.SpotLight('#e4efff',12,5.5,.32,.9,2);light.position.set(-2.12,.61,side*.76);light.target.position.set(-5.1,.025,side*.9);root.add(light,light.target);headlights.push(light)}
+ function setLights(front:boolean,rear:boolean){spill.visible=front;headlights.forEach(light=>light.intensity=front?12:0);white.emissiveIntensity=front?2.7:0;frontEmitter.emissiveIntensity=front?2.7:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
  function setUpholstery(color:string){leather.color.set(color)}
- return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,dispose(){
+ return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments:displays.updateInstruments,dispose(){
   const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([...materials.values(),body]),textures=new Set<T.Texture>()
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}})
   geometries.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())

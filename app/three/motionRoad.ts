@@ -47,7 +47,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
  }`}));road.name='Scanned asphalt motion surface';road.rotation.x=-Math.PI/2;road.position.y=.007;group.add(road)
  const metal=new T.MeshStandardMaterial({color:'#363c43',roughness:.42,metalness:.55}),lightMaterial=new T.MeshBasicMaterial({color:new T.Color(2.4,2.65,2.9),toneMapped:false})
  if(italian){
-  const skyMaterial=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,depthTest:false,toneMapped:false,uniforms:{horizon:{value:new T.Color('#e5eff1')},zenith:{value:new T.Color('#86c4e7')}},vertexShader:`varying vec3 skyDirection;void main(){skyDirection=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,fragmentShader:`varying vec3 skyDirection;uniform vec3 horizon;uniform vec3 zenith;void main(){float elevation=max(0.,normalize(skyDirection).y);gl_FragColor=vec4(mix(horizon,zenith,pow(elevation,.65)),1.);
+  const skyMaterial=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,depthTest:false,toneMapped:false,uniforms:{horizon:{value:new T.Color('#b1d3e4')},zenith:{value:new T.Color('#669fc4')}},vertexShader:`varying vec3 skyDirection;void main(){skyDirection=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,fragmentShader:`varying vec3 skyDirection;uniform vec3 horizon;uniform vec3 zenith;void main(){float elevation=max(0.,normalize(skyDirection).y);gl_FragColor=vec4(mix(horizon,zenith,pow(elevation,.65)),1.);
   #include <colorspace_fragment>
   }`})
   const sky=new T.Mesh(new T.SphereGeometry(150,24,12),skyMaterial);sky.name='Clear Italian daylight sky';sky.renderOrder=-100;sky.frustumCulled=false;group.add(sky)
@@ -59,7 +59,7 @@ export function createMotionRoad(scene:T.Scene,italian=false){
   for(const side of [-1,1]){const slab=new T.Mesh(new T.BoxGeometry(1200,.14,10),slabMaterial);slab.position.set(0,.045,side*10);slab.receiveShadow=true;group.add(slab);pavingSurface(1200,10,side*10,.116,pavementMaterial)}
   // The kerb meets the raised pavement directly. Individual stone blocks make
   // the vertical face read as concrete rather than a dark gap or metal rail.
-  const curbMaterial=new T.MeshStandardMaterial({color:'#c6c2b6',roughness:.93})
+  const curbMaterial=new T.MeshStandardMaterial({color:'#b5b1a6',roughness:.93})
   const curbGeometry=new T.BoxGeometry(1.995,.145,.24)
   for(const side of [-1,1]){const curb=new T.InstancedMesh(curbGeometry,curbMaterial,400);curb.name='Jointed concrete pavement kerb';curb.userData.side=side;curb.receiveShadow=true;curb.frustumCulled=false;group.add(curb);concreteCurbs.push(curb)}
   const courtyardMaterial=pavementMaterial.clone()

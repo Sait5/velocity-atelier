@@ -33,7 +33,7 @@ export function createItalianStreet(parent:T.Group){
      #endif`)}
      shaded.customProgramCacheKey=()=> 'italian-plaster-neutral-grain-v1';finishes.set(m,shaded)
     }return shaded};o.material=Array.isArray(o.material)?o.material.map(tint):tint(o.material)}
-    for(const m of Array.isArray(o.material)?o.material:[o.material]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=16;(m as T.MeshStandardMaterial).envMapIntensity=.75}
+    for(const m of Array.isArray(o.material)?o.material:[o.material]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=12;const finish=m as T.MeshStandardMaterial;finish.envMapIntensity=.4;if(kind==='facade'){finish.side=T.FrontSide;if(m.name.endsWith('_glass')){finish.transparent=false;finish.opacity=1;finish.depthWrite=true;finish.roughness=.4;finish.metalness=.12;finish.needsUpdate=true}}}
     for(const chunk of chunks){
      const count=kind==='facade'?2:4,instances=new T.InstancedMesh(geometry,o.material,count),dummy=new T.Object3D()
      instances.name=kind==='facade'?'Poly Haven detailed architectural modules':'Poly Haven detailed roadside trees';instances.receiveShadow=true;instances.castShadow=kind==='facade'

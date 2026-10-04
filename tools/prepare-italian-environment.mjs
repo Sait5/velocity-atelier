@@ -1,6 +1,6 @@
 import {NodeIO} from '@gltf-transform/core';
 import {ALL_EXTENSIONS} from '@gltf-transform/extensions';
-import {prune,dedup,weld,simplify,meshopt,textureCompress,join} from '@gltf-transform/functions';
+import {prune,dedup,weld,simplify,meshopt,textureCompress,join,flatten} from '@gltf-transform/functions';
 import {MeshoptEncoder,MeshoptSimplifier} from 'meshoptimizer';
 import sharp from 'sharp';
 import fs from 'node:fs/promises';
@@ -44,7 +44,7 @@ building.addChild(doc.createNode('Solid roof').setMesh(doc.createMesh('Roof').ad
 }
 for(const node of templates.values())node.dispose();
 scene.dispose();doc.getRoot().setDefaultScene(doc.getRoot().listScenes()[1]);
-await doc.transform(prune(),dedup(),join(),weld(),simplify({simplifier:MeshoptSimplifier,ratio:.3,error:.002}),textureCompress({encoder:sharp,targetFormat:'webp',quality:92}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
+await doc.transform(prune(),dedup(),flatten(),join(),weld(),simplify({simplifier:MeshoptSimplifier,ratio:.3,error:.002}),textureCompress({encoder:sharp,targetFormat:'webp',quality:92}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
 await io.write('public/models/italian-urban-facade.glb',doc);
 const tree=await io.read(base+'/island_tree_01/island_tree_01.gltf');
 const files=JSON.parse((await fs.readFile('../assets-research/island_tree_01-files.json','utf8')).replace(/^\uFEFF/,''));
