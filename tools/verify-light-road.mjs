@@ -11,9 +11,7 @@ const assets={texture(url){if(!textures.has(url)){const map=new T.Texture();owne
 const scene=new T.Scene();
 for(let attempt=0;attempt<3;attempt++){
  const road=createMotionRoad(scene,true,assets);await road.ready;scene.updateMatrixWorld(true);
- const surfaces=[];scene.traverse(o=>{if(o instanceof T.Mesh&&o.material instanceof T.MeshStandardMaterial&&o.material.map===textures.get('/textures/italian-pavement-diff-4k.webp').map)surfaces.push(o)});
- assert.equal(surfaces.length,2,'one seamless pavement surface per street side');
- for(const surface of surfaces){const b=new T.Box3().setFromObject(surface);assert(Math.abs(b.min.y-b.max.y)<1e-6);assert(Math.abs(b.min.y-.122)<1e-6);assert(Math.abs(Math.min(Math.abs(b.min.z),Math.abs(b.max.z))-5)<1e-6);assert(Math.abs(Math.max(Math.abs(b.min.z),Math.abs(b.max.z))-24.5)<1e-6)}
+ assert(scene.getObjectByName('Continuous Roman countryside hills'),'terrain fills horizon');assert(scene.getObjectByName('Weathered low Roman brick boundaries'),'low brick boundaries replace houses');
  const asphaltRoad=scene.getObjectByName('Continuous PBR asphalt road');assert(asphaltRoad.material.isMeshStandardMaterial&&asphaltRoad.receiveShadow,'asphalt accepts real light and shadows');const shader={uniforms:{},vertexShader:T.ShaderLib.standard.vertexShader,fragmentShader:T.ShaderLib.standard.fragmentShader};asphaltRoad.material.onBeforeCompile(shader);assert(!/;#/.test(shader.vertexShader+shader.fragmentShader),'GLSL preprocessor must begin a new line');road.update(200,30,3);road.dispose();assert.equal(scene.children.length,0,'old map fully detached');assert.equal(disposedSources,0,'shared source assets stay valid across switches');assert.equal(facade.scenes[0].children[0].material,originalMaterial,'map tint must not mutate cached source material');
 }
 console.log('Continuous paving bounds, map detachment and shared asset ownership pass.');
@@ -24,7 +22,7 @@ const layouts=Array.from({length:8},(_,i)=>treeLayout(i));
 assert(new Set(layouts.map(l=>l.length)).size>1,'street sections have different tree densities');
 for(let section=0;section<8;section++){
  const poses=layouts[section];assert.deepEqual(poses,treeLayout(section),'tree placements remain stable during streaming');
- for(const pose of poses){assert(Math.abs(pose.z)>7.5&&Math.abs(pose.z)<11,'trees remain between road and facade');assert(pose.scale>.7&&pose.scale<1.15)}
+ for(const pose of poses){assert(Math.abs(pose.z)>=9&&Math.abs(pose.z)<16,'trees stay beyond stone shoulders');assert(pose.scale>=.8&&pose.scale<1.2)}
  for(let i=1;i<poses.length;i++)assert(poses[i].x-poses[i-1].x>7,'tree trunks cannot overlap');
 }
 console.log('Irregular tree density, safe planting bounds and stable stream poses pass.');
@@ -32,6 +30,4 @@ console.log('Irregular tree density, safe planting bounds and stable stream pose
 const {createHeadlightPool}=await import('./generated/verify-lampPool.mjs');
 const physicalRoot=new T.Group(),lamp=new T.SpotLight(0xffffff,95),second=new T.SpotLight(0xffffff,95);lamp.position.set(-2,.5,.7);second.position.set(-2,.5,-.7);lamp.target.position.set(-6,0,.7);second.target.position.set(-6,0,-.7);physicalRoot.add(lamp,second,lamp.target,second.target);const pool=createHeadlightPool(-2,.7);physicalRoot.add(pool);const physicalLights=createLampDynamics(physicalRoot);physicalLights.configure('High',true,false);physicalLights.update(0);assert(pool.material.uniforms.lampPositions.value[0].equals(lamp.position));physicalRoot.position.x=10;physicalLights.update(0);assert.equal(pool.material.uniforms.lampPositions.value[0].x,8,'light reflection tracks actual world position');assert.equal(pool.material.uniforms.lampPowers.value[0],95);assert(pool.material.fragmentShader.includes('cameraPosition-surface'),'BRDF uses camera direction');assert(pool.material.fragmentShader.includes('1./distance2'),'physical inverse-square attenuation');assert(!pool.material.fragmentShader.includes('sin('),'no painted scrolling pattern');assert(layouts.every(poses=>new Set(poses.map(p=>p.species)).size===2),'both tree species are planted in every section');console.log('World-space lamp transforms, camera-dependent BRDF and two tree species pass.');
 
-assert(layouts.every(poses=>poses.length>=2&&poses.length<=3),'tree density remains within the reduced performance budget');
-
-const {buildingLayout}=await import('./generated/verify-italianStreet.mjs');for(let section=0;section<6;section++)for(const side of [-1,1]){const houses=buildingLayout(section,side);assert(houses.length>=1&&houses.length<=2,'each street side has an empty plot');assert.deepEqual(houses,buildingLayout(section,side),'house omissions must remain stable when streaming')}console.log('Sparse stable building layouts leave empty plots.');
+assert(layouts.every(poses=>poses.length>=3&&poses.length<=4),'trees stay in a controlled instance budget');

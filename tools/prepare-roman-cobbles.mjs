@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';import sharp from 'sharp';
+const meta=await fetch('https://api.polyhaven.com/files/cobblestone_floor_08',{headers:{'User-Agent':'Mozilla/5.0'}}).then(r=>r.json());
+for(const [key,size,name] of [['Diffuse','4k','diff'],['nor_gl','2k','normal'],['Rough','2k','rough']]){const entry=meta[key]?.[size]?.jpg;if(!entry)throw Error(key+' '+Object.keys(meta));const response=await fetch(entry.url);if(!response.ok)throw Error(response.status);await sharp(Buffer.from(await response.arrayBuffer())).webp({quality:90}).toFile('public/textures/roman-cobbles-'+name+'.webp');console.log(name)}

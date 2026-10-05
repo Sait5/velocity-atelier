@@ -11,3 +11,10 @@ These are generic scanned surfaces, not Ferrari-specific material scans.
 - [Pavement 03](https://polyhaven.com/a/pavement_03) — Poly Haven, CC0. Цветовая карта тротуара 4K; нормали и шероховатость 2K. Преобразованы в WebP; 4K карта используется на тротуарах и в дворах.
 
 - [Roof Tiles](https://polyhaven.com/a/roof_tiles) — Poly Haven, CC0. 2K diffuse, OpenGL normal and roughness converted to WebP, used on new pitched roofs. Geometry, chimneys and gutters are authored for this project.
+
+## Roman stone road
+Cobblestone Floor 08 — Poly Haven, CC0. https://polyhaven.com/a/cobblestone_floor_08
+Albedo 4K, normal/roughness 2K, compressed to WebP. Preparation: tools/prepare-roman-cobbles.mjs.
+
+Withered Grass — Poly Haven, CC0. https://polyhaven.com/a/withered_grass
+2K albedo/normal converted to WebP for Roman countryside.
