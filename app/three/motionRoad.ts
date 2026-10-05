@@ -47,7 +47,7 @@ export function createMotionRoad(scene:T.Scene,italian=false,sharedAssets?:RoadA
   }`})
   const sky=new T.Mesh(new T.SphereGeometry(240,24,12),skyMaterial);sky.name='Clear Italian daylight sky';sky.renderOrder=-100;sky.frustumCulled=false;group.add(sky)
   const [map,normalMap,roughnessMap]=['diff-4k','normal','rough'].map((name,i)=>{const texture=roadMap('/textures/italian-pavement-'+name+'.webp',i===0);paving.push(texture);return texture})
-  const pavementMaterial=new T.MeshStandardMaterial({color:'#c0c3bf',map,normalMap,roughnessMap,normalScale:new T.Vector2(.6,.6),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1})
+  const pavementMaterial=new T.MeshStandardMaterial({color:'#c0c3bf',map,normalMap,roughnessMap,normalScale:new T.Vector2(.85,.85),roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1})
   // World-sized UVs preserve square pavers on the top face and through courtyards.
   const pavingSurface=(length:number,depth:number,z:number,y:number,material:T.Material)=>{const geometry=new T.PlaneGeometry(length,depth);geometry.rotateX(-Math.PI/2);const positions=geometry.getAttribute('position'),uv=geometry.getAttribute('uv');for(let i=0;i<uv.count;i++)uv.setXY(i,positions.getX(i)/3.2,(positions.getZ(i)+z)/3.2);const mesh=new T.Mesh(geometry,material);mesh.position.set(0,y,z);mesh.receiveShadow=true;group.add(mesh);return mesh}
   const slabMaterial=new T.MeshStandardMaterial({color:'#b9b7ad',roughness:.95})

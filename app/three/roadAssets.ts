@@ -14,7 +14,6 @@ export function createRoadAssets(){
   // Decode sequentially during spare frames; GPU upload remains under the loading curtain.
   for(const url of ['/models/italian-urban-facade.glb','/models/italian-roadside-tree.glb','/models/italian-canopy-tree.glb']){if(disposed)return;await new Promise<void>(r=>setTimeout(r,50));await model(url)}
   for(const name of ['diff-4k','normal','rough']){if(disposed)return;await texture('/textures/italian-pavement-'+name+'.webp',name==='diff-4k').ready}
-  for(const name of ['diff','normal','rough']){if(disposed)return;await texture('/textures/italian-roof-'+name+'.webp',name==='diff').ready}
  }
  return {texture,model,owns:(value:T.Texture|T.Material|T.BufferGeometry)=>owned.has(value),preloadItalian,dispose(){disposed=true;owned.forEach(release);owned.clear();models.clear();textures.clear()}}
 }
