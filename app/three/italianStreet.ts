@@ -6,7 +6,7 @@ import type {RoadAssets} from './roadAssets'
 export function treeLayout(section:number){
  const random=(key:number)=>{const value=Math.sin(key*127.1+section*311.7)*43758.5453;return value-Math.floor(value)}
  const count=3+section%4
- return Array.from({length:count},(_,i)=>({x:-35+i*(70/(count-1))+(random(i+1)-.5)*5,z:(i%2?-1:1)*(7.8+random(i+10)*2.2),scale:.78+random(i+20)*.32,rotation:random(i+30)*Math.PI*2,tint:new T.Color().setHSL(.24+random(i+40)*.04,.18+random(i+50)*.12,.76+random(i+60)*.1)}))
+ return Array.from({length:count},(_,i)=>({species:(section+i)%3===0?0:1,x:-35+i*(70/(count-1))+(random(i+1)-.5)*5,z:(i%2?-1:1)*(7.8+random(i+10)*2.2),scale:.78+random(i+20)*.32,rotation:random(i+30)*Math.PI*2,tint:new T.Color().setHSL(.24+random(i+40)*.04,.18+random(i+50)*.12,.76+random(i+60)*.1)}))
 }
 function masonryDetail(material:T.MeshStandardMaterial){
  material.onBeforeCompile=shader=>{
@@ -67,11 +67,11 @@ export function createItalianStreet(parent:T.Group,assets:RoadAssets){
   }
  })
 
- const ready=Promise.all([assets.model('/models/italian-urban-facade.glb'),assets.model('/models/italian-roadside-tree.glb')]).then(([facade,tree])=>{
-  const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0}]
+ const ready=Promise.all([assets.model('/models/italian-urban-facade.glb'),assets.model('/models/italian-roadside-tree.glb'),assets.model('/models/italian-canopy-tree.glb')]).then(([facade,tree,canopy])=>{
+  const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0},{asset:canopy.scene,kind:'tree',variant:1}]
   for(const {asset,kind,variant} of assets){
    asset.updateMatrixWorld(true)
-   const bounds=new T.Box3().setFromObject(asset),height=bounds.max.y-bounds.min.y,scale=kind==='tree'?5.2/height:1
+   const bounds=new T.Box3().setFromObject(asset),height=bounds.max.y-bounds.min.y,scale=kind==='tree'?(variant===1?4.8:5.2)/height:1
    const finishes=new Map<T.Material,T.Material>()
    asset.traverse(o=>{if(!(o instanceof T.Mesh))return
     if(disposed)return
@@ -92,8 +92,8 @@ export function createItalianStreet(parent:T.Group,assets:RoadAssets){
     }return shaded};instanceMaterials=Array.isArray(o.material)?o.material.map(tint):tint(o.material)}
     for(const m of Array.isArray(instanceMaterials)?instanceMaterials:[instanceMaterials]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=12;const finish=m as T.MeshStandardMaterial;finish.envMapIntensity=.4;if(kind==='facade'){finish.side=T.FrontSide;if(m.name.endsWith('_glass')){finish.transparent=false;finish.opacity=1;finish.depthWrite=true;finish.roughness=.82;finish.metalness=0;finish.envMapIntensity=.08;finish.needsUpdate=true}}}
     for(const [section,chunk] of chunks.entries()){
-     const layout=treeLayout(section);const count=kind==='facade'?2:layout.length,instances=new T.InstancedMesh(geometry,instanceMaterials,count),dummy=new T.Object3D()
-     instances.name=kind==='facade'?'Poly Haven detailed architectural modules':'Poly Haven detailed roadside trees';instances.receiveShadow=true;instances.castShadow=kind==='facade'
+     const layout=treeLayout(section).filter(p=>p.species===variant);const count=kind==='facade'?2:layout.length,instances=new T.InstancedMesh(geometry,instanceMaterials,count),dummy=new T.Object3D()
+     instances.name=kind==='facade'?'Poly Haven detailed architectural modules':'Poly Haven detailed roadside trees';instances.receiveShadow=true;instances.castShadow=true
      for(let i=0;i<count;i++){
             dummy.scale.setScalar(scale)
       if(kind==='facade'){const buildingSide=i===0?-1:1;dummy.rotation.y=buildingSide===1?Math.PI:0;dummy.scale.set(width(variant),1,1);dummy.position.copy(housePose(variant,buildingSide))}

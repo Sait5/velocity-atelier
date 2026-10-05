@@ -1,6 +1,6 @@
 import {rolldown} from 'rolldown';
 import * as T from 'three';import assert from 'node:assert/strict';
-for(const name of ['motionRoad','lampDynamics','italianStreet']){const build=await rolldown({input:'app/three/'+name+'.ts',external:id=>id==='three'||id.startsWith('three/')});await build.write({file:'tools/generated/verify-'+name+'.mjs',format:'esm'});await build.close()}
+for(const name of ['motionRoad','lampDynamics','italianStreet','lampPool']){const build=await rolldown({input:'app/three/'+name+'.ts',external:id=>id==='three'||id.startsWith('three/')});await build.write({file:'tools/generated/verify-'+name+'.mjs',format:'esm'});await build.close()}
 const {createMotionRoad}=await import('./generated/verify-motionRoad.mjs');
 const textures=new Map(),owned=new Set();let disposedSources=0;
 const originalMaterial=new T.MeshStandardMaterial();originalMaterial.name='sample_plaster';owned.add(originalMaterial);originalMaterial.addEventListener('dispose',()=>disposedSources++);
@@ -28,3 +28,6 @@ for(let section=0;section<8;section++){
  for(let i=1;i<poses.length;i++)assert(poses[i].x-poses[i-1].x>7,'tree trunks cannot overlap');
 }
 console.log('Irregular tree density, safe planting bounds and stable stream poses pass.');
+
+const {createHeadlightPool}=await import('./generated/verify-lampPool.mjs');
+const physicalRoot=new T.Group(),lamp=new T.SpotLight(0xffffff,95),second=new T.SpotLight(0xffffff,95);lamp.position.set(-2,.5,.7);second.position.set(-2,.5,-.7);lamp.target.position.set(-6,0,.7);second.target.position.set(-6,0,-.7);physicalRoot.add(lamp,second,lamp.target,second.target);const pool=createHeadlightPool(-2,.7);physicalRoot.add(pool);const physicalLights=createLampDynamics(physicalRoot);physicalLights.configure('High',true,false);physicalLights.update(0);assert(pool.material.uniforms.lampPositions.value[0].equals(lamp.position));physicalRoot.position.x=10;physicalLights.update(0);assert.equal(pool.material.uniforms.lampPositions.value[0].x,8,'light reflection tracks actual world position');assert.equal(pool.material.uniforms.lampPowers.value[0],95);assert(pool.material.fragmentShader.includes('cameraPosition-surface'),'BRDF uses camera direction');assert(pool.material.fragmentShader.includes('1./distance2'),'physical inverse-square attenuation');assert(!pool.material.fragmentShader.includes('sin('),'no painted scrolling pattern');assert(layouts.every(poses=>new Set(poses.map(p=>p.species)).size===2),'both tree species are planted in every section');console.log('World-space lamp transforms, camera-dependent BRDF and two tree species pass.');
