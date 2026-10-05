@@ -75,6 +75,10 @@ export function prepareRevuelto(source:T.Group){
   // Rim geometry defines the axle; irregular tread bounds are not a rotation centre.
   const axleBounds=new T.Box3();original.traverse(o=>{if(o instanceof T.Mesh){const mats=Array.isArray(o.material)?o.material:[o.material];if(mats.some(m=>m.name==='M_WheelRim'))axleBounds.expandByObject(o,true)}});if(axleBounds.isEmpty())axleBounds.setFromObject(original,true)
   const wheel=new T.Group();wheel.name='Revuelto wheel '+name;axleBounds.getCenter(wheel.position);root.add(wheel);root.updateMatrixWorld(true);wheel.attach(original)
+  // Align the irregular authored tread with the rim axle in the radial plane.
+  const treads:T.Mesh[]=[];wheel.traverse(o=>{if(o instanceof T.Mesh&&!Array.isArray(o.material)&&/^Wheel(?:\.|$)/.test(o.material.name))treads.push(o)})
+  for(const tread of treads){const centre=new T.Box3().setFromObject(tread,true).getCenter(new T.Vector3()),target=centre.clone().setX(wheel.position.x).setY(wheel.position.y);const localCentre=tread.parent!.worldToLocal(centre.clone()),localTarget=tread.parent!.worldToLocal(target);tread.position.add(localTarget.sub(localCentre))}
+  root.updateMatrixWorld(true)
   // The authored controller also contains off-axis pads, brackets and brake hardware.
   // Only tyres, rims, hub badges and concentric rotors rotate with the axle.
   const fixed:T.Mesh[]=[];wheel.traverse(o=>{if(o instanceof T.Mesh&&!Array.isArray(o.material)&&/^(M_Caliper|M_Steel|M_DarkMetal|M_PaintedMetal|M_Rubber|M_Screw|M_Label)/.test(o.material.name))fixed.push(o)})

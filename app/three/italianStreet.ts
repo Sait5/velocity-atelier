@@ -8,6 +8,8 @@ export function treeLayout(section:number){
  const count=2+section%2
  return Array.from({length:count},(_,i)=>({species:(section+i)%2,x:-35+i*(70/(count-1))+(random(i+1)-.5)*5,z:(i%2?-1:1)*(7.8+random(i+10)*2.2),scale:.78+random(i+20)*.32,rotation:random(i+30)*Math.PI*2,tint:new T.Color().setHSL(.24+random(i+40)*.04,.18+random(i+50)*.12,.76+random(i+60)*.1)}))
 }
+/** Reproducible empty plots: each side has one or two houses, not a solid row. */
+export function buildingLayout(section:number,side:number){const omitted=(section+(side===1?1:0))%3;return [0,1,2].filter(variant=>variant!==omitted&&(!(section%3===1)||variant===(omitted+1)%3))}
 function masonryDetail(material:T.MeshStandardMaterial){
  material.onBeforeCompile=shader=>{
   shader.vertexShader='varying vec3 masonryPosition;\n'+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
@@ -35,22 +37,19 @@ export function createItalianStreet(parent:T.Group,assets:RoadAssets){
  const orders=[[0,1,2],[2,0,1],[1,2,0],[0,2,1],[2,1,0],[1,0,2]]
  const housePose=(variant:number,side:number,section=0)=>new T.Vector3(-24+orders[(section+(side===1?2:0))%orders.length]!.indexOf(variant)*24,.255,side*(variant===0?18:19))
  const foundationGeometry=new T.BoxGeometry(1,1,1),foundationMaterial=masonryDetail(new T.MeshStandardMaterial({color:'#69665d',roughness:.95}))
- for(const [section,chunk] of chunks.entries()){const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,6),dummy=new T.Object3D();foundations.name='Separate continuous building foundations';let i=0;for(const side of [-1,1])for(let variant=0;variant<3;variant++){dummy.position.copy(housePose(variant,side,section));dummy.position.y=.135;dummy.scale.set(12.7*width(variant),.30,9.7);dummy.updateMatrix();foundations.setMatrixAt(i++,dummy.matrix)}foundations.receiveShadow=true;foundations.computeBoundingSphere();chunk.add(foundations)}
-
- // Small street details stay instanced and travel with each existing section.
- const pipeGeometry=new T.CylinderGeometry(.045,.045,1,6),pipeMaterial=new T.MeshStandardMaterial({color:'#5e625e',metalness:.45,roughness:.6})
+ const roofGeometry=new T.BoxGeometry(1,.16,1),roofMaterial=new T.MeshStandardMaterial({color:'#817b71',roughness:.95})
  for(const [section,chunk] of chunks.entries()){
-  const pipes=new T.InstancedMesh(pipeGeometry,pipeMaterial,12),dummy=new T.Object3D();let index=0
-  pipes.name='Facade rainwater downpipes'
-  for(const side of [-1,1])for(let variant=0;variant<3;variant++)for(const edge of [-1,1]){
-   const pos=housePose(variant,side,section),front=side*(Math.abs(pos.z)-4.95),height=(variant+1)*3.6+.5
-   dummy.position.set(pos.x+edge*5.95*width(variant),.3+height/2,front+side*.15);dummy.scale.set(1,height,1);dummy.updateMatrix();pipes.setMatrixAt(index,dummy.matrix);index++
-  }
-  for(const mesh of [pipes]){mesh.receiveShadow=true;mesh.computeBoundingSphere();chunk.add(mesh)}
+  const buildings=[-1,1].flatMap(side=>buildingLayout(section,side).map(variant=>({side,variant}))),dummy=new T.Object3D()
+  const foundations=new T.InstancedMesh(foundationGeometry,foundationMaterial,buildings.length),roofs=new T.InstancedMesh(roofGeometry,roofMaterial,buildings.length)
+  foundations.name='Separate continuous building foundations';roofs.name='Closed flat roof caps'
+  buildings.forEach(({side,variant},i)=>{
+   dummy.position.copy(housePose(variant,side,section));dummy.position.y=.135;dummy.scale.set(12.7*width(variant),.30,9.7);dummy.updateMatrix();foundations.setMatrixAt(i,dummy.matrix)
+   dummy.position.y=.255+(variant+1)*3.6+.72;dummy.scale.set(12.65*width(variant),1,9.65);dummy.updateMatrix();roofs.setMatrixAt(i,dummy.matrix)
+  })
+  for(const mesh of [foundations,roofs]){mesh.receiveShadow=true;mesh.computeBoundingSphere();chunk.add(mesh)}
  }
  let disposed=false
- // Imported facade modules retain their closed caps; omit extra pitched roofs,
- // chimneys and roof textures to keep the moving street lightweight.
+ // Lightweight flat caps close the open tops without pitched roofs or pipes.
  const ready=Promise.all([assets.model('/models/italian-urban-facade.glb'),assets.model('/models/italian-roadside-tree.glb'),assets.model('/models/italian-canopy-tree.glb')]).then(([facade,tree,canopy])=>{
   const assets=[...facade.scenes.map((asset,variant)=>({asset,kind:'facade',variant})),{asset:tree.scene,kind:'tree',variant:0},{asset:canopy.scene,kind:'tree',variant:1}]
   for(const {asset,kind,variant} of assets){
@@ -76,11 +75,11 @@ export function createItalianStreet(parent:T.Group,assets:RoadAssets){
     }return shaded};instanceMaterials=Array.isArray(o.material)?o.material.map(tint):tint(o.material)}
     for(const m of Array.isArray(instanceMaterials)?instanceMaterials:[instanceMaterials]){for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=12;const finish=m as T.MeshStandardMaterial;finish.envMapIntensity=.4;if(kind==='facade'){finish.side=T.FrontSide;if(m.name.endsWith('_glass')){finish.transparent=false;finish.opacity=1;finish.depthWrite=true;finish.roughness=.82;finish.metalness=0;finish.envMapIntensity=.08;finish.needsUpdate=true}}}
     for(const [section,chunk] of chunks.entries()){
-     const layout=treeLayout(section).filter(p=>p.species===variant);const count=kind==='facade'?2:layout.length,instances=new T.InstancedMesh(geometry,instanceMaterials,count),dummy=new T.Object3D()
+     const layout=treeLayout(section).filter(p=>p.species===variant),sides=[-1,1].filter(side=>buildingLayout(section,side).includes(variant));const count=kind==='facade'?sides.length:layout.length;if(!count)continue;const instances=new T.InstancedMesh(geometry,instanceMaterials,count),dummy=new T.Object3D()
      instances.name=kind==='facade'?'Poly Haven detailed architectural modules':'Poly Haven detailed roadside trees';instances.receiveShadow=kind==='facade';instances.castShadow=kind==='facade'
      for(let i=0;i<count;i++){
             dummy.scale.setScalar(scale)
-      if(kind==='facade'){const buildingSide=i===0?-1:1;dummy.rotation.y=buildingSide===1?Math.PI:0;dummy.scale.set(width(variant),1,1);dummy.position.copy(housePose(variant,buildingSide,section))}
+      if(kind==='facade'){const buildingSide=sides[i]!;dummy.rotation.y=buildingSide===1?Math.PI:0;dummy.scale.set(width(variant),1,1);dummy.position.copy(housePose(variant,buildingSide,section))}
       else{const pose=layout[i]!,treeScale=scale*pose.scale;dummy.scale.set(treeScale*(.94+(i%3)*.05),treeScale,treeScale);dummy.rotation.y=pose.rotation;dummy.position.set(pose.x,-bounds.min.y*treeScale+.14,pose.z);instances.setColorAt(i,pose.tint)}
       dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix.clone().multiply(o.matrixWorld))
      }
