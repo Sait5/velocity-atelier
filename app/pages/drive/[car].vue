@@ -27,7 +27,7 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
   <div v-if="error" class="error-panel"><p>{{t('Не удалось запустить сцену:','Scene could not initialize:')}} {{error}}</p><button class="outline" @click="retryScene">{{t('ПОВТОРИТЬ','RETRY')}}</button></div>
   <div v-show="ready" class="drive-hud"><strong>{{String(speed).padStart(3,'0')}}</strong><small>{{t('КМ/Ч','KM/H')}}</small><div class="rpm"><i :style="{width:Math.min(100,telemetry.rpm/8500*100)+'%'}"/></div><small>{{t('ПЕРЕДАЧА','GEAR')}} {{gear}}</small></div>
   <div v-show="ready" class="drive-controls">
-   <div class="drive-hints">W / ↑ {{t('ГАЗ','ACCELERATE')}} · S / ↓ {{t('ТОРМОЗ','BRAKE')}} · SPACE {{t('ТОРМОЗ','BRAKE')}}<br>{{t('ПЕРЕТАСКИВАНИЕ — ОСМОТР','DRAG TO LOOK AROUND')}} · C {{t('КАМЕРА','CAMERA')}}</div>
+   <div class="drive-hints">W / ↑ {{t('ГАЗ','ACCELERATE')}} · S / ↓ {{t('ТОРМОЗ','BRAKE')}} · A / D {{t('ПОЛОСА','LANE')}}<br>{{t('ПЕРЕТАСКИВАНИЕ — ОСМОТР','DRAG TO LOOK AROUND')}} · C {{t('КАМЕРА','CAMERA')}}</div>
    <div class="drive-button-grid">
     <button :aria-pressed="cruise" @click="auto">{{cruise?t('ОСТАНОВИТЬ РАЗГОН','STOP ACCELERATING'):t('АВТОРАЗГОН','AUTO ACCELERATE')}}</button>
     <button :aria-pressed="s.engine.value" @click="s.engine.value=!s.engine.value">{{s.engine.value?t('ВЫКЛЮЧИТЬ МОТОР','MUTE ENGINE'):t('ЗВУК МОТОРА','ENGINE SOUND')}}</button>
@@ -41,7 +41,7 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
   <dialog ref="mapDialog" class="drive-map-dialog" aria-labelledby="map-heading" @close="onMapClose">
    <div class="map-dialog-heading"><div><small>VELOCITY / {{t('МАРШРУТЫ','ROUTES')}}</small><h2 id="map-heading">{{t('Выберите карту','Choose a map')}}</h2></div><button :aria-label="t('Закрыть','Close')" @click="closeMaps">×</button></div>
    <div class="drive-map-options">
-    <button :class="{selected:roadMap==='italy'}" :aria-pressed="roadMap==='italy'" @click="chooseMap('italy')"><strong>{{t('Италия · Рим','Italy · Rome')}}</strong><small>{{t('Каменная дорога · окрестности Рима','Quiet streets · clear daylight')}}</small><b>{{roadMap==='italy'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
+    <button :class="{selected:roadMap==='italy'}" :aria-pressed="roadMap==='italy'" @click="chooseMap('italy')"><strong>{{t('Италия · Рим','Italy · Rome')}}</strong><small>{{t('Загородная дорога · окрестности Рима','Quiet streets · clear daylight')}}</small><b>{{roadMap==='italy'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
     <button :class="{selected:roadMap==='night'}" :aria-pressed="roadMap==='night'" @click="chooseMap('night')"><strong>{{t('Ночная дорога','Night road')}}</strong><small>{{t('Тёмный фон · свет фонарей','Dark backdrop · overhead lights')}}</small><b>{{roadMap==='night'?t('ВЫБРАНО','SELECTED'):t('ВЫБРАТЬ →','SELECT →')}}</b></button>
    </div>
   </dialog>

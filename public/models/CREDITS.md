@@ -61,3 +61,12 @@ File: lamborghini-revuelto.glb. Adaptations: coordinate alignment, scissor-door 
 Оба ресурса используются по [CC0](https://polyhaven.com/license), без обязательной атрибуции.
 
 - [Tree Small 02](https://polyhaven.com/a/tree_small_02) — Rico Cilliers, CC0. Второй вид дерева с плотной кроной; оптимизирована геометрия, восстановлена альфа-маска листьев, текстуры сжаты в WebP. Файл: `italian-canopy-tree.glb`.
+
+## Roman countryside vegetation
+- Pine Tree 01 — Rob Tuytel (photography), Rico Cilliers (modeling), CC0: https://polyhaven.com/a/pine_tree_01
+- Shrub 01 — Poly Haven, CC0: https://polyhaven.com/a/shrub_01
+- Grass Medium 01 — Poly Haven, CC0: https://polyhaven.com/a/grass_medium_01
+
+Prepared with tools/prepare-roman-nature.mjs: one pine variant, reduced mesh density, alpha masking, 1K WebP textures and Meshopt compression. These are decorative botanical assets; the pine is not claimed to be a verified Pinus pinea scan.
+
+Distant groves use reduced variants of the same CC0 trees: tools/prepare-roman-lod.mjs. Full and reduced variants share textures at runtime.

@@ -1,0 +1,2 @@
+import sharp from 'sharp';const headers={'User-Agent':'Mozilla/5.0'},meta=await fetch('https://api.polyhaven.com/files/leafy_grass',{headers}).then(r=>r.json());console.log(Object.keys(meta));for(const [key,name] of [['Diffuse','diff'],['nor_gl','normal']]){const entry=meta[key]['2k'].jpg,res=await fetch(entry.url);if(!res.ok)throw Error(res.status);await sharp(Buffer.from(await res.arrayBuffer())).webp({quality:88}).toFile('public/textures/roman-meadow-'+name+'.webp')}
+

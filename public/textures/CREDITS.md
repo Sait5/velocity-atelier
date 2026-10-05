@@ -18,3 +18,6 @@ Albedo 4K, normal/roughness 2K, compressed to WebP. Preparation: tools/prepare-r
 
 Withered Grass — Poly Haven, CC0. https://polyhaven.com/a/withered_grass
 2K albedo/normal converted to WebP for Roman countryside.
+
+Leafy Grass — Poly Haven, CC0: https://polyhaven.com/a/leafy_grass
+2K albedo and normal, WebP; greener countryside terrain. Prepared by tools/prepare-roman-meadow.mjs.
