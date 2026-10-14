@@ -22,3 +22,12 @@ tools/generated/*-full.jpg
 tools/generated/showroomIntro.mjs
 
 /tools/generated/verify-*.mjs
+/tools/coast-top.png
+/tools/coast-probes.json
+/tools/generated/forest-road.glb
+/tools/generated/road-tunnel.glb
+
+/tools/source-audio/
+
+# Large intermediate Blender source; exported runtime models are tracked.
+/tools/generated/cinematic-road-source/Cinematic roads pack/Straight road/forBlender.blend

@@ -1,0 +1,24 @@
+[
+  {
+    "side": "L",
+    "samples": 121,
+    "jointError": 8.123739115834193e-8,
+    "gasError": 8.59134048437846e-8,
+    "linkLengths": [
+      0.29,
+      0.31
+    ],
+    "gasCylinderLength": 0.22
+  },
+  {
+    "side": "R",
+    "samples": 121,
+    "jointError": 8.123739115834193e-8,
+    "gasError": 8.59134048437846e-8,
+    "linkLengths": [
+      0.29,
+      0.31
+    ],
+    "gasCylinderLength": 0.22
+  }
+]

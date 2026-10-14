@@ -1,0 +1,110 @@
+{
+  "source": "https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Pole%20Position%20-%20Lamborghini%20Aventador%202014/lamborghini_aventador_t14_onbrd_start_drive_ramps_stop_off_exhaust_right_DPA4062.wav",
+  "sha256": "92986d10dd09f45cda5b57cca3805387e25c7235154741234f1aed60a5355a54",
+  "publisher": "Pole Position Production",
+  "vehicle": "Lamborghini Aventador 2014",
+  "bundle": "Sonniss GameAudioGDC 2020",
+  "license": "https://sonniss.com/gdc-bundle-license/",
+  "processing": "RPM-normalized recorded ramps, smooth splices, static level; no synthesized engine",
+  "bands": [
+    {
+      "name": "idle",
+      "file": "aventador-sonniss-idle.wav",
+      "duration": 15.75,
+      "excerpts": [
+        {
+          "seconds": [
+            502,
+            518
+          ],
+          "rate": "original"
+        }
+      ],
+      "peak": 0.05649355565557171,
+      "rms": 0.019276220257338862
+    },
+    {
+      "name": "low",
+      "file": "aventador-sonniss-low.wav",
+      "duration": 5.712,
+      "excerpts": [
+        {
+          "seconds": [
+            100.5,
+            104.435
+          ],
+          "frequency_hz": 240
+        },
+        {
+          "seconds": [
+            160,
+            162.069
+          ],
+          "frequency_hz": 240
+        }
+      ],
+      "peak": 0.15040996826910524,
+      "rms": 0.05097385724618081
+    },
+    {
+      "name": "mid",
+      "file": "aventador-sonniss-mid.wav",
+      "duration": 9.939708333333334,
+      "excerpts": [
+        {
+          "seconds": [
+            107.053,
+            111.555
+          ],
+          "frequency_hz": 420
+        },
+        {
+          "seconds": [
+            164.516,
+            168.725
+          ],
+          "frequency_hz": 420
+        },
+        {
+          "seconds": [
+            411.701,
+            414.022
+          ],
+          "frequency_hz": 420
+        }
+      ],
+      "peak": 0.25133600975834514,
+      "rms": 0.05037954978647544
+    },
+    {
+      "name": "high",
+      "file": "aventador-sonniss-high.wav",
+      "duration": 8.904270833333333,
+      "excerpts": [
+        {
+          "seconds": [
+            114.296,
+            118.3
+          ],
+          "frequency_hz": 640
+        },
+        {
+          "seconds": [
+            173.5,
+            177.5
+          ],
+          "frequency_hz": 640
+        },
+        {
+          "seconds": [
+            415.436,
+            417.5
+          ],
+          "frequency_hz": 640
+        }
+      ],
+      "peak": 0.20917785632418867,
+      "rms": 0.04945207457048954
+    }
+  ]
+}

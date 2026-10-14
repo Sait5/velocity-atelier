@@ -1,0 +1,34 @@
+{
+  "provenance": "Owner-supplied Aventador/SVJ recordings.",
+  "processing": "Pitch-preserving duration extension; no filters or playback-rate changes. Cabin volume only.",
+  "timing": {
+    "loopStart": 12.94,
+    "loopEnd": 37.54
+  },
+  "assets": [
+    {
+      "output": "aventador-engine-quiet.wav",
+      "source": "Lamborghini Aventador — Звук двигателя (www.hotplayer.ru).mp3",
+      "source_sha256": "00f46d36424a589c79b3d9d0ea1f7d9d9e4a228ab346f287bbb1315b2233c647",
+      "gain_db": -14.301,
+      "duration": 24.816326530612244,
+      "edit": "Complete original, static volume only."
+    },
+    {
+      "output": "aventador-engine-driving.wav",
+      "source": "Lamborghini Aventador — Звук двигателя (www.hotplayer.ru).mp3",
+      "source_sha256": "00f46d36424a589c79b3d9d0ea1f7d9d9e4a228ab346f287bbb1315b2233c647",
+      "gain_db": -14.301,
+      "duration": 37.54,
+      "edit": "Original acceleration 6–18 s; source 18–24.4 s duration extended 4x with stereo WSOLA, no resampling/filtering/pitch shift; 1 s circular splice."
+    },
+    {
+      "output": "aventador-ignition-exhaust.wav",
+      "source": "Lamborghini aventador svj ignition and exhaust.mp3",
+      "source_sha256": "0658818cabff1e2c802feddfaf16dcef89b349a98ef35a855632c0d749c1f46e",
+      "gain_db": -12,
+      "duration": 10.1061875,
+      "edit": "Complete original, static volume only."
+    }
+  ]
+}

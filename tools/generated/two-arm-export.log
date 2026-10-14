@@ -1,0 +1,165 @@
+00:00.578  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\blender\Revuelto-Two-Arm-Mechanism.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+13:00:38 | INFO: Starting glTF 2.0 export
+13:00:38 | INFO: Extracting primitive: Cylinder.095
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.100
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.083
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.085
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.087
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.089
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.093
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.098
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.081
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.082
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.091
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.096
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.075
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.080
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.063
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.065
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.067
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.069
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.073
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.078
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.062
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.071
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.076
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Cylinder.044
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.048
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube.001
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Cube.002
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Cylinder.139
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube.006
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.031
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.034
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.037
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.040
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube.003
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Door_Mount | coupling cheek
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Door_Mount | coupling cheek.001
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Cube.004
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube.005
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.051
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.054
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.057
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.060
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.143
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.141
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.147
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.145
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.114
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.119
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.102
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.104
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.106
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.108
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.112
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.117
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.101
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.110
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.115
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Lower_Arm | fork plate
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Lower_Arm | fork plate.001
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Cylinder.133
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.138
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.121
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.123
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.125
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.127
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.131
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.136
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.120
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.129
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.134
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.149
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.151
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cylinder.140
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Cube.007
+13:00:38 | INFO: Primitives created: 1
+13:00:38 | INFO: Extracting primitive: Upper_Arm | perforated plate
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Extracting primitive: Upper_Arm | perforated plate.001
+13:00:38 | INFO: Primitives created: 2
+13:00:38 | INFO: Finished glTF 2.0 export in 0.4553039073944092 s
+
+BAKED_EXISTING_TWO_ARM 5 animated objects
+Existing two-arm animation 6 channels
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

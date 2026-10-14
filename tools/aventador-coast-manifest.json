@@ -1,0 +1,18 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\Zvuk_dviguna_-_Lamborghini_Aventador_(Zvyki.com).mp3",
+  "sha256": "91b18fa5ca52116a39f611bb414101507899152b7f091a20374886ebe612239c",
+  "source_seconds": [
+    29,
+    55
+  ],
+  "sustain_source_seconds": [
+    48,
+    55
+  ],
+  "crossfade_seconds": 0.6,
+  "gain": 0.4,
+  "pitch_change": false,
+  "tempo_change": false,
+  "loopStart": 31.8,
+  "loopEnd": 38.2
+}

@@ -1,0 +1,582 @@
+17:34:09 | INFO: Data are loaded, start creating Blender stuff
+17:34:09 | INFO: Blender create Mesh node _Badge_Geo_lodA_Badge_Geo_lodA_Porsche_911GT39922_2025BadgeA_Material__Porsche_911GT39922_2025BadgeA_Material1_0.001
+17:34:09 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.003
+17:34:09 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+17:34:09 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+17:34:09 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+17:34:09 | INFO: Blender create Mesh node _GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha2A_Material__Porsche_911GT39922_2025GrilleAlpha2A_Material1_0.001
+17:34:09 | INFO: Blender create Mesh node _GrilleAlpha6_Geo_lodA_GrilleAlpha6_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha6A_Material__Porsche_911GT39922_2025GrilleAlpha6A_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _GrilleNoAlpha1_Geo_lodA_GrilleNoAlpha1_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha1A_Material__Porsche_911GT39922_2025GrilleNoAlpha1A_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha3A_Material__Porsche_911GT39922_2025GrilleNoAlpha3A_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.008
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material_dash_0.001
+17:34:10 | INFO: Blender create Mesh node _Light_Geo_lodA_Light_Geo_lodA_Porsche_911GT39922_2025LightA_Material__Porsche_911GT39922_2025LightA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Porsche_911GT39922_2025ManufacturerPlateA_Material__Porsche_911GT39922_2025ManufacturerPlateA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _SeatBelt_Geo_lodA_SeatBelt_Geo_lodA_Porsche_911GT39922_2025SeatBelt_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material_red_glass_0.001
+17:34:10 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node polySurface618_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface619_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface620_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface621_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface622_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface970_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface971_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface972_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.004
+17:34:10 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.003
+17:34:10 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.005
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.006
+17:34:10 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.007
+17:34:10 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.002
+17:34:10 | INFO: Blender create Mesh node polySurface1_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface617_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface616_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:10 | INFO: Blender create Mesh node polySurface615_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:10 | INFO: glTF import finished in 0.59s
+C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\build-door-mechanisms.py:17: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*color,1);m.use_nodes=True
+porsche L axis [-0.7300000190734863, -0.8799999952316284, 0.699999988079071] new painted-panel intersections [0, 0, 0, 0, 0]
+porsche R axis [-0.7300000190734863, 0.8799999952316284, 0.699999988079071] new painted-panel intersections [0, 0, 0, 0, 0]
+Info: Saved as "porsche-door-mechanisms.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+17:34:12 | INFO: Starting glTF 2.0 export
+17:34:12 | INFO: Extracting primitive: Cube.008
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.019
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.002
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.002
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.004
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.005
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.006
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.007
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.014
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.016
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.015
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.017
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.009
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.005
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.005
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.006
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.019
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.020
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.004
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.004
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.018
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.028
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.029
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.030
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.031
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.032
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.033
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.034
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.035
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.036
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.037
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.039
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.051
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.053
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.038
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.040
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.052
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.054
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.020
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.012
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.016
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.042
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.043
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.056
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.057
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.011
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.015
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.041
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.055
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.065
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.066
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.067
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.068
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.069
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.070
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.071
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.072
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.073
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.010
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.012
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.024
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.026
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.011
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.013
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.025
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.027
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.008
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.009
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.022
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.023
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.010
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.006
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.007
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.007
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.021
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.047
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.049
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.061
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.063
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.048
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.050
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.062
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.064
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.045
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.046
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.059
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.060
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.021
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.013
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.017
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.014
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.018
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.044
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.058
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Badge_Geo_lodA_Badge_Geo_lodA_Porsche_911GT39922_2025BadgeA_Material__Porsche_911GT39922_2025BadgeA_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha2A_Material__Porsche_911GT39922_2025GrilleAlpha2A_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleAlpha6_Geo_lodA_GrilleAlpha6_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha6A_Material__Porsche_911GT39922_2025GrilleAlpha6A_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleNoAlpha1_Geo_lodA_GrilleNoAlpha1_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha1A_Material__Porsche_911GT39922_2025GrilleNoAlpha1A_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha3A_Material__Porsche_911GT39922_2025GrilleNoAlpha3A_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.008
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material_dash_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Light_Geo_lodA_Light_Geo_lodA_Porsche_911GT39922_2025LightA_Material__Porsche_911GT39922_2025LightA_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Porsche_911GT39922_2025ManufacturerPlateA_Material__Porsche_911GT39922_2025ManufacturerPlateA_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _SeatBelt_Geo_lodA_SeatBelt_Geo_lodA_Porsche_911GT39922_2025SeatBelt_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material_red_glass_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface618_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface619_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface620_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface621_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface622_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface970_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface971_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface972_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface1_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface617_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface616_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: polySurface615_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Finished glTF 2.0 export in 0.7560555934906006 s
+
+17:34:12 | INFO: Starting glTF 2.0 export
+17:34:12 | INFO: Extracting primitive: Cube.008
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.019
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.014
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.016
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.015
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.017
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.009
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.001
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.005
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.005
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.006
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.019
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.020
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.004
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.004
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.018
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.028
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.029
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.030
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.031
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.032
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.033
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.034
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.035
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.036
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.037
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.039
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.051
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.053
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.038
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.040
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.052
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.054
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.020
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.012
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.016
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.042
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.043
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.056
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.057
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.011
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.015
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.041
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.055
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.065
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.066
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.067
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.068
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.069
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.070
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.071
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.072
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.073
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.010
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.012
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.024
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.026
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.011
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.013
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.025
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.027
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.008
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.009
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.022
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.023
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.010
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.002
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.006
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.003
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.007
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.007
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.021
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.047
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.049
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.061
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.063
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.048
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.050
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.062
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.064
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.045
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.046
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.059
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.060
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.021
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.013
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.017
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.014
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cube.018
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.044
+17:34:12 | INFO: Primitives created: 1
+17:34:12 | INFO: Extracting primitive: Cylinder.058
+17:34:12 | INFO: Primitives created: 1
+17:34:13 | INFO: Finished glTF 2.0 export in 0.27675700187683105 s
+
+DONE porsche closed vertex error 0.0
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

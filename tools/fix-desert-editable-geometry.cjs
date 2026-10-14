@@ -1,0 +1,3 @@
+const fs=require('fs'),p='app/three/desertRoad.ts';let s=fs.readFileSync(p,'utf8');s=s.replace('const positions=o.geometry.attributes.position,inverseWorld=o.matrixWorld.clone().invert(),v=new T.Vector3()',`const original=o.geometry.attributes.position!,positions=new T.Float32BufferAttribute(new Float32Array(original.count*3),3),inverseWorld=o.matrixWorld.clone().invert(),v=new T.Vector3()
+   for(let i=0;i<original.count;i++)positions.setXYZ(i,original.getX(i),original.getY(i),original.getZ(i))
+   o.geometry.setAttribute('position',positions);o.geometry.deleteAttribute('normal')`);fs.writeFileSync(p,s);

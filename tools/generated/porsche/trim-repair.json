@@ -1,0 +1,47 @@
+[
+  {
+    "part": "Porsche door trim 0",
+    "side": 0,
+    "faces": 1372
+  },
+  {
+    "part": "Porsche door trim 1",
+    "side": 1,
+    "faces": 1372
+  },
+  {
+    "part": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 2,
+    "faces": 52300
+  },
+  {
+    "part": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.001",
+    "fixed_sill": false,
+    "faces": 1298
+  },
+  {
+    "part": "Porsche fixed sill switches",
+    "fixed_sill": true,
+    "faces": 112
+  },
+  {
+    "part": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.002",
+    "fixed_sill": false,
+    "faces": 1683
+  },
+  {
+    "part": "Porsche fixed sill switches.001",
+    "fixed_sill": true,
+    "faces": 213
+  },
+  {
+    "part": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.003",
+    "fixed_sill": false,
+    "faces": 1294
+  },
+  {
+    "part": "Porsche fixed sill switches.002",
+    "fixed_sill": true,
+    "faces": 16
+  }
+]

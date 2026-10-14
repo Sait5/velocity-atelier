@@ -1,0 +1,18 @@
+{
+  "samples": 241,
+  "maxApprovedPoseError": 5.551115123125783e-16,
+  "maxScaleError": 3.557059964354181e-7,
+  "maxClosureError": 8.852909139100973e-8,
+  "visibleComplexMeshes": 0,
+  "replacedDoorFlanges": 2,
+  "clips": [
+    "Door_Open",
+    "Door_Close"
+  ],
+  "maskedFaces": {
+    "DoorJambLF_CarPaint": 649,
+    "DoorJambRF_CarPaint": 649,
+    "DoorSill_CarPaint": 1636,
+    "DoorSill_PaintedMetal": 628
+  }
+}

@@ -1,0 +1,44 @@
+import {build} from 'esbuild';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const timing=JSON.parse(readFileSync('public/audio/bugatti/user-loop-timing.json','utf8'));
+await build({entryPoints:['app/three/tourbillonEngineAudio.ts'],outfile:'tools/generated/bugatti-audio-check.mjs',bundle:true,platform:'node',format:'esm'});
+const sources=[];
+const targets=[];const param=()=>({value:0,setTargetAtTime(v){targets.push(v)}});
+globalThis.AudioContext=class{currentTime=0;destination={};createGain(){return {gain:param(),connect(){},disconnect(){}}}createBufferSource(){const s={playbackRate:param(),connect(){},disconnect(){},start(){s.started=true},stop(){s.stopped=true}};sources.push(s);return s}decodeAudioData(){return Promise.resolve({duration:25})}resume(){return Promise.resolve()}close(){return Promise.resolve()}};
+globalThis.fetch=async()=>({ok:true,json:async()=>timing,arrayBuffer:async()=>new ArrayBuffer(1)});
+const {createTourbillonEngineAudio}=await import('./generated/bugatti-audio-check.mjs');
+const a=createTourbillonEngineAudio();await a.preload();a.start();
+a.update(3000,true,.2,true,10);assert.equal(sources.length,1);assert.equal(sources[0].playbackRate.value,1);assert.equal(sources[0].loopStart,15);assert.equal(sources[0].loopEnd,25);
+a.update(5000,true,.2,true,20);assert.equal(sources.length,1);
+a.update(2000,false,.2,true,15);assert.equal(sources.length,2);assert(sources[0].stopped);assert.equal(sources[1].loopStart,timing.coast.loopStart);
+a.update(900,false,.2,true,0);assert(sources[1].stopped);
+a.update(3000,true,.2,true,10);a.update(3000,true,.2,false,10);assert(sources[2].stopped);
+a.dispose();console.log('PASS: acceleration, coast, stop, mute, original playback rate');
+const ignition=createTourbillonEngineAudio();await ignition.preload();ignition.start();
+const base=sources.length;
+ignition.update(900,false,.2,true,0);assert.equal(sources.length,base+1);assert.equal(sources[base].loop,false);
+ignition.update(900,false,.2,true,0);assert.equal(sources.length,base+1);
+sources[base].onended();ignition.update(900,false,.2,true,0);assert.equal(sources.length,base+1);
+ignition.update(900,false,.2,false,0);ignition.update(900,false,.2,true,0);assert.equal(sources.length,base+2);
+ignition.update(3000,true,.2,true,10);assert(sources[base+1].stopped);assert.equal(sources.at(-1).loop,true);
+ignition.dispose();console.log('PASS: ignition plays once, restarts on motor toggle, yields to acceleration');
+
+assert.equal(timing.acceleration.loopEnd-timing.acceleration.loopStart,10);
+assert(Math.abs(timing.coast.loopEnd-timing.coast.loopStart-4)<.0001);
+console.log("PASS: 10-second acceleration loop and 4-second coast loop");
+
+const ending=createTourbillonEngineAudio();await ending.preload();ending.update(2000,false,.2,true,10);
+const coastSource=sources.at(-1);assert.equal(coastSource.loopStart,2);assert.equal(coastSource.loopEnd,6);
+ending.update(1000,false,.2,true,.5);assert(coastSource.stopped);const endSource=sources.at(-1);assert.equal(endSource.loop,false);
+ending.update(900,false,.2,true,0);assert(!endSource.stopped);endSource.onended();const count=sources.length;
+ending.update(900,false,.2,true,0);assert.equal(sources.length,count);ending.dispose();
+console.log('PASS: final 6–8s plays once near stop and never loops');
+
+const fade=createTourbillonEngineAudio();await fade.preload();
+fade.update(3000,false,.2,true,30);const loud=targets.at(-1);
+fade.update(2000,false,.2,true,15);const medium=targets.at(-1);
+fade.update(1000,false,.2,true,5);const quiet=targets.at(-1);
+fade.update(900,false,.2,true,0);assert.equal(targets.at(-1),0);
+assert(loud>medium&&medium>quiet&&quiet>0);fade.dispose();
+console.log('PASS: coast volume decreases with speed and reaches zero at stop');

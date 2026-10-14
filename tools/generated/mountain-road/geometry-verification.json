@@ -1,0 +1,16 @@
+{
+  "mountain": {
+    "checkedJoins": 16,
+    "maxGapMetres": 0,
+    "nearVertices": 23994,
+    "farVertices": 374,
+    "period": 4096
+  },
+  "winter": {
+    "checkedJoins": 16,
+    "maxGapMetres": 0,
+    "nearVertices": 23994,
+    "farVertices": 374,
+    "period": 4096
+  }
+}

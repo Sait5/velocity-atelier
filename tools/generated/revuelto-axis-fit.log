@@ -1,0 +1,546 @@
+11:31:41 | INFO: Data are loaded, start creating Blender stuff
+11:31:41 | INFO: Blender create Mesh node Cylinder_050.004
+11:31:41 | INFO: Blender create Mesh node Cylinder_050.001
+11:31:41 | INFO: Blender create Mesh node Cylinder_050.002
+11:31:41 | INFO: Blender create Mesh node Cylinder_050.003
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID20_carbonfiber.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID31_detail_metallic_ch1.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID43_detail_metallic_ch1.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID26_grille.001
+11:31:41 | INFO: Blender create Mesh node body_label_a_LODS0 ID42_screw.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID06_paintedmetal.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID02_plastic.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID28_plastic.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID29_plastic.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID08_rubber.001
+11:31:41 | INFO: Blender create Mesh node body_a_LODS0 ID09_undercarriage_ch1.001
+11:31:41 | INFO: Blender create Mesh node bodyGascap_a_LODS0|body_a_LODS0 carPaint.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID13_blackframe.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID33_grillebackground_ch1.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID20_carbonfiber.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 carPaint.003
+11:31:41 | INFO: Blender create Mesh node bumperF_label_a_LODS0 ID34_steel_ch1.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID06_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID21_carbonfiber.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID28_plastic.003
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID29_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID30_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperF_a_LODS0 ID32_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID13_blackframe.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID20_carbonfiber.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID21_carbonfiber.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 carPaint.003
+11:31:41 | INFO: Blender create Mesh node bumperR_label_a_LODS0 ID33_screw.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID06_paintedmetal.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID29_paintedmetal.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID31_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID32_plastic.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID08_rubber.001
+11:31:41 | INFO: Blender create Mesh node bumperR_a_LODS0 ID09_undercarriage_ch1.001
+11:31:41 | INFO: Blender create Mesh node bumperRBadge_a_LODS0 ID11_chrome.001
+11:31:41 | INFO: Blender create Mesh node bumperRHoneycomb_a_LODS0 ID27_detail_ch1|bumperrhoneycomb_a.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS ID10_aluminum.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS ID13_blackframe.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS carPaint.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID49_detail_ch1.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID40_label_ch1.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID48_screw_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS ID28_plastic.001
+11:31:42 | INFO: Blender create Mesh node doorJambLF_a_LODS ID08_rubber.001
+11:31:42 | INFO: Blender create Mesh node doorJambLFPistonLower_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorJambLFPistonUpper_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS ID10_aluminum.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS ID13_blackframe.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS carPaint.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_label_a_LODS ID49_detail_ch1.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_label_a_LODS ID48_screw_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS ID28_plastic|doorjambrf_a.001
+11:31:42 | INFO: Blender create Mesh node doorJambRF_a_LODS ID08_rubber.001
+11:31:42 | INFO: Blender create Mesh node doorJambRFPistonLower_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorJambRFPistonUpper_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorLF_a_LODS0 CarbonFiber.001
+11:31:42 | INFO: Blender create Mesh node doorLF_a_LODS0 carPaint.001
+11:31:42 | INFO: Blender create Mesh node doorLF_a_LODS0|mirrorBaseL_a_LODS0 ID30_plastic|mirrorbasel
+11:31:42 | INFO: Blender create Mesh node doorRF_a_LODS0 CarbonFiber.001
+11:31:42 | INFO: Blender create Mesh node doorRF_a_LODS0 carPaint.001
+11:31:42 | INFO: Blender create Mesh node doorRF_a_LODS0|mirrorBaseR_a_LODS0 ID30_plastic|mirrorbasel
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS carPaint.001
+11:31:42 | INFO: Blender create Mesh node doorSill_label_a_LODS ID26_grille.001
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS ID06_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS ID28_plastic.001
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS ID30_plastic.001
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS ID31_plastic.001
+11:31:42 | INFO: Blender create Mesh node doorSill_a_LODS ID08_rubber.001
+11:31:42 | INFO: Blender create Mesh node fenders_a_LODS0 carPaint.001
+11:31:42 | INFO: Blender create Mesh node fenders_a_LODS0 ID02_plastic.001
+11:31:42 | INFO: Blender create Mesh node mirrorBaseL_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:31:42 | INFO: Blender create Mesh node mirrorBaseR_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:31:42 | INFO: Blender create Mesh node PlateUS_a_LODS0 US_Plate_base.001
+11:31:42 | INFO: Blender create Mesh node PlateUS_a_LODS0 US_Plate_Shadow [no color].001
+11:31:42 | INFO: Blender create Mesh node vents_a_LODS0 ID10_chrome|vents_a [no color].001
+11:31:42 | INFO: Blender create Mesh node vents_a_LODS0 ID04_detail_ch1|vents_a [no color].001
+11:31:42 | INFO: Blender create Mesh node vents_label_a_LODS0 ID24_screw_metallic_ch1|vents_a [no col
+11:31:42 | INFO: Blender create Mesh node vents_a_LODS0 ID01_plastic|vents_a [no color].001
+11:31:42 | INFO: Blender create Mesh node vents_a_LODS0 ID07_plastic_ch1|vents_a [no color].001
+11:31:42 | INFO: Blender create Mesh node wing_a_LODS0 carPaint.004
+11:31:42 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID04_blackhole.001
+11:31:42 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID03_metailpanit.001
+11:31:42 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID05_screw.001
+11:31:42 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID04_blackhole.001
+11:31:42 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID03_metailpanit.001
+11:31:42 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID05_screw.001
+11:31:42 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID02_steel.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID14_blackhole.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID20_carbonfiber.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID40_mirror_left [no color].001
+11:31:42 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID28_plastic.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID30_plastic.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID14_blackhole.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID20_carbonfiber.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID41_mirror_right [no color].001
+11:31:42 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID28_plastic.001
+11:31:42 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID30_plastic.001
+11:31:42 | INFO: Blender create Mesh node wingPistonLowerL_a_LODS0 ID02_steel.001
+11:31:42 | INFO: Blender create Mesh node wingPistonLowerR_a_LODS0 ID02_steel.001
+11:31:42 | INFO: Blender create Mesh node wingPistonUpperL_a_LODS0 ID03_metailpanit.001
+11:31:42 | INFO: Blender create Mesh node wingPistonUpperR_a_LODS0 ID03_metailpanit.001
+11:31:42 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID04_blackhole.001
+11:31:42 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID03_metailpanit.001
+11:31:42 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID02_steel.001
+11:31:42 | INFO: Blender create Mesh node wiperArmL_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperArmL_a_LODS0 ID09_Screw.001
+11:31:42 | INFO: Blender create Mesh node wiperArmR_001_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperArmR_002_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperArmR_002_a_LODS0 ID09_Screw.001
+11:31:42 | INFO: Blender create Mesh node wiperBase_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperBladeL_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperBladeL_a_LODS0 ID08_Rubber.001
+11:31:42 | INFO: Blender create Mesh node wiperBladeR_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperBladeR_a_LODS0 ID08_Rubber.001
+11:31:42 | INFO: Blender create Mesh node wiperL_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperR_001_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node wiperR_002_a_LODS0 ID06_MetalPaint.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID11_aluminum.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID33_aluminum.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID71_aluminum.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID08_anodizedmetal.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID37_anodizedmetal_ch1.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID65_anodizedmetal.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID13_blackhole.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID20_chrome.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID35_detail_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID40_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID60_detail_metallic_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID81_glass_window_rear.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID07_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID09_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID10_metalpowder_ch1.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID12_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID06_plastic.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID38_plastic_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID39_plastic.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID42_plastic_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID14_screw_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engine_a_LODS ID29_titanium.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID11_aluminum.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID24_aluminum.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID08_anodizedmetal.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID37_anodizedmetal_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID45_anodizedmetal.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID75_anodizedmetal.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID13_blackhole.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID62_carbonfiber.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS carPaint.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID20_chrome.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID34_detail_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID35_detail_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID44_detail_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID48_detail_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID59_detail_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID21_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID22_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID40_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID66_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID68_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID73_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID74_detail_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_label_a_LODS ID79_label_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_label_a_LODS ID80_label_metallic_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engineBay_label_a_LODS ID32_ID32_plastic_CH1_Custom_diffuse
+11:31:42 | INFO: Blender create Mesh node engineBay_label_a_LODS ID61_screw_metallic_ch1.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID12_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID30_paintedmetal.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID06_plastic.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID18_plastic.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID28_plastic.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID31_ID31_plastic_CH1_Custom.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID39_plastic.001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID42_plastic_ch1 [no color].001
+11:31:42 | INFO: Blender create Mesh node engineBay_a_LODS ID43_fluid_container_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID47_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID49_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID52_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID57_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID58_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID63_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID69_plastic.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID53_screw_metallic_ch1.001
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS|engineBay_label_a_LODS ID14_screw_metallic
+11:31:43 | INFO: Blender create Mesh node engineBay_a_LODS ID41_titanium.001
+11:31:43 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID14_blackhole [no color].001
+11:31:43 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID11_detail_metal.001
+11:31:43 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID10_heat_treated_2.001
+11:31:43 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID12_heat_treated.001
+11:31:43 | INFO: Blender create Mesh node glassCTL_a_LODS0 gls_clear.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 Detail_Metallic_CH1_ID40.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 Glass_Windshield.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 ID50_plastic.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 Screw_CH1.001
+11:31:43 | INFO: Blender create Mesh node glassF_a_LODS0 Screw_Metallic_CH1_ID49.001
+11:31:43 | INFO: Blender create Mesh node glassLF_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassLF_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassLM_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassLR_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassLR_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassR_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassR_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassRF_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassRF_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassRM_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node glassRR_a_LODS0 BlackFrame.001
+11:31:43 | INFO: Blender create Mesh node glassRR_a_LODS0 Glass_Window_Side.001
+11:31:43 | INFO: Blender create Mesh node hood_a_LODS0 carPaint.001
+11:31:43 | INFO: Blender create Mesh node hood_a_LODS0 ID30_plastic.001
+11:31:43 | INFO: Blender create Mesh node hoodBadge_a_LODS0 Badge.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS CarbonFiber.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS Chrome.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS metal_RGH_001.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_label_a_LODS Detail_Metallic_CH1_ID40.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS Plastic_ID28.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS Rubber.001
+11:31:43 | INFO: Blender create Mesh node hoodLiner_a_LODS Steel.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerPistonLowerL_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerPistonLowerL_a_LODS Plastic_ID28.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerPistonUpperL_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerPistonUpperL_a_LODS Plastic_ID28.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerStrutLowerAimL_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerStrutLowerL_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node hoodLinerStrutUpperL_a_LODS GunMetal_ID6.001
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID13_glass_limotint [no color].001
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID07_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID09_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0|centerConsoleBezels_label_a_LOD
+11:31:43 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0|centerConsoleStructure_a_LODS0 .002
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID08_alcantara|centerconsole
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID37_Alcantara|centerconsole
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID15_carbonfiber|centerconso
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_label_a_LODS0 ID03_stitch_ch1|center
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID02_leather|centerconsolest
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID04_plastic|centerconsolest
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID30_label_ch1 [n
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID36_Label_CH1 [n
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID06_stitch_ch1 [
+11:31:43 | INFO: Blender create Mesh node centerConsoleStructureCustom_a_LODS ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID10_chrome [no color].001
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID04_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_label_a_LODS0 ID23_mfr_badge_ch1.001
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_label_a_LODS0 ID24_screw_metallic_ch1 
+11:31:43 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID05_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_a_LODS0 ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_a_LODS0 ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_a_LODS0 ID13_glass_limotint.001
+11:31:43 | INFO: Blender create Mesh node dashPad_label_a_LODS0 ID31_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_a_LODS0 ID02_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node dashPad_a_LODS0 ID27_digitalscreen [no color].001
+11:31:43 | INFO: Blender create Mesh node dashStructure_a_LODS0 ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node dashStructure_label_a_LODS0 ID30_detail_metallic_ch1 [no co
+11:31:43 | INFO: Blender create Mesh node dashStructure_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0 ID32_blackhole|dashstruct
+11:31:43 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0 ID36_Detail_CH1|dashstruc
+11:31:43 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0|gaugePod_label_a_LODS0 ID
+11:31:43 | INFO: Blender create Mesh node dashStructureBezels_a_LODS0|dashStructureBezels_label_a_LOD
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID32_blackhole.001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID04_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID13_glass_limotint [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID07_gunmetal [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID36_Detail_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID02_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID05_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_label_a_LODS ID30_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_label_a_LODS ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS|doorCardLFCustom_label_a_LODS ID32_
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID32_blackhole.001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID13_glass_limotint [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID07_gunmetal [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID02_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID05_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID08_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID32_blackhole.001
+11:31:43 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node floor_a_LODS0 ID02_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node floor_a_LODS0 ID08_carpet_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node floor_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node floor_a_LODS0|pedals_a_LODS0|pedals_label_a_LODS0 ID01_plas
+11:31:43 | INFO: Blender create Mesh node floorCustom_a_LODS ID02_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node floorCustom_a_LODS ID04_detail_ch2 [no color].001
+11:31:43 | INFO: Blender create Mesh node floorCustom_label_a_LODS ID32_blackhole.001
+11:31:43 | INFO: Blender create Mesh node floorCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node floorCustom_a_LODS ID05_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node gaugeCluster_a_LODS0 ID27_digitalscreen [no color].001
+11:31:43 | INFO: Blender create Mesh node gaugePod_a_LODS0 ID15_carbonfiber|gaugepod_a [no color].001
+11:31:43 | INFO: Blender create Mesh node gaugePod_label_a_LODS0 ID24_screw_metallic_ch1|gaugepod_a [
+11:31:43 | INFO: Blender create Mesh node gaugePod_a_LODS0 ID05_plastic|gaugepod_a [no color].001
+11:31:43 | INFO: Blender create Mesh node nav_a_LODS0 ID13_glass_limotint.001
+11:31:43 | INFO: Blender create Mesh node nav_label_a_LODS0 ID28_digitalscreen [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID37_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID04_glass [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID13_glass.001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID30_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID31_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID03_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0|rearviewMirrorBase_label_a_LO
+11:31:43 | INFO: Blender create Mesh node overheadConsole_a_LODS0|visors_a_LODS0 ID01_plastic [no col
+11:31:43 | INFO: Blender create Mesh node paddleShifterL_a_LODS0 ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node paddleShifterL_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node paddleShifterL_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node paddleShifterR_a_LODS0 ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node paddleShifterR_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node paddleShifterR_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node pedalBrake_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:31:43 | INFO: Blender create Mesh node pedalBrake_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a 
+11:31:43 | INFO: Blender create Mesh node pedalBrake_a_LODS0 ID01_plastic|pedals_a [no color].001
+11:31:43 | INFO: Blender create Mesh node pedalGas_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:31:43 | INFO: Blender create Mesh node pedalGas_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [n
+11:31:43 | INFO: Blender create Mesh node pedals_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:31:43 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [no 
+11:31:43 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID30_detail_metallic_ch1|pedals_a [no 
+11:31:43 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID29_screw_metallic_ch1|pedals_a [no c
+11:31:43 | INFO: Blender create Mesh node pillarTrim_a_LODS0 ID04_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID30_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID33_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID31_screw_metallic_ch1 [no c
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID05_nylon [no color].001
+11:31:43 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID04_glass [no color].001
+11:31:43 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID20_mirror_center|rearviewmirror_a 
+11:31:43 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node rearviewMirrorBase_label_a_LODS0 ID31_detail_ch1|rearviewmi
+11:31:43 | INFO: Blender create Mesh node rearviewMirrorBase_a_LODS ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID10_chrome [no color].001
+11:31:43 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID09_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID08_nylon [no color].001
+11:31:43 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.002
+11:31:43 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.001
+11:31:43 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID02_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node seatL_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node seatL_label_a_LODS0|seatR_label_a_LODS0 ID30_label_ch1.001
+11:31:43 | INFO: Blender create Mesh node seatL_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID04_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID05_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node seatLCustom_a_LODS|seatRCustom_a_LODS ID02_alcantara|seatl_
+11:31:43 | INFO: Blender create Mesh node seatLCustom_label_a_LODS ID29_detail_ch1|seatl_a [no color].001
+11:31:43 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID31_deta
+11:31:43 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID33_labe
+11:31:43 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID03_stit
+11:31:43 | INFO: Blender create Mesh node seatLCustom_a_LODS|seatRCustom_a_LODS ID12_paintedmetal|sea
+11:31:43 | INFO: Blender create Mesh node seatR_label_a_LODS0 ID28_stitch_ch1|seatr_a [no color].001
+11:31:43 | INFO: Blender create Mesh node seatRCustom_label_a_LODS ID29_detail_ch1|seatr_a [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID08_alcantara|steeringcolumn_a [no 
+11:31:43 | INFO: Blender create Mesh node steeringColumn_a_LODS0|vents_a_LODS0 ID32_blackhole|steerin
+11:31:43 | INFO: Blender create Mesh node steeringColumn_label_a_LODS0|vents_label_a_LODS0 ID34_label
+11:31:43 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID01_plastic|steeringcolumn_a [no co.002
+11:31:43 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID04_plastic|steeringcolumn_a [no co
+11:31:43 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID10_plastic|steeringcolumn_a [no co
+11:31:43 | INFO: Blender create Mesh node steeringColumnCustom_label_a_LODS ID32_blackhole.001
+11:31:43 | INFO: Blender create Mesh node steeringColumnCustom_label_a_LODS ID31_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringColumnCustom_a_LODS ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringColumnCustom_a_LODS ID04_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID12_mfr_badge_ch1.001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID15_carbonfiber [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID07_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID29_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID30_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID31_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID34_label_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID09_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID01_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID04_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID05_leather [no color].001
+11:31:43 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID11_plastic [no color].001
+11:31:43 | INFO: Blender create Mesh node visors_a_LODS0 ID08_alcantara|visors_a [no color].001
+11:31:43 | INFO: Blender create Mesh node visors_label_a_LODS0 ID09_stitch_ch1|visors_a [no color].001
+11:31:43 | INFO: Blender create Mesh node visors_a_LODS0 ID06_plastic|visors_a [no color].001
+11:31:43 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom
+11:31:43 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom.001
+11:31:43 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 plast
+11:31:43 | INFO: Blender create Mesh node glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.001
+11:31:43 | INFO: Blender create Mesh node glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.002
+11:31:43 | INFO: Blender create Mesh node glassLHL_a_LODS0 gls_clear.003
+11:31:43 | INFO: Blender create Mesh node glassLHL_a_LODS0 gls_colored.001
+11:31:43 | INFO: Blender create Mesh node glassRHL_a_LODS0 gls_clear.003
+11:31:43 | INFO: Blender create Mesh node glassRHL_a_LODS0 gls_colored.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 backfacingGeo.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome_001.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome_002.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 ID67_EmitterHD [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 lights_smooth_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 plastic_mgl.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 plastic_smooth.001
+11:31:43 | INFO: Blender create Mesh node headlightL_a_LODS0 screw_001 [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 backfacingGeo.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome_001.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome_002.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 ID67_EmitterHD [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 lights_smooth_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 plastic_mgl.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 plastic_smooth.001
+11:31:43 | INFO: Blender create Mesh node headlightR_a_LODS0 screw_001 [no color].001
+11:31:43 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_clear.001
+11:31:43 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:31:43 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:31:43 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:31:43 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:31:43 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_clear.001
+11:31:43 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:31:43 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:31:43 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:31:43 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:31:43 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 chrom
+11:31:43 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 light
+11:31:43 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 plast
+11:31:43 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.006
+11:31:43 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.007
+11:31:43 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.008
+11:31:43 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.009
+11:31:43 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.010
+11:31:43 | INFO: Blender create Mesh node glassCHMSL_a_LODS0 gls_colored.001
+11:31:43 | INFO: Blender create Mesh node glassLTL_a_LODS0 gls_colored.001
+11:31:43 | INFO: Blender create Mesh node glassRTL_a_LODS0 gls_colored.001
+11:31:43 | INFO: Blender create Mesh node lensLTL_a_LODS0 gls_ML_CH1_Custom.001
+11:31:43 | INFO: Blender create Mesh node lensRTL_a_LODS0 gls_ML_CH1_Custom.001
+11:31:43 | INFO: Blender create Mesh node PlatelightUS_a_LODS0 gls_clear.001
+11:31:43 | INFO: Blender create Mesh node PlatelightUS_a_LODS0 lights_smooth_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node taillightC_a_LODS0 chrome [no color].001
+11:31:43 | INFO: Blender create Mesh node taillightC_a_LODS0 metal_satin [no color].001
+11:31:43 | INFO: Blender create Mesh node taillightC_a_LODS0 lights_smooth_CH1 [no color].001
+11:31:43 | INFO: Blender create Mesh node taillightCBulbs_a_LODS0 gls_lightbulb|taillightcbulbs_a.001
+11:31:43 | INFO: Blender create Mesh node taillightCHMSL_a_LODS0 lights_smooth_CH1 [no color].003
+11:31:43 | INFO: Blender create Mesh node taillightL_a_LODS0 backfacingGeo.001
+11:31:43 | INFO: Blender create Mesh node taillightL_a_LODS0 chrome.001
+11:31:43 | INFO: Blender create Mesh node taillightL_a_LODS0 lights_smooth_CH1.001
+11:31:43 | INFO: Blender create Mesh node taillightL_a_LODS0 plastic_mgl.001
+11:31:43 | INFO: Blender create Mesh node taillightL_a_LODS0 plastic_smooth.001
+11:31:43 | INFO: Blender create Mesh node taillightR_a_LODS0 backfacingGeo.001
+11:31:43 | INFO: Blender create Mesh node taillightR_a_LODS0 chrome.001
+11:31:43 | INFO: Blender create Mesh node taillightR_a_LODS0 lights_smooth_CH1.001
+11:31:43 | INFO: Blender create Mesh node taillightR_a_LODS0 plastic_mgl.001
+11:31:43 | INFO: Blender create Mesh node taillightR_a_LODS0 plastic_smooth.001
+11:31:43 | INFO: Blender create Mesh node trunk_a_LODS0 ID14_blackhole.001
+11:31:43 | INFO: Blender create Mesh node trunk_a_LODS0 ID20_carbonfiber.001
+11:31:43 | INFO: Blender create Mesh node trunk_a_LODS0 ID21_carbonfiber.001
+11:31:43 | INFO: Blender create Mesh node trunk_a_LODS0 ID06_paintedmetal.001
+11:31:43 | INFO: Blender create Mesh node trunk_a_LODS0 ID48_screw_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID31_alcantara [no color].001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS|trunkBay_label_a_LODS ID13_blackframe.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID55_glass_detailed_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID56_glass_detailed_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID26_grille.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID40_label_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID41_label_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID33_plastic_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID48_screw_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID06_paintedmetal.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID29_plastic.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID30_plastic.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID32_plastic.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS|trunkBay_label_a_LODS ID28_plastic.001
+11:31:43 | INFO: Blender create Mesh node trunkBay_a_LODS ID08_rubber.001
+11:31:43 | INFO: Blender create Mesh node trunkHoneycomb_a_LODS0 ID27_detail_ch1|trunkhoneycomb_a.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_a_LODS ID20_carbonfiber.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID31_aluminum.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID48_screw_metallic_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID49_screw_ch1.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_a_LODS ID06_paintedmetal.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_a_LODS ID08_rubber.001
+11:31:43 | INFO: Blender create Mesh node trunkLiner_a_LODS ID10_steel.001
+11:31:44 | INFO: glTF import finished in 2.51s
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.241402268409729, -0.965609073638916, -0.09656091034412384], "total": 1881, "hits": [164, 167, 162, 71, 20, 70, 112, 86, 97, 217, 226, 215, 149, 97, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.23287320137023926, -0.931492805480957, -0.27944785356521606], "total": 1892, "hits": [196, 135, 156, 91, 20, 64, 130, 96, 157, 223, 217, 200, 130, 77, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.21398025751113892, -0.8559210300445557, -0.4707565903663635], "total": 1940, "hits": [213, 168, 158, 87, 44, 60, 127, 130, 181, 199, 177, 175, 144, 77, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.44543540477752686, -0.8908708095550537, -0.08908708393573761], "total": 1905, "hits": [205, 149, 152, 77, 25, 89, 129, 130, 188, 197, 201, 190, 123, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.4319342076778412, -0.8638684153556824, -0.2591605484485626], "total": 1895, "hits": [220, 165, 161, 89, 37, 110, 117, 173, 206, 170, 184, 158, 101, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.40128615498542786, -0.8025723099708557, -0.4414147734642029], "total": 1848, "hits": [231, 202, 158, 100, 34, 81, 132, 208, 197, 171, 150, 131, 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.6227991580963135, -0.7784989476203918, -0.07784989476203918], "total": 1960, "hits": [230, 189, 166, 103, 47, 85, 129, 190, 206, 174, 159, 161, 101, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.6082287430763245, -0.7602859139442444, -0.22808578610420227], "total": 1844, "hits": [231, 193, 157, 92, 49, 89, 162, 225, 187, 160, 151, 120, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 0.8999999761581421], "axis": [-0.5739967823028564, -0.7174959778785706, -0.394622802734375], "total": 1820, "hits": [253, 199, 137, 86, 76, 112, 196, 215, 170, 159, 147, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.241402268409729, -0.965609073638916, -0.09656091034412384], "total": 1338, "hits": [228, 243, 78, 40, 65, 113, 159, 199, 133, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.23287320137023926, -0.931492805480957, -0.27944785356521606], "total": 1315, "hits": [196, 199, 50, 25, 92, 111, 229, 209, 131, 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.21398025751113892, -0.8559210300445557, -0.4707565903663635], "total": 1330, "hits": [224, 177, 94, 22, 98, 101, 192, 175, 160, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.44543540477752686, -0.8908708095550537, -0.08908708393573761], "total": 1388, "hits": [252, 249, 87, 54, 94, 145, 187, 174, 127, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.4319342076778412, -0.8638684153556824, -0.2591605484485626], "total": 1261, "hits": [234, 190, 64, 22, 102, 221, 176, 146, 106, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.40128615498542786, -0.8025723099708557, -0.4414147734642029], "total": 1262, "hits": [249, 184, 81, 19, 111, 183, 157, 147, 121, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.6227991580963135, -0.7784989476203918, -0.07784989476203918], "total": 1315, "hits": [270, 182, 86, 59, 145, 196, 137, 149, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.6082287430763245, -0.7602859139442444, -0.22808578610420227], "total": 1229, "hits": [245, 175, 87, 44, 155, 219, 135, 123, 46, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-1.100000023841858, -0.8600000143051147, 1.0499999523162842], "axis": [-0.5739967823028564, -0.7174959778785706, -0.394622802734375], "total": 1225, "hits": [247, 180, 86, 54, 178, 179, 134, 133, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.241402268409729, -0.965609073638916, -0.09656091034412384], "total": 1339, "hits": [121, 76, 131, 66, 0, 0, 0, 0, 0, 22, 55, 97, 171, 166, 160, 106, 74, 49, 39, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.23287320137023926, -0.931492805480957, -0.27944785356521606], "total": 1270, "hits": [111, 65, 66, 71, 0, 0, 0, 0, 0, 0, 40, 67, 117, 139, 163, 152, 104, 81, 57, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.21398025751113892, -0.8559210300445557, -0.4707565903663635], "total": 1422, "hits": [115, 78, 69, 62, 31, 0, 0, 0, 0, 0, 0, 32, 53, 78, 109, 156, 171, 157, 105, 88, 69, 41, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.44543540477752686, -0.8908708095550537, -0.08908708393573761], "total": 1445, "hits": [152, 138, 138, 73, 0, 0, 0, 0, 0, 30, 103, 143, 164, 154, 136, 105, 75, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.4319342076778412, -0.8638684153556824, -0.2591605484485626], "total": 1522, "hits": [143, 150, 124, 71, 4, 0, 0, 0, 0, 4, 64, 123, 154, 182, 146, 133, 103, 79, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.40128615498542786, -0.8025723099708557, -0.4414147734642029], "total": 1777, "hits": [126, 163, 127, 112, 41, 0, 0, 0, 0, 0, 0, 48, 119, 168, 180, 184, 153, 128, 106, 81, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.6227991580963135, -0.7784989476203918, -0.07784989476203918], "total": 1793, "hits": [235, 188, 158, 101, 22, 0, 0, 10, 67, 137, 161, 167, 137, 128, 119, 98, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.6082287430763245, -0.7602859139442444, -0.22808578610420227], "total": 1928, "hits": [235, 193, 161, 124, 35, 0, 0, 0, 34, 118, 162, 176, 163, 143, 128, 110, 101, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 0.8999999761581421], "axis": [-0.5739967823028564, -0.7174959778785706, -0.394622802734375], "total": 2026, "hits": [219, 207, 155, 134, 59, 17, 0, 0, 0, 42, 122, 147, 176, 169, 156, 125, 122, 105, 65, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.241402268409729, -0.965609073638916, -0.09656091034412384], "total": 1174, "hits": [199, 211, 117, 50, 0, 27, 70, 181, 171, 109, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.23287320137023926, -0.931492805480957, -0.27944785356521606], "total": 931, "hits": [157, 111, 61, 22, 0, 8, 70, 178, 149, 102, 53, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.21398025751113892, -0.8559210300445557, -0.4707565903663635], "total": 953, "hits": [150, 99, 76, 41, 35, 0, 27, 66, 126, 137, 102, 58, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.44543540477752686, -0.8908708095550537, -0.08908708393573761], "total": 1290, "hits": [278, 236, 117, 29, 0, 44, 133, 152, 129, 150, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.4319342076778412, -0.8638684153556824, -0.2591605484485626], "total": 1116, "hits": [240, 160, 63, 32, 0, 31, 159, 149, 150, 97, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.40128615498542786, -0.8025723099708557, -0.4414147734642029], "total": 1188, "hits": [233, 169, 87, 31, 26, 0, 52, 137, 164, 149, 102, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.6227991580963135, -0.7784989476203918, -0.07784989476203918], "total": 1334, "hits": [290, 201, 116, 37, 16, 129, 163, 144, 157, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.6082287430763245, -0.7602859139442444, -0.22808578610420227], "total": 1224, "hits": [270, 188, 90, 37, 6, 102, 170, 143, 123, 86, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.5739967823028564, -0.7174959778785706, -0.394622802734375], "total": 1312, "hits": [280, 188, 108, 14, 30, 31, 160, 167, 137, 116, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+BEST [{"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.23287320137023926, -0.931492805480957, -0.27944785356521606], "total": 931, "hits": [157, 111, 61, 22, 0, 8, 70, 178, 149, 102, 53, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.21398025751113892, -0.8559210300445557, -0.4707565903663635], "total": 953, "hits": [150, 99, 76, 41, 35, 0, 27, 66, 126, 137, 102, 58, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"pivot": [-0.8999999761581421, -0.8600000143051147, 1.0499999523162842], "axis": [-0.4319342076778412, -0.8638684153556824, -0.2591605484485626], "total": 1116, "hits": [240, 160, 63, 32, 0, 31, 159, 149, 150, 97, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

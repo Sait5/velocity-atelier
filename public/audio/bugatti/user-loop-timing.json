@@ -1,0 +1,10 @@
+{
+  "acceleration": {
+    "loopStart": 15,
+    "loopEnd": 25
+  },
+  "coast": {
+    "loopStart": 2,
+    "loopEnd": 6
+  }
+}

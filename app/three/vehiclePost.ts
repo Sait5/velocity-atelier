@@ -11,7 +11,7 @@ export function createVehiclePost(renderer:T.WebGLRenderer,scene:T.Scene,camera:
  composer.addPass(renderPass);composer.addPass(bloom);composer.addPass(output)
  return {
   resize(width:number,height:number){composer.setPixelRatio(Math.min(renderer.getPixelRatio(),1.25));composer.setSize(width,height)},
-  render(quality:string){if(quality==='Low'||quality==='Medium')renderer.render(scene,camera);else composer.render()},
+  render(quality:string,glare=true){bloom.enabled=glare;bloom.strength=scene.userData.daylightBloom??.24;if(quality==='Low'||quality==='Medium')renderer.render(scene,camera);else composer.render()},
   dispose(){bloom.dispose();output.dispose();composer.dispose()}
  }
 }

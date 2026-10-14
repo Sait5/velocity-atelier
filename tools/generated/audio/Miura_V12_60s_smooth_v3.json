@@ -1,0 +1,40 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\Lamborghini Miura - \u0417\u0432\u0443\u043a \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f V12.mp3",
+  "duration": 60,
+  "first_pass_preserved_until": 18.55,
+  "continuation_source": [
+    20.5,
+    23.3
+  ],
+  "continuation_engine_order_hz": 493.0,
+  "source_order_range_hz": [
+    459.5147768798063,
+    495.0760228056096
+  ],
+  "splice_seconds": 0.75,
+  "phase_match_correlation": 0.5827218375297186,
+  "joins": [
+    18.55,
+    20.51424036281179,
+    22.478480725623584,
+    24.442721088435373,
+    26.406961451247167,
+    28.371201814058956,
+    30.33544217687075,
+    32.29968253968254,
+    34.26392290249433,
+    36.22816326530612,
+    38.192403628117916,
+    40.1566439909297,
+    42.120884353741495,
+    44.08512471655329,
+    46.04936507936508,
+    48.01360544217687,
+    49.97784580498866,
+    51.942086167800454,
+    53.90632653061225,
+    55.870566893424034,
+    57.83480725623583
+  ],
+  "processing": "continuation pulse alignment by mild variable-rate resampling; phase-matched long energy-balanced overlaps; no EQ or generated engine"
+}

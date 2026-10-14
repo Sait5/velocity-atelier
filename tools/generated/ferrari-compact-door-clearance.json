@@ -1,0 +1,160 @@
+{
+  "car": "ferrari",
+  "samples": 241,
+  "restContacts": [
+    463,
+    453
+  ],
+  "newPaintContactFrames": [
+    {
+      "sample": 1,
+      "door": 0,
+      "pairs": 166
+    },
+    {
+      "sample": 1,
+      "door": 1,
+      "pairs": 147
+    },
+    {
+      "sample": 2,
+      "door": 0,
+      "pairs": 45
+    },
+    {
+      "sample": 2,
+      "door": 1,
+      "pairs": 45
+    },
+    {
+      "sample": 3,
+      "door": 0,
+      "pairs": 44
+    },
+    {
+      "sample": 3,
+      "door": 1,
+      "pairs": 42
+    },
+    {
+      "sample": 4,
+      "door": 0,
+      "pairs": 61
+    },
+    {
+      "sample": 4,
+      "door": 1,
+      "pairs": 56
+    },
+    {
+      "sample": 5,
+      "door": 0,
+      "pairs": 51
+    },
+    {
+      "sample": 5,
+      "door": 1,
+      "pairs": 59
+    },
+    {
+      "sample": 6,
+      "door": 0,
+      "pairs": 56
+    },
+    {
+      "sample": 6,
+      "door": 1,
+      "pairs": 51
+    },
+    {
+      "sample": 7,
+      "door": 0,
+      "pairs": 83
+    },
+    {
+      "sample": 7,
+      "door": 1,
+      "pairs": 76
+    },
+    {
+      "sample": 8,
+      "door": 0,
+      "pairs": 82
+    },
+    {
+      "sample": 8,
+      "door": 1,
+      "pairs": 88
+    },
+    {
+      "sample": 9,
+      "door": 0,
+      "pairs": 78
+    },
+    {
+      "sample": 9,
+      "door": 1,
+      "pairs": 79
+    },
+    {
+      "sample": 10,
+      "door": 0,
+      "pairs": 91
+    },
+    {
+      "sample": 10,
+      "door": 1,
+      "pairs": 97
+    },
+    {
+      "sample": 11,
+      "door": 0,
+      "pairs": 96
+    },
+    {
+      "sample": 11,
+      "door": 1,
+      "pairs": 99
+    },
+    {
+      "sample": 12,
+      "door": 0,
+      "pairs": 94
+    },
+    {
+      "sample": 12,
+      "door": 1,
+      "pairs": 106
+    },
+    {
+      "sample": 13,
+      "door": 0,
+      "pairs": 63
+    },
+    {
+      "sample": 13,
+      "door": 1,
+      "pairs": 62
+    },
+    {
+      "sample": 14,
+      "door": 0,
+      "pairs": 36
+    },
+    {
+      "sample": 14,
+      "door": 1,
+      "pairs": 56
+    },
+    {
+      "sample": 15,
+      "door": 0,
+      "pairs": 14
+    },
+    {
+      "sample": 15,
+      "door": 1,
+      "pairs": 16
+    }
+  ]
+}

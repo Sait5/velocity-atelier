@@ -1,0 +1,100 @@
+[
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 0,
+    "lo": [
+      -0.5372850298881531,
+      -0.7005630135536194,
+      0.33633100986480713
+    ],
+    "hi": [
+      0.2152700275182724,
+      -0.6397820115089417,
+      0.3921380341053009
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 1,
+    "lo": [
+      -0.463498055934906,
+      0.6714640259742737,
+      0.852053165435791
+    ],
+    "hi": [
+      -0.45870107412338257,
+      0.6741629838943481,
+      0.856727123260498
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 1,
+    "lo": [
+      -0.4864630699157715,
+      0.6504610180854797,
+      0.8530831336975098
+    ],
+    "hi": [
+      -0.47618407011032104,
+      0.6753360033035278,
+      0.8583551645278931
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 0,
+    "lo": [
+      -0.6130390763282776,
+      -0.6829540133476257,
+      0.5408010482788086
+    ],
+    "hi": [
+      -0.4047590494155884,
+      -0.6300680041313171,
+      0.8270121216773987
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 1,
+    "lo": [
+      -0.6108050346374512,
+      0.6300680041313171,
+      0.5408130884170532
+    ],
+    "hi": [
+      -0.4047590494155884,
+      0.6829540133476257,
+      0.8270121216773987
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 1,
+    "lo": [
+      -0.5372850298881531,
+      0.6397820115089417,
+      0.33633100986480713
+    ],
+    "hi": [
+      0.2152700275182724,
+      0.7005630135536194,
+      0.3921380341053009
+    ]
+  },
+  {
+    "source": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009",
+    "side": 1,
+    "lo": [
+      -0.3246040344238281,
+      0.6496580243110657,
+      0.33306801319122314
+    ],
+    "hi": [
+      0.046355005353689194,
+      0.6947879791259766,
+      0.3750670254230499
+    ]
+  }
+]

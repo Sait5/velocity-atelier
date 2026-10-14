@@ -1,0 +1,20 @@
+[
+  {
+    "car": "porsche",
+    "samples": 241,
+    "openDegrees": 64.1712730546522,
+    "maxJointSeparation": 2.482534153247273e-16,
+    "hardwareMeshes": 32,
+    "closedPosePreserved": true,
+    "acceptedAnimationPreserved": true
+  },
+  {
+    "car": "ferrari",
+    "samples": 241,
+    "openDegrees": 64.1712730546522,
+    "maxJointSeparation": 4.002966042486721e-16,
+    "hardwareMeshes": 32,
+    "closedPosePreserved": true,
+    "acceptedAnimationPreserved": true
+  }
+]

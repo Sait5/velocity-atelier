@@ -3,11 +3,14 @@ import {createHeadlightPool} from './lampPool'
 import {installTailGlow} from './tailGlow'
 import {installRevueltoDisplays} from './revueltoDisplays'
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js'
+import {setRevueltoDoorPose} from './revueltoDoorMotion'
+import {hideRevueltoLegacyHooks} from './revueltoLegacyHardware'
+import {installRevueltoInnerTrim} from './innerDoorTrim'
 
 /** Batch only fixed opaque surfaces; door, wheel and transparent assemblies stay separate. */
 function batchStaticSurfaces(source:T.Group,root:T.Group){
  const batches=new Map<string,T.Mesh[]>()
- source.traverse(o=>{if(!(o instanceof T.Mesh)||Array.isArray(o.material)||o instanceof T.SkinnedMesh)return
+ source.traverse(o=>{if(!(o instanceof T.Mesh)||!o.visible||Array.isArray(o.material)||o instanceof T.SkinnedMesh)return
   const m=o.material as T.MeshPhysicalMaterial
   if(m.transparent||m.transmission>0||Object.keys(o.geometry.morphAttributes).length)return
   const attributes=Object.entries(o.geometry.attributes as Record<string,T.BufferAttribute|T.InterleavedBufferAttribute>).map(([name,a])=>`${name}:${a.itemSize}:${a.normalized}:${a.array.constructor.name}`).sort().join('|')
@@ -28,9 +31,10 @@ function batchStaticSurfaces(source:T.Group,root:T.Group){
 }
 
 /** Authored Anatolian Studios model: metres, with +Z forward in the source. */
-export function prepareRevuelto(source:T.Group){
+export function prepareRevuelto(source:T.Group,driving=false){
  const root=new T.Group();root.name='Revuelto';root.add(source)
  source.rotation.y=-Math.PI/2;source.position.set(.10516,.00108,0);root.updateMatrixWorld(true)
+ hideRevueltoLegacyHooks(source)
  const materials=new Map<string,T.MeshStandardMaterial>()
  source.traverse(o=>{if(o instanceof T.Mesh){for(const m of Array.isArray(o.material)?o.material:[o.material])materials.set(m.name,m as T.MeshStandardMaterial)}})
  function material(name:string){const m=materials.get(name);if(!m)throw new Error('Revuelto material missing: '+name);return m}
@@ -55,6 +59,7 @@ export function prepareRevuelto(source:T.Group){
   o.material=Array.isArray(o.material)?list.map(m=>/^(car_paint_v3_03|M_CarPaint)$/.test(m.name)?body:m):/^(car_paint_v3_03|M_CarPaint)$/.test(o.material.name)?body:o.material
   for(const m of list)for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=16
  })
+ installRevueltoInnerTrim(source)
  // Use transparent glass without the additional full-scene transmission pass.
  for(const name of ['M_GlassClear','M_GlassSide','M_GlassRed']){
   const m=material(name) as T.MeshPhysicalMaterial;m.transmission=0;m.transparent=true;m.opacity=name==='M_GlassRed'?.45:.22;m.depthWrite=false;m.envMapIntensity=1;m.needsUpdate=true
@@ -79,28 +84,37 @@ export function prepareRevuelto(source:T.Group){
   const treads:T.Mesh[]=[];wheel.traverse(o=>{if(o instanceof T.Mesh&&!Array.isArray(o.material)&&/^Wheel(?:\.|$)/.test(o.material.name))treads.push(o)})
   for(const tread of treads){const centre=new T.Box3().setFromObject(tread,true).getCenter(new T.Vector3()),target=centre.clone().setX(wheel.position.x).setY(wheel.position.y);const localCentre=tread.parent!.worldToLocal(centre.clone()),localTarget=tread.parent!.worldToLocal(target);tread.position.add(localTarget.sub(localCentre))}
   root.updateMatrixWorld(true)
+  // The authored tyre has an irregular loaded silhouette. Spinning it rotates that
+  // deformation around the axle and looks like wobble even with a rigid suspension.
+  // Keep its silhouette fixed on the carrier; rotate only rims and concentric rotors.
+  for(const tread of treads){root.attach(tread);tread.name='Fixed wheel hardware '+name+' tyre '+tread.name}
   // The authored controller also contains off-axis pads, brackets and brake hardware.
-  // Only tyres, rims, hub badges and concentric rotors rotate with the axle.
+  // Only rims, hub badges and concentric rotors rotate with the axle.
   const fixed:T.Mesh[]=[];wheel.traverse(o=>{if(o instanceof T.Mesh&&!Array.isArray(o.material)&&/^(M_Caliper|M_Steel|M_DarkMetal|M_PaintedMetal|M_Rubber|M_Screw|M_Label)/.test(o.material.name))fixed.push(o)})
   for(const part of fixed){root.attach(part);part.name='Fixed wheel hardware '+name+' '+part.name}
   wheels.push(wheel)
  }
+ // Keep the actual rim opaque: overlapping shutter copies made it appear to wobble.
+ function updateWheelMotion(_speed:number){}
  const displays=installRevueltoDisplays(source)
+ // Keep replaced piston meshes outside static batches so the fitted animated
+ // mechanism can hide them without leaving detached copies baked into the body.
+ source.traverse(o=>{if(/^DoorJamb[LR]FPiston/.test(o.name))o.visible=false})
  batchStaticSurfaces(source,root)
  let windowProgress=0
  function setWindows(progress:number){windowProgress=T.MathUtils.clamp(progress,0,1)
   for(const w of windows){w.mesh.position.copy(w.closed);w.mesh.position.y-=windowProgress*.34;w.mesh.position.z+=w.side*windowProgress*.14;w.mesh.visible=windowProgress<.995;w.door.updateWorldMatrix(true,false);w.pane.clippingPlanes![0]!.set(new T.Vector3(0,1,0),.065).applyMatrix4(w.door.matrixWorld)}
  }
- function setDoors(progress:number,rightProgress=progress){doors.forEach((door,i)=>{const p=T.MathUtils.clamp(i===0?progress:rightProgress,0,1),release=T.MathUtils.smoothstep(p,0,.22);const side=i===0?1:-1;door.position.z=side*(.86+.06*release);door.rotation.set(side*.055*p,-side*.16*release,1.12*T.MathUtils.smoothstep(p,.16,1),'YXZ')});setWindows(windowProgress)}
+ function setDoors(progress:number,rightProgress=progress){doors.forEach((door,i)=>setRevueltoDoorPose(door,i===0?1:-1,i===0?progress:rightProgress));setWindows(windowProgress)}
  const tailGlow=installTailGlow(root,2.15)
  const headlights:T.SpotLight[]=[]
  const spill=createHeadlightPool(-2.12,0.76);root.add(spill)
  for(const side of [-1,1]){const light=new T.SpotLight('#e4efff',95,6,.42,.85,2);light.position.set(-2.12,.61,side*.76);light.target.position.set(-4.4,.03,side*.86);root.add(light,light.target);headlights.push(light)}
- function setLights(front:boolean,rear:boolean){root.userData.frontEnabled=front;root.userData.tailEnabled=rear;tailGlow.set(rear);spill.visible=front;headlights.forEach(light=>light.intensity=front?95:0);white.emissiveIntensity=front?2.55:0;frontEmitter.emissiveIntensity=front?2.55:0;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=rear?2.6:0}
+ function setLights(front:boolean,rear:boolean,frontLevel=Number(front),rearLevel=Number(rear)){root.userData.frontEnabled=front;root.userData.tailEnabled=rear;tailGlow.set(rear,rearLevel);spill.visible=front;headlights.forEach(light=>light.intensity=95*frontLevel);white.emissiveIntensity=2.55*frontLevel;frontEmitter.emissiveIntensity=2.55*frontLevel;rearEmitter.emissive.set('#ff1828');rearEmitter.emissiveIntensity=2.6*rearLevel}
  function setUpholstery(color:string){leather.color.set(color)}
- return {root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments:displays.updateInstruments,dispose(){
+ return {updateWheelMotion,root,body,leather,rim,brake,glass,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments:displays.updateInstruments,dispose(){
   const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([...materials.values(),body]),textures=new Set<T.Texture>()
-  root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}})
+  root.traverse(o=>{if(o instanceof T.Mesh){if(o instanceof T.InstancedMesh)o.dispose();geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}})
   geometries.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())
  }}
 }

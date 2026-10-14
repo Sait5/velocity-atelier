@@ -1,0 +1,18 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\\u0417\u0432\u0443\u043a \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f Ferrari 458 Spider.mp3",
+  "sha256": "05a92f9ca60398faf53ef3e81f3ace9456619e0bf3018e5e545fce91cf5c98cb",
+  "source_seconds": [
+    3,
+    19
+  ],
+  "continuation_source_seconds": [
+    12,
+    18.8
+  ],
+  "crossfade_seconds": 0.75,
+  "gain": 0.8,
+  "pitch_change": false,
+  "tempo_change": false,
+  "loopStart": 21.3,
+  "loopEnd": 27.35
+}

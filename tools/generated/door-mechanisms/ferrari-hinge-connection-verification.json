@@ -1,0 +1,16 @@
+[
+  {
+    "side": "L",
+    "samples": 121,
+    "axisError": 3.7056262158224764e-8,
+    "endpointError": 0.0002500521799903457,
+    "openBootDeflection": 0.03662040328363743
+  },
+  {
+    "side": "R",
+    "samples": 121,
+    "axisError": 3.7056262158224764e-8,
+    "endpointError": 0.0002500521799903457,
+    "openBootDeflection": 0.03662040328363743
+  }
+]

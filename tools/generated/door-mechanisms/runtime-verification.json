@@ -1,0 +1,59 @@
+[
+  {
+    "car": "porsche",
+    "clips": [
+      "Door_L_Open",
+      "Door_R_Open",
+      "Door_L_Close",
+      "Door_R_Close"
+    ],
+    "states": {
+      "L": {
+        "duration": 2.0333333015441895,
+        "angleDegrees": 70.00000933447446
+      },
+      "R": {
+        "duration": 2.0333333015441895,
+        "angleDegrees": 70.00000933447446
+      }
+    }
+  },
+  {
+    "car": "ferrari",
+    "clips": [
+      "Door_L_Open",
+      "Door_R_Open",
+      "Door_L_Close",
+      "Door_R_Close"
+    ],
+    "states": {
+      "L": {
+        "duration": 2.0166666507720947,
+        "angleDegrees": 70.00000933447446
+      },
+      "R": {
+        "duration": 2.0166666507720947,
+        "angleDegrees": 70.00000933447446
+      }
+    }
+  },
+  {
+    "car": "revuelto",
+    "clips": [
+      "Door_L_Open",
+      "Door_R_Open",
+      "Door_L_Close",
+      "Door_R_Close"
+    ],
+    "states": {
+      "L": {
+        "duration": 2.0333333015441895,
+        "angleDegrees": 72.864178918498
+      },
+      "R": {
+        "duration": 2.0333333015441895,
+        "angleDegrees": 72.864178918498
+      }
+    }
+  }
+]

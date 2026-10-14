@@ -1,0 +1,70 @@
+14:53:51 | INFO: Data are loaded, start creating Blender stuff
+14:53:51 | INFO: Blender create Mesh node _Badge_Geo_lodA_Badge_Geo_lodA_Porsche_911GT39922_2025BadgeA_Material__Porsche_911GT39922_2025BadgeA_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.003
+14:53:51 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+14:53:51 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003
+14:53:51 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha2A_Material__Porsche_911GT39922_2025GrilleAlpha2A_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _GrilleAlpha6_Geo_lodA_GrilleAlpha6_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha6A_Material__Porsche_911GT39922_2025GrilleAlpha6A_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.003
+14:53:51 | INFO: Blender create Mesh node _GrilleNoAlpha1_Geo_lodA_GrilleNoAlpha1_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha1A_Material__Porsche_911GT39922_2025GrilleNoAlpha1A_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha3A_Material__Porsche_911GT39922_2025GrilleNoAlpha3A_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.003
+14:53:51 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.008
+14:53:51 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.011
+14:53:51 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material_dash_0.001
+14:53:51 | INFO: Blender create Mesh node _Light_Geo_lodA_Light_Geo_lodA_Porsche_911GT39922_2025LightA_Material__Porsche_911GT39922_2025LightA_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Porsche_911GT39922_2025ManufacturerPlateA_Material__Porsche_911GT39922_2025ManufacturerPlateA_Material1_0.001
+14:53:51 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.003
+14:53:52 | INFO: Blender create Mesh node _SeatBelt_Geo_lodA_SeatBelt_Geo_lodA_Porsche_911GT39922_2025SeatBelt_Material__Porsche_911GT39922_2025Coloured_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.003
+14:53:52 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material_red_glass_0.001
+14:53:52 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.003
+14:53:52 | INFO: Blender create Mesh node polySurface618_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface619_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface620_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface621_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface622_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface970_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface971_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface972_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.012
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.014
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.004
+14:53:52 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.009
+14:53:52 | INFO: Blender create Mesh node _Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.003
+14:53:52 | INFO: Blender create Mesh node _GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.016
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.005
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.006
+14:53:52 | INFO: Blender create Mesh node _Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.002
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.010
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.013
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.015
+14:53:52 | INFO: Blender create Mesh node _Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.017
+14:53:52 | INFO: Blender create Mesh node polySurface1_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface617_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface616_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+14:53:52 | INFO: Blender create Mesh node polySurface615_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001
+14:53:52 | INFO: glTF import finished in 0.68s
+PARTS Porsche GT3 992.2 [(1754, [-2.164, 0.562, 0.0], [-0.733, 0.906, 0.7]), (3188, [-0.856, 0.175, 0.468], [1.858, 1.269, 0.925]), (3188, [-0.856, 0.175, 0.468], [1.858, 1.269, 0.925]), (2028, [-2.105, 0.246, 0.385], [-0.605, 0.879, 0.92]), (2114, [-2.105, 0.246, 0.385], [-0.605, 0.879, 0.92]), (82, [-0.829, 0.854, 0.686], [-0.772, 0.875, 0.705]), (82, [-0.829, 0.854, 0.686], [-0.772, 0.875, 0.705]), (186, [-1.036, 0.729, 0.795], [-0.827, 0.838, 0.882])]
+PARTS Porsche door L [(367, [-0.491, 0.859, 0.802], [-0.34, 0.927, 0.989]), (135, [-0.49, 0.81, 0.794], [-0.361, 0.881, 0.856]), (332, [-0.431, 0.865, 0.822], [-0.245, 0.931, 1.012]), (393, [-0.721, 0.255, 0.712], [0.565, 0.908, 0.879]), (61, [-0.719, 0.372, 0.78], [-0.66, 0.436, 0.789]), (27, [-0.69, 0.375, 0.786], [-0.661, 0.401, 0.843]), (61, [-0.706, 0.711, 0.772], [-0.646, 0.775, 0.781]), (27, [-0.676, 0.714, 0.778], [-0.648, 0.74, 0.836]), (679, [-0.721, 0.255, 0.732], [0.565, 0.904, 0.88]), (18, [-0.67, 0.28, 0.839], [-0.578, 0.314, 0.846]), (16, [-0.58, 0.282, 0.838], [-0.493, 0.318, 0.842]), (756, [-0.634, 0.289, 0.699], [0.531, 0.798, 0.826]), (12, [-0.674, 0.716, 0.818], [-0.656, 0.749, 0.835]), (12, [-0.687, 0.373, 0.826], [-0.67, 0.412, 0.843]), (40, [-0.695, 0.391, 0.798], [-0.651, 0.42, 0.843]), (17, [-0.695, 0.391, 0.798], [-0.653, 0.393, 0.843]), (43, [-0.681, 0.731, 0.79], [-0.638, 0.76, 0.836]), (16, [-0.681, 0.745, 0.817], [-0.651, 0.76, 0.835]), (17, [-0.681, 0.731, 0.791], [-0.639, 0.734, 0.836]), (12, [-0.69, 0.372, 0.786], [-0.664, 0.38, 0.843]), (12, [-0.676, 0.711, 0.778], [-0.65, 0.72, 0.836]), (45, [-0.484, 0.805, 0.791], [-0.372, 0.855, 0.829]), (185, [0.269, 0.698, 0.844], [0.496, 0.737, 0.86])]
+PARTS Porsche door R [(333, [-0.431, 0.865, 0.822], [-0.245, 0.931, 1.012]), (368, [-0.491, 0.859, 0.802], [-0.34, 0.927, 0.989]), (135, [-0.49, 0.81, 0.794], [-0.361, 0.881, 0.856]), (17, [-0.695, 0.391, 0.798], [-0.653, 0.393, 0.843]), (393, [-0.721, 0.255, 0.712], [0.565, 0.908, 0.879]), (61, [-0.719, 0.372, 0.78], [-0.66, 0.436, 0.789]), (27, [-0.69, 0.375, 0.786], [-0.661, 0.401, 0.843]), (61, [-0.706, 0.711, 0.772], [-0.646, 0.775, 0.781]), (27, [-0.676, 0.714, 0.778], [-0.648, 0.74, 0.836]), (695, [-0.721, 0.255, 0.732], [0.565, 0.904, 0.88]), (18, [-0.68, 0.28, 0.84], [-0.593, 0.315, 0.849]), (19, [-0.595, 0.282, 0.838], [-0.506, 0.32, 0.842]), (12, [-0.687, 0.373, 0.826], [-0.67, 0.412, 0.843]), (12, [-0.674, 0.716, 0.818], [-0.656, 0.749, 0.835]), (43, [-0.681, 0.731, 0.79], [-0.638, 0.76, 0.836]), (16, [-0.681, 0.745, 0.817], [-0.651, 0.76, 0.835]), (17, [-0.681, 0.731, 0.791], [-0.639, 0.734, 0.836]), (40, [-0.695, 0.391, 0.798], [-0.651, 0.42, 0.843]), (756, [-0.634, 0.289, 0.699], [0.531, 0.798, 0.826]), (12, [-0.69, 0.372, 0.786], [-0.664, 0.38, 0.843]), (12, [-0.676, 0.711, 0.778], [-0.65, 0.72, 0.836]), (185, [0.269, 0.698, 0.844], [0.496, 0.737, 0.86]), (45, [-0.484, 0.805, 0.791], [-0.372, 0.855, 0.829])]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

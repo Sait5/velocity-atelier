@@ -1,0 +1,12 @@
+{
+  "source": "C:\\Users\\Admin\\Documents\\ChatGPT\\Velocity Atelier\\blender\\Scissor-Hinge.blend",
+  "closed_vertex_error": 4.0011768287711e-07,
+  "attachment_nodes": [
+    "Supplied_L_DOOR_ATTACHMENT | parent door here",
+    "Supplied_R_DOOR_ATTACHMENT | parent door here"
+  ],
+  "frames": [
+    16,
+    76
+  ]
+}

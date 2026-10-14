@@ -1,0 +1,564 @@
+{
+  "car": "porsche",
+  "original_vertices": 218522,
+  "sides": [
+    {
+      "side": "L",
+      "pivot": [
+        -0.7300000190734863,
+        -0.8799999952316284,
+        0.699999988079071
+      ],
+      "axis_tilt": 0,
+      "fit_intersections": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sweep": [
+        {
+          "frame": 1,
+          "new_intersections": 0
+        },
+        {
+          "frame": 2,
+          "new_intersections": 0
+        },
+        {
+          "frame": 3,
+          "new_intersections": 0
+        },
+        {
+          "frame": 4,
+          "new_intersections": 0
+        },
+        {
+          "frame": 5,
+          "new_intersections": 0
+        },
+        {
+          "frame": 6,
+          "new_intersections": 0
+        },
+        {
+          "frame": 7,
+          "new_intersections": 0
+        },
+        {
+          "frame": 8,
+          "new_intersections": 0
+        },
+        {
+          "frame": 9,
+          "new_intersections": 0
+        },
+        {
+          "frame": 10,
+          "new_intersections": 0
+        },
+        {
+          "frame": 11,
+          "new_intersections": 0
+        },
+        {
+          "frame": 12,
+          "new_intersections": 0
+        },
+        {
+          "frame": 13,
+          "new_intersections": 0
+        },
+        {
+          "frame": 14,
+          "new_intersections": 0
+        },
+        {
+          "frame": 15,
+          "new_intersections": 0
+        },
+        {
+          "frame": 16,
+          "new_intersections": 0
+        },
+        {
+          "frame": 17,
+          "new_intersections": 0
+        },
+        {
+          "frame": 18,
+          "new_intersections": 0
+        },
+        {
+          "frame": 19,
+          "new_intersections": 0
+        },
+        {
+          "frame": 20,
+          "new_intersections": 0
+        },
+        {
+          "frame": 21,
+          "new_intersections": 0
+        },
+        {
+          "frame": 22,
+          "new_intersections": 0
+        },
+        {
+          "frame": 23,
+          "new_intersections": 0
+        },
+        {
+          "frame": 24,
+          "new_intersections": 0
+        },
+        {
+          "frame": 25,
+          "new_intersections": 0
+        },
+        {
+          "frame": 26,
+          "new_intersections": 0
+        },
+        {
+          "frame": 27,
+          "new_intersections": 0
+        },
+        {
+          "frame": 28,
+          "new_intersections": 0
+        },
+        {
+          "frame": 29,
+          "new_intersections": 0
+        },
+        {
+          "frame": 30,
+          "new_intersections": 0
+        },
+        {
+          "frame": 31,
+          "new_intersections": 0
+        },
+        {
+          "frame": 32,
+          "new_intersections": 0
+        },
+        {
+          "frame": 33,
+          "new_intersections": 0
+        },
+        {
+          "frame": 34,
+          "new_intersections": 0
+        },
+        {
+          "frame": 35,
+          "new_intersections": 0
+        },
+        {
+          "frame": 36,
+          "new_intersections": 0
+        },
+        {
+          "frame": 37,
+          "new_intersections": 0
+        },
+        {
+          "frame": 38,
+          "new_intersections": 0
+        },
+        {
+          "frame": 39,
+          "new_intersections": 0
+        },
+        {
+          "frame": 40,
+          "new_intersections": 0
+        },
+        {
+          "frame": 41,
+          "new_intersections": 0
+        },
+        {
+          "frame": 42,
+          "new_intersections": 0
+        },
+        {
+          "frame": 43,
+          "new_intersections": 0
+        },
+        {
+          "frame": 44,
+          "new_intersections": 0
+        },
+        {
+          "frame": 45,
+          "new_intersections": 0
+        },
+        {
+          "frame": 46,
+          "new_intersections": 0
+        },
+        {
+          "frame": 47,
+          "new_intersections": 0
+        },
+        {
+          "frame": 48,
+          "new_intersections": 0
+        },
+        {
+          "frame": 49,
+          "new_intersections": 0
+        },
+        {
+          "frame": 50,
+          "new_intersections": 0
+        },
+        {
+          "frame": 51,
+          "new_intersections": 0
+        },
+        {
+          "frame": 52,
+          "new_intersections": 0
+        },
+        {
+          "frame": 53,
+          "new_intersections": 0
+        },
+        {
+          "frame": 54,
+          "new_intersections": 0
+        },
+        {
+          "frame": 55,
+          "new_intersections": 0
+        },
+        {
+          "frame": 56,
+          "new_intersections": 0
+        },
+        {
+          "frame": 57,
+          "new_intersections": 0
+        },
+        {
+          "frame": 58,
+          "new_intersections": 0
+        },
+        {
+          "frame": 59,
+          "new_intersections": 0
+        },
+        {
+          "frame": 60,
+          "new_intersections": 0
+        },
+        {
+          "frame": 61,
+          "new_intersections": 0
+        }
+      ],
+      "baseline_intersections": 0
+    },
+    {
+      "side": "R",
+      "pivot": [
+        -0.7300000190734863,
+        0.8799999952316284,
+        0.699999988079071
+      ],
+      "axis_tilt": 0,
+      "fit_intersections": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sweep": [
+        {
+          "frame": 1,
+          "new_intersections": 0
+        },
+        {
+          "frame": 2,
+          "new_intersections": 0
+        },
+        {
+          "frame": 3,
+          "new_intersections": 0
+        },
+        {
+          "frame": 4,
+          "new_intersections": 0
+        },
+        {
+          "frame": 5,
+          "new_intersections": 0
+        },
+        {
+          "frame": 6,
+          "new_intersections": 0
+        },
+        {
+          "frame": 7,
+          "new_intersections": 0
+        },
+        {
+          "frame": 8,
+          "new_intersections": 0
+        },
+        {
+          "frame": 9,
+          "new_intersections": 0
+        },
+        {
+          "frame": 10,
+          "new_intersections": 0
+        },
+        {
+          "frame": 11,
+          "new_intersections": 0
+        },
+        {
+          "frame": 12,
+          "new_intersections": 0
+        },
+        {
+          "frame": 13,
+          "new_intersections": 0
+        },
+        {
+          "frame": 14,
+          "new_intersections": 0
+        },
+        {
+          "frame": 15,
+          "new_intersections": 0
+        },
+        {
+          "frame": 16,
+          "new_intersections": 0
+        },
+        {
+          "frame": 17,
+          "new_intersections": 0
+        },
+        {
+          "frame": 18,
+          "new_intersections": 0
+        },
+        {
+          "frame": 19,
+          "new_intersections": 0
+        },
+        {
+          "frame": 20,
+          "new_intersections": 0
+        },
+        {
+          "frame": 21,
+          "new_intersections": 0
+        },
+        {
+          "frame": 22,
+          "new_intersections": 0
+        },
+        {
+          "frame": 23,
+          "new_intersections": 0
+        },
+        {
+          "frame": 24,
+          "new_intersections": 0
+        },
+        {
+          "frame": 25,
+          "new_intersections": 0
+        },
+        {
+          "frame": 26,
+          "new_intersections": 0
+        },
+        {
+          "frame": 27,
+          "new_intersections": 0
+        },
+        {
+          "frame": 28,
+          "new_intersections": 0
+        },
+        {
+          "frame": 29,
+          "new_intersections": 0
+        },
+        {
+          "frame": 30,
+          "new_intersections": 0
+        },
+        {
+          "frame": 31,
+          "new_intersections": 0
+        },
+        {
+          "frame": 32,
+          "new_intersections": 0
+        },
+        {
+          "frame": 33,
+          "new_intersections": 0
+        },
+        {
+          "frame": 34,
+          "new_intersections": 0
+        },
+        {
+          "frame": 35,
+          "new_intersections": 0
+        },
+        {
+          "frame": 36,
+          "new_intersections": 0
+        },
+        {
+          "frame": 37,
+          "new_intersections": 0
+        },
+        {
+          "frame": 38,
+          "new_intersections": 0
+        },
+        {
+          "frame": 39,
+          "new_intersections": 0
+        },
+        {
+          "frame": 40,
+          "new_intersections": 0
+        },
+        {
+          "frame": 41,
+          "new_intersections": 0
+        },
+        {
+          "frame": 42,
+          "new_intersections": 0
+        },
+        {
+          "frame": 43,
+          "new_intersections": 0
+        },
+        {
+          "frame": 44,
+          "new_intersections": 0
+        },
+        {
+          "frame": 45,
+          "new_intersections": 0
+        },
+        {
+          "frame": 46,
+          "new_intersections": 0
+        },
+        {
+          "frame": 47,
+          "new_intersections": 0
+        },
+        {
+          "frame": 48,
+          "new_intersections": 0
+        },
+        {
+          "frame": 49,
+          "new_intersections": 0
+        },
+        {
+          "frame": 50,
+          "new_intersections": 0
+        },
+        {
+          "frame": 51,
+          "new_intersections": 0
+        },
+        {
+          "frame": 52,
+          "new_intersections": 0
+        },
+        {
+          "frame": 53,
+          "new_intersections": 0
+        },
+        {
+          "frame": 54,
+          "new_intersections": 0
+        },
+        {
+          "frame": 55,
+          "new_intersections": 0
+        },
+        {
+          "frame": 56,
+          "new_intersections": 0
+        },
+        {
+          "frame": 57,
+          "new_intersections": 0
+        },
+        {
+          "frame": 58,
+          "new_intersections": 0
+        },
+        {
+          "frame": 59,
+          "new_intersections": 0
+        },
+        {
+          "frame": 60,
+          "new_intersections": 0
+        },
+        {
+          "frame": 61,
+          "new_intersections": 0
+        }
+      ],
+      "baseline_intersections": 0
+    }
+  ],
+  "max_closed_vertex_error_m": 0.0,
+  "hardware_meshes": 96
+}

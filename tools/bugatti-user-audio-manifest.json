@@ -1,0 +1,23 @@
+{
+  "source": "C:/Users/Admin/Downloads/86f3tszG77g2VXYzBw51+Qshj-Ik5MrY.m4a",
+  "acceleration": [
+    0,
+    25
+  ],
+  "coast": [
+    27,
+    "end"
+  ],
+  "pitch": "original",
+  "ignition": {
+    "source": "C:\\Users\\Admin\\Downloads\\Bugatti Veyron 16.4 — Звук двигателя (www.lightaudio.ru).mp3",
+    "range": "full recording",
+    "loop": false
+  },
+  "continuation": {
+    "acceleration": "0–25 then repeat 15–25",
+    "coast": "0–6 then repeat 2–6 until final stopping phase",
+    "coastEnd": "6–8 once near stop",
+    "joinCrossfadeSeconds": 0.12
+  }
+}

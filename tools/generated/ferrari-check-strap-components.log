@@ -1,0 +1,723 @@
+21:53:22 | INFO: Data are loaded, start creating Blender stuff
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_glassRF_window__window_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_glassRF_window__window_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorR_body__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorR_body__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorR_brushed_metal__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorR_brushed_metal__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorR_mirrorRight__mirrorLeft_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorR_mirrorRight__mirrorLeft_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorR_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorR_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_mottled__mottled_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_mottled__mottled_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_smooth_plastic__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_smooth_plastic__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardRF_tiling_cloth2__tiling_cloth2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardRF_tiling_cloth2__tiling_cloth2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_body_2__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_body_2__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_body__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_body__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_metal__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_metal__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_plastic__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_plastic__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorRF_rubber_trim__rubber_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorRF_rubber_trim__rubber_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_glassLF_window__window_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_glassLF_window__window_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorL_body__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorL_body__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorL_brushed_metal__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorL_brushed_metal__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorL_mirrorLeft__mirrorLeft_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorL_mirrorLeft__mirrorLeft_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_mirrorL_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_mirrorL_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_mottled__mottled_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_mottled__mottled_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_smooth_plastic__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_smooth_plastic__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorcardLF_tiling_cloth2__tiling_cloth2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorcardLF_tiling_cloth2__tiling_cloth2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_body_2__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_body_2__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_body__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_body__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_emblem__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_emblem__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_metal__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_metal__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_plastic__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_plastic__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_s_lod0_doorLF_rubber_trim__rubber_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_doorLF_rubber_trim__rubber_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperlf_s_lod0_caliperLF_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperlf_s_lod0_caliperLF_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperlf_s_lod0_caliperLF_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperlf_s_lod0_caliperLF_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperlr_s_lod0_caliperLR_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperlr_s_lod0_caliperLR_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperlr_s_lod0_caliperLR_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperlr_s_lod0_caliperLR_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperrf_s_lod0_caliperRF_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperrf_s_lod0_caliperRF_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperrf_s_lod0_caliperRF_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperrf_s_lod0_caliperRF_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperrr_s_lod0_caliperRR_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperrr_s_lod0_caliperRR_brake_bump_metal2__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_caliperrr_s_lod0_caliperRR_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_caliperrr_s_lod0_caliperRR_brake_smooth_metal__brake_bump_metal2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_glassF_black_glass__black_glass_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_glassF_black_glass__black_glass_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_glassF_window__window_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_glassF_window__window_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_body__carpaint_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_body__carpaint_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_emblem__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_emblem__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_matte_colors__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_matte_colors__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_pistonLower1_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_pistonLower1_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_pistonUpper1_misc__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_pistonUpper1_misc__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_hooda_plastic__emblem_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_hooda_plastic__emblem_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_badge__gauge_needle_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_badge__gauge_needle_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_bump_leather__bump_leather_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_bump_metal__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_bump_metal__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_bump_plastic3__bump_plastic3_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_bump_plastic3__bump_plastic3_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_bump_plastic4__bump_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_bump_stitchingA__bump_stitchingA_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_chrome__chrome2_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_chrome__chrome2_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_digital_gauge__digital_gauge_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_digital_gauge__digital_gauge_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_embossed_badge__embossed_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_embossed_badge__embossed_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_embossed_metal__embossed_metal_cp_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_embossed_metal__embossed_metal_cp_0
+21:53:22 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_gauge_emissive__gauge_needle_0
+21:53:22 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_gauge_emissive__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_glass__glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_glass__glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_headliner__headliner_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_headliner__headliner_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_mirrorMiddle__mirrorLeft_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_mirrorMiddle__mirrorLeft_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_mottled__mottled_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_mottled__mottled_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_plastic__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_plastic__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_rubber__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_rubber__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_interior_solid__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_interior_solid__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_bump_plastic4__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_bump_plastic4__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_bump_stitchingA__bump_stitchingA_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_bump_stitchingA__bump_stitchingA_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_embossed_leather__embossed_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_embossed_leather__embossed_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatL_tiling_cloth__tiling_cloth_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatL_tiling_cloth__tiling_cloth_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_bump_plastic4__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_bump_plastic4__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_bump_stitchingA__bump_stitchingA_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_bump_stitchingA__bump_stitchingA_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_embossed_leather__embossed_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_embossed_leather__embossed_metal_cp_0
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 170 vertices, 573 indices
+DracoDecoder | Decoded 1923 vertices, 10503 indices
+DracoDecoder | Decoded 33 vertices, 81 indices
+DracoDecoder | Decoded 116 vertices, 138 indices
+DracoDecoder | Decoded 146 vertices, 576 indices
+DracoDecoder | Decoded 4731 vertices, 26400 indices
+DracoDecoder | Decoded 1417 vertices, 7404 indices
+DracoDecoder | Decoded 1263 vertices, 3252 indices
+DracoDecoder | Decoded 291 vertices, 1470 indices
+DracoDecoder | Decoded 20 vertices, 54 indices
+DracoDecoder | Decoded 184 vertices, 984 indices
+DracoDecoder | Decoded 4035 vertices, 16992 indices
+DracoDecoder | Decoded 502 vertices, 2580 indices
+DracoDecoder | Decoded 306 vertices, 990 indices
+DracoDecoder | Decoded 88 vertices, 180 indices
+DracoDecoder | Decoded 455 vertices, 2034 indices
+DracoDecoder | Decoded 1108 vertices, 4914 indices
+DracoDecoder | Decoded 166 vertices, 576 indices
+DracoDecoder | Decoded 1923 vertices, 10503 indices
+DracoDecoder | Decoded 33 vertices, 81 indices
+DracoDecoder | Decoded 102 vertices, 138 indices
+DracoDecoder | Decoded 144 vertices, 576 indices
+DracoDecoder | Decoded 4155 vertices, 23109 indices
+DracoDecoder | Decoded 1003 vertices, 5292 indices
+DracoDecoder | Decoded 1003 vertices, 2604 indices
+DracoDecoder | Decoded 291 vertices, 1470 indices
+DracoDecoder | Decoded 20 vertices, 54 indices
+DracoDecoder | Decoded 184 vertices, 984 indices
+DracoDecoder | Decoded 4098 vertices, 17328 indices
+DracoDecoder | Decoded 508 vertices, 2580 indices
+DracoDecoder | Decoded 84 vertices, 222 indices
+DracoDecoder | Decoded 306 vertices, 990 indices
+DracoDecoder | Decoded 88 vertices, 180 indices
+DracoDecoder | Decoded 449 vertices, 2034 indices
+DracoDecoder | Decoded 1112 vertices, 4914 indices
+DracoDecoder | Decoded 3871 vertices, 14631 indices
+DracoDecoder | Decoded 3395 vertices, 8697 indices
+DracoDecoder | Decoded 3828 vertices, 15090 indices
+DracoDecoder | Decoded 1926 vertices, 3882 indices
+DracoDecoder | Decoded 3920 vertices, 14631 indices
+DracoDecoder | Decoded 3385 vertices, 8697 indices
+DracoDecoder | Decoded 3825 vertices, 15084 indices
+DracoDecoder | Decoded 1953 vertices, 3885 indices
+DracoDecoder | Decoded 327 vertices, 792 indices
+DracoDecoder | Decoded 195 vertices, 882 indices
+DracoDecoder | Decoded 2218 vertices, 10374 indices
+DracoDecoder | Decoded 54 vertices, 156 indices
+DracoDecoder | Decoded 192 vertices, 552 indices
+DracoDecoder | Decoded 413 vertices, 1560 indices
+DracoDecoder | Decoded 1336 vertices, 4968 indices
+DracoDecoder | Decoded 10462 vertices, 47586 indices
+DracoDecoder | Decoded 391 vertices, 759 indices
+DracoDecoder | Decoded 20893 vertices, 96843 indices
+DracoDecoder | Decoded 14988 vertices, 65844 indices
+DracoDecoder | Decoded 612 vertices, 984 indices
+DracoDecoder | Decoded 22329 vertices, 84357 indices
+DracoDecoder | Decoded 3861 vertices, 8847 indices
+DracoDecoder | Decoded 2546 vertices, 7428 indices
+DracoDecoder | Decoded 132 vertices, 318 indices
+DracoDecoder | Decoded 48 vertices, 138 indices
+DracoDecoder | Decoded 20 vertices, 54 indices
+DracoDecoder | Decoded 528 vertices, 2268 indices
+DracoDecoder | Decoded 312 vertices, 876 indices
+DracoDecoder | Decoded 82 vertices, 192 indices
+DracoDecoder | Decoded 76 vertices, 120 indices
+DracoDecoder | Decoded 2862 vertices, 14880 indices
+DracoDecoder | Decoded 2501 vertices, 11901 indices
+DracoDecoder | Decoded 492 vertices, 1968 indices
+DracoDecoder | Decoded 20 vertices, 36 indices
+DracoDecoder | Decoded 336 vertices, 1560 indices
+DracoDecoder | Decoded 610 vertices, 1686 indices
+DracoDecoder | Decoded 4249 vertices, 21054 indices
+DracoDecoder | Decoded 2145 vertices, 8598 indices
+DracoDecoder | Decoded 1008 vertices, 2952 indices
+DracoDecoder | Decoded 15 vertices, 48 indices
+DracoDecoder | Decoded 2417 vertices, 8931 indices
+DracoDecoder | Decoded 385 vertices, 1257 indices
+DracoDecoder | Decoded 4249 vertices, 21054 indices
+DracoDecoder | Decoded 2145 vertices, 8598 indices
+DracoDecoder | Decoded 1008 vertices, 2952 indices
+DracoDecoder | Decoded 121:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_seatR_tiling_cloth__tiling_cloth_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_seatR_tiling_cloth__tiling_cloth_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_anodized_aluminum__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_anodized_aluminum__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_badge__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_badge__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_leather2__embossed_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_leather2__embossed_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_leather3__bump_leather3_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_leather3__bump_leather3_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_leather__bump_leather_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_metal__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_metal__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_plastic__bump_plastic_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_plastic__bump_plastic_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_bump_stitchingE__bump_stitchingE_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_bump_stitchingE__bump_stitchingE_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_plastic__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_plastic__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_steering_wheel_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_steering_wheel_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_max_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_max_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_max_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_max_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_mid_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_mid_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_mid_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_mid_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_min_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_min_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_cockpit_s_tach_min_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_cockpit_s_tach_min_gauge_needle__gauge_needle_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_badgeLF_emblem__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_badgeLF_emblem__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_badgeRF_emblem__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_badgeRF_emblem__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_body_2__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_body_2__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_body__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_body__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_detail_glass_amber__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_detail_glass_amber__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_grille1__grille1_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_grille1__grille1_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_matte_colors__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_matte_colors__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_metal__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_metal__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_plastic__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_plastic__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_rubber_trim__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_rubber_trim__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_textured_reflector__tail_light_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_textured_reflector__tail_light_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_body_window__window_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_body_window__window_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_boot_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_boot_bump_plastic5__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_boot_mottled__mottled_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_boot_mottled__mottled_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_boot_rubber__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_boot_rubber__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_boot_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_boot_smooth_metal__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_boot_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_boot_smooth_plastic__bump_metal_cp_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_body__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_body__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_bottom__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_bottom__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_emblem__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_emblem__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_grille1__grille1_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_grille1__grille1_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_misc__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_misc__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperFa_plastic__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperFa_plastic__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_body__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_body__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_emblem__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_emblem__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_frame__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_frame__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_grille1__grille1_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_grille1__grille1_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_matte_colors__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_matte_colors__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_misc__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_misc__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_bumperRa_textured_reflector__tail_light_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_bumperRa_textured_reflector__tail_light_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_badge__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_badge__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_body__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_body__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_metal2__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_metal2__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_metal3__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_metal3__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_metal4__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_metal4__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_metal__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_metal__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_plastic2__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_plastic2__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_plastic4__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_plastic4__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_bump_plastic5__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_bump_plastic5__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_chrome__chrome2_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_chrome__chrome2_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_chrome_bump__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_chrome_bump__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_embossed_metal__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_embossed_metal__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_rubber__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_rubber__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_smooth_metal__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_smooth_metal__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_engine_smooth_plastic__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_engine_smooth_plastic__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_enginebay_S_bump_metal4__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_enginebay_S_bump_metal4__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_enginebay_S_bump_plastic4__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_enginebay_S_bump_plastic4__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_enginebay_S_smooth_metal__bump_plastic4_en_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_enginebay_S_smooth_metal__bump_plastic4_en_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_exhausta_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_exhausta_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_exhausta_chrome__chrome2_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_exhausta_chrome__chrome2_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_exhausta_matte_colors__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_exhausta_matte_colors__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassLHL_glass__glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassLHL_glass__glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassLR_black_glass__black_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassLR_black_glass__black_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassLR_window__window_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassLR_window__window_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassLTL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassLTL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassLTL_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassLTL_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassR_window__window_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassR_window__window_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassRHL_glass__glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassRHL_glass__glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassRR_black_glass__black_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassRR_black_glass__black_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassRR_window__window_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassRR_window__window_0
+5 vertices, 48 indices
+DracoDecoder | Decoded 2421 vertices, 8931 indices
+DracoDecoder | Decoded 385 vertices, 1257 indices
+DracoDecoder | Decoded 346 vertices, 1428 indices
+DracoDecoder | Decoded 313 vertices, 1092 indices
+DracoDecoder | Decoded 1913 vertices, 10758 indices
+DracoDecoder | Decoded 1736 vertices, 9948 indices
+DracoDecoder | Decoded 9983 vertices, 56334 indices
+DracoDecoder | Decoded 6085 vertices, 31587 indices
+DracoDecoder | Decoded 108 vertices, 216 indices
+DracoDecoder | Decoded 169 vertices, 534 indices
+DracoDecoder | Decoded 3677 vertices, 17847 indices
+DracoDecoder | Decoded 650 vertices, 3312 indices
+DracoDecoder | Decoded 121 vertices, 516 indices
+DracoDecoder | Decoded 48 vertices, 108 indices
+DracoDecoder | Decoded 121 vertices, 516 indices
+DracoDecoder | Decoded 48 vertices, 108 indices
+DracoDecoder | Decoded 121 vertices, 516 indices
+DracoDecoder | Decoded 48 vertices, 108 indices
+DracoDecoder | Decoded 96 vertices, 258 indices
+DracoDecoder | Decoded 96 vertices, 258 indices
+DracoDecoder | Decoded 1469 vertices, 3144 indices
+DracoDecoder | Decoded 649 vertices, 2379 indices
+DracoDecoder | Decoded 16080 vertices, 72846 indices
+DracoDecoder | Decoded 242 vertices, 1260 indices
+DracoDecoder | Decoded 188 vertices, 516 indices
+DracoDecoder | Decoded 24 vertices, 63 indices
+DracoDecoder | Decoded 6840 vertices, 21948 indices
+DracoDecoder | Decoded 2247 vertices, 6897 indices
+DracoDecoder | Decoded 5991 vertices, 24327 indices
+DracoDecoder | Decoded 60 vertices, 168 indices
+DracoDecoder | Decoded 46 vertices, 60 indices
+DracoDecoder | Decoded 3360 vertices, 15327 indices
+DracoDecoder | Decoded 700 vertices, 3630 indices
+DracoDecoder | Decoded 2136 vertices, 8115 indices
+DracoDecoder | Decoded 2926 vertices, 7110 indices
+DracoDecoder | Decoded 90 vertices, 204 indices
+DracoDecoder | Decoded 804 vertices, 1722 indices
+DracoDecoder | Decoded 3954 vertices, 18618 indices
+DracoDecoder | Decoded 66 vertices, 180 indices
+DracoDecoder | Decoded 694 vertices, 2946 indices
+DracoDecoder | Decoded 90 vertices, 180 indices
+DracoDecoder | Decoded 326 vertices, 948 indices
+DracoDecoder | Decoded 3051 vertices, 10926 indices
+DracoDecoder | Decoded 74 vertices, 216 indices
+DracoDecoder | Decoded 3060 vertices, 15978 indices
+DracoDecoder | Decoded 162 vertices, 810 indices
+DracoDecoder | Decoded 694 vertices, 2946 indices
+DracoDecoder | Decoded 705 vertices, 1758 indices
+DracoDecoder | Decoded 368 vertices, 1380 indices
+DracoDecoder | Decoded 978 vertices, 3888 indices
+DracoDecoder | Decoded 2853 vertices, 12552 indices
+DracoDecoder | Decoded 112 vertices, 450 indices
+DracoDecoder | Decoded 50 vertices, 126 indices
+DracoDecoder | Decoded 1270 vertices, 5220 indices
+DracoDecoder | Decoded 92 vertices, 246 indices
+DracoDecoder | Decoded 843 vertices, 3123 indices
+DracoDecoder | Decoded 9575 vertices, 39474 indices
+DracoDecoder | Decoded 38005 vertices, 107991 indices
+DracoDecoder | Decoded 6320 vertices, 18456 indices
+DracoDecoder | Decoded 24892 vertices, 102402 indices
+DracoDecoder | Decoded 9546 vertices, 35280 indices
+DracoDecoder | Decoded 5331 vertices, 15837 indices
+DracoDecoder | Decoded 292 vertices, 360 indices
+DracoDecoder | Decoded 539 vertices, 2196 indices
+DracoDecoder | Decoded 5020 vertices, 21966 indices
+DracoDecoder | Decoded 5561 vertices, 15624 indices
+DracoDecoder | Decoded 2486 vertices, 11898 indices
+DracoDecoder | Decoded 216 vertices, 936 indices
+DracoDecoder | Decoded 8743 vertices, 41082 indices
+DracoDecoder | Decoded 3042 vertices, 8652 indices
+DracoDecoder | Decoded 192 vertices, 534 indices
+DracoDecoder | Decoded 1440 vertices, 7200 indices
+DracoDecoder | Decoded 776 vertices, 2124 indices
+DracoDecoder | Decoded 465 vertices, 2178 indices
+DracoDecoder | Decoded 57 vertices, 189 indices
+DracoDecoder | Decoded 29 vertices, 90 indices
+DracoDecoder | Decoded 81 vertices, 360 indices
+DracoDecoder | Decoded 557 vertices, 2379 indices
+DracoDecoder | Decoded 81 vertices, 342 indices
+DracoDecoder | Decoded 465 vertices, 2178 indices
+DracoDecoder | Decoded 57 vertices, 189 indices
+DracoDecoder | Dec21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassRTL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassRTL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_glassRTL_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_glassRTL_detail_glass_red__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightL_brushed_metal__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightL_brushed_metal__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightL_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightL_head_light__tail_light_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightL_head_light__tail_light_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightL_lights_plastic__lights_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightL_lights_plastic__lights_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightL_reflector__lights_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightL_reflector__lights_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightR_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightR_detail_glass_clear__detail_glass_clear_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightR_head_light__tail_light_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightR_head_light__tail_light_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightR_lights_plastic__lights_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightR_lights_plastic__lights_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_headlightR_reflector__lights_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_headlightR_reflector__lights_glass_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtLa_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtLa_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtLa_body__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtLa_body__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtLa_chrome2__chrome2_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtLa_chrome2__chrome2_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtLa_misc__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtLa_misc__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtLa_rubber_trim__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtLa_rubber_trim__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtRa_black__black_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtRa_black__black_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtRa_body__carpaint_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtRa_body__carpaint_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtRa_chrome2__chrome2_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtRa_chrome2__chrome2_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtRa_misc__emblem_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtRa_misc__emblem_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_skirtRa_rubber_trim__rubber_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_skirtRa_rubber_trim__rubber_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightL_head_light__tail_light_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightL_head_light__tail_light_0
+21:53:23 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightL_lights_glass__lights_glass_0
+21:53:23 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightL_lights_glass__lights_glass_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightL_tail_light__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightL_tail_light__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightL_textured_reflector__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightL_textured_reflector__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightR_lights_glass__lights_glass_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightR_lights_glass__lights_glass_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightR_reverse_light__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightR_reverse_light__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightR_tail_light__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightR_tail_light__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_taillightR_textured_reflector__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_taillightR_textured_reflector__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_black_glass__black_glass_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_black_glass__black_glass_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_body__carpaint_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_body__carpaint_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_emblem__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_emblem__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_grille1__grille1_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_grille1__grille1_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_misc__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_misc__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_pistonLower1_misc__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_pistonLower1_misc__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_pistonLower2_misc__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_pistonLower2_misc__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_pistonUpper1_misc__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_pistonUpper1_misc__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_pistonUpper2_misc__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_pistonUpper2_misc__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_trunk_plastic__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_trunk_plastic__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_winga_body__carpaint_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_winga_body__carpaint_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_winga_brushed_metal__emblem_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_winga_brushed_metal__emblem_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_winga_detail_glass_red__detail_glass_clear_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_winga_detail_glass_red__detail_glass_clear_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_winga_tail_light__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_winga_tail_light__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_lod0_winga_textured_reflector__tail_light_0
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_lod0_winga_textured_reflector__tail_light_0
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorrr_s_lod0_rotorRR_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorrr_s_lod0_rotorRR_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorrr_s_lod0_rotorRR_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorrr_s_lod0_rotorRR_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_inner_rim_2_inner_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_inner_rim_2_inner_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_outer_rim_2_outer_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_outer_rim_2_outer_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_bump_metal_2_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_bump_metal_2_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_wheel_emblem_2_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_wheel_emblem_2_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_wheel_black_2_black_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_wheel_black_2_black_0.001
+21:53:24 | INFO: Blender create Mesh node w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorlr_s_lod0_rotorLR_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorlr_s_lod0_rotorLR_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorlr_s_lod0_rotorLR_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorlr_s_lod0_rotorLR_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_inner_rim_3_inner_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_inner_rim_3_inner_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_outer_rim_3_outer_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_outer_rim_3_outer_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_bump_metal_3_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_bump_metal_3_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_wheel_emblem_3_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_wheel_emblem_3_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_wheel_black_3_black_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_wheel_black_3_black_0.001
+21:53:24 | INFO: Blender create Mesh node w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.002
+21:53:24 | INFO: Draco Decoder: Decode primitive w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.002
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorlf_s_lod0_rotorLF_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorlf_s_lod0_rotorLF_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorlf_s_lod0_rotorLF_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorlf_s_lod0_rotorLF_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_inner_rim__inner_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_inner_rim__inner_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_outer_rim__outer_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_outer_rim__outer_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_bump_metal__rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_bump_metal__rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_wheel_emblem__rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_wheel_emblem__rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_wheel_black__black_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_wheel_black__black_0.001
+21:53:24 | INFO: Blender create Mesh node w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.003
+21:53:24 | INFO: Draco Decoder: Decode primitive w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.003
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorrf_s_lod0_rotorRF_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorrf_s_lod0_rotorRF_brake_bump_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_rotorrf_s_lod0_rotorRF_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_rotorrf_s_lod0_rotorRF_brake_smooth_metal__brake_bump_metal2_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_inner_rim_1_inner_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_inner_rim_1_inner_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_outer_rim_1_outer_rim_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_outer_rim_1_outer_rim_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_bump_metal_1_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_bump_metal_1_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_rim_wheel_emblem_1_rim_bump_metal_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_rim_wheel_emblem_1_rim_bump_metal_0.001
+21:53:24 | INFO: Blender create Mesh node fer_f142_10_s_wheel_wheel_wheel_black_1_black_0.001
+21:53:24 | INFO: Draco Decoder: Decode primitive fer_f142_10_s_wheel_wheel_wheel_black_1_black_0.001
+21:53:24 | INFO: Blender create Mesh node w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.004
+21:53:24 | INFO: Draco Decoder: Decode primitive w:M_Tire_Highcar_ferrari_458spider_2013_Mesh_lod0_w:phong15SG1_0.004
+21:53:24 | INFO: glTF import finished in 2.02s
+[{"name": "fer_f142_10_s_lod0_doorRF_body_2__carpaint_0", "parent": "door_L", "faces": 88, "lo": [-0.6632839441299438, 0.8991851806640625, 0.507400393486023], "hi": [-0.6452438831329346, 0.9015281200408936, 0.5251281261444092], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorRF_body_2__carpaint_0", "parent": "door_L", "faces": 88, "lo": [-0.6633620262145996, 0.8994976282119751, 0.5704234838485718], "hi": [-0.6452438831329346, 0.9019185304641724, 0.5882292985916138], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorRF_body_2__carpaint_0", "parent": "door_L", "faces": 178, "lo": [-0.6606286764144897, 0.8943432569503784, 0.5106804370880127], "hi": [-0.6476648449897766, 0.8998880982398987, 0.5219261646270752], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorRF_body_2__carpaint_0", "parent": "door_L", "faces": 178, "lo": [-0.6606286764144897, 0.894655704498291, 0.5737035274505615], "hi": [-0.6476648449897766, 0.9002785682678223, 0.5850273966789246], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorcardLF_bump_leather__bump_leather_cp_0", "parent": "door_R", "faces": 5, "lo": [-0.6267693638801575, -0.7768047451972961, 0.5684065222740173], "hi": [-0.6147201061248779, -0.6942704916000366, 0.5808303356170654], "materials": ["bump_leather_cp"]}, {"name": "fer_f142_10_s_lod0_doorLF_body_2__carpaint_0", "parent": "door_R", "faces": 88, "lo": [-0.6625417470932007, -0.9021241664886475, 0.5704238414764404], "hi": [-0.6444235444068909, -0.8997032046318054, 0.5882295966148376], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorLF_body_2__carpaint_0", "parent": "door_R", "faces": 88, "lo": [-0.6624636650085449, -0.9017336964607239, 0.507400631904602], "hi": [-0.6444235444068909, -0.8993908166885376, 0.5251283645629883], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorLF_body_2__carpaint_0", "parent": "door_R", "faces": 178, "lo": [-0.6598083972930908, -0.900093674659729, 0.5106806755065918], "hi": [-0.6468445062637329, -0.8944708108901978, 0.5219264030456543], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_doorLF_body_2__carpaint_0", "parent": "door_R", "faces": 178, "lo": [-0.6598083972930908, -0.9004842042922974, 0.5737038254737854], "hi": [-0.6468445062637329, -0.8948612809181213, 0.5850276947021484], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_body_body__carpaint_0", "parent": "ferrari_complete", "faces": 118, "lo": [-0.6138562560081482, 0.8806118369102478, 0.5037448406219482], "hi": [-0.5879844427108765, 0.9045592546463013, 0.5319685935974121], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_body_body__carpaint_0", "parent": "ferrari_complete", "faces": 118, "lo": [-0.6130009889602661, -0.9051826596260071, 0.5037448406219482], "hi": [-0.5871291756629944, -0.8812351822853088, 0.5319685935974121], "materials": ["carpaint"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 106, "lo": [-0.662998378276825, -0.8452012538909912, 0.5219970345497131], "hi": [-0.6323335766792297, -0.8081387281417847, 0.5320347547531128], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 106, "lo": [-0.6638808250427246, 0.807499349117279, 0.5219970345497131], "hi": [-0.6332160234451294, 0.8444515466690063, 0.5320347547531128], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 92, "lo": [-0.6421507596969604, -0.838141679763794, 0.5205630660057068], "hi": [-0.6356427669525146, -0.8316336870193481, 0.5335790514945984], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 92, "lo": [-0.6430332064628601, 0.8309943079948425, 0.5205630660057068], "hi": [-0.6365252137184143, 0.8375023007392883, 0.5335790514945984], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 28, "lo": [-0.651195764541626, 0.8236038684844971, 0.5247546434402466], "hi": [-0.5894249081611633, 0.903244137763977, 0.5292771458625793], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_metal__emblem_0", "parent": "ferrari_complete", "faces": 28, "lo": [-0.6503133177757263, -0.9038835763931274, 0.5247546434402466], "hi": [-0.5885424613952637, -0.8242433071136475, 0.5293874740600586], "materials": ["emblem"]}, {"name": "fer_f142_10_s_lod0_body_rubber_trim__rubber_0", "parent": "ferrari_complete", "faces": 696, "lo": [-0.6215687394142151, 0.8658271431922913, 0.5046374797821045], "hi": [-0.6003015637397766, 0.8900368809700012, 0.5249683260917664], "materials": ["rubber"]}, {"name": "fer_f142_10_s_lod0_body_rubber_trim__rubber_0", "parent": "ferrari_complete", "faces": 696, "lo": [-0.6206324100494385, -0.890783429145813, 0.5046374797821045], "hi": [-0.5993652939796448, -0.866439938545227, 0.5249683260917664], "materials": ["rubber"]}]
+oded 29 vertices, 90 indices
+DracoDecoder | Decoded 81 vertices, 360 indices
+DracoDecoder | Decoded 559 vertices, 2388 indices
+DracoDecoder | Decoded 15 vertices, 15 indices
+DracoDecoder | Decoded 101 vertices, 480 indices
+DracoDecoder | Decoded 61 vertices, 240 indices
+DracoDecoder | Decoded 8424 vertices, 30066 indices
+DracoDecoder | Decoded 830 vertices, 3660 indices
+DracoDecoder | Decoded 101 vertices, 480 indices
+DracoDecoder | Decoded 139 vertices, 240 indices
+DracoDecoder | Decoded 8472 vertices, 30081 indices
+DracoDecoder | Decoded 830 vertices, 3660 indices
+DracoDecoder | Decoded 183 vertices, 345 indices
+DracoDecoder | Decoded 391 vertices, 1857 indices
+DracoDecoder | Decoded 972 vertices, 2346 indices
+DracoDecoder | Decoded 118 vertices, 408 indices
+DracoDecoder | Decoded 213 vertices, 618 indices
+DracoDecoder | Decoded 181 vertices, 345 indices
+DracoDecoder | Decoded 391 vertices, 1857 indices
+DracoDecoder | Decoded 974 vertices, 2346 indices
+DracoDecoder | Decoded 118 vertices, 408 indices
+DracoDecoder | Decoded 213 vertices, 618 indices
+DracoDecoder | Decoded 97 vertices, 480 indices
+DracoDecoder | Decoded 6571 vertices, 12060 indices
+DracoDecoder | Decoded 1386 vertices, 4608 indices
+DracoDecoder | Decoded 4842 vertices, 11208 indices
+DracoDecoder | Decoded 6571 vertices, 12060 indices
+DracoDecoder | Decoded 97 vertices, 480 indices
+DracoDecoder | Decoded 1386 vertices, 4608 indices
+DracoDecoder | Decoded 4842 vertices, 11208 indices
+DracoDecoder | Decoded 576 vertices, 1842 indices
+DracoDecoder | Decoded 315 vertices, 1686 indices
+DracoDecoder | Decoded 1407 vertices, 3939 indices
+DracoDecoder | Decoded 392 vertices, 1068 indices
+DracoDecoder | Decoded 26838 vertices, 92676 indices
+DracoDecoder | Decoded 610 vertices, 1956 indices
+DracoDecoder | Decoded 630 vertices, 1956 indices
+DracoDecoder | Decoded 1099 vertices, 3090 indices
+DracoDecoder | Decoded 1099 vertices, 3090 indices
+DracoDecoder | Decoded 536 vertices, 2802 indices
+DracoDecoder | Decoded 1165 vertices, 5955 indices
+DracoDecoder | Decoded 138 vertices, 336 indices
+DracoDecoder | Decoded 210 vertices, 1128 indices
+DracoDecoder | Decoded 1107 vertices, 2079 indices
+DracoDecoder | Decoded 423 vertices, 1344 indices
+DracoDecoder | Decoded 2157 vertices, 6780 indices
+DracoDecoder | Decoded 3252 vertices, 8184 indices
+DracoDecoder | Decoded 2020 vertices, 4518 indices
+DracoDecoder | Decoded 1252 vertices, 2880 indices
+DracoDecoder | Decoded 13217 vertices, 61872 indices
+DracoDecoder | Decoded 199 vertices, 894 indices
+DracoDecoder | Decoded 322 vertices, 960 indices
+DracoDecoder | Decoded 930 vertices, 3960 indices
+DracoDecoder | Decoded 2171 vertices, 6780 indices
+DracoDecoder | Decoded 3276 vertices, 8178 indices
+DracoDecoder | Decoded 2020 vertices, 4518 indices
+DracoDecoder | Decoded 1252 vertices, 2880 indices
+DracoDecoder | Decoded 13217 vertices, 61872 indices
+DracoDecoder | Decoded 199 vertices, 894 indices
+DracoDecoder | Decoded 322 vertices, 960 indices
+DracoDecoder | Decoded 930 vertices, 3960 indices
+DracoDecoder | Decoded 1782 vertices, 3420 indices
+DracoDecoder | Decoded 3113 vertices, 9384 indices
+DracoDecoder | Decoded 2020 vertices, 4518 indices
+DracoDecoder | Decoded 1260 vertices, 2880 indices
+DracoDecoder | Decoded 13219 vertices, 61872 indices
+DracoDecoder | Decoded 199 vertices, 894 indices
+DracoDecoder | Decoded 322 vertices, 960 indices
+DracoDecoder | Decoded 900 vertices, 3960 indices
+DracoDecoder | Decoded 1786 vertices, 3420 indices
+DracoDecoder | Decoded 3109 vertices, 9384 indices
+DracoDecoder | Decoded 2020 vertices, 4518 indices
+DracoDecoder | Decoded 1260 vertices, 2880 indices
+DracoDecoder | Decoded 13219 vertices, 61872 indices
+DracoDecoder | Decoded 199 vertices, 894 indices
+DracoDecoder | Decoded 322 vertices, 960 indices
+DracoDecoder | Decoded 900 vertices, 3960 indices
+
+Blender quit

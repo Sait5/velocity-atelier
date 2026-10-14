@@ -1,0 +1,36 @@
+{
+  "duration": 90,
+  "first_source_seconds": [
+    4,
+    23.3
+  ],
+  "repeat_source_seconds": [
+    18.3,
+    23.3
+  ],
+  "crossfade_seconds": 0.9,
+  "joins_seconds": [
+    18.4,
+    22.5,
+    26.6,
+    30.7,
+    34.8,
+    38.9,
+    43.0,
+    47.1,
+    51.2,
+    55.3,
+    59.4,
+    63.5,
+    67.6,
+    71.7,
+    75.8,
+    79.9,
+    84.0,
+    88.1
+  ],
+  "pitch_change": false,
+  "playback_rate": 1,
+  "EQ": false,
+  "processing": "original samples, complementary smoothstep overlaps, short file-end fades"
+}

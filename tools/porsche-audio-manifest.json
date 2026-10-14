@@ -1,0 +1,103 @@
+{
+  "source_vehicle": "Porsche 997 GT3 RS 2008 (not a 992.2 recording)",
+  "publisher": "Pole Position Production",
+  "bundle": "Sonniss GameAudioGDC 2020",
+  "license": "https://sonniss.com/gdc-bundle-license/",
+  "source_urls": [
+    "gt3-onboard.wav https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Pole%20Position%20-%20Porsche%20997%20GT3%20RS%202008/Porsche%2C%20997%2C%20GT3%2C%20t1%2C%20Onbrd%2C%20Start%2C%20Slow%2C%20Drive%2C%20Stop%2C%20Reverse%2C%20Stop%2C%20Drive%2C%20Stop%2C%20Off%2C%20Interior%2C%20Mix.wav",
+    "gt3-foley.wav https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Pole%20Position%20-%20Porsche%20997%20GT3%20RS%202008/Porsche%2C%20997%2C%20GT3%2C%20t9%2C%20Var%20SFX%2C%20Horn%2C%20Various%2C%20Engine%2C%20Left%2C%20PZM.wav"
+  ],
+  "sha256": "76ceae7e47d77b53717eeabbdc88d8cae9f30a06010b914cab27e14212e241c7",
+  "gain": 6.703616190138116,
+  "processing": "Original recording excerpts; static level matching, 120 ms circular overlaps, 48 kHz PCM16. Runtime RPM-linked pitch and equal-power load/overrun crossfades.",
+  "source_intervals": {
+    "start": [
+      2.1,
+      5.9
+    ],
+    "idle": [
+      35,
+      54
+    ],
+    "drive": [
+      132,
+      156
+    ],
+    "coast": [
+      91,
+      102
+    ],
+    "coast-idle": [
+      100,
+      106
+    ],
+    "stop": [
+      201.2,
+      206.4
+    ]
+  },
+  "duration_seconds": {
+    "start": 3.8,
+    "idle": 18.6,
+    "drive": 23.6,
+    "coast": 11.0,
+    "coast-idle": 5.6,
+    "stop": 5.2
+  },
+  "doors": {
+    "source": "https://freesound.org/people/mincedbeats/sounds/630562/",
+    "author": "mincedbeats",
+    "license": "CC0",
+    "note": "Classic 911, not verified 992.2. Public MP3 preview used; original WAV requires login."
+  },
+  "tyres": {
+    "source": "https://bigsoundbank.com/crissement-de-pneus-1-s2368.html",
+    "author": "Dorian CLAIR",
+    "license": "CC0",
+    "file": "car-braking.wav",
+    "used_for_gt3_driving": false
+  },
+  "rpm_banks": {
+    "load-low": {
+      "source_interval": [
+        145.7,
+        147.0
+      ],
+      "nominal_tuning_rpm": 2600,
+      "duration": 1.18,
+      "peak": 0.4095456898212433,
+      "gain": 7.018919582147054
+    },
+    "load-high": {
+      "source_interval": [
+        85.8,
+        87.6
+      ],
+      "nominal_tuning_rpm": 4900,
+      "duration": 1.68,
+      "peak": 0.4141780436038971,
+      "gain": 6.53509599375937
+    },
+    "overrun-low": {
+      "source_interval": [
+        96.2,
+        97.4
+      ],
+      "nominal_tuning_rpm": 1900,
+      "duration": 1.08,
+      "peak": 0.3951237201690674,
+      "gain": 8.410119508806119
+    },
+    "overrun-high": {
+      "source_interval": [
+        135.6,
+        137.0
+      ],
+      "nominal_tuning_rpm": 4600,
+      "duration": 1.28,
+      "peak": 0.5056689381599426,
+      "gain": 6.835800833773512
+    }
+  },
+  "playback": "Four real GT3 recording loops, smoothly RPM-scaled and crossfaded by load. Original idle, start and stop. No unrelated braking effect."
+}

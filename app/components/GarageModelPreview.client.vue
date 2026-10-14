@@ -14,7 +14,7 @@ async function initialize(){
  if(renderer||disposed)return
  try{
   renderer=new T.WebGLRenderer({alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0,0);renderer.toneMapping=T.NeutralToneMapping;renderer.localClippingEnabled=true;host.value!.appendChild(renderer.domElement)
-  scene=new T.Scene();camera=new T.PerspectiveCamera(32,1,.05,40);camera.position.set(-4.7,1.7,4.6);camera.lookAt(0,.58,0)
+  scene=new T.Scene();camera=new T.PerspectiveCamera(32,1,.05,40);camera.position.set(-5.45,1.9,5.35);camera.lookAt(0,.58,0)
   const studio=createStudioEnvironment(),pmrem=new T.PMREMGenerator(renderer);environment=pmrem.fromScene(studio.scene,.025);scene.environment=environment.texture;studio.dispose();pmrem.dispose()
   scene.add(new T.HemisphereLight('#ffffff','#252b35',.7));const key=new T.DirectionalLight('#ffffff',2.5);key.position.set(-3,5,4);scene.add(key)
   vehicle=await loadVehicle(props.shape,()=>{},true)

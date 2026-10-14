@@ -1,0 +1,1592 @@
+{
+  "porsche": [
+    {
+      "name": "Porsche GT3 992.2",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche door L",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        -0.7300000190734863,
+        -0.7900000214576721,
+        0.699999988079071
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche door R",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        -0.7300000190734863,
+        0.7900000214576721,
+        0.699999988079071
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche wheel 0",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        -1.2430001497268677,
+        -0.7874444127082825,
+        0.3481907546520233
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche wheel 1",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        -1.2430001497268677,
+        0.7874443531036377,
+        0.3481907844543457
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche wheel 2",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        1.204862356185913,
+        -0.7644397020339966,
+        0.3666224181652069
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Porsche wheel 3",
+      "type": "EMPTY",
+      "parent": "Porsche GT3 992.2",
+      "location": [
+        1.2051383256912231,
+        0.7644397020339966,
+        0.3666224181652069
+      ],
+      "mesh": 0
+    }
+  ],
+  "ferrari": [
+    {
+      "name": "ferrari_complete",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "door_L",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        -0.7327569723129272,
+        0.7753030061721802,
+        0.6514692306518555
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "door_R",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        -0.7327569723129272,
+        -0.774696946144104,
+        0.6514692306518555
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "wheel_0",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        1.4986929893493652,
+        0.8007030487060547,
+        0.36431920528411865
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "wheel_1",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        1.4986929893493652,
+        -0.8000969886779785,
+        0.36431920528411865
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "wheel_2",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        -1.1535069942474365,
+        -0.8388969898223877,
+        0.334719181060791
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "wheel_3",
+      "type": "EMPTY",
+      "parent": "ferrari_complete",
+      "location": [
+        -1.1535069942474365,
+        0.8395030498504639,
+        0.334719181060791
+      ],
+      "mesh": 0
+    }
+  ],
+  "revuelto": [
+    {
+      "name": "Revuelto_Root",
+      "type": "EMPTY",
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "CTRL_Wheel_FL",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.8516126871109009,
+        -1.3934342861175537,
+        0.3414224088191986
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "CTRL_Wheel_FR",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        -0.8533456325531006,
+        -1.3934342861175537,
+        0.3414224088191986
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "CTRL_Wheel_RL",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.8516126871109009,
+        1.3879387378692627,
+        0.3414224088191986
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "CTRL_Wheel_RR",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        -0.8533456325531006,
+        1.3879387378692627,
+        0.3414224088191986
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GRP_Body",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "DoorJambLF_Aluminum",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 530
+    },
+    {
+      "name": "DoorJambLF_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 156
+    },
+    {
+      "name": "DoorJambLF_CarPaint",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 6434
+    },
+    {
+      "name": "DoorJambLF_label_Detail",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "DoorJambLF_label_Label",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 40
+    },
+    {
+      "name": "DoorJambLF_label_Screw",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 4
+    },
+    {
+      "name": "DoorJambLF_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 152
+    },
+    {
+      "name": "DoorJambLF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3642
+    },
+    {
+      "name": "DoorJambLF_Rubber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3298
+    },
+    {
+      "name": "DoorJambLFPistonLower_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 194
+    },
+    {
+      "name": "DoorJambLFPistonUpper_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 446
+    },
+    {
+      "name": "DoorJambRF_Aluminum",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 530
+    },
+    {
+      "name": "DoorJambRF_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 156
+    },
+    {
+      "name": "DoorJambRF_CarPaint",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 6440
+    },
+    {
+      "name": "DoorJambRF_label_Detail",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "DoorJambRF_label_Screw",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 4
+    },
+    {
+      "name": "DoorJambRF_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 152
+    },
+    {
+      "name": "DoorJambRF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3642
+    },
+    {
+      "name": "DoorJambRF_Rubber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3298
+    },
+    {
+      "name": "DoorJambRFPistonLower_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 194
+    },
+    {
+      "name": "DoorJambRFPistonUpper_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 446
+    },
+    {
+      "name": "DoorLF_CarbonFiber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1680
+    },
+    {
+      "name": "DoorLF_CarPaint",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2450
+    },
+    {
+      "name": "DoorLF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1347
+    },
+    {
+      "name": "DoorRF_CarbonFiber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1680
+    },
+    {
+      "name": "DoorRF_CarPaint",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2443
+    },
+    {
+      "name": "DoorRF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1347
+    },
+    {
+      "name": "DoorSill_CarPaint",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2376
+    },
+    {
+      "name": "DoorSill_label_Grille",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 74
+    },
+    {
+      "name": "DoorSill_PaintedMetal",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3048
+    },
+    {
+      "name": "DoorSill_PlasticBlack_01",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 4248
+    },
+    {
+      "name": "DoorSill_PlasticBlack_02",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3107
+    },
+    {
+      "name": "DoorSill_PlasticBlack_03",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 3502
+    },
+    {
+      "name": "DoorSill_Rubber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 5678
+    },
+    {
+      "name": "MirrorBaseL_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 40
+    },
+    {
+      "name": "MirrorBaseR_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 40
+    },
+    {
+      "name": "WingMirrorL_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 95
+    },
+    {
+      "name": "WingMirrorL_CarbonFiber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 795
+    },
+    {
+      "name": "WingMirrorL_Mirror",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 183
+    },
+    {
+      "name": "WingMirrorL_PlasticBlack_01",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 52
+    },
+    {
+      "name": "WingMirrorL_PlasticBlack_02",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1992
+    },
+    {
+      "name": "WingMirrorR_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 95
+    },
+    {
+      "name": "WingMirrorR_CarbonFiber",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 795
+    },
+    {
+      "name": "WingMirrorR_Mirror",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 183
+    },
+    {
+      "name": "WingMirrorR_PlasticBlack_01",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 52
+    },
+    {
+      "name": "WingMirrorR_PlasticBlack_02",
+      "type": "MESH",
+      "parent": "GRP_Body",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1992
+    },
+    {
+      "name": "GRP_Engine",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GRP_Glass",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GlassCTL_GlassClear",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 80
+    },
+    {
+      "name": "GlassF_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 274
+    },
+    {
+      "name": "GlassF_DetailMetallic",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 16
+    },
+    {
+      "name": "GlassF_GlassClear",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 452
+    },
+    {
+      "name": "GlassF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 10
+    },
+    {
+      "name": "GlassF_Screw_01",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "GlassF_Screw_02",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "GlassLF_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 52
+    },
+    {
+      "name": "GlassLF_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 82
+    },
+    {
+      "name": "GlassLM_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 229
+    },
+    {
+      "name": "GlassLR_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 82
+    },
+    {
+      "name": "GlassLR_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 110
+    },
+    {
+      "name": "GlassR_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 112
+    },
+    {
+      "name": "GlassR_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 108
+    },
+    {
+      "name": "GlassRF_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 52
+    },
+    {
+      "name": "GlassRF_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 82
+    },
+    {
+      "name": "GlassRM_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 229
+    },
+    {
+      "name": "GlassRR_BlackFrame",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 82
+    },
+    {
+      "name": "GlassRR_GlassSide",
+      "type": "MESH",
+      "parent": "GRP_Glass",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 110
+    },
+    {
+      "name": "GRP_Hood",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GRP_Interior",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "DoorCardLF_Alcantara",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1182
+    },
+    {
+      "name": "DoorCardLF_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 20
+    },
+    {
+      "name": "DoorCardLF_Detail",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 28
+    },
+    {
+      "name": "DoorCardLF_GlassDark",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 168
+    },
+    {
+      "name": "DoorCardLF_GunMetal",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 631
+    },
+    {
+      "name": "DoorCardLF_label_Detail_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 6
+    },
+    {
+      "name": "DoorCardLF_label_Detail_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 10
+    },
+    {
+      "name": "DoorCardLF_label_Label_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 26
+    },
+    {
+      "name": "DoorCardLF_label_Label_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 38
+    },
+    {
+      "name": "DoorCardLF_label_Stitch_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 120
+    },
+    {
+      "name": "DoorCardLF_label_Stitch_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 39
+    },
+    {
+      "name": "DoorCardLF_Leather_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 116
+    },
+    {
+      "name": "DoorCardLF_Leather_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 378
+    },
+    {
+      "name": "DoorCardLF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1052
+    },
+    {
+      "name": "DoorCardLF_Screw",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 4
+    },
+    {
+      "name": "DoorCardLFCustom_Alcantara",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 128
+    },
+    {
+      "name": "DoorCardLFCustom_GlassClear",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 78
+    },
+    {
+      "name": "DoorCardLFCustom_label_Label_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "DoorCardLFCustom_label_Label_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 2
+    },
+    {
+      "name": "DoorCardLFCustom_PlasticBlack_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 64
+    },
+    {
+      "name": "DoorCardLFCustom_PlasticBlack_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 26
+    },
+    {
+      "name": "DoorCardLFCustom_PlasticBlack_03",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 62
+    },
+    {
+      "name": "DoorCardRF_Alcantara",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 1176
+    },
+    {
+      "name": "DoorCardRF_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 10
+    },
+    {
+      "name": "DoorCardRF_GlassDark",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 112
+    },
+    {
+      "name": "DoorCardRF_GunMetal",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 631
+    },
+    {
+      "name": "DoorCardRF_label_Label_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 26
+    },
+    {
+      "name": "DoorCardRF_label_Label_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 8
+    },
+    {
+      "name": "DoorCardRF_label_Stitch_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 120
+    },
+    {
+      "name": "DoorCardRF_label_Stitch_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 39
+    },
+    {
+      "name": "DoorCardRF_Leather_01",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 116
+    },
+    {
+      "name": "DoorCardRF_Leather_02",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 378
+    },
+    {
+      "name": "DoorCardRF_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 606
+    },
+    {
+      "name": "DoorCardRF_Screw",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 4
+    },
+    {
+      "name": "DoorCardRFCustom_Alcantara",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 88
+    },
+    {
+      "name": "DoorCardRFCustom_BlackHole",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 26
+    },
+    {
+      "name": "DoorCardRFCustom_GlassClear",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 78
+    },
+    {
+      "name": "DoorCardRFCustom_PlasticBlack",
+      "type": "MESH",
+      "parent": "GRP_Interior",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 26
+    },
+    {
+      "name": "GRP_Lights_F",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GlassBumperFSideMarkerL_GlassClear_01",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 164
+    },
+    {
+      "name": "GlassBumperFSideMarkerL_GlassClear_02",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 372
+    },
+    {
+      "name": "GlassLHL_GlassClear_01",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 182
+    },
+    {
+      "name": "GlassLHL_GlassClear_02",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 959
+    },
+    {
+      "name": "GlassRHL_GlassClear_01",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 182
+    },
+    {
+      "name": "GlassRHL_GlassClear_02",
+      "type": "MESH",
+      "parent": "GRP_Lights_F",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 959
+    },
+    {
+      "name": "GRP_Lights_R",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "GlassBumperRSideMarkerL_GlassRed_01",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 62
+    },
+    {
+      "name": "GlassBumperRSideMarkerL_GlassRed_02",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 16
+    },
+    {
+      "name": "GlassBumperRSideMarkerL_GlassRed_03",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 36
+    },
+    {
+      "name": "GlassBumperRSideMarkerL_GlassRed_04",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 182
+    },
+    {
+      "name": "GlassBumperRSideMarkerL_GlassRed_05",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 158
+    },
+    {
+      "name": "GlassCHMSL_GlassRed",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 284
+    },
+    {
+      "name": "GlassLTL_GlassRed",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 935
+    },
+    {
+      "name": "GlassRTL_GlassRed",
+      "type": "MESH",
+      "parent": "GRP_Lights_R",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mesh": 935
+    },
+    {
+      "name": "GRP_Trunk",
+      "type": "EMPTY",
+      "parent": "Revuelto_Root",
+      "location": [
+        0.0,
+        0.0,
+        0.08772513270378113
+      ],
+      "mesh": 0
+    }
+  ]
+}

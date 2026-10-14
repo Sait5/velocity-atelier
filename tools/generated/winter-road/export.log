@@ -1,0 +1,199 @@
+00:00.719  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\source-assets\winter\untitled.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_0_near
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.011963367462158203 s
+
+CHUNK winter 0 near 5590
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_0_far
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.0034568309783935547 s
+
+CHUNK winter 0 far 374
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_1_near
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.010720968246459961 s
+
+CHUNK winter 1 near 5590
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_1_far
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.003838777542114258 s
+
+CHUNK winter 1 far 374
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_2_near
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.013507604598999023 s
+
+CHUNK winter 2 near 5590
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_2_far
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.003831148147583008 s
+
+CHUNK winter 2 far 374
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_3_near
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.010516643524169922 s
+
+CHUNK winter 3 near 5590
+16:30:55 | INFO: Starting glTF 2.0 export
+16:30:55 | INFO: Extracting primitive: Terrain_3_far
+16:30:55 | INFO: Primitives created: 1
+16:30:55 | INFO: Finished glTF 2.0 export in 0.003261089324951172 s
+
+CHUNK winter 3 far 374
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_4_near
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.01070261001586914 s
+
+CHUNK winter 4 near 5590
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_4_far
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.0039327144622802734 s
+
+CHUNK winter 4 far 374
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_5_near
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.011011362075805664 s
+
+CHUNK winter 5 near 5590
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_5_far
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.003400087356567383 s
+
+CHUNK winter 5 far 374
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_6_near
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.011181116104125977 s
+
+CHUNK winter 6 near 5590
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_6_far
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.0028579235076904297 s
+
+CHUNK winter 6 far 374
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_7_near
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.012878656387329102 s
+
+CHUNK winter 7 near 5590
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_7_far
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.003863096237182617 s
+
+CHUNK winter 7 far 374
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_8_near
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.010044336318969727 s
+
+CHUNK winter 8 near 5590
+16:30:56 | INFO: Starting glTF 2.0 export
+16:30:56 | INFO: Extracting primitive: Terrain_8_far
+16:30:56 | INFO: Primitives created: 1
+16:30:56 | INFO: Finished glTF 2.0 export in 0.0041348934173583984 s
+
+CHUNK winter 8 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_9_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.010762929916381836 s
+
+CHUNK winter 9 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_9_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.0033464431762695312 s
+
+CHUNK winter 9 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_10_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.01063680648803711 s
+
+CHUNK winter 10 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_10_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.0041425228118896484 s
+
+CHUNK winter 10 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_11_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.010053396224975586 s
+
+CHUNK winter 11 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_11_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.0043811798095703125 s
+
+CHUNK winter 11 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_12_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.010432004928588867 s
+
+CHUNK winter 12 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_12_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.0034635066986083984 s
+
+CHUNK winter 12 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_13_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.010100603103637695 s
+
+CHUNK winter 13 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_13_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.002962350845336914 s
+
+CHUNK winter 13 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_14_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.013773202896118164 s
+
+CHUNK winter 14 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_14_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.0034444332122802734 s
+
+CHUNK winter 14 far 374
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_15_near
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.012055158615112305 s
+
+CHUNK winter 15 near 5590
+16:30:57 | INFO: Starting glTF 2.0 export
+16:30:57 | INFO: Extracting primitive: Terrain_15_far
+16:30:57 | INFO: Primitives created: 1
+16:30:57 | INFO: Finished glTF 2.0 export in 0.004168987274169922 s
+
+CHUNK winter 15 far 374
+Информация: Сохранено как "environment.blend"
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

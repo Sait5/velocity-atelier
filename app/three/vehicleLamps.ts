@@ -20,12 +20,12 @@ export function installItaliaLamps(root:T.Group,source:T.MeshStandardMaterial){
  for(const side of [-1,1]){
   const light=new T.SpotLight('#dceaff',95,6,.42,.8,2);light.position.set(-1.92,.57,side*.67);light.target.position.set(-4.4,.03,side*.86);root.add(light,light.target);headlights.push(light)
  }
- function setLights(frontOn:boolean,rearOn:boolean){root.userData.frontEnabled=frontOn;root.userData.tailEnabled=rearOn;
-  tailGlow.set(rearOn)
+ function setLights(frontOn:boolean,rearOn:boolean,frontLevel=Number(frontOn),rearLevel=Number(rearOn)){root.userData.frontEnabled=frontOn;root.userData.tailEnabled=rearOn;
+  tailGlow.set(rearOn,rearLevel)
   spill.visible=frontOn
-  front.emissiveIntensity=frontOn?5.3:0;projector.emissiveIntensity=frontOn?8:0
-  rear.emissiveIntensity=rearOn?1.6:0;rearLens.emissiveIntensity=rearOn?.9:0
-  headlights.forEach(l=>l.intensity=frontOn?95:0);taillights.forEach(l=>l.intensity=rearOn?.8:0)
+  front.emissiveIntensity=5.3*frontLevel;projector.emissiveIntensity=8*frontLevel
+  rear.emissiveIntensity=1.6*rearLevel;rearLens.emissiveIntensity=.9*rearLevel
+  headlights.forEach(l=>l.intensity=95*frontLevel);taillights.forEach(l=>l.intensity=.8*rearLevel)
  }
  setLights(true,true)
  return {white:front,setLights}

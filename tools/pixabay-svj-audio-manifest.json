@@ -1,0 +1,27 @@
+{
+  "title": "Lamborghini Aventador SVJ Racing Sound effect",
+  "author": "mizanstock / AH.Mizan Rahman",
+  "source": "https://pixabay.com/sound-effects/film-special-effects-lamborghini-aventador-svj-racing-sound-effect-161994/",
+  "license": "Pixabay Content License",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "source_sha256": "f69eb0f40106acf67ced787a01b8db7a7003da2f41a28211ac46f534aeda1f2e",
+  "original_duration": 18.834285714285713,
+  "segments_seconds": [
+    [
+      0,
+      4.4
+    ],
+    [
+      6.1,
+      15.7
+    ]
+  ],
+  "gain_db": -12.041199826559248,
+  "transition_seconds": 0.4,
+  "circular_crossfade_seconds": 0.9,
+  "timing": {
+    "loopStart": 4.9,
+    "loopEnd": 13.6
+  },
+  "processing": "Cuts, static attenuation and equal-power splices only. Playback rate 1; no pitch shifts, filters or time stretching. Exact recording attribution comes from publisher; not a Revuelto recording."
+}

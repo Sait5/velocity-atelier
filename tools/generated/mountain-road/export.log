@@ -1,0 +1,201 @@
+FBX version: 7400
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+16:31:02 | INFO: Starting glTF 2.0 export
+16:31:02 | INFO: Extracting primitive: Terrain_0_near
+16:31:02 | INFO: Primitives created: 1
+16:31:02 | INFO: Finished glTF 2.0 export in 0.01611781120300293 s
+
+CHUNK mountain 0 near 5590
+16:31:02 | INFO: Starting glTF 2.0 export
+16:31:02 | INFO: Extracting primitive: Terrain_0_far
+16:31:02 | INFO: Primitives created: 1
+16:31:02 | INFO: Finished glTF 2.0 export in 0.003735780715942383 s
+
+CHUNK mountain 0 far 374
+16:31:02 | INFO: Starting glTF 2.0 export
+16:31:02 | INFO: Extracting primitive: Terrain_1_near
+16:31:02 | INFO: Primitives created: 1
+16:31:02 | INFO: Finished glTF 2.0 export in 0.016340970993041992 s
+
+CHUNK mountain 1 near 5590
+16:31:02 | INFO: Starting glTF 2.0 export
+16:31:02 | INFO: Extracting primitive: Terrain_1_far
+16:31:02 | INFO: Primitives created: 1
+16:31:02 | INFO: Finished glTF 2.0 export in 0.003779888153076172 s
+
+CHUNK mountain 1 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_2_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.013005495071411133 s
+
+CHUNK mountain 2 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_2_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.003692626953125 s
+
+CHUNK mountain 2 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_3_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.010149240493774414 s
+
+CHUNK mountain 3 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_3_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.003069162368774414 s
+
+CHUNK mountain 3 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_4_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.01044607162475586 s
+
+CHUNK mountain 4 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_4_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.0033385753631591797 s
+
+CHUNK mountain 4 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_5_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.01110696792602539 s
+
+CHUNK mountain 5 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_5_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.0034165382385253906 s
+
+CHUNK mountain 5 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_6_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.014252662658691406 s
+
+CHUNK mountain 6 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_6_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.00393366813659668 s
+
+CHUNK mountain 6 far 374
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_7_near
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.010051250457763672 s
+
+CHUNK mountain 7 near 5590
+16:31:03 | INFO: Starting glTF 2.0 export
+16:31:03 | INFO: Extracting primitive: Terrain_7_far
+16:31:03 | INFO: Primitives created: 1
+16:31:03 | INFO: Finished glTF 2.0 export in 0.003317594528198242 s
+
+CHUNK mountain 7 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_8_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.011069059371948242 s
+
+CHUNK mountain 8 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_8_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.0032486915588378906 s
+
+CHUNK mountain 8 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_9_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.011098146438598633 s
+
+CHUNK mountain 9 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_9_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.00418400764465332 s
+
+CHUNK mountain 9 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_10_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.01373744010925293 s
+
+CHUNK mountain 10 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_10_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.005888938903808594 s
+
+CHUNK mountain 10 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_11_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.011546611785888672 s
+
+CHUNK mountain 11 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_11_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.003278017044067383 s
+
+CHUNK mountain 11 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_12_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.010607004165649414 s
+
+CHUNK mountain 12 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_12_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.0031647682189941406 s
+
+CHUNK mountain 12 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_13_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.012961864471435547 s
+
+CHUNK mountain 13 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_13_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.0033197402954101562 s
+
+CHUNK mountain 13 far 374
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_14_near
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.010572671890258789 s
+
+CHUNK mountain 14 near 5590
+16:31:04 | INFO: Starting glTF 2.0 export
+16:31:04 | INFO: Extracting primitive: Terrain_14_far
+16:31:04 | INFO: Primitives created: 1
+16:31:04 | INFO: Finished glTF 2.0 export in 0.0036072731018066406 s
+
+CHUNK mountain 14 far 374
+16:31:05 | INFO: Starting glTF 2.0 export
+16:31:05 | INFO: Extracting primitive: Terrain_15_near
+16:31:05 | INFO: Primitives created: 1
+16:31:05 | INFO: Finished glTF 2.0 export in 0.011208295822143555 s
+
+CHUNK mountain 15 near 5590
+16:31:05 | INFO: Starting glTF 2.0 export
+16:31:05 | INFO: Extracting primitive: Terrain_15_far
+16:31:05 | INFO: Primitives created: 1
+16:31:05 | INFO: Finished glTF 2.0 export in 0.0038492679595947266 s
+
+CHUNK mountain 15 far 374
+00:06.547  reports          | WARNING Path 'D:\Gaia terrains\Snow-Mount-Range\Combine.tif' cannot be made relative for Image 'Combine.tif'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+00:06.547  reports          | WARNING Path 'D:\Gaia terrains\Snow-Mount-Range\Combine001.tif' cannot be made relative for Image 'Combine001.tif'
+Info: Saved as "environment.blend"
+
+Blender quit

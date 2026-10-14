@@ -1,0 +1,546 @@
+[
+  {
+    "name": "_Badge_Geo_lodA_Badge_Geo_lodA_Porsche_911GT39922_2025BadgeA_Material__Porsche_911GT39922_2025BadgeA_Material1_0",
+    "min": [
+      -0.009138300083577633,
+      -0.02285677380859852,
+      0.0013027602108195424
+    ],
+    "max": [
+      0.009138300083577633,
+      0.022571703419089317,
+      0.009770341217517853
+    ],
+    "faces": 8444,
+    "materials": [
+      "Porsche_911GT39922_2025BadgeA_Material1"
+    ]
+  },
+  {
+    "name": "_Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0",
+    "min": [
+      -0.009231380186975002,
+      -0.021526223048567772,
+      0.0011768701951950788
+    ],
+    "max": [
+      0.009231380186975002,
+      0.022348353639245033,
+      0.012351501733064651
+    ],
+    "faces": 5277,
+    "materials": [
+      "Porsche_911GT39922_2025Base_Material1"
+    ]
+  },
+  {
+    "name": "_Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0",
+    "min": [
+      -0.007717289961874485,
+      -0.004511640872806311,
+      0.003136800369247794
+    ],
+    "max": [
+      0.007717289961874485,
+      0.004195000510662794,
+      0.00818760134279728
+    ],
+    "faces": 1558,
+    "materials": [
+      "Porsche_911GT39922_2025Carbon1_Material1"
+    ]
+  },
+  {
+    "name": "_Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0",
+    "min": [
+      -0.010135259479284286,
+      -0.02194962464272976,
+      0.0019341002916917205
+    ],
+    "max": [
+      0.010135259479284286,
+      0.02200336381793022,
+      0.012987682595849037
+    ],
+    "faces": 20191,
+    "materials": [
+      "Porsche_911GT39922_2025Carbon1_Material1"
+    ]
+  },
+  {
+    "name": "_Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0",
+    "min": [
+      -0.010053189471364021,
+      -0.022610103711485863,
+      0.0011956702219322324
+    ],
+    "max": [
+      0.010053189471364021,
+      0.022829584777355194,
+      0.012632242403924465
+    ],
+    "faces": 63615,
+    "materials": [
+      "Porsche_911GT39922_2025Coloured_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha2A_Material__Porsche_911GT39922_2025GrilleAlpha2A_Material1_0",
+    "min": [
+      -0.00598229980096221,
+      -0.022140583023428917,
+      0.001995140453800559
+    ],
+    "max": [
+      0.00598229980096221,
+      0.02123054303228855,
+      0.008810281753540039
+    ],
+    "faces": 328,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleAlpha2A_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleAlpha6_Geo_lodA_GrilleAlpha6_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha6A_Material__Porsche_911GT39922_2025GrilleAlpha6A_Material1_0",
+    "min": [
+      -0.005207359790802002,
+      -0.002809620462357998,
+      0.002388530410826206
+    ],
+    "max": [
+      0.005207359790802002,
+      0.004792060703039169,
+      0.007650711107999086
+    ],
+    "faces": 2250,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleAlpha6A_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0",
+    "min": [
+      -0.006528919562697411,
+      -0.01906019262969494,
+      0.004315081052482128
+    ],
+    "max": [
+      0.006528919562697411,
+      -0.0016691802302375436,
+      0.00656883092597127
+    ],
+    "faces": 53,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleAlphaTest4A_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleNoAlpha1_Geo_lodA_GrilleNoAlpha1_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha1A_Material__Porsche_911GT39922_2025GrilleNoAlpha1A_Material1_0",
+    "min": [
+      -0.008369669318199158,
+      -0.02100435271859169,
+      0.0016278201946988702
+    ],
+    "max": [
+      0.008369669318199158,
+      -0.017613712698221207,
+      0.005362980533391237
+    ],
+    "faces": 122,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleNoAlpha1A_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha3A_Material__Porsche_911GT39922_2025GrilleNoAlpha3A_Material1_0",
+    "min": [
+      -0.004931529983878136,
+      0.015795163810253143,
+      0.008697621524333954
+    ],
+    "max": [
+      0.004931529983878136,
+      0.02083495259284973,
+      0.011650041677057743
+    ],
+    "faces": 3424,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleNoAlpha3A_Material1"
+    ]
+  },
+  {
+    "name": "_GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0",
+    "min": [
+      -0.0071461996994912624,
+      -0.008134650997817516,
+      0.004248880781233311
+    ],
+    "max": [
+      0.0071461996994912624,
+      0.00818847119808197,
+      0.00897735171020031
+    ],
+    "faces": 336,
+    "materials": [
+      "Porsche_911GT39922_2025GrilleNoAlpha5A_Material1"
+    ]
+  },
+  {
+    "name": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0",
+    "min": [
+      -0.008517550304532051,
+      -0.021403592079877853,
+      0.00156885024625808
+    ],
+    "max": [
+      0.008517550304532051,
+      0.016052933409810066,
+      0.012621801346540451
+    ],
+    "faces": 78225,
+    "materials": [
+      "Porsche_911GT39922_2025InteriorA_Material1"
+    ]
+  },
+  {
+    "name": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material_dash_0",
+    "min": [
+      -0.0020883900579065084,
+      -0.004969420842826366,
+      0.007400581147521734
+    ],
+    "max": [
+      0.004916199948638678,
+      -0.004491930827498436,
+      0.008839101530611515
+    ],
+    "faces": 127,
+    "materials": [
+      "dash"
+    ]
+  },
+  {
+    "name": "_Light_Geo_lodA_Light_Geo_lodA_Porsche_911GT39922_2025LightA_Material__Porsche_911GT39922_2025LightA_Material1_0",
+    "min": [
+      -0.009149479679763317,
+      -0.018957553431391716,
+      0.00534258084371686
+    ],
+    "max": [
+      0.009149479679763317,
+      0.022615503519773483,
+      0.009771531447768211
+    ],
+    "faces": 40304,
+    "materials": [
+      "Porsche_911GT39922_2025LightA_Material1"
+    ]
+  },
+  {
+    "name": "_ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Porsche_911GT39922_2025ManufacturerPlateA_Material__Porsche_911GT39922_2025ManufacturerPlateA_Material1_0",
+    "min": [
+      -0.0015239999629557133,
+      0.02217281423509121,
+      0.0043151709251105785
+    ],
+    "max": [
+      0.0015239999629557133,
+      0.022440074011683464,
+      0.005820390768349171
+    ],
+    "faces": 128,
+    "materials": [
+      "Porsche_911GT39922_2025ManufacturerPlateA_Material1"
+    ]
+  },
+  {
+    "name": "_Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0",
+    "min": [
+      -0.010123100131750107,
+      -0.022776633501052856,
+      0.0016967501724138856
+    ],
+    "max": [
+      0.010123100131750107,
+      0.022768784314393997,
+      0.012964442372322083
+    ],
+    "faces": 31803,
+    "materials": [
+      "Porsche_911GT39922_2025Paint_Material1"
+    ]
+  },
+  {
+    "name": "_SeatBelt_Geo_lodA_SeatBelt_Geo_lodA_Porsche_911GT39922_2025SeatBelt_Material__Porsche_911GT39922_2025Coloured_Material1_0",
+    "min": [
+      0.004893679637461901,
+      0.0013845901703462005,
+      0.0026223803870379925
+    ],
+    "max": [
+      0.005980110261589289,
+      0.005686990916728973,
+      0.009721001610159874
+    ],
+    "faces": 614,
+    "materials": [
+      "Porsche_911GT39922_2025Coloured_Material1"
+    ]
+  },
+  {
+    "name": "_WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0",
+    "min": [
+      -0.007338020019233227,
+      -0.008831891231238842,
+      0.008727801963686943
+    ],
+    "max": [
+      0.00733802979812026,
+      0.01579040288925171,
+      0.01215205155313015
+    ],
+    "faces": 626,
+    "materials": [
+      "Porsche_911GT39922_2025Window_Material1"
+    ]
+  },
+  {
+    "name": "_Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0",
+    "min": [
+      -0.00917958002537489,
+      -0.0189600121229887,
+      0.0057625011540949345
+    ],
+    "max": [
+      0.00917958002537489,
+      0.022615503519773483,
+      0.012178711593151093
+    ],
+    "faces": 2006,
+    "materials": [
+      "Porsche_911GT39922_2025Window_Material1"
+    ]
+  },
+  {
+    "name": "_Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material_red_glass_0",
+    "min": [
+      -0.007705220021307468,
+      0.017830662429332733,
+      0.005336560774594545
+    ],
+    "max": [
+      0.007705220021307468,
+      0.021776262670755386,
+      0.007975281216204166
+    ],
+    "faces": 1356,
+    "materials": [
+      "red_glass"
+    ]
+  },
+  {
+    "name": "polySurface1_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0",
+    "min": [
+      0.006442606914788485,
+      -0.015860943123698235,
+      -3.449559153523296e-05
+    ],
+    "max": [
+      0.009306280873715878,
+      -0.008999061770737171,
+      0.006892711855471134
+    ],
+    "faces": 10742,
+    "materials": [
+      "wPorsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1"
+    ]
+  },
+  {
+    "name": "polySurface617_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0",
+    "min": [
+      -0.009306282736361027,
+      -0.015860943123698235,
+      -3.4495813451940194e-05
+    ],
+    "max": [
+      -0.006442605517804623,
+      -0.008999060839414597,
+      0.0068927123211324215
+    ],
+    "faces": 10742,
+    "materials": [
+      "wPorsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1"
+    ]
+  },
+  {
+    "name": "polySurface616_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0",
+    "min": [
+      0.005883231293410063,
+      0.008437322452664375,
+      -5.2776977099711075e-05
+    ],
+    "max": [
+      0.009405563585460186,
+      0.01565992459654808,
+      0.007279625162482262
+    ],
+    "faces": 10774,
+    "materials": [
+      "wPorsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1"
+    ]
+  },
+  {
+    "name": "polySurface615_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0",
+    "min": [
+      -0.009405563585460186,
+      0.008440081961452961,
+      -5.277689706417732e-05
+    ],
+    "max": [
+      -0.005883231293410063,
+      0.01566268317401409,
+      0.007279625162482262
+    ],
+    "faces": 10774,
+    "materials": [
+      "wPorsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1"
+    ]
+  },
+  {
+    "name": "polySurface618_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "min": [
+      0.00876374077051878,
+      -0.011205961927771568,
+      0.0022933080326765776
+    ],
+    "max": [
+      0.008794891647994518,
+      -0.01053756196051836,
+      0.003482880536466837
+    ],
+    "faces": 2,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperBadgeA_Material1"
+    ]
+  },
+  {
+    "name": "polySurface622_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "min": [
+      0.007095229346305132,
+      -0.014594602398574352,
+      0.0012392970966175199
+    ],
+    "max": [
+      0.008811619132757187,
+      -0.01010827161371708,
+      0.005617543123662472
+    ],
+    "faces": 1260,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperA_Zone_Material1"
+    ]
+  },
+  {
+    "name": "polySurface619_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "min": [
+      -0.008794884197413921,
+      -0.011204101145267487,
+      0.0022935783490538597
+    ],
+    "max": [
+      -0.008763748221099377,
+      -0.01053590141236782,
+      0.0034826009068638086
+    ],
+    "faces": 2,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperBadgeA_Material1"
+    ]
+  },
+  {
+    "name": "polySurface972_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "min": [
+      -0.008811620064079762,
+      -0.014594602398574352,
+      0.0012392970966175199
+    ],
+    "max": [
+      -0.007095228414982557,
+      -0.010108270682394505,
+      0.005617543589323759
+    ],
+    "faces": 1260,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperA_Zone_Material1"
+    ]
+  },
+  {
+    "name": "polySurface620_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "min": [
+      0.008295264095067978,
+      0.01035534217953682,
+      0.002631048671901226
+    ],
+    "max": [
+      0.008323295041918755,
+      0.010843902826309204,
+      0.003433749545365572
+    ],
+    "faces": 2,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperBadgeA_Material1"
+    ]
+  },
+  {
+    "name": "polySurface971_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "min": [
+      0.006707287393510342,
+      0.009829502552747726,
+      0.0015894805546849966
+    ],
+    "max": [
+      0.008348316885530949,
+      0.011215382255613804,
+      0.00437140790745616
+    ],
+    "faces": 1020,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperA_Zone_Material1"
+    ]
+  },
+  {
+    "name": "polySurface621_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "min": [
+      -0.008323298767209053,
+      0.010355692356824875,
+      0.002630968578159809
+    ],
+    "max": [
+      -0.008295262232422829,
+      0.010844312608242035,
+      0.003433819394558668
+    ],
+    "faces": 2,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperBadgeA_Material1"
+    ]
+  },
+  {
+    "name": "polySurface970_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "min": [
+      -0.008348317816853523,
+      0.009829502552747726,
+      0.0015894805546849966
+    ],
+    "max": [
+      -0.006707287393510342,
+      0.011215383186936378,
+      0.00437140790745616
+    ],
+    "faces": 1020,
+    "materials": [
+      "wPorsche_911GT39922_2025_CallipersCalliperA_Zone_Material1"
+    ]
+  }
+]

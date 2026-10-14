@@ -1,0 +1,108 @@
+00:00.531  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\generated\Tourbillon-parts.blend"
+Информация: Сохранено как "Tourbillon-ready.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+09:21:19 | INFO: Starting glTF 2.0 export
+09:21:20 | INFO: Extracting primitive: polySurface862_b:Bugatti_Tourbillon_2026_CallipersCalliperA_Zone_Material1_0
+09:21:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: polySurface767_b:Bugatti_Tourbillon_2026_CallipersCalliperBadgeA_Material1_0
+09:21:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Badge_Geo_lodA_Badge_Geo_lodA_Bugatti_Tourbillon_2026BadgeA_Material_b:Bugatti_Tourbillon_2026BadgeA_Material1_0
+09:21:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Base_Geo_lodA_Base_Geo_lodA_Bugatti_Tourbillon_2026Base_Material_b:Bugatti_Tourbillon_2026Base_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Carbon1_Geo_lodA_Carbon1_Geo_lodA_Bugatti_Tourbillon_2026Carbon1_Material_b:Bugatti_Tourbillon_2026Carbon1_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Coloured_Geo_lodA_Coloured_Geo_lodA_Bugatti_Tourbillon_2026Coloured_Material_b:Bugatti_Tourbillon_2026Coloured_Material1_0
+09:21:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Engine_Geo_lodA_Engine_Geo_lodA_Bugatti_Tourbillon_2026EngineA_Material_b:Bugatti_Tourbillon_2026EngineA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleAlpha1_Geo_lodA_GrilleAlpha1_Geo_lodA_Bugatti_Tourbillon_2026GrilleAlpha1A_Material_b:Bugatti_Tourbillon_2026GrilleAlpha1A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Bugatti_Tourbillon_2026GrilleAlpha2A_Material_b:Bugatti_Tourbillon_2026GrilleAlpha2A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleAlpha4_Geo_lodA_GrilleAlpha4_Geo_lodA_Bugatti_Tourbillon_2026GrilleAlpha4A_Material_b:Bugatti_Tourbillon_2026GrilleAlpha4A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Bugatti_Tourbillon_2026GrilleNoAlpha3A_Material_b:Bugatti_Tourbillon_2026GrilleNoAlpha3A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Bugatti_Tourbillon_2026GrilleNoAlpha5A_Material_b:Bugatti_Tourbillon_2026GrilleNoAlpha5A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleNoAlpha6_Geo_lodA_GrilleNoAlpha6_Geo_lodA_Bugatti_Tourbillon_2026GrilleNoAlpha6A_Material_b:Bugatti_Tourbillon_2026GrilleNoAlpha6A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleNoAlpha7_Geo_lodA_GrilleNoAlpha7_Geo_lodA_Bugatti_Tourbillon_2026GrilleNoAlpha7A_Material_b:Bugatti_Tourbillon_2026GrilleNoAlpha7A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:GrilleNoAlpha8_Geo_lodA_GrilleNoAlpha8_Geo_lodA_Bugatti_Tourbillon_2026GrilleNoAlpha8A_Material_b:Bugatti_Tourbillon_2026GrilleNoAlpha8A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Interior_Geo_lodA_Interior_Geo_lodA_Bugatti_Tourbillon_2026InteriorA_Material_b:Bugatti_Tourbillon_2026InteriorA_Material1_0.001
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:InteriorColourZone_Geo_lodA_InteriorColourZone_Geo_lodA_Bugatti_Tourbillon_2026InteriorColourZoneA_Material_b:Bugatti_Tourbillon_2026InteriorColourZoneA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:InteriorTillingColourZone_Geo_lodA_InteriorTillingColourZone_Geo_lodA_Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material_b:Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material1_0.005
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Light_Geo_lodA_Light_Geo_lodA_Bugatti_Tourbillon_2026LightA_Material_b:Bugatti_Tourbillon_2026LightA_Material1_0
+09:21:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Bugatti_Tourbillon_2026ManufacturerPlateA_Material_b:Bugatti_Tourbillon_2026ManufacturerPlateA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Paint_Geo_lodA_Paint_Geo_lodA_Bugatti_Tourbillon_2026Paint_Material_b:Bugatti_Tourbillon_2026Paint_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Textured_Geo_lodA_Textured_Geo_lodA_Bugatti_Tourbillon_2026TexturedA_Material_b:Bugatti_Tourbillon_2026TexturedA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:WindowInside_Geo_lodA_WindowInside_Geo_lodA_Bugatti_Tourbillon_2026WindowInside_Material_b:Bugatti_Tourbillon_2026Window_Material1_0.005
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Paint_Geo_lodA_Paint_Geo_lodA_Bugatti_Tourbillon_2026Paint_Material_col_2_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Window_Geo_lodA_Window_Geo_lodA_Bugatti_Tourbillon_2026Window_Material_red_glass_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Interior_Geo_lodA_Interior_Geo_lodA_Bugatti_Tourbillon_2026InteriorA_Material_b:Bugatti_Tourbillon_2026InteriorA_Material1_0.247
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Base_Geo_lodA_Base_Geo_lodA_Bugatti_Tourbillon_2026Base_Material_b:Bugatti_Tourbillon_2026Base_Material1_0.006
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Carbon1_Geo_lodA_Carbon1_Geo_lodA_Bugatti_Tourbillon_2026Carbon1_Material_b:Bugatti_Tourbillon_2026Carbon1_Material1_0.068
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Coloured_Geo_lodA_Coloured_Geo_lodA_Bugatti_Tourbillon_2026Coloured_Material_b:Bugatti_Tourbillon_2026Coloured_Material1_0.496
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Interior_Geo_lodA_Interior_Geo_lodA_Bugatti_Tourbillon_2026InteriorA_Material_b:Bugatti_Tourbillon_2026InteriorA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:InteriorTillingColourZone_Geo_lodA_InteriorTillingColourZone_Geo_lodA_Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material_b:Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material1_0.001
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Paint_Geo_lodA_Paint_Geo_lodA_Bugatti_Tourbillon_2026Paint_Material_b:Bugatti_Tourbillon_2026Paint_Material1_0.008
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:WindowInside_Geo_lodA_WindowInside_Geo_lodA_Bugatti_Tourbillon_2026WindowInside_Material_b:Bugatti_Tourbillon_2026Window_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:WindowInside_Geo_lodA_WindowInside_Geo_lodA_Bugatti_Tourbillon_2026WindowInside_Material_b:Bugatti_Tourbillon_2026Window_Material1_0.002
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Base_Geo_lodA_Base_Geo_lodA_Bugatti_Tourbillon_2026Base_Material_b:Bugatti_Tourbillon_2026Base_Material1_0.007
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Carbon1_Geo_lodA_Carbon1_Geo_lodA_Bugatti_Tourbillon_2026Carbon1_Material_b:Bugatti_Tourbillon_2026Carbon1_Material1_0.003
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Coloured_Geo_lodA_Coloured_Geo_lodA_Bugatti_Tourbillon_2026Coloured_Material_b:Bugatti_Tourbillon_2026Coloured_Material1_0.019
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Interior_Geo_lodA_Interior_Geo_lodA_Bugatti_Tourbillon_2026InteriorA_Material_b:Bugatti_Tourbillon_2026InteriorA_Material1_0.004
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:InteriorTillingColourZone_Geo_lodA_InteriorTillingColourZone_Geo_lodA_Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material_b:Bugatti_Tourbillon_2026InteriorTillingColourZoneA_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:Paint_Geo_lodA_Paint_Geo_lodA_Bugatti_Tourbillon_2026Paint_Material_b:Bugatti_Tourbillon_2026Paint_Material1_0.014
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:WindowInside_Geo_lodA_WindowInside_Geo_lodA_Bugatti_Tourbillon_2026WindowInside_Material_b:Bugatti_Tourbillon_2026Window_Material1_0.004
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: b:WindowInside_Geo_lodA_WindowInside_Geo_lodA_Bugatti_Tourbillon_2026WindowInside_Material_b:Bugatti_Tourbillon_2026Window_Material1_0.003
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: polySurface192_b:Bugatti_Tourbillon_2026_Wheel1A_3D_3DWheel1A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: polySurface384_b:Bugatti_Tourbillon_2026_Wheel1A_3D_3DWheel1A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: polySurface575_b:Bugatti_Tourbillon_2026_Wheel1A_3D_3DWheel1A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Extracting primitive: polySurface766_b:Bugatti_Tourbillon_2026_Wheel1A_3D_3DWheel1A_Material1_0
+09:21:20 | INFO: Primitives created: 1
+09:21:20 | INFO: Finished glTF 2.0 export in 0.528186559677124 s
+
+RIG [('door0', [-1.0399999618530273, 0.7099999785423279, 0.7799999713897705]), ('door1', [-1.0399999618530273, -0.7099999785423279, 0.7799999713897705]), ('wheel0', [-1.2869997024536133, 0.8781366348266602, 0.35212910175323486]), ('wheel1', [-1.2870007753372192, -0.8781366944313049, 0.35212913155555725]), ('wheel2', [1.448000192642212, 0.8398855924606323, 0.36978352069854736]), ('wheel3', [1.4480000734329224, -0.8398857116699219, 0.36978355050086975])]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

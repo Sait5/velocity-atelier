@@ -1,0 +1,287 @@
+[
+  {
+    "mesh": "_Badge_Geo_lodA_Badge_Geo_lodA_Porsche_911GT39922_2025BadgeA_Material__Porsche_911GT39922_2025BadgeA_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 8444
+  },
+  {
+    "mesh": "_Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 71
+  },
+  {
+    "mesh": "_Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 71
+  },
+  {
+    "mesh": "_Base_Geo_lodA_Base_Geo_lodA_Porsche_911GT39922_2025Base_Material__Porsche_911GT39922_2025Base_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 5135
+  },
+  {
+    "mesh": "_Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 524
+  },
+  {
+    "mesh": "_Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 515
+  },
+  {
+    "mesh": "_Carbon1M_Geo_lodA_Carbon1M_Geo_lodA_Porsche_911GT39922_2025Carbon1M_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 519
+  },
+  {
+    "mesh": "_Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 1481
+  },
+  {
+    "mesh": "_Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 1481
+  },
+  {
+    "mesh": "_Carbon1_Geo_lodA_Carbon1_Geo_lodA_Porsche_911GT39922_2025Carbon1_Material__Porsche_911GT39922_2025Carbon1_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 17229
+  },
+  {
+    "mesh": "_Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 63129
+  },
+  {
+    "mesh": "_Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.002",
+    "parent": "Porsche door L",
+    "triangles": 243
+  },
+  {
+    "mesh": "_Coloured_Geo_lodA_Coloured_Geo_lodA_Porsche_911GT39922_2025Coloured_Material__Porsche_911GT39922_2025Coloured_Material1_0.003",
+    "parent": "Porsche door R",
+    "triangles": 243
+  },
+  {
+    "mesh": "_GrilleAlpha2_Geo_lodA_GrilleAlpha2_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha2A_Material__Porsche_911GT39922_2025GrilleAlpha2A_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 328
+  },
+  {
+    "mesh": "_GrilleAlpha6_Geo_lodA_GrilleAlpha6_Geo_lodA_Porsche_911GT39922_2025GrilleAlpha6A_Material__Porsche_911GT39922_2025GrilleAlpha6A_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 2250
+  },
+  {
+    "mesh": "_GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 24
+  },
+  {
+    "mesh": "_GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 24
+  },
+  {
+    "mesh": "_GrilleAlphaTest4_Geo_lodA_GrilleAlphaTest4_Geo_lodA_Porsche_911GT39922_2025GrilleAlphaTest4A_Material__Porsche_911GT39922_2025GrilleAlphaTest4A_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 5
+  },
+  {
+    "mesh": "_GrilleNoAlpha1_Geo_lodA_GrilleNoAlpha1_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha1A_Material__Porsche_911GT39922_2025GrilleNoAlpha1A_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 122
+  },
+  {
+    "mesh": "_GrilleNoAlpha3_Geo_lodA_GrilleNoAlpha3_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha3A_Material__Porsche_911GT39922_2025GrilleNoAlpha3A_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 3424
+  },
+  {
+    "mesh": "_GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 41
+  },
+  {
+    "mesh": "_GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 41
+  },
+  {
+    "mesh": "_GrilleNoAlpha5_Geo_lodA_GrilleNoAlpha5_Geo_lodA_Porsche_911GT39922_2025GrilleNoAlpha5A_Material__Porsche_911GT39922_2025GrilleNoAlpha5A_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 254
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 55044
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.002",
+    "parent": "Porsche door L",
+    "triangles": 1410
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.003",
+    "parent": "Porsche door L",
+    "triangles": 1896
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.004",
+    "parent": "Porsche door L",
+    "triangles": 435
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.005",
+    "parent": "Porsche door R",
+    "triangles": 435
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.006",
+    "parent": "Porsche door R",
+    "triangles": 1683
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.007",
+    "parent": "Porsche door R",
+    "triangles": 1310
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material__Porsche_911GT39922_2025InteriorA_Material1_0.008",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 15706
+  },
+  {
+    "mesh": "_Interior_Geo_lodA_Interior_Geo_lodA_Porsche_911GT39922_2025InteriorA_Material_dash_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 127
+  },
+  {
+    "mesh": "_Light_Geo_lodA_Light_Geo_lodA_Porsche_911GT39922_2025LightA_Material__Porsche_911GT39922_2025LightA_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 40304
+  },
+  {
+    "mesh": "_ManufacturerPlate_Geo_lodA_ManufacturerPlate_Geo_lodA_Porsche_911GT39922_2025ManufacturerPlateA_Material__Porsche_911GT39922_2025ManufacturerPlateA_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 128
+  },
+  {
+    "mesh": "_Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.001",
+    "parent": "Porsche door L",
+    "triangles": 3366
+  },
+  {
+    "mesh": "_Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.002",
+    "parent": "Porsche door R",
+    "triangles": 3385
+  },
+  {
+    "mesh": "_Paint_Geo_lodA_Paint_Geo_lodA_Porsche_911GT39922_2025Paint_Material__Porsche_911GT39922_2025Paint_Material1_0.003",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 25052
+  },
+  {
+    "mesh": "_SeatBelt_Geo_lodA_SeatBelt_Geo_lodA_Porsche_911GT39922_2025SeatBelt_Material__Porsche_911GT39922_2025Coloured_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 614
+  },
+  {
+    "mesh": "Porsche door glass 0",
+    "parent": "Porsche door L",
+    "triangles": 49
+  },
+  {
+    "mesh": "Porsche door glass 1",
+    "parent": "Porsche door R",
+    "triangles": 49
+  },
+  {
+    "mesh": "_WindowInside_Geo_lodA_WindowInside_Geo_lodA_Porsche_911GT39922_2025WindowInside_Material__Porsche_911GT39922_2025Window_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 528
+  },
+  {
+    "mesh": "Porsche door glass 0.001",
+    "parent": "Porsche door L",
+    "triangles": 95
+  },
+  {
+    "mesh": "Porsche door glass 1.001",
+    "parent": "Porsche door R",
+    "triangles": 95
+  },
+  {
+    "mesh": "_Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material__Porsche_911GT39922_2025Window_Material1_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1816
+  },
+  {
+    "mesh": "_Window_Geo_lodA_Window_Geo_lodA_Porsche_911GT39922_2025Window_Material_red_glass_0.001",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1356
+  },
+  {
+    "mesh": "polySurface1_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001",
+    "parent": "Porsche wheel 0",
+    "triangles": 10742
+  },
+  {
+    "mesh": "polySurface617_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001",
+    "parent": "Porsche wheel 1",
+    "triangles": 10742
+  },
+  {
+    "mesh": "polySurface616_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001",
+    "parent": "Porsche wheel 2",
+    "triangles": 10774
+  },
+  {
+    "mesh": "polySurface615_w:Porsche_911GT39922_2025_Wheel1C_3D_3DWheel1C_Material1_0.001",
+    "parent": "Porsche wheel 3",
+    "triangles": 10774
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface618_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 2
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface622_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1260
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface619_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 2
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface972_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1260
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface620_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 2
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface971_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1020
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface621_w:Porsche_911GT39922_2025_CallipersCalliperBadgeA_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 2
+  },
+  {
+    "mesh": "Fixed wheel hardware Porsche polySurface970_w:Porsche_911GT39922_2025_CallipersCalliperA_Zone_Material1_0",
+    "parent": "Porsche GT3 992.2",
+    "triangles": 1020
+  }
+]

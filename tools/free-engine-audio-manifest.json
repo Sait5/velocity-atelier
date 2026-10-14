@@ -1,0 +1,17 @@
+{
+  "title": "Performance Cars \u2014 sample 005",
+  "source": "https://muted.io/performance-cars/",
+  "download": "https://mutedio.s3.us-east-2.amazonaws.com/sounds/sample-packs/performance-cars-free-sample-pack-mutedio.zip",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "original_sha256": "fcd746ecae1edc0aa2bf57ed82ffdfc0bf635de783ceab0afd310cf26faeec79",
+  "excerpt_seconds": [
+    0.6,
+    6.8
+  ],
+  "crossfade_seconds": 0.18,
+  "gain": 0.35,
+  "output_duration_seconds": 6.02,
+  "sample_rate": 48000,
+  "note": "Real performance-car field recording. Exact vehicle model unspecified; not represented as Revuelto. No time stretching. Subtle RPM-controlled playback range 0.85\u20131.15."
+}

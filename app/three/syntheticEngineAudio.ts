@@ -1,7 +1,9 @@
 /** Procedural V12 presentation audio; this is not a recorded Revuelto engine. */
 export function createSyntheticEngineAudio(){
+ const abort=new AbortController();let disposed=false,brakeBuffer:AudioBuffer|undefined,brakeTake:{source:AudioBufferSourceNode,gain:GainNode}|undefined,lastBraking=false
  let context:AudioContext|undefined,master:GainNode,pulse:OscillatorNode,bass:OscillatorNode,filter:BiquadFilterNode,air:GainNode,windFilter:BiquadFilterNode,brake:GainNode,noise:AudioBufferSourceNode,combustion:GainNode
  function start(){
+  if(disposed)return
   if(context){void context.resume();return}
   context=new AudioContext();master=context.createGain();master.gain.value=0;master.connect(context.destination)
   filter=context.createBiquadFilter();filter.type='lowpass';filter.frequency.value=700;filter.Q.value=.45;filter.connect(master)
@@ -14,6 +16,8 @@ export function createSyntheticEngineAudio(){
   windFilter=context.createBiquadFilter();windFilter.type='lowpass';windFilter.frequency.value=550;air=context.createGain();air.gain.value=0;noise.connect(windFilter);windFilter.connect(air);air.connect(master)
   const brakeFilter=context.createBiquadFilter();brakeFilter.type='bandpass';brakeFilter.frequency.value=1100;brakeFilter.Q.value=.55;brake=context.createGain();brake.gain.value=0;noise.connect(brakeFilter);brakeFilter.connect(brake);brake.connect(master)
   noise.start();void context.resume()
+  const ctx=context
+  void fetch('/audio/car-braking.wav',{signal:abort.signal}).then(response=>{if(!response.ok)throw Error('Brake recording unavailable');return response.arrayBuffer()}).then(bytes=>ctx.decodeAudioData(bytes)).then(buffer=>{if(!disposed)brakeBuffer=buffer}).catch(()=>{})
  }
  function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false){
   if(!context)return;const time=context.currentTime,velocity=Math.abs(speed),load=throttle&&!braking?1:.25,cut=shifting?.43:1
@@ -22,9 +26,13 @@ export function createSyntheticEngineAudio(){
   filter.frequency.setTargetAtTime(inside?450+rpm*.14:650+rpm*.30+load*500,time,.16)
   windFilter.frequency.setTargetAtTime(inside?500:1250,time,.25)
   air.gain.setTargetAtTime(Math.min(.16,velocity*.0016)*(inside?.35:1),time,.25)
-  brake.gain.setTargetAtTime(braking&&velocity>4?Math.min(.065,velocity*.0008)*(inside?.45:1):0,time,.10)
+  const stopping=enabled&&braking&&velocity>6
+  if(stopping&&!lastBraking&&brakeBuffer){const source=context.createBufferSource(),gain=context.createGain();source.buffer=brakeBuffer;gain.gain.value=Math.min(.8,.25+velocity*.006)*(inside?.45:1);source.connect(gain);gain.connect(master);source.start();const take={source,gain};brakeTake=take;source.onended=()=>{source.disconnect();gain.disconnect();if(brakeTake===take)brakeTake=undefined}}
+  if(!stopping&&brakeTake){brakeTake.gain.gain.setTargetAtTime(0,time,.03);try{brakeTake.source.stop(time+.15)}catch{}brakeTake=undefined}
+  lastBraking=stopping
+  brake.gain.setTargetAtTime(!brakeBuffer&&stopping?Math.min(.065,velocity*.0008)*(inside?.45:1):0,time,.10)
   master.gain.setTargetAtTime(enabled?volume*(inside?.24:.31):0,time,.16)
  }
- function dispose(){if(!context)return;noise.stop();pulse.stop();bass.stop();void context.close();context=undefined}
+ function dispose(){disposed=true;abort.abort();if(!context)return;brakeTake?.source.stop();brakeTake=undefined;noise.stop();pulse.stop();bass.stop();void context.close();context=undefined}
  return {start,update,dispose}
 }

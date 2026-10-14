@@ -1,0 +1,148 @@
+00:00.875  blend            | Read blend: "C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\generated\saltflat\saltflat-speed-test.blend"
+C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\refine-saltflat-environment.py:122: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.get(name) or bpy.data.materials.new(name);mat.use_nodes=True
+C:\Users\Admin\Documents\ChatGPT\Velocity Atelier\apex\tools\refine-saltflat-environment.py:244: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world=scene.world;world.use_nodes=True
+Информация: Сохранено как "saltflat-speed-test.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+15:42:09 | INFO: Starting glTF 2.0 export
+15:42:09 | INFO: Extracting primitive: Guardrail_0_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_1_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_2_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_3_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_4_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_5_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_6_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Guardrail_7_near
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_0_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_1_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_2_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_3_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_4_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_5_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_6_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Markings_7_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Terrain_0_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Terrain_1_near.001
+15:42:09 | INFO: Primitives created: 1
+15:42:09 | INFO: Extracting primitive: Terrain_2_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_3_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_4_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_5_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_6_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_7_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_0_near
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_1_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_2_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_3_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_4_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_5_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_6_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_7_near.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Finished glTF 2.0 export in 0.2722811698913574 s
+
+15:42:10 | INFO: Starting glTF 2.0 export
+15:42:10 | INFO: Extracting primitive: Guardrail_0_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_1_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_2_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_3_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_4_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_5_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_6_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Guardrail_7_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Horizon_0_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_0_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_1_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_2_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_3_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_4_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_5_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_6_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Markings_7_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_0_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_1_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_2_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_3_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_4_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_5_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_6_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Terrain_7_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_0_far
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_1_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_2_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_3_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_4_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_5_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_6_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Extracting primitive: Water_7_far.001
+15:42:10 | INFO: Primitives created: 1
+15:42:10 | INFO: Finished glTF 2.0 export in 0.06853938102722168 s
+
+REFINED_EXISTING_SALTFLAT {"tileLength": 160, "patternLength": 1280, "variants": 8, "roadLevel": 8.287, "waterLevel": 7.737000000000001, "roadWidth": 7.4, "saltPlainHalfWidth": 160, "highDetailHalfWidth": 48, "nearTrianglesPerTile": 24776, "farTrianglesPerTile": 1816, "waterTrianglesPerTile": 4, "mountainTriangles": 0, "waterSide": "asymmetric both", "source": "tools/generated/saltflat/saltflat-speed-test.blend", "builder": "tools/refine-saltflat-environment.py"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

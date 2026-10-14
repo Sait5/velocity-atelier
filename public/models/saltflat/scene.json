@@ -1,0 +1,17 @@
+{
+  "tileLength": 160,
+  "patternLength": 1280,
+  "variants": 8,
+  "roadLevel": 8.287,
+  "waterLevel": 7.737000000000001,
+  "roadWidth": 7.4,
+  "saltPlainHalfWidth": 160,
+  "highDetailHalfWidth": 48,
+  "nearTrianglesPerTile": 24776,
+  "farTrianglesPerTile": 1816,
+  "waterTrianglesPerTile": 4,
+  "mountainTriangles": 0,
+  "waterSide": "asymmetric both",
+  "source": "tools/generated/saltflat/saltflat-speed-test.blend",
+  "builder": "tools/refine-saltflat-environment.py"
+}

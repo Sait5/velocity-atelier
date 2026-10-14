@@ -1,0 +1,27 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\\u0417\u0432\u0443\u043a \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f Ferrari 458 Spider.mp3",
+  "sha256": "05a92f9ca60398faf53ef3e81f3ace9456619e0bf3018e5e545fce91cf5c98cb",
+  "intro_source_seconds": [
+    19,
+    23
+  ],
+  "repeat_source_seconds": [
+    21,
+    23.25
+  ],
+  "ending_source_seconds": [
+    22,
+    24
+  ],
+  "ending_duration": 2,
+  "method": "initial 4 seconds once, first two seconds removed from repeats, 2-second cycles with 250 ms overlapping splice; original final 2 seconds once; no time stretching",
+  "gain": 0.9590811738040164,
+  "runtime_gain_multiplier": 2,
+  "master_volume_multiplier": 0.9,
+  "tail_lift_max": 6,
+  "pitch_change": false,
+  "tempo_change": false,
+  "loopStart": 4.0,
+  "loopEnd": 8.0,
+  "repeat_seconds": 2.0
+}

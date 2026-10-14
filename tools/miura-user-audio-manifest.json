@@ -1,0 +1,26 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\Lamborghini Miura - \u0417\u0432\u0443\u043a \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f V12.mp3",
+  "sha256": "87b401f2e41bf661f43d0db9de7c08020151fb623e49808b8e6c7359c097b4a7",
+  "first_source_seconds": [
+    4,
+    23.3
+  ],
+  "continuation_source_seconds": [
+    12,
+    23.3
+  ],
+  "removed_from_repeats_seconds": [
+    12.88,
+    13.33
+  ],
+  "inner_cut_crossfade": 0.065,
+  "crossfade_seconds": 0.75,
+  "continuation_duration": 10.03501133786848,
+  "site_gain": 0.25,
+  "pitch_change": false,
+  "tempo_change": false,
+  "EQ": false,
+  "loopStart": 28.58501133786848,
+  "loopEnd": 38.62002267573696,
+  "preview": "C:\\Users\\Admin\\Documents\\ChatGPT\\Velocity Atelier\\apex\\tools\\generated\\audio\\Miura_V12_60s_fixed_dip_v6.wav"
+}

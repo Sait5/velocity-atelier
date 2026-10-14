@@ -70,3 +70,38 @@ File: lamborghini-revuelto.glb. Adaptations: coordinate alignment, scissor-door 
 Prepared with tools/prepare-roman-nature.mjs: one pine variant, reduced mesh density, alpha masking, 1K WebP textures and Meshopt compression. These are decorative botanical assets; the pine is not claimed to be a verified Pinus pinea scan.
 
 Distant groves use reduced variants of the same CC0 trees: tools/prepare-roman-lod.mjs. Full and reduced variants share textures at runtime.
+
+## Rocky coast route
+
+- **Coast road and rocks ver2.0**, Metazeon, [source](https://sketchfab.com/3d-models/coast-road-and-rocks-ver20-cb5baff4d1754208b9d372ec2aea24bb), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- File: `coast-road-rocks.glb`. Original 4K GLB downloaded from Sketchfab. Meshopt geometry compression and WebP textures; scanned road geometry retained. An animated sea and sky were added by Velocity Atelier.
+- This is a short scanned coastal section, not a geographically verified Italian route or an infinite highway.
+
+## Forest Road
+
+- **Forest Road**, Toby Noby, [source](https://www.blendkit.com/asset-gallery-detail/46a567f5-8301-4b89-90ec-e6c361325256/). Listed as free, **Royalty Free** on Blendkit; see [Blendkit licenses](https://www.blendkit.com/docs/licenses/).
+- File: `forest-road.glb`. Exported from the author's Blender scene. Procedural road markings baked to a 4K texture; original terrain and photographic alpha foliage retained. Color foliage textures reduced to 2K, foliage normals to 1K; Meshopt and WebP compression. Blender volume objects replaced by browser fog. The source uses flat photographic foliage, not volumetric tree models.
+
+## Road Tunnel
+
+- **Road Tunnel**, judefelix, [source](https://www.cgtrader.com/free-3d-models/exterior/cityscape/road-tunnel-1a320a5a-c9a7-407a-a7b6-74ddcfd05d85). Listed as **Royalty Free License (no AI)** on CGTrader.
+- File: `road-tunnel.glb`. Original Blender geometry and bundled textures exported with arrays applied, sections clipped to common boundaries, compressed with Meshopt/WebP. Runtime instances share resources; two live warm lights replace the Blender area-light array. The original volume cube is omitted.
+
+
+
+
+## Desert road
+Source assembly: blender/desert/Desert-environment.blend. Full asset authors, licenses and links: /models/desert/SOURCES.md
+Route adaptation: straight 8.6 m road, grading only its corridor, cleared vegetation, sand dust material; full mesh geometry retained, shared browser instances and Meshopt/WebP compression without texture resizing.
+
+## Porsche 911 GT3 992.2 (2025)
+Ddiaz Design; source credits GM25 / CSR2. https://sketchfab.com/3d-models/2025-porsche-911-gt3-992-2-1503f8d08f154ec7ab52f95a99c55134
+CC BY-NC-SA 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/ . Noncommercial only; uploader identifies CSR2 provenance; underlying game rights have not independently been established.
+Changes: metre scale, independent door and wheel pivots, separated door trim and glass, runtime materials and lighting. Editable adaptation: tools/generated/porsche/Porsche-911-GT3-rigged.blend.
+
+Porsche door correction: complete UV/edge-connected trim, window seals, carbon inserts and speaker pieces assigned to their respective hinges. Original corner normals retained; 308387 source triangles preserved.
+
+
+## Bugatti Tourbillon
+2026 Bugatti Tourbillon — Ddiaz Design; based on CSR2, credits ZD 3D Modelling and Design. CC BY-NC-SA 4.0. https://sketchfab.com/3d-models/2026-bugatti-tourbillon-4f63f5a74611477989cefd9861b9784a
+Changes: metre scale, door and wheel assemblies, materials and lamp controls. Source rights beyond uploader license not independently verified.

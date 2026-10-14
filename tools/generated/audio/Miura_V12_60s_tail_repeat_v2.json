@@ -1,0 +1,26 @@
+{
+  "source": "C:\\Users\\Admin\\Downloads\\Lamborghini Miura - Звук двигателя V12.mp3",
+  "first_source_seconds": [
+    4,
+    23.3
+  ],
+  "repeated_source_seconds": [
+    18,
+    23.3
+  ],
+  "duration": 60,
+  "crossfade": 0.18,
+  "join_seconds": [
+    19.12,
+    24.24,
+    29.36,
+    34.48,
+    39.6,
+    44.72,
+    49.84,
+    54.96
+  ],
+  "pitch_change": false,
+  "gain_change": false,
+  "removed": "source fade-out and trailing silence"
+}

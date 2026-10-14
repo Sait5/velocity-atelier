@@ -7,9 +7,16 @@ import {installInstruments} from './instruments'
 import {enhanceCabin} from './cabinDetails'
 import {installWheelShutter} from './wheelShutter'
 import {prepareRevuelto} from './revuelto'
+import {prepareTourbillon} from './tourbillon'
+import {preparePorsche} from './porsche'
+import {installSideDoorConnections,removeRetiredItaliaHinges} from './sideDoorConnections'
+import {connectSuppliedRevueltoHinge} from './suppliedRevueltoHinge'
+import {installItaliaJambTrim} from './italiaJambTrim'
+
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
 export function prepareCompleteItalia(root:T.Group,driving=false){
+ removeRetiredItaliaHinges(root)
  const material=(name:string)=>{
   let found:T.MeshStandardMaterial|undefined
   root.traverse(o=>{if(o instanceof T.Mesh)for(const m of Array.isArray(o.material)?o.material:[o.material])if(m.name===name)found=m as T.MeshStandardMaterial})
@@ -37,6 +44,7 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
   if(/leather|stitching|mottled|headliner|cloth/.test(o.material.name)){(o.material as T.MeshStandardMaterial).metalness=0}
  })
  retired.forEach(m=>m.dispose())
+ installItaliaJambTrim(root)
  const rearPane=root.getObjectByName('fer_f142_10_s_lod0_body_window__window_0')
  if(rearPane instanceof T.Mesh){const rearGlass=glass.clone();rearGlass.name='Italia rear cabin glass';rearGlass.color.set('#111719');rearGlass.opacity=1;rearGlass.transparent=false;rearGlass.roughness=.18;rearGlass.envMapIntensity=.25;rearGlass.forceSinglePass=true;rearGlass.depthWrite=true;rearGlass.polygonOffset=true;rearGlass.polygonOffsetFactor=-1;rearGlass.polygonOffsetUnits=-1;rearPane.material=rearGlass;rearPane.renderOrder=0}
  const group=(name:string)=>{
@@ -45,8 +53,6 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
   return part as T.Group
  }
  const doors=[group('door_L'),group('door_R')],wheels=[0,1,2,3].map(i=>group('wheel_'+i)),spokes:T.Group[]=[]
- // Outer hinge seam avoids sweeping the front edge into the tyre.
- for(const door of doors){const shift=new T.Vector3(0,0,Math.sign(door.position.z)*.98-door.position.z);door.position.add(shift);door.children.forEach(child=>child.position.sub(shift))}
  root.updateMatrixWorld(true)
  // Only the two door panes retract. Clip the hidden portion at the belt seal.
  const windows=doors.flatMap(door=>door.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&!Array.isArray(o.material)&&o.material.name==='window').map(mesh=>{
@@ -68,12 +74,20 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
 }
 
 export async function loadVehicle(shape:number,onProgress:(n:number)=>void,driving=false){
- if(shape!==8&&shape!==0)return createVehicle(shape)
+ if(shape!==8&&shape!==0&&shape!==1&&shape!==3)return createVehicle(shape)
  const decoder=new DRACOLoader().setDecoderPath('/draco/'),loader=new GLTFLoader().setDRACOLoader(decoder)
  try{
-  const gltf=await loader.loadAsync(shape===0?'/models/lamborghini-revuelto.glb':'/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
-  return shape===0?prepareRevuelto(gltf.scene):prepareCompleteItalia(gltf.scene,driving)
+  const gltf=await loader.loadAsync(shape===3?'/models/bugatti-tourbillon-door-fit-v4.glb?v=1':shape===0?'/models/lamborghini-revuelto-user-edited.glb?v=1':shape===1?'/models/porsche-911-gt3-door-assembly.glb?v=3':'/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
+  const vehicle=shape===3?prepareTourbillon(gltf.scene):shape===0?prepareRevuelto(gltf.scene,driving):shape===1?preparePorsche(gltf.scene):prepareCompleteItalia(gltf.scene,driving)
+  if(shape===3)return vehicle
+  if(shape===0){const hinge=await loader.loadAsync('/models/revuelto-two-arm-mechanism.glb?v=1');return connectSuppliedRevueltoHinge(vehicle,hinge)}
+  return installSideDoorConnections(vehicle,shape===1?'porsche':'ferrari')
  }finally{decoder.dispose()}
 }
+
+
+
+
+
 
 

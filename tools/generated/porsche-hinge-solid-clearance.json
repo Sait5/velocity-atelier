@@ -1,0 +1,8 @@
+{
+  "car": "porsche",
+  "samples": 241,
+  "links": 8,
+  "mountFootprintRadiusMm": 16,
+  "mountOrSurfaceTouchFrames": 6,
+  "contactFrames": []
+}

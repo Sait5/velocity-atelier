@@ -1,0 +1,2118 @@
+11:10:39 | INFO: Data are loaded, start creating Blender stuff
+11:10:39 | INFO: Blender create Mesh node Cylinder_050.004
+11:10:39 | INFO: Blender create Mesh node Cylinder_050.001
+11:10:39 | INFO: Blender create Mesh node Cylinder_050.002
+11:10:39 | INFO: Blender create Mesh node Cylinder_050.003
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID20_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID31_detail_metallic_ch1.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID43_detail_metallic_ch1.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID26_grille.001
+11:10:39 | INFO: Blender create Mesh node body_label_a_LODS0 ID42_screw.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID02_plastic.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID28_plastic.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID29_plastic.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID08_rubber.001
+11:10:39 | INFO: Blender create Mesh node body_a_LODS0 ID09_undercarriage_ch1.001
+11:10:39 | INFO: Blender create Mesh node bodyGascap_a_LODS0|body_a_LODS0 carPaint.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID13_blackframe.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID33_grillebackground_ch1.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID20_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 carPaint.003
+11:10:39 | INFO: Blender create Mesh node bumperF_label_a_LODS0 ID34_steel_ch1.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID06_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID21_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID28_plastic.003
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID29_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID30_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperF_a_LODS0 ID32_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID13_blackframe.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID20_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID21_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 carPaint.003
+11:10:39 | INFO: Blender create Mesh node bumperR_label_a_LODS0 ID33_screw.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID29_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID31_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID32_plastic.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID08_rubber.001
+11:10:39 | INFO: Blender create Mesh node bumperR_a_LODS0 ID09_undercarriage_ch1.001
+11:10:39 | INFO: Blender create Mesh node bumperRBadge_a_LODS0 ID11_chrome.001
+11:10:39 | INFO: Blender create Mesh node bumperRHoneycomb_a_LODS0 ID27_detail_ch1|bumperrhoneycomb_a.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS ID10_aluminum.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS ID13_blackframe.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS carPaint.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID49_detail_ch1.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID40_label_ch1.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS ID28_plastic.001
+11:10:39 | INFO: Blender create Mesh node doorJambLF_a_LODS ID08_rubber.001
+11:10:39 | INFO: Blender create Mesh node doorJambLFPistonLower_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorJambLFPistonUpper_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS ID10_aluminum.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS ID13_blackframe.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS carPaint.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_label_a_LODS ID49_detail_ch1.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS ID28_plastic|doorjambrf_a.001
+11:10:39 | INFO: Blender create Mesh node doorJambRF_a_LODS ID08_rubber.001
+11:10:39 | INFO: Blender create Mesh node doorJambRFPistonLower_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorJambRFPistonUpper_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorLF_a_LODS0 CarbonFiber.001
+11:10:39 | INFO: Blender create Mesh node doorLF_a_LODS0 carPaint.001
+11:10:39 | INFO: Blender create Mesh node doorLF_a_LODS0|mirrorBaseL_a_LODS0 ID30_plastic|mirrorbasel
+11:10:39 | INFO: Blender create Mesh node doorRF_a_LODS0 CarbonFiber.001
+11:10:39 | INFO: Blender create Mesh node doorRF_a_LODS0 carPaint.001
+11:10:39 | INFO: Blender create Mesh node doorRF_a_LODS0|mirrorBaseR_a_LODS0 ID30_plastic|mirrorbasel
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS carPaint.001
+11:10:39 | INFO: Blender create Mesh node doorSill_label_a_LODS ID26_grille.001
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS ID06_paintedmetal.001
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS ID28_plastic.001
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS ID30_plastic.001
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS ID31_plastic.001
+11:10:39 | INFO: Blender create Mesh node doorSill_a_LODS ID08_rubber.001
+11:10:39 | INFO: Blender create Mesh node fenders_a_LODS0 carPaint.001
+11:10:39 | INFO: Blender create Mesh node fenders_a_LODS0 ID02_plastic.001
+11:10:39 | INFO: Blender create Mesh node mirrorBaseL_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:10:39 | INFO: Blender create Mesh node mirrorBaseR_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:10:39 | INFO: Blender create Mesh node PlateUS_a_LODS0 US_Plate_base.001
+11:10:39 | INFO: Blender create Mesh node PlateUS_a_LODS0 US_Plate_Shadow [no color].001
+11:10:39 | INFO: Blender create Mesh node vents_a_LODS0 ID10_chrome|vents_a [no color].001
+11:10:39 | INFO: Blender create Mesh node vents_a_LODS0 ID04_detail_ch1|vents_a [no color].001
+11:10:39 | INFO: Blender create Mesh node vents_label_a_LODS0 ID24_screw_metallic_ch1|vents_a [no col
+11:10:39 | INFO: Blender create Mesh node vents_a_LODS0 ID01_plastic|vents_a [no color].001
+11:10:39 | INFO: Blender create Mesh node vents_a_LODS0 ID07_plastic_ch1|vents_a [no color].001
+11:10:39 | INFO: Blender create Mesh node wing_a_LODS0 carPaint.004
+11:10:39 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID04_blackhole.001
+11:10:39 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID03_metailpanit.001
+11:10:39 | INFO: Blender create Mesh node wingHinge_a_LODS0 ID05_screw.001
+11:10:39 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID04_blackhole.001
+11:10:39 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID03_metailpanit.001
+11:10:39 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID05_screw.001
+11:10:39 | INFO: Blender create Mesh node wingHingeAim_a_LODS0 ID02_steel.001
+11:10:39 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID14_blackhole.001
+11:10:39 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID20_carbonfiber.001
+11:10:39 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID40_mirror_left [no color].001
+11:10:39 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID28_plastic.001
+11:10:40 | INFO: Blender create Mesh node wingMirrorL_a_LODS0 ID30_plastic.001
+11:10:40 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID14_blackhole.001
+11:10:40 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID20_carbonfiber.001
+11:10:40 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID41_mirror_right [no color].001
+11:10:40 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID28_plastic.001
+11:10:40 | INFO: Blender create Mesh node wingMirrorR_a_LODS0 ID30_plastic.001
+11:10:40 | INFO: Blender create Mesh node wingPistonLowerL_a_LODS0 ID02_steel.001
+11:10:40 | INFO: Blender create Mesh node wingPistonLowerR_a_LODS0 ID02_steel.001
+11:10:40 | INFO: Blender create Mesh node wingPistonUpperL_a_LODS0 ID03_metailpanit.001
+11:10:40 | INFO: Blender create Mesh node wingPistonUpperR_a_LODS0 ID03_metailpanit.001
+11:10:40 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID04_blackhole.001
+11:10:40 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID03_metailpanit.001
+11:10:40 | INFO: Blender create Mesh node wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID02_steel.001
+11:10:40 | INFO: Blender create Mesh node wiperArmL_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperArmL_a_LODS0 ID09_Screw.001
+11:10:40 | INFO: Blender create Mesh node wiperArmR_001_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperArmR_002_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperArmR_002_a_LODS0 ID09_Screw.001
+11:10:40 | INFO: Blender create Mesh node wiperBase_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperBladeL_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperBladeL_a_LODS0 ID08_Rubber.001
+11:10:40 | INFO: Blender create Mesh node wiperBladeR_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperBladeR_a_LODS0 ID08_Rubber.001
+11:10:40 | INFO: Blender create Mesh node wiperL_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperR_001_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node wiperR_002_a_LODS0 ID06_MetalPaint.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID11_aluminum.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID33_aluminum.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID71_aluminum.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID08_anodizedmetal.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID37_anodizedmetal_ch1.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID65_anodizedmetal.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID13_blackhole.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID20_chrome.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID35_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID40_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID60_detail_metallic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID81_glass_window_rear.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID07_paintedmetal.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID09_paintedmetal.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID10_metalpowder_ch1.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID12_paintedmetal.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID06_plastic.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID38_plastic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID39_plastic.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID42_plastic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID14_screw_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engine_a_LODS ID29_titanium.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID11_aluminum.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID24_aluminum.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID08_anodizedmetal.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID37_anodizedmetal_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID45_anodizedmetal.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID75_anodizedmetal.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID13_blackhole.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID62_carbonfiber.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS carPaint.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID20_chrome.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID34_detail_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID35_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID44_detail_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID48_detail_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID59_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID21_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID22_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID40_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID66_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID68_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID73_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID74_detail_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_label_a_LODS ID79_label_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_label_a_LODS ID80_label_metallic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engineBay_label_a_LODS ID32_ID32_plastic_CH1_Custom_diffuse
+11:10:40 | INFO: Blender create Mesh node engineBay_label_a_LODS ID61_screw_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID12_paintedmetal.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID30_paintedmetal.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID06_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID18_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID28_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID31_ID31_plastic_CH1_Custom.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID39_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID42_plastic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID43_fluid_container_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID47_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID49_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID52_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID57_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID58_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID63_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID69_plastic.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID53_screw_metallic_ch1.001
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS|engineBay_label_a_LODS ID14_screw_metallic
+11:10:40 | INFO: Blender create Mesh node engineBay_a_LODS ID41_titanium.001
+11:10:40 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID14_blackhole [no color].001
+11:10:40 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID11_detail_metal.001
+11:10:40 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID10_heat_treated_2.001
+11:10:40 | INFO: Blender create Mesh node exhaustL_a_LODS0|exhaustR_a_LODS0 ID12_heat_treated.001
+11:10:40 | INFO: Blender create Mesh node glassCTL_a_LODS0 gls_clear.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 Detail_Metallic_CH1_ID40.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 Glass_Windshield.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 ID50_plastic.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 Screw_CH1.001
+11:10:40 | INFO: Blender create Mesh node glassF_a_LODS0 Screw_Metallic_CH1_ID49.001
+11:10:40 | INFO: Blender create Mesh node glassLF_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassLF_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassLM_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassLR_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassLR_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassR_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassR_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassRF_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassRF_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassRM_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node glassRR_a_LODS0 BlackFrame.001
+11:10:40 | INFO: Blender create Mesh node glassRR_a_LODS0 Glass_Window_Side.001
+11:10:40 | INFO: Blender create Mesh node hood_a_LODS0 carPaint.001
+11:10:40 | INFO: Blender create Mesh node hood_a_LODS0 ID30_plastic.001
+11:10:40 | INFO: Blender create Mesh node hoodBadge_a_LODS0 Badge.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS CarbonFiber.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS Chrome.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS metal_RGH_001.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_label_a_LODS Detail_Metallic_CH1_ID40.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS Plastic_ID28.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS Rubber.001
+11:10:40 | INFO: Blender create Mesh node hoodLiner_a_LODS Steel.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerPistonLowerL_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerPistonLowerL_a_LODS Plastic_ID28.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerPistonUpperL_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerPistonUpperL_a_LODS Plastic_ID28.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerStrutLowerAimL_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerStrutLowerL_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node hoodLinerStrutUpperL_a_LODS GunMetal_ID6.001
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID13_glass_limotint [no color].001
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID07_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0 ID09_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0|centerConsoleBezels_label_a_LOD
+11:10:40 | INFO: Blender create Mesh node centerConsoleBezels_a_LODS0|centerConsoleStructure_a_LODS0 .002
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID08_alcantara|centerconsole
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID37_Alcantara|centerconsole
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID15_carbonfiber|centerconso
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_label_a_LODS0 ID03_stitch_ch1|center
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID02_leather|centerconsolest
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructure_a_LODS0 ID04_plastic|centerconsolest
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID30_label_ch1 [n
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID36_Label_CH1 [n
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructureCustom_label_a_LODS ID06_stitch_ch1 [
+11:10:40 | INFO: Blender create Mesh node centerConsoleStructureCustom_a_LODS ID01_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID15_carbonfiber [no color].001
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID10_chrome [no color].001
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID04_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_label_a_LODS0 ID23_mfr_badge_ch1.001
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_label_a_LODS0 ID24_screw_metallic_ch1 
+11:10:40 | INFO: Blender create Mesh node centerStackStructure_a_LODS0 ID05_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_a_LODS0 ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_a_LODS0 ID15_carbonfiber [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_a_LODS0 ID13_glass_limotint.001
+11:10:40 | INFO: Blender create Mesh node dashPad_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_a_LODS0 ID02_leather [no color].001
+11:10:40 | INFO: Blender create Mesh node dashPad_a_LODS0 ID27_digitalscreen [no color].001
+11:10:40 | INFO: Blender create Mesh node dashStructure_a_LODS0 ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node dashStructure_label_a_LODS0 ID30_detail_metallic_ch1 [no co
+11:10:40 | INFO: Blender create Mesh node dashStructure_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0 ID32_blackhole|dashstruct
+11:10:40 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0 ID36_Detail_CH1|dashstruc
+11:10:40 | INFO: Blender create Mesh node dashStructureBezels_label_a_LODS0|gaugePod_label_a_LODS0 ID
+11:10:40 | INFO: Blender create Mesh node dashStructureBezels_a_LODS0|dashStructureBezels_label_a_LOD
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID32_blackhole.001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID04_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID13_glass_limotint [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID07_gunmetal [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID36_Detail_CH1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID02_leather [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID05_leather [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID01_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_label_a_LODS ID30_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_label_a_LODS ID34_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID01_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardLFCustom_a_LODS|doorCardLFCustom_label_a_LODS ID32_
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID32_blackhole.001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID13_glass_limotint [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID07_gunmetal [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID02_leather [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID05_leather [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID01_plastic [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID08_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID32_blackhole.001
+11:10:40 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:10:40 | INFO: Blender create Mesh node doorCardRFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node floor_a_LODS0 ID02_alcantara [no color].001
+11:10:40 | INFO: Blender create Mesh node floor_a_LODS0 ID08_carpet_ch1 [no color].001
+11:10:40 | INFO: Blender create Mesh node floor_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node floor_a_LODS0|pedals_a_LODS0|pedals_label_a_LODS0 ID01_plas
+11:10:41 | INFO: Blender create Mesh node floorCustom_a_LODS ID02_alcantara [no color].001
+11:10:41 | INFO: Blender create Mesh node floorCustom_a_LODS ID04_detail_ch2 [no color].001
+11:10:41 | INFO: Blender create Mesh node floorCustom_label_a_LODS ID32_blackhole.001
+11:10:41 | INFO: Blender create Mesh node floorCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node floorCustom_a_LODS ID05_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node gaugeCluster_a_LODS0 ID27_digitalscreen [no color].001
+11:10:41 | INFO: Blender create Mesh node gaugePod_a_LODS0 ID15_carbonfiber|gaugepod_a [no color].001
+11:10:41 | INFO: Blender create Mesh node gaugePod_label_a_LODS0 ID24_screw_metallic_ch1|gaugepod_a [
+11:10:41 | INFO: Blender create Mesh node gaugePod_a_LODS0 ID05_plastic|gaugepod_a [no color].001
+11:10:41 | INFO: Blender create Mesh node nav_a_LODS0 ID13_glass_limotint.001
+11:10:41 | INFO: Blender create Mesh node nav_label_a_LODS0 ID28_digitalscreen [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID37_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID04_glass [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_a_LODS0 ID13_glass.001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID30_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID31_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID03_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node overheadConsole_label_a_LODS0|rearviewMirrorBase_label_a_LO
+11:10:41 | INFO: Blender create Mesh node overheadConsole_a_LODS0|visors_a_LODS0 ID01_plastic [no col
+11:10:41 | INFO: Blender create Mesh node paddleShifterL_a_LODS0 ID15_carbonfiber [no color].001
+11:10:41 | INFO: Blender create Mesh node paddleShifterL_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node paddleShifterL_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node paddleShifterR_a_LODS0 ID15_carbonfiber [no color].001
+11:10:41 | INFO: Blender create Mesh node paddleShifterR_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node paddleShifterR_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node pedalBrake_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:41 | INFO: Blender create Mesh node pedalBrake_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a 
+11:10:41 | INFO: Blender create Mesh node pedalBrake_a_LODS0 ID01_plastic|pedals_a [no color].001
+11:10:41 | INFO: Blender create Mesh node pedalGas_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:41 | INFO: Blender create Mesh node pedalGas_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [n
+11:10:41 | INFO: Blender create Mesh node pedals_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:41 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [no 
+11:10:41 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID30_detail_metallic_ch1|pedals_a [no 
+11:10:41 | INFO: Blender create Mesh node pedals_label_a_LODS0 ID29_screw_metallic_ch1|pedals_a [no c
+11:10:41 | INFO: Blender create Mesh node pillarTrim_a_LODS0 ID04_alcantara [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID15_carbonfiber [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID30_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID33_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID31_screw_metallic_ch1 [no c
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node pillarTrimCustom_a_LODS ID05_nylon [no color].001
+11:10:41 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID04_glass [no color].001
+11:10:41 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID20_mirror_center|rearviewmirror_a 
+11:10:41 | INFO: Blender create Mesh node rearviewMirror_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node rearviewMirrorBase_label_a_LODS0 ID31_detail_ch1|rearviewmi
+11:10:41 | INFO: Blender create Mesh node rearviewMirrorBase_a_LODS ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID10_chrome [no color].001
+11:10:41 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID09_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS ID08_nylon [no color].001
+11:10:41 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.002
+11:10:41 | INFO: Blender create Mesh node seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.001
+11:10:41 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID02_alcantara [no color].001
+11:10:41 | INFO: Blender create Mesh node seatL_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node seatL_label_a_LODS0|seatR_label_a_LODS0 ID30_label_ch1.001
+11:10:41 | INFO: Blender create Mesh node seatL_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID04_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID05_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node seatL_a_LODS0|seatR_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node seatLCustom_a_LODS|seatRCustom_a_LODS ID02_alcantara|seatl_
+11:10:41 | INFO: Blender create Mesh node seatLCustom_label_a_LODS ID29_detail_ch1|seatl_a [no color].001
+11:10:41 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID31_deta
+11:10:41 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID33_labe
+11:10:41 | INFO: Blender create Mesh node seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID03_stit
+11:10:41 | INFO: Blender create Mesh node seatLCustom_a_LODS|seatRCustom_a_LODS ID12_paintedmetal|sea
+11:10:41 | INFO: Blender create Mesh node seatR_label_a_LODS0 ID28_stitch_ch1|seatr_a [no color].001
+11:10:41 | INFO: Blender create Mesh node seatRCustom_label_a_LODS ID29_detail_ch1|seatr_a [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID08_alcantara|steeringcolumn_a [no 
+11:10:41 | INFO: Blender create Mesh node steeringColumn_a_LODS0|vents_a_LODS0 ID32_blackhole|steerin
+11:10:41 | INFO: Blender create Mesh node steeringColumn_label_a_LODS0|vents_label_a_LODS0 ID34_label
+11:10:41 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID01_plastic|steeringcolumn_a [no co.002
+11:10:41 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID04_plastic|steeringcolumn_a [no co
+11:10:41 | INFO: Blender create Mesh node steeringColumn_a_LODS0 ID10_plastic|steeringcolumn_a [no co
+11:10:41 | INFO: Blender create Mesh node steeringColumnCustom_label_a_LODS ID32_blackhole.001
+11:10:41 | INFO: Blender create Mesh node steeringColumnCustom_label_a_LODS ID31_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringColumnCustom_a_LODS ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringColumnCustom_a_LODS ID04_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID12_mfr_badge_ch1.001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID15_carbonfiber [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID07_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID29_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID30_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID09_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID01_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID04_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID05_leather [no color].001
+11:10:41 | INFO: Blender create Mesh node steeringWheel_a_LODS0 ID11_plastic [no color].001
+11:10:41 | INFO: Blender create Mesh node visors_a_LODS0 ID08_alcantara|visors_a [no color].001
+11:10:41 | INFO: Blender create Mesh node visors_label_a_LODS0 ID09_stitch_ch1|visors_a [no color].001
+11:10:41 | INFO: Blender create Mesh node visors_a_LODS0 ID06_plastic|visors_a [no color].001
+11:10:41 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom
+11:10:41 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom.001
+11:10:41 | INFO: Blender create Mesh node bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 plast
+11:10:41 | INFO: Blender create Mesh node glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.001
+11:10:41 | INFO: Blender create Mesh node glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.002
+11:10:41 | INFO: Blender create Mesh node glassLHL_a_LODS0 gls_clear.003
+11:10:41 | INFO: Blender create Mesh node glassLHL_a_LODS0 gls_colored.001
+11:10:41 | INFO: Blender create Mesh node glassRHL_a_LODS0 gls_clear.003
+11:10:41 | INFO: Blender create Mesh node glassRHL_a_LODS0 gls_colored.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 backfacingGeo.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome_001.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 chrome_002.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 ID67_EmitterHD [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 plastic_mgl.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 plastic_smooth.001
+11:10:41 | INFO: Blender create Mesh node headlightL_a_LODS0 screw_001 [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 backfacingGeo.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome_001.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 chrome_002.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 ID67_EmitterHD [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 plastic_mgl.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 plastic_smooth.001
+11:10:41 | INFO: Blender create Mesh node headlightR_a_LODS0 screw_001 [no color].001
+11:10:41 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_clear.001
+11:10:41 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:10:41 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:10:41 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:10:41 | INFO: Blender create Mesh node lensLHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:10:41 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_clear.001
+11:10:41 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:10:41 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:10:41 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:10:41 | INFO: Blender create Mesh node lensRHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:10:41 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 chrom
+11:10:41 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 light
+11:10:41 | INFO: Blender create Mesh node bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 plast
+11:10:41 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.006
+11:10:41 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.007
+11:10:41 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.008
+11:10:41 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.009
+11:10:41 | INFO: Blender create Mesh node glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.010
+11:10:41 | INFO: Blender create Mesh node glassCHMSL_a_LODS0 gls_colored.001
+11:10:41 | INFO: Blender create Mesh node glassLTL_a_LODS0 gls_colored.001
+11:10:41 | INFO: Blender create Mesh node glassRTL_a_LODS0 gls_colored.001
+11:10:41 | INFO: Blender create Mesh node lensLTL_a_LODS0 gls_ML_CH1_Custom.001
+11:10:41 | INFO: Blender create Mesh node lensRTL_a_LODS0 gls_ML_CH1_Custom.001
+11:10:41 | INFO: Blender create Mesh node PlatelightUS_a_LODS0 gls_clear.001
+11:10:41 | INFO: Blender create Mesh node PlatelightUS_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:41 | INFO: Blender create Mesh node taillightC_a_LODS0 chrome [no color].001
+11:10:41 | INFO: Blender create Mesh node taillightC_a_LODS0 metal_satin [no color].001
+11:10:41 | INFO: Blender create Mesh node taillightC_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:41 | INFO: Blender create Mesh node taillightCBulbs_a_LODS0 gls_lightbulb|taillightcbulbs_a.001
+11:10:41 | INFO: Blender create Mesh node taillightCHMSL_a_LODS0 lights_smooth_CH1 [no color].003
+11:10:41 | INFO: Blender create Mesh node taillightL_a_LODS0 backfacingGeo.001
+11:10:41 | INFO: Blender create Mesh node taillightL_a_LODS0 chrome.001
+11:10:41 | INFO: Blender create Mesh node taillightL_a_LODS0 lights_smooth_CH1.001
+11:10:41 | INFO: Blender create Mesh node taillightL_a_LODS0 plastic_mgl.001
+11:10:41 | INFO: Blender create Mesh node taillightL_a_LODS0 plastic_smooth.001
+11:10:41 | INFO: Blender create Mesh node taillightR_a_LODS0 backfacingGeo.001
+11:10:41 | INFO: Blender create Mesh node taillightR_a_LODS0 chrome.001
+11:10:41 | INFO: Blender create Mesh node taillightR_a_LODS0 lights_smooth_CH1.001
+11:10:41 | INFO: Blender create Mesh node taillightR_a_LODS0 plastic_mgl.001
+11:10:41 | INFO: Blender create Mesh node taillightR_a_LODS0 plastic_smooth.001
+11:10:41 | INFO: Blender create Mesh node trunk_a_LODS0 ID14_blackhole.001
+11:10:41 | INFO: Blender create Mesh node trunk_a_LODS0 ID20_carbonfiber.001
+11:10:41 | INFO: Blender create Mesh node trunk_a_LODS0 ID21_carbonfiber.001
+11:10:41 | INFO: Blender create Mesh node trunk_a_LODS0 ID06_paintedmetal.001
+11:10:41 | INFO: Blender create Mesh node trunk_a_LODS0 ID48_screw_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID31_alcantara [no color].001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS|trunkBay_label_a_LODS ID13_blackframe.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID55_glass_detailed_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID56_glass_detailed_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID26_grille.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID40_label_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID41_label_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID33_plastic_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_label_a_LODS ID48_screw_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID06_paintedmetal.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID29_plastic.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID30_plastic.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID32_plastic.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS|trunkBay_label_a_LODS ID28_plastic.001
+11:10:41 | INFO: Blender create Mesh node trunkBay_a_LODS ID08_rubber.001
+11:10:41 | INFO: Blender create Mesh node trunkHoneycomb_a_LODS0 ID27_detail_ch1|trunkhoneycomb_a.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_a_LODS ID20_carbonfiber.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID31_aluminum.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_label_a_LODS ID49_screw_ch1.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_a_LODS ID06_paintedmetal.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_a_LODS ID08_rubber.001
+11:10:41 | INFO: Blender create Mesh node trunkLiner_a_LODS ID10_steel.001
+11:10:41 | INFO: glTF import finished in 2.40s
+11:10:42 | INFO: Data are loaded, start creating Blender stuff
+11:10:42 | INFO: Blender create Mesh node 0
+11:10:42 | INFO: Blender create Mesh node 1
+11:10:42 | INFO: Blender create Mesh node 2
+11:10:42 | INFO: Blender create Mesh node 3
+11:10:42 | INFO: Blender create Mesh node 4
+11:10:42 | INFO: Blender create Mesh node 5
+11:10:42 | INFO: Blender create Mesh node 6
+11:10:42 | INFO: Blender create Mesh node 7
+11:10:42 | INFO: Blender create Mesh node 8
+11:10:42 | INFO: Blender create Mesh node 9
+11:10:42 | INFO: Blender create Mesh node 10
+11:10:42 | INFO: Blender create Mesh node 11
+11:10:42 | INFO: Blender create Mesh node 12
+11:10:42 | INFO: Blender create Mesh node 13
+11:10:42 | INFO: Blender create Mesh node 14
+11:10:42 | INFO: Blender create Mesh node 15
+11:10:42 | INFO: Blender create Mesh node 16
+11:10:42 | INFO: Blender create Mesh node 17
+11:10:42 | INFO: Blender create Mesh node 18
+11:10:42 | INFO: Blender create Mesh node 19
+11:10:42 | INFO: Blender create Mesh node 20
+11:10:42 | INFO: Blender create Mesh node 21
+11:10:42 | INFO: Blender create Mesh node 22
+11:10:42 | INFO: Blender create Mesh node 23
+11:10:42 | INFO: Blender create Mesh node 24
+11:10:42 | INFO: Blender create Mesh node 25
+11:10:42 | INFO: Blender create Mesh node 26
+11:10:42 | INFO: Blender create Mesh node 27
+11:10:42 | INFO: Blender create Mesh node 28
+11:10:42 | INFO: Blender create Mesh node 29
+11:10:42 | INFO: Blender create Mesh node 30
+11:10:42 | INFO: Blender create Mesh node 31
+11:10:42 | INFO: Blender create Mesh node 32
+11:10:42 | INFO: Blender create Mesh node 33
+11:10:42 | INFO: Blender create Mesh node 34
+11:10:42 | INFO: Blender create Mesh node 35
+11:10:42 | INFO: Blender create Mesh node 36
+11:10:42 | INFO: Blender create Mesh node 37
+11:10:42 | INFO: Blender create Mesh node 38
+11:10:42 | INFO: Blender create Mesh node 39
+11:10:42 | INFO: Blender create Mesh node 40
+11:10:42 | INFO: Blender create Mesh node 41
+11:10:42 | INFO: Blender create Mesh node 42
+11:10:42 | INFO: Blender create Mesh node 43
+11:10:42 | INFO: Blender create Mesh node 44
+11:10:42 | INFO: Blender create Mesh node 45
+11:10:42 | INFO: Blender create Mesh node 46
+11:10:42 | INFO: Blender create Mesh node 47
+11:10:42 | INFO: Blender create Mesh node 48
+11:10:42 | INFO: Blender create Mesh node 49
+11:10:42 | INFO: Blender create Mesh node 50
+11:10:42 | INFO: Blender create Mesh node 51
+11:10:42 | INFO: Blender create Mesh node 52
+11:10:42 | INFO: Blender create Mesh node 53
+11:10:42 | INFO: Blender create Mesh node 54
+11:10:42 | INFO: Blender create Mesh node 55
+11:10:42 | INFO: Blender create Mesh node 56
+11:10:42 | INFO: Blender create Mesh node 57
+11:10:42 | INFO: Blender create Mesh node 58
+11:10:42 | INFO: Blender create Mesh node 59
+11:10:42 | INFO: Blender create Mesh node 60
+11:10:42 | INFO: Blender create Mesh node 61
+11:10:42 | INFO: Blender create Mesh node 62
+11:10:42 | INFO: Blender create Mesh node 63
+11:10:42 | INFO: Blender create Mesh node 64
+11:10:42 | INFO: Blender create Mesh node 65
+11:10:42 | INFO: Blender create Mesh node 66
+11:10:42 | INFO: Blender create Mesh node 67
+11:10:42 | INFO: Blender create Mesh node 68
+11:10:42 | INFO: Blender create Mesh node 69
+11:10:42 | INFO: Blender create Mesh node 70
+11:10:42 | INFO: Blender create Mesh node 71
+11:10:42 | INFO: Blender create Mesh node 72
+11:10:42 | INFO: Blender create Mesh node 73
+11:10:42 | INFO: Blender create Mesh node 74
+11:10:42 | INFO: Blender create Mesh node 75
+11:10:42 | INFO: Blender create Mesh node 76
+11:10:42 | INFO: Blender create Mesh node 77
+11:10:42 | INFO: Blender create Mesh node 78
+11:10:42 | INFO: Blender create Mesh node 79
+11:10:42 | INFO: Blender create Mesh node 80
+11:10:42 | INFO: Blender create Mesh node 81
+11:10:42 | INFO: Blender create Mesh node 82
+11:10:42 | INFO: Blender create Mesh node 83
+11:10:42 | INFO: Blender create Mesh node 84
+11:10:42 | INFO: Blender create Mesh node 85
+11:10:42 | INFO: Blender create Mesh node 86
+11:10:42 | INFO: Blender create Mesh node 87
+11:10:42 | INFO: Blender create Mesh node 88
+11:10:42 | INFO: Blender create Mesh node 89
+11:10:42 | INFO: Blender create Mesh node 90
+11:10:42 | INFO: Blender create Mesh node 91
+11:10:42 | INFO: Blender create Mesh node 92
+11:10:42 | INFO: Blender create Mesh node 93
+11:10:42 | INFO: Blender create Mesh node 94
+11:10:42 | INFO: Blender create Mesh node 95
+11:10:42 | INFO: Blender create Mesh node 96
+11:10:42 | INFO: Blender create Mesh node 97
+11:10:42 | INFO: Blender create Mesh node 98
+11:10:42 | INFO: Blender create Mesh node 99
+11:10:42 | INFO: Blender create Mesh node 100
+11:10:42 | INFO: Blender create Mesh node 101
+11:10:42 | INFO: Blender create Mesh node 102
+11:10:42 | INFO: Blender create Mesh node 103
+11:10:42 | INFO: Blender create Mesh node 104
+11:10:42 | INFO: Blender create Mesh node 105
+11:10:42 | INFO: Blender create Mesh node 106
+11:10:42 | INFO: Blender create Mesh node 107
+11:10:42 | INFO: Blender create Mesh node 108
+11:10:42 | INFO: Blender create Mesh node 109
+11:10:42 | INFO: Blender create Mesh node 110
+11:10:42 | INFO: Blender create Mesh node 111
+11:10:42 | INFO: Blender create Mesh node 112
+11:10:42 | INFO: Blender create Mesh node 113
+11:10:42 | INFO: Blender create Mesh node 114
+11:10:42 | INFO: Blender create Mesh node 115
+11:10:42 | INFO: Blender create Mesh node 116
+11:10:42 | INFO: Blender create Mesh node 117
+11:10:42 | INFO: Blender create Mesh node 118
+11:10:42 | INFO: Blender create Mesh node 119
+11:10:42 | INFO: Blender create Mesh node 120
+11:10:42 | INFO: Blender create Mesh node 121
+11:10:42 | INFO: Blender create Mesh node 122
+11:10:42 | INFO: Blender create Mesh node 123
+11:10:42 | INFO: Blender create Mesh node 124
+11:10:42 | INFO: Blender create Mesh node 125
+11:10:42 | INFO: Blender create Mesh node 126
+11:10:42 | INFO: Blender create Mesh node 127
+11:10:42 | INFO: Blender create Mesh node 128
+11:10:42 | INFO: Blender create Mesh node 129
+11:10:42 | INFO: Blender create Mesh node 130
+11:10:42 | INFO: Blender create Mesh node 131
+11:10:42 | INFO: Blender create Mesh node 132
+11:10:42 | INFO: Blender create Mesh node 133
+11:10:42 | INFO: Blender create Mesh node 134
+11:10:42 | INFO: Blender create Mesh node 135
+11:10:42 | INFO: Blender create Mesh node 136
+11:10:42 | INFO: Blender create Mesh node 137
+11:10:42 | INFO: Blender create Mesh node 138
+11:10:42 | INFO: Blender create Mesh node 139
+11:10:42 | INFO: Blender create Mesh node 140
+11:10:42 | INFO: Blender create Mesh node 141
+11:10:42 | INFO: Blender create Mesh node 142
+11:10:42 | INFO: Blender create Mesh node 143
+11:10:42 | INFO: Blender create Mesh node 144
+11:10:42 | INFO: Blender create Mesh node 145
+11:10:42 | INFO: Blender create Mesh node 146
+11:10:42 | INFO: Blender create Mesh node 147
+11:10:42 | INFO: Blender create Mesh node 148
+11:10:42 | INFO: Blender create Mesh node 149
+11:10:42 | INFO: Blender create Mesh node 150
+11:10:42 | INFO: Blender create Mesh node 151
+11:10:42 | INFO: Blender create Mesh node 152
+11:10:42 | INFO: Blender create Mesh node 153
+11:10:42 | INFO: Blender create Mesh node 154
+11:10:42 | INFO: Blender create Mesh node 155
+11:10:42 | INFO: Blender create Mesh node 156
+11:10:42 | INFO: Blender create Mesh node 157
+11:10:42 | INFO: Blender create Mesh node 158
+11:10:42 | INFO: Blender create Mesh node 159
+11:10:42 | INFO: Blender create Mesh node 160
+11:10:42 | INFO: Blender create Mesh node 161
+11:10:42 | INFO: Blender create Mesh node 162
+11:10:42 | INFO: Blender create Mesh node 163
+11:10:42 | INFO: Blender create Mesh node 164
+11:10:42 | INFO: Blender create Mesh node 165
+11:10:42 | INFO: Blender create Mesh node 166
+11:10:42 | INFO: Blender create Mesh node 167
+11:10:42 | INFO: Blender create Mesh node 168
+11:10:42 | INFO: Blender create Mesh node 169
+11:10:42 | INFO: Blender create Mesh node 170
+11:10:42 | INFO: Blender create Mesh node 171
+11:10:42 | INFO: Blender create Mesh node 172
+11:10:42 | INFO: Blender create Mesh node 173
+11:10:42 | INFO: Blender create Mesh node 174
+11:10:42 | INFO: Blender create Mesh node 175
+11:10:42 | INFO: Blender create Mesh node 176
+11:10:42 | INFO: Blender create Mesh node 177
+11:10:42 | INFO: Blender create Mesh node 178
+11:10:42 | INFO: Blender create Mesh node 179
+11:10:42 | INFO: Blender create Mesh node 180
+11:10:42 | INFO: Blender create Mesh node 181
+11:10:42 | INFO: Blender create Mesh node 182
+11:10:42 | INFO: Blender create Mesh node 183
+11:10:42 | INFO: Blender create Mesh node 184
+11:10:42 | INFO: Blender create Mesh node 185
+11:10:42 | INFO: Blender create Mesh node 186
+11:10:42 | INFO: Blender create Mesh node 187
+11:10:42 | INFO: Blender create Mesh node 188
+11:10:42 | INFO: Blender create Mesh node 189
+11:10:42 | INFO: Blender create Mesh node 190
+11:10:42 | INFO: Blender create Mesh node 191
+11:10:42 | INFO: Blender create Mesh node 192
+11:10:42 | INFO: Blender create Mesh node 193
+11:10:42 | INFO: glTF import finished in 0.59s
+Info: Saved as "revuelto-fitted.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+11:10:43 | INFO: Starting glTF 2.0 export
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID08_alcantara [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID32_blackhole.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID04_detail_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID13_glass_limotint [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID07_gunmetal [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID36_Detail_CH1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:43 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:43 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID02_leather [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID05_leather [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID01_plastic [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_a_LODS ID08_alcantara [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_label_a_LODS ID30_label_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_label_a_LODS ID34_label_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_a_LODS ID01_plastic [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardLFCustom_a_LODS|doorCardLFCustom_label_a_LODS ID32_
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS ID10_aluminum.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS ID13_blackframe.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS carPaint.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_label_a_LODS ID49_detail_ch1.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_label_a_LODS ID40_label_ch1.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS ID06_paintedmetal.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS ID28_plastic.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambLF_a_LODS ID08_rubber.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorLF_a_LODS0 CarbonFiber.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorLF_a_LODS0 carPaint.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorLF_a_LODS0|mirrorBaseL_a_LODS0 ID30_plastic|mirrorbasel
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: glassLM_a_LODS0 Glass_Window_Side.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: mirrorBaseL_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: wingMirrorL_a_LODS0 ID14_blackhole.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: wingMirrorL_a_LODS0 ID20_carbonfiber.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: wingMirrorL_a_LODS0 ID40_mirror_left [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: wingMirrorL_a_LODS0 ID28_plastic.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: wingMirrorL_a_LODS0 ID30_plastic.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_1
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_6
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_13
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_12
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_3
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_5
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_8
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_10
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_0
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_11
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_2
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_4
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_7
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: Mesh_9
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID08_alcantara [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID32_blackhole.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID13_glass_limotint [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID07_gunmetal [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID02_leather [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID05_leather [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID01_plastic [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRF_a_LODS0 ID37_Screw_Metallic_CH1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRFCustom_a_LODS ID08_alcantara [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRFCustom_a_LODS ID32_blackhole.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRFCustom_a_LODS ID35_Glass_Detailed_CH1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorCardRFCustom_a_LODS ID09_plastic_ch1 [no color].001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS ID10_aluminum.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS ID13_blackframe.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS carPaint.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_label_a_LODS ID49_detail_ch1.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS ID06_paintedmetal.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS ID28_plastic|doorjambrf_a.001
+11:10:43 | INFO: Primitives created: 1
+11:10:43 | INFO: Extracting primitive: doorJambRF_a_LODS ID08_rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorRF_a_LODS0 CarbonFiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorRF_a_LODS0 carPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorRF_a_LODS0|mirrorBaseR_a_LODS0 ID30_plastic|mirrorbasel
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: glassRM_a_LODS0 Glass_Window_Side.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: mirrorBaseR_a_LODS0 ID14_blackhole|mirrorbasel_a.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingMirrorR_a_LODS0 ID14_blackhole.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingMirrorR_a_LODS0 ID20_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingMirrorR_a_LODS0 ID41_mirror_right [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingMirrorR_a_LODS0 ID28_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingMirrorR_a_LODS0 ID30_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_15
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_20
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_27
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_26
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_17
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_19
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_22
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_24
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_14
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_25
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_16
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_18
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_21
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_23
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_29
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_34
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_39
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_46
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_45
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_31
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_33
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_36
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_38
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_41
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_43
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_28
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_44
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_30
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_32
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_35
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_37
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_40
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_42
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_112
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_117
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_122
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_129
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_128
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_114
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_116
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_119
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_121
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_124
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_126
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_111
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_127
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_113
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_115
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_118
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_120
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_123
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_125
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_55
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_57
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_59
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_61
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_63
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_65
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_67
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_69
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_71
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_73
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_75
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_77
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_79
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_81
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_83
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_85
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_87
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_89
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_91
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_93
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_95
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_97
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_99
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_101
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_103
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_105
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_107
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_109
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_138
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_140
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_142
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_144
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_146
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_148
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_150
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_152
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_154
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_156
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_158
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_160
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_162
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_164
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_166
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_168
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_170
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_172
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_174
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_176
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_178
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_180
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_182
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_184
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_186
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_188
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_190
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_192
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_53
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_136
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_54
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_137
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_49
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_52
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_132
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_135
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_47
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_50
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_130
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_133
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_48
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_51
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_131
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_134
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_56
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_58
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_60
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_62
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_64
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_66
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_68
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_70
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_72
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_74
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_76
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_78
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_80
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_82
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_84
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_86
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_88
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_90
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_92
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_94
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_96
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_98
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_100
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_102
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_104
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_106
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_108
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_110
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_139
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_141
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_143
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_145
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_147
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_149
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_151
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_153
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_155
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_157
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_159
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_161
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_163
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_165
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_167
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_169
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_171
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_173
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_175
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_177
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_179
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_181
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_183
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_185
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_187
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_189
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_191
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Mesh_193
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: Cylinder_050.004
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | WARNING: glTF specification does not allow this case (multiple materials with different Vertex Color)
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | INFO: Primitives created: 15
+11:10:44 | INFO: Extracting primitive: Cylinder_050.001
+11:10:44 | WARNING: glTF specification does not allow this case (multiple materials with different Vertex Color)
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | INFO: Primitives created: 15
+11:10:44 | INFO: Extracting primitive: Cylinder_050.002
+11:10:44 | WARNING: glTF specification does not allow this case (multiple materials with different Vertex Color)
+11:10:44 | INFO: Primitives created: 15
+11:10:44 | INFO: Extracting primitive: Cylinder_050.003
+11:10:44 | WARNING: glTF specification does not allow this case (multiple materials with different Vertex Color)
+11:10:44 | INFO: Primitives created: 15
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID20_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID31_detail_metallic_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID43_detail_metallic_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID26_grille.001
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_label_a_LODS0 ID42_screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID06_paintedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID02_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID28_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID29_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID08_rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: body_a_LODS0 ID09_undercarriage_ch1.001
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bodyGascap_a_LODS0|body_a_LODS0 carPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID13_blackframe.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID33_grillebackground_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID20_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 carPaint.003
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_label_a_LODS0 ID34_steel_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID06_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID21_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID28_plastic.003
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID29_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID30_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperF_a_LODS0 ID32_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID13_blackframe.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID20_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID21_carbonfiber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 carPaint.003
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_label_a_LODS0 ID33_screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID06_paintedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID29_paintedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID31_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID32_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID08_rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperR_a_LODS0 ID09_undercarriage_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperRBadge_a_LODS0 ID11_chrome.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: bumperRHoneycomb_a_LODS0 ID27_detail_ch1|bumperrhoneycomb_a.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS carPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_label_a_LODS ID26_grille.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS ID06_paintedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS ID28_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS ID30_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS ID31_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: doorSill_a_LODS ID08_rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: fenders_a_LODS0 carPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: fenders_a_LODS0 ID02_plastic.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: PlateUS_a_LODS0 US_Plate_base.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: PlateUS_a_LODS0 US_Plate_Shadow [no color].001
+11:10:44 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: vents_a_LODS0 ID10_chrome|vents_a [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: vents_a_LODS0 ID04_detail_ch1|vents_a [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: vents_label_a_LODS0 ID24_screw_metallic_ch1|vents_a [no col
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: vents_a_LODS0 ID01_plastic|vents_a [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: vents_a_LODS0 ID07_plastic_ch1|vents_a [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wing_a_LODS0 carPaint.004
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHinge_a_LODS0 ID04_blackhole.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHinge_a_LODS0 ID03_metailpanit.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHinge_a_LODS0 ID05_screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHingeAim_a_LODS0 ID04_blackhole.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHingeAim_a_LODS0 ID03_metailpanit.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHingeAim_a_LODS0 ID05_screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingHingeAim_a_LODS0 ID02_steel.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingPistonLowerL_a_LODS0 ID02_steel.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingPistonLowerR_a_LODS0 ID02_steel.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingPistonUpperL_a_LODS0 ID03_metailpanit.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingPistonUpperR_a_LODS0 ID03_metailpanit.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID04_blackhole.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID03_metailpanit.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wingStrutL_a_LODS0|wingStrutR_a_LODS0 ID02_steel.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperArmL_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperArmL_a_LODS0 ID09_Screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperArmR_001_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperArmR_002_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperArmR_002_a_LODS0 ID09_Screw.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperBase_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperBladeL_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperBladeL_a_LODS0 ID08_Rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperBladeR_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperBladeR_a_LODS0 ID08_Rubber.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperL_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperR_001_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: wiperR_002_a_LODS0 ID06_MetalPaint.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID11_aluminum.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID33_aluminum.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID71_aluminum.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID08_anodizedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID37_anodizedmetal_ch1.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID65_anodizedmetal.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID13_blackhole.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID20_chrome.001
+11:10:44 | INFO: Primitives created: 1
+11:10:44 | INFO: Extracting primitive: engine_a_LODS ID35_detail_ch1 [no color].001
+11:10:44 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID40_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID60_detail_metallic_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID81_glass_window_rear.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID07_paintedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID09_paintedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID10_metalpowder_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID12_paintedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID06_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID38_plastic_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID39_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID42_plastic_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID14_screw_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engine_a_LODS ID29_titanium.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID11_aluminum.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID24_aluminum.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID08_anodizedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID37_anodizedmetal_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID45_anodizedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID75_anodizedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID13_blackhole.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID62_carbonfiber.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS carPaint.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID20_chrome.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID34_detail_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID35_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID44_detail_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID48_detail_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID59_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID19_ID19_metal_CH1_Custom.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID21_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID22_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID40_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID66_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID68_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID73_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID74_detail_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_label_a_LODS ID79_label_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_label_a_LODS ID80_label_metallic_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_label_a_LODS ID32_ID32_plastic_CH1_Custom_diffuse
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_label_a_LODS ID61_screw_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID12_paintedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID30_paintedmetal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID06_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID18_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID28_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID31_ID31_plastic_CH1_Custom.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID39_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID42_plastic_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID43_fluid_container_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID47_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID49_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID52_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID57_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID58_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID63_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID69_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID53_screw_metallic_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS|engineBay_label_a_LODS ID14_screw_metallic
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: engineBay_a_LODS ID41_titanium.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: exhaustL_a_LODS0|exhaustR_a_LODS0 ID14_blackhole [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: exhaustL_a_LODS0|exhaustR_a_LODS0 ID11_detail_metal.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: exhaustL_a_LODS0|exhaustR_a_LODS0 ID10_heat_treated_2.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: exhaustL_a_LODS0|exhaustR_a_LODS0 ID12_heat_treated.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassCTL_a_LODS0 gls_clear.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 Detail_Metallic_CH1_ID40.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 Glass_Windshield.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 ID50_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 Screw_CH1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassF_a_LODS0 Screw_Metallic_CH1_ID49.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLF_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLF_a_LODS0 Glass_Window_Side.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLR_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLR_a_LODS0 Glass_Window_Side.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassR_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassR_a_LODS0 Glass_Window_Side.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRF_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRF_a_LODS0 Glass_Window_Side.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRR_a_LODS0 BlackFrame.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRR_a_LODS0 Glass_Window_Side.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hood_a_LODS0 carPaint.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hood_a_LODS0 ID30_plastic.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodBadge_a_LODS0 Badge.001
+11:10:45 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS CarbonFiber.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS Chrome.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS metal_RGH_001.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_label_a_LODS Detail_Metallic_CH1_ID40.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS Plastic_ID28.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS Rubber.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLiner_a_LODS Steel.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerPistonLowerL_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerPistonLowerL_a_LODS Plastic_ID28.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerPistonUpperL_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerPistonUpperL_a_LODS Plastic_ID28.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerStrutLowerAimL_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerStrutLowerL_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: hoodLinerStrutUpperL_a_LODS GunMetal_ID6.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_a_LODS0 ID13_glass_limotint [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_a_LODS0 ID07_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_a_LODS0 ID09_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_a_LODS0|centerConsoleBezels_label_a_LOD
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleBezels_a_LODS0|centerConsoleStructure_a_LODS0 .002
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_a_LODS0 ID08_alcantara|centerconsole
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_a_LODS0 ID37_Alcantara|centerconsole
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_a_LODS0 ID15_carbonfiber|centerconso
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_label_a_LODS0 ID03_stitch_ch1|center
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_a_LODS0 ID02_leather|centerconsolest
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructure_a_LODS0 ID04_plastic|centerconsolest
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructureCustom_label_a_LODS ID30_label_ch1 [n
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructureCustom_label_a_LODS ID36_Label_CH1 [n
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructureCustom_label_a_LODS ID06_stitch_ch1 [
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerConsoleStructureCustom_a_LODS ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_a_LODS0 ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_a_LODS0 ID10_chrome [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_a_LODS0 ID04_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_label_a_LODS0 ID23_mfr_badge_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_label_a_LODS0 ID24_screw_metallic_ch1 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: centerStackStructure_a_LODS0 ID05_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_a_LODS0 ID08_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_a_LODS0 ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_a_LODS0 ID13_glass_limotint.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_a_LODS0 ID02_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashPad_a_LODS0 ID27_digitalscreen [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructure_a_LODS0 ID08_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructure_label_a_LODS0 ID30_detail_metallic_ch1 [no co
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructure_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructureBezels_label_a_LODS0 ID32_blackhole|dashstruct
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructureBezels_label_a_LODS0 ID36_Detail_CH1|dashstruc
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructureBezels_label_a_LODS0|gaugePod_label_a_LODS0 ID
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: dashStructureBezels_a_LODS0|dashStructureBezels_label_a_LOD
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floor_a_LODS0 ID02_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floor_a_LODS0 ID08_carpet_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floor_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floor_a_LODS0|pedals_a_LODS0|pedals_label_a_LODS0 ID01_plas
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floorCustom_a_LODS ID02_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floorCustom_a_LODS ID04_detail_ch2 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floorCustom_label_a_LODS ID32_blackhole.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floorCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: floorCustom_a_LODS ID05_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: gaugeCluster_a_LODS0 ID27_digitalscreen [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: gaugePod_a_LODS0 ID15_carbonfiber|gaugepod_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: gaugePod_label_a_LODS0 ID24_screw_metallic_ch1|gaugepod_a [
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: gaugePod_a_LODS0 ID05_plastic|gaugepod_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: nav_a_LODS0 ID13_glass_limotint.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: nav_label_a_LODS0 ID28_digitalscreen [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_a_LODS0 ID37_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_a_LODS0 ID04_glass [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_a_LODS0 ID13_glass.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0 ID30_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0 ID31_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0 ID03_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_label_a_LODS0|rearviewMirrorBase_label_a_LO
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: overheadConsole_a_LODS0|visors_a_LODS0 ID01_plastic [no col
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterL_a_LODS0 ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterL_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterL_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterR_a_LODS0 ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterR_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: paddleShifterR_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedalBrake_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedalBrake_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedalBrake_a_LODS0 ID01_plastic|pedals_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedalGas_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedalGas_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [n
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedals_a_LODS0 ID10_aluminum|pedals_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedals_label_a_LODS0 ID28_detail_metallic_ch1|pedals_a [no 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedals_label_a_LODS0 ID30_detail_metallic_ch1|pedals_a [no 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pedals_label_a_LODS0 ID29_screw_metallic_ch1|pedals_a [no c
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrim_a_LODS0 ID04_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_a_LODS ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_label_a_LODS ID30_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_label_a_LODS ID33_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_label_a_LODS ID31_screw_metallic_ch1 [no c
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_label_a_LODS ID03_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_a_LODS ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: pillarTrimCustom_a_LODS ID05_nylon [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: rearviewMirror_a_LODS0 ID04_glass [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: rearviewMirror_a_LODS0 ID20_mirror_center|rearviewmirror_a 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: rearviewMirror_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: rearviewMirrorBase_label_a_LODS0 ID31_detail_ch1|rearviewmi
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: rearviewMirrorBase_a_LODS ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatBeltL_a_LODS|seatBeltR_a_LODS ID10_chrome [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatBeltL_a_LODS|seatBeltR_a_LODS ID09_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatBeltL_a_LODS|seatBeltR_a_LODS ID08_nylon [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.002
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatBeltL_a_LODS|seatBeltR_a_LODS|seatLCustom_a_LODS|seatRC.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_a_LODS0|seatR_a_LODS0 ID02_alcantara [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_label_a_LODS0 ID29_detail_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_label_a_LODS0|seatR_label_a_LODS0 ID30_label_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_label_a_LODS0 ID28_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_a_LODS0|seatR_a_LODS0 ID04_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_a_LODS0|seatR_a_LODS0 ID05_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatL_a_LODS0|seatR_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_a_LODS|seatRCustom_a_LODS ID02_alcantara|seatl_
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_label_a_LODS ID29_detail_ch1|seatl_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID31_deta
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID33_labe
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_label_a_LODS|seatRCustom_label_a_LODS ID03_stit
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatLCustom_a_LODS|seatRCustom_a_LODS ID12_paintedmetal|sea
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatR_label_a_LODS0 ID28_stitch_ch1|seatr_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: seatRCustom_label_a_LODS ID29_detail_ch1|seatr_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_a_LODS0 ID08_alcantara|steeringcolumn_a [no 
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_a_LODS0|vents_a_LODS0 ID32_blackhole|steerin
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_label_a_LODS0|vents_label_a_LODS0 ID34_label
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_a_LODS0 ID01_plastic|steeringcolumn_a [no co.002
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_a_LODS0 ID04_plastic|steeringcolumn_a [no co
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumn_a_LODS0 ID10_plastic|steeringcolumn_a [no co
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumnCustom_label_a_LODS ID32_blackhole.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumnCustom_label_a_LODS ID31_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumnCustom_a_LODS ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringColumnCustom_a_LODS ID04_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID12_mfr_badge_ch1.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID15_carbonfiber [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID07_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID29_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID30_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID31_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID34_label_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID03_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_label_a_LODS0 ID06_stitch_ch1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID09_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID01_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID04_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID05_leather [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: steeringWheel_a_LODS0 ID11_plastic [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: visors_a_LODS0 ID08_alcantara|visors_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: visors_label_a_LODS0 ID09_stitch_ch1|visors_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: visors_a_LODS0 ID06_plastic|visors_a [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 chrom.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperFSideMarkerL_a_LODS0|bumperFSideMarkerR_a_LODS0 plast
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperFSideMarkerL_a_LODS0|glassBumperFSideMarkerR_a_L.002
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLHL_a_LODS0 gls_clear.003
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassLHL_a_LODS0 gls_colored.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRHL_a_LODS0 gls_clear.003
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassRHL_a_LODS0 gls_colored.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 backfacingGeo.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 chrome.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 chrome_001.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 chrome_002.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 ID67_EmitterHD [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 plastic_mgl.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 plastic_smooth.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightL_a_LODS0 screw_001 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 backfacingGeo.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 chrome.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 chrome_001.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 chrome_002.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 ID67_EmitterHD [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 lights_smooth_CH1_001 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 plastic_mgl.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 plastic_smooth.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: headlightR_a_LODS0 screw_001 [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensLHL_a_LODS0 gls_clear.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensLHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensLHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensLHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensLHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensRHL_a_LODS0 gls_clear.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensRHL_a_LODS0 gls_ML_CH1_Custom_001.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensRHL_a_LODS0 gls_ML_CH1_Custom_DRL [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensRHL_a_LODS0 gls_ML_CH1_Custom_Null.001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: lensRHL_a_LODS0 gls_ML_CH1_Custom [no color].001
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 chrom
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 light
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: bumperRSideMarkerL_a_LODS0|bumperRSideMarkerR_a_LODS0 plast
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.006
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.007
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.008
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.009
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassBumperRSideMarkerL_a_LODS0|glassBumperRSideMarkerR_a_L.010
+11:10:45 | INFO: Primitives created: 1
+11:10:45 | INFO: Extracting primitive: glassCHMSL_a_LODS0 gls_colored.001
+11:10:45 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: glassLTL_a_LODS0 gls_colored.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: glassRTL_a_LODS0 gls_colored.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: lensLTL_a_LODS0 gls_ML_CH1_Custom.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: lensRTL_a_LODS0 gls_ML_CH1_Custom.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: PlatelightUS_a_LODS0 gls_clear.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: PlatelightUS_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightC_a_LODS0 chrome [no color].001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightC_a_LODS0 metal_satin [no color].001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightC_a_LODS0 lights_smooth_CH1 [no color].001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightCBulbs_a_LODS0 gls_lightbulb|taillightcbulbs_a.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightCHMSL_a_LODS0 lights_smooth_CH1 [no color].003
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightL_a_LODS0 backfacingGeo.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightL_a_LODS0 chrome.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightL_a_LODS0 lights_smooth_CH1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightL_a_LODS0 plastic_mgl.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightL_a_LODS0 plastic_smooth.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightR_a_LODS0 backfacingGeo.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightR_a_LODS0 chrome.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightR_a_LODS0 lights_smooth_CH1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightR_a_LODS0 plastic_mgl.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: taillightR_a_LODS0 plastic_smooth.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunk_a_LODS0 ID14_blackhole.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunk_a_LODS0 ID20_carbonfiber.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunk_a_LODS0 ID21_carbonfiber.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunk_a_LODS0 ID06_paintedmetal.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunk_a_LODS0 ID48_screw_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID31_alcantara [no color].001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS|trunkBay_label_a_LODS ID13_blackframe.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID55_glass_detailed_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID56_glass_detailed_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_label_a_LODS ID26_grille.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_label_a_LODS ID40_label_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_label_a_LODS ID41_label_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_label_a_LODS ID33_plastic_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_label_a_LODS ID48_screw_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID06_paintedmetal.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID29_plastic.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID30_plastic.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID32_plastic.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS|trunkBay_label_a_LODS ID28_plastic.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkBay_a_LODS ID08_rubber.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkHoneycomb_a_LODS0 ID27_detail_ch1|trunkhoneycomb_a.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_a_LODS ID20_carbonfiber.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_label_a_LODS ID31_aluminum.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_label_a_LODS ID48_screw_metallic_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_label_a_LODS ID49_screw_ch1.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_a_LODS ID06_paintedmetal.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_a_LODS ID08_rubber.001
+11:10:46 | INFO: Primitives created: 1
+11:10:46 | INFO: Extracting primitive: trunkLiner_a_LODS ID10_steel.001
+11:10:46 | INFO: Primitives created: 1
+11:11:02 | INFO: Finished glTF 2.0 export in 18.52635669708252 s
+
+FITTED_EXPORT revuelto closed vertex error 1.7881393432617188e-07
+revuelto exact animation samples preserved
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit
