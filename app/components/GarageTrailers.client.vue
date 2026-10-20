@@ -35,7 +35,7 @@ const engineOn=ref(false),preroll=3.3
 let engine:ReturnType<typeof createEngineAudio>|undefined,engineChapter=-1,motion:ReturnType<typeof createStraightMotion>|undefined,motionTime=0,engineFrame=0
 function engineTick(){
  engineFrame=requestAnimationFrame(engineTick);const video=videos.value[current],chapter=chapters[current];if(!video||!chapter)return
- if(engineChapter!==current){engine?.dispose();engine=createEngineAudio(chapter.id==='tourbillon'||chapter.id==='gt3'||chapter.id==='revuelto'||chapter.id==='750s'||chapter.id==='valhalla'||chapter.id==='jesko'?chapter.id:chapter.id==='458');engine.start();engineChapter=current;motion=undefined}
+ if(engineChapter!==current){engine?.dispose();engine=createEngineAudio(chapter.id==='tourbillon'||chapter.id==='gt3'||chapter.id==='revuelto'||chapter.id==='750s'||chapter.id==='valhalla'||chapter.id==='jesko'||chapter.id==='amg'?chapter.id:chapter.id==='458');engine.start();engineChapter=current;motion=undefined}
  if(video.paused||video.readyState<3){engine!.update(900,false,s.volume.value,false,0);return}
  const target=preroll+video.currentTime
  if(!motion||target<motionTime-.05){motion=createStraightMotion(chapter.id==='revuelto'?370:parseFloat(chapter.car.speed)||325,chapter.car.shape===0?8:7);motionTime=0}

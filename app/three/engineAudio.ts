@@ -6,7 +6,9 @@ import {createPorscheEngineAudio} from './porscheEngineAudio'
 import {createMcLarenEngineAudio} from './mclarenEngineAudio'
 import {createValhallaEngineAudio} from './valhallaEngineAudio'
 import {createJeskoEngineAudio} from './jeskoEngineAudio'
-export function createEngineAudio(recorded458:boolean|'revuelto'|'gt3'|'tourbillon'|'750s'|'valhalla'|'jesko'=true){
+import {createAmgEngineAudio} from './amgEngineAudio'
+export function createEngineAudio(recorded458:boolean|'revuelto'|'gt3'|'tourbillon'|'750s'|'valhalla'|'jesko'|'amg'=true){
+ if(recorded458==='amg')return createAmgEngineAudio()
  if(recorded458==='jesko')return createJeskoEngineAudio()
  if(recorded458==='valhalla')return createValhallaEngineAudio()
  if(recorded458==='750s')return createMcLarenEngineAudio()

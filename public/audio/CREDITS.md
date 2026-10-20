@@ -239,3 +239,12 @@ is not a recording of a Jesko. Loops were cut at fixed rpm along the mod's full-
 re-timed along the tracked engine pitch so it holds one rpm), exhaust and engine takes mixed, crossfaded loop points;
 idle, start and stop are the mod's own. Built losslessly by `tools/pack-jesko-audio.py` (Blender audaspace).
 (An earlier set from a GTA San Andreas Jesko mod was replaced the same day at the owner's word.)
+
+## Mercedes-AMG GT 63 S engine audio — 2026-10-20
+`amg-load-2500…6400.flac`, `amg-overrun-3000…5600.flac`, `amg-idle|start|stop.flac` derive from the M177 resource
+(ta176m177) of the "Mercedes-AMG 4.0T V8 (M17x) Engine Sound Pack" GTA V sound mod, supplied by the owner (its AWC
+container is kept in `tools/source-assets/audio/amg-m177-mod`). The M177 is the twin-turbo 4.0 V8 of the GT 63 S.
+Loops were cut at fixed rpm along the mod's full-throttle and overrun sweeps (one spectral line followed through each
+sweep, windows re-timed so each holds one rpm), exhaust and engine takes mixed, crossfaded loop points; idle, start and
+stop are the mod's own. Built losslessly by `tools/pack-amg-audio.py` (Blender audaspace). Until then the AMG played the
+site's synthetic engine.
