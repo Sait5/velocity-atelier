@@ -17,7 +17,7 @@ export function createSyntheticEngineAudio(){
   const brakeFilter=context.createBiquadFilter();brakeFilter.type='bandpass';brakeFilter.frequency.value=1100;brakeFilter.Q.value=.55;brake=context.createGain();brake.gain.value=0;noise.connect(brakeFilter);brakeFilter.connect(brake);brake.connect(master)
   noise.start();void context.resume()
   const ctx=context
-  void fetch('/audio/car-braking.wav',{signal:abort.signal}).then(response=>{if(!response.ok)throw Error('Brake recording unavailable');return response.arrayBuffer()}).then(bytes=>ctx.decodeAudioData(bytes)).then(buffer=>{if(!disposed)brakeBuffer=buffer}).catch(()=>{})
+  void fetch('/audio/car-braking.flac',{signal:abort.signal}).then(response=>{if(!response.ok)throw Error('Brake recording unavailable');return response.arrayBuffer()}).then(bytes=>ctx.decodeAudioData(bytes)).then(buffer=>{if(!disposed)brakeBuffer=buffer}).catch(()=>{})
  }
  function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false){
   if(!context)return;const time=context.currentTime,velocity=Math.abs(speed),load=throttle&&!braking?1:.25,cut=shifting?.43:1

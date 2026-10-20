@@ -30,7 +30,9 @@ export function installItaliaJambTrim(root:T.Group){
    const aperture=body&&min.x>-.78&&max.x<.57&&min.y>.19&&max.y<.90&&min.z>.74&&max.z<.96
    // The continuous outer skin is the wide, outboard island. The other
    // islands belong to the inner shell, including its latch end and lower rim.
-   const outerDoorSkin=min.z>.84&&max.z>.95&&max.x-min.x>1
+   // A small separate patch lying in the outermost skin (on the right door, beside the handle) is paint too: as trim
+   // it showed as a black rectangle on the door.
+   const outerDoorSkin=(min.z>.84&&max.z>.95&&max.x-min.x>1)||min.z>.935
    const innerDoor=door&&!outerDoorSkin
    if(aperture||innerDoor)selected.add(component)
   }

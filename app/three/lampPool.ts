@@ -20,7 +20,8 @@ export function createLampPool(x:number,rear=false){
     float attenuation=1./distance2;float rangeFade=1.-smoothstep(3.,5.5,sqrt(distance2));
     radiance+=lampPowers[i]*attenuation*nl*cone*rangeFade*(.008/3.14159+specular*.07);
    }
-   float boundary=(1.-smoothstep(.55,1.,abs(footprint.x)))*(1.-smoothstep(.55,1.,abs(footprint.y)));
+   // an elliptical fade: the plane's straight edges showed on the road at night as a bright rectangle
+   float boundary=1.-smoothstep(.3,1.,length(footprint));
    gl_FragColor=vec4(lampTint*min(radiance,1.2),boundary);
    #include <tonemapping_fragment>
    #include <colorspace_fragment>

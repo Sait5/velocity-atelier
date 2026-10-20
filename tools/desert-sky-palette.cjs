@@ -1,4 +1,0 @@
-const fs=require('fs'),p='app/components/VehicleScene.client.vue';let s=fs.readFileSync(p,'utf8');s=s.replace('let lightTime=0','let desertSky:T.CanvasTexture|undefined;let lightTime=0');s=s.replace('scene.background=new T.Color(background);',`if(props.roadMap==='desert'){
- if(!desertSky){const sky=document.createElement('canvas');sky.width=8;sky.height=512;const ctx=sky.getContext('2d')!;const gradient=ctx.createLinearGradient(0,0,0,512);gradient.addColorStop(0,'#96adbe');gradient.addColorStop(.55,'#cbd3d6');gradient.addColorStop(1,'#d7d1c4');ctx.fillStyle=gradient;ctx.fillRect(0,0,8,512);desertSky=new T.CanvasTexture(sky);desertSky.colorSpace=T.SRGBColorSpace}
- scene.background=desertSky
-}else scene.background=new T.Color(background);`);s=s.replace('envTarget?.dispose();italianEnvironment?.dispose();post?.dispose();','desertSky?.dispose();envTarget?.dispose();italianEnvironment?.dispose();post?.dispose();');fs.writeFileSync(p,s);

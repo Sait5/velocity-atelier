@@ -41,3 +41,9 @@ License: CGTrader Royalty Free (no AI), not CC0. Original 3072px Albedo, Normal 
 
 
 Snow 02 — Rob Tuytel / Poly Haven, CC0. https://polyhaven.com/a/snow_02 . 4K diffuse and 2K OpenGL normal/roughness, 2m tile. Used on the winter pass close slopes.
+
+## Asset cleanup — 2026-10-15
+Textures no live scene loads were removed (they stay in git history): desert sand, Italian pavement and roof sets, Roman grass, the salt-crust and salt-crystal sets, the 8K Vatican road photo, Rock 3, the 1K asphalt and the Sand 01 normal/roughness maps.
+
+## Tunnel finishes — 2026-10-16
+Asphalt 01 OpenGL normal and roughness (Poly Haven, CC0, already listed above) add surface relief and a worn sheen to the tunnel road on a second metric UV set. The cladding panels, sprayed-concrete vault, soot and luminaire spill are shader work on the tunnel model's existing Concrete042A maps (ambientCG, CC0). The mountain sea, mist banks, snowfall and salt ridges are procedural, no new third-party assets.

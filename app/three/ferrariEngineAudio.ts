@@ -41,7 +41,7 @@ export function createFerrariEngineAudio(){
   })
   const coastReady=fetch('/audio/ferrari-user-coast-timing.json?v=9',{signal:abort.signal}).then(async response=>{if(!response.ok)throw Error('Ferrari coast timing unavailable');coastTiming=await response.json()})
   loading=Promise.all([timingReady,coastReady,...['ferrari-user-driving','ferrari-user-coast','ferrari-user-coast-end','ferrari-start','car-braking'].map(async name=>{
-   const response=await fetch('/audio/'+name+'.wav?v=ferrari-continuous-12',{signal:abort.signal})
+   const response=await fetch('/audio/'+name+'.flac?v=ferrari-continuous-12',{signal:abort.signal})
    if(!response.ok)throw Error('Engine audio unavailable')
    const buffer=await ctx.decodeAudioData(await response.arrayBuffer());if(!disposed)buffers.set(name,buffer)
   })]).then(()=>{

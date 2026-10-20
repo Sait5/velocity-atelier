@@ -1,4 +1,4 @@
-import {installSideDoorConnections,removeRetiredItaliaHinges,retiredItaliaHardware} from '../app/three/sideDoorConnections'
+import {removeRetiredItaliaHinges,retiredItaliaHardware} from '../app/three/sideDoorConnections'
 import fs from 'node:fs/promises'
 import assert from 'node:assert/strict'
 import * as T from 'three'

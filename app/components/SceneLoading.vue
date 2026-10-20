@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props=defineProps<{active:boolean,progress:number,title:string,vehicle:string,error?:string}>()
+const props=defineProps<{active:boolean,progress:number,title:string,vehicle:string,error?:string,status?:string}>()
 const emit=defineEmits<{retry:[],complete:[],revealed:[]}>();const {t}=useLocale();const shown=ref(1)
 let timer:ReturnType<typeof setInterval>|undefined,completed=false
 function restart(){shown.value=1;completed=false}
@@ -21,7 +21,7 @@ onBeforeUnmount(()=>clearInterval(timer))
    <h2>{{title}}</h2><p>{{vehicle}}</p>
    <template v-if="!error">
     <div class="scene-load-track" role="progressbar" :aria-label="t('Подготовка сцены','Preparing scene')" :aria-valuenow="Math.round(shown)" aria-valuemin="0" aria-valuemax="100"><i :style="{width:shown+'%'}"/></div>
-    <div class="scene-load-status"><span>{{progress<65?t('Подготовка автомобиля и окружения','Preparing vehicle and environment'):progress<90?t('Загрузка деталей и текстур','Loading details and textures'):t('Настройка света и отражений','Preparing light and reflections')}}</span><b>{{Math.round(shown)}}<small>%</small></b></div>
+    <div class="scene-load-status"><span>{{status??(progress<65?t('Подготовка автомобиля и окружения','Preparing vehicle and environment'):progress<90?t('Загрузка деталей и текстур','Loading details and textures'):t('Настройка света и отражений','Preparing light and reflections'))}}</span><b>{{Math.round(shown)}}<small>%</small></b></div>
    </template>
    <template v-else><p>{{error}}</p><button class="outline" @click="emit('retry')">{{t('ПОВТОРИТЬ','RETRY')}}</button></template>
   </div>

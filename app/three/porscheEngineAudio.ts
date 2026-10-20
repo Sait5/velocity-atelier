@@ -18,7 +18,7 @@ export function createPorscheEngineAudio(){
   context=new AudioContext();master=context.createGain();master.gain.value=0;master.connect(context.destination);filter=context.createBiquadFilter();filter.type='lowpass';filter.Q.value=.3;filter.frequency.value=10000;filter.connect(master)
   const ctx=context
   loading=Promise.all(['start','idle','stop',...banks.map(([name])=>name)].map(async key=>{
-   const r=await fetch('/audio/porsche-'+key+'.wav',{signal:abort.signal});if(!r.ok)throw Error('Porsche audio unavailable: '+key)
+   const r=await fetch('/audio/porsche-'+key+'.flac',{signal:abort.signal});if(!r.ok)throw Error('Porsche audio unavailable: '+key)
    const b=await ctx.decodeAudioData(await r.arrayBuffer());if(!disposed)buffers.set(key,b)
   })).then(()=>{if(disposed)return;ready=true;update(desired.rpm,desired.throttle,desired.volume,desired.enabled,desired.speed,desired.shifting,desired.inside,desired.braking)}).catch(e=>{if(!disposed)console.warn('Porsche recordings could not load',e)})
   return loading

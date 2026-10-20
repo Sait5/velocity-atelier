@@ -1,8 +1,0 @@
-{
- "bodyPoint": [-0.9178208532, 0.54, 0.88],
- "surfacePoint": [-0.9358208776, 0.54, 0.88],
- "surfaceNormal": [0.9, 0.435, -0.016],
- "doorMountPoint": [-0.815, 0.535, 0.895],
- "linkLength": 0.127,
- "foldDirection": [0, 1, 0]
-}

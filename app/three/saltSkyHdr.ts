@@ -9,6 +9,15 @@ export function createSaltSky(texture:T.Texture,size=4000){
  uniform sampler2D panorama,clouds;varying vec3 direction;
  void main(){vec3 d=normalize(direction);vec2 uv=vec2(atan(d.z,d.x)/6.2831853+.5,asin(clamp(d.y,-1.,1.))/3.14159265+.5);
  vec3 colour=min(texture2D(panorama,uv).rgb,vec3(6.));
+ // The 2K panorama carries its own photographed mountains on the horizon; enlarged to the screen they read as pixels.
+ // Below 8° the sky is rebuilt from the clear sky just above them, paling into the horizon haze, and the site's own 3D
+ // ranges (saltHorizon.ts) stand in that band instead.
+ float band=1.-smoothstep(.1,.15,d.y);
+ if(band>0.){
+  vec3 above=min(texture2D(panorama,vec2(uv.x,asin(.15)/3.14159265+.5)).rgb,vec3(6.));
+  vec3 low=mix(vec3(.80,.87,.92),above,smoothstep(0.,.15,max(d.y,0.)));
+  colour=mix(colour,low,band);
+ }
  float cover=texture2D(clouds,uv).r*.42;
  colour=mix(colour,vec3(1.25,1.29,1.32),cover);
  if(d.y<0.)colour=mix(colour,vec3(.70,.72,.73),smoothstep(0.,.045,-d.y));

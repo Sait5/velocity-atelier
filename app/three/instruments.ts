@@ -24,8 +24,10 @@ export function installInstruments(root:T.Group){
  const rounded=(w:number,h:number,r:number)=>{const shape=new T.Shape(),x=-w/2,y=-h/2;shape.moveTo(x+r,y);shape.lineTo(x+w-r,y);shape.quadraticCurveTo(x+w,y,x+w,y+r);shape.lineTo(x+w,y+h-r);shape.quadraticCurveTo(x+w,y+h,x+w-r,y+h);shape.lineTo(x+r,y+h);shape.quadraticCurveTo(x,y+h,x,y+h-r);shape.lineTo(x,y+r);shape.quadraticCurveTo(x,y,x+r,y);return shape};const shell=rounded(.092,.091,.004);shell.holes.push(new T.Path(rounded(.085,.083,.002).getPoints()));const bezelGeometry=new T.ExtrudeGeometry(shell,{depth:.003,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.0005,bevelThickness:.0005}),bezelMaterial=new T.MeshStandardMaterial({color:'#282e30',roughness:.28,metalness:.65});
  const screens=[-.112,.112].map(x=>{const bezel=new T.Mesh(bezelGeometry,bezelMaterial);bezel.position.set(x,-.010,-.003);group.add(bezel);const el=document.createElement('canvas');el.width=el.height=512;const map=new T.CanvasTexture(el);map.colorSpace=T.SRGBColorSpace;map.anisotropy=16;map.generateMipmaps=false;map.minFilter=T.LinearFilter;const mesh=new T.Mesh(new T.PlaneGeometry(.085,.083),new T.MeshBasicMaterial({map,toneMapped:false}));mesh.position.set(x,-.010,-.001);group.add(mesh);const context=el.getContext('2d')!;context.scale(.5,.5);return {c:context,map}})
  let previous='',lastDisplay=0
- function updateInstruments(speed:number,rpm:number,gear:number){
+ function updateInstruments(speed:number,rpm:number,gear:number,inView=true){
   pivot.rotation.z=-(Math.PI*.75+Math.min(10000,Math.max(0,rpm))/10000*Math.PI*1.5)-Math.PI/2
+  // the side screens' canvases are only redrawn and re-uploaded while the cabin is in view
+  if(!inView){previous='';return}
   const kph=Math.round(Math.abs(speed)*3.6),rev=Math.round(rpm/100)*100,key=`${kph}/${rev}/${gear}`,now=performance.now();if(key===previous||(previous&&now-lastDisplay<100))return;previous=key;lastDisplay=now
   screens.forEach(({c,map},i)=>{
    const bg=c.createLinearGradient(0,0,0,1024);bg.addColorStop(0,'#141a1d');bg.addColorStop(1,'#040809');c.fillStyle=bg;c.fillRect(0,0,1024,1024)

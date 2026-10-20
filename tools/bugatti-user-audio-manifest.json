@@ -19,5 +19,16 @@
     "coast": "0–6 then repeat 2–6 until final stopping phase",
     "coastEnd": "6–8 once near stop",
     "joinCrossfadeSeconds": 0.12
+  },
+  "takes": "tools/source-assets/audio/bugatti/user-acceleration.wav, user-coast.wav (decoded owner takes)",
+  "levels": {
+    "declip": "runs at full scale rebuilt by cubic interpolation from 2 neighbours each side",
+    "sharedGainDb": -1.78,
+    "peaksDbfs": {
+      "user-acceleration-continuous": -1,
+      "user-coast-continuous": -1.93,
+      "user-coast-end": -3.07
+    },
+    "note": "one gain for all three takes, loudest peak at -1 dBFS (2026-10-15)"
   }
 }

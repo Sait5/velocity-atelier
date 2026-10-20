@@ -1,0 +1,21 @@
+SP Install:
+
+Drag the lg91timreg folder into GTAV/mods/update/x64/dlcpacks
+Edit the dlclist.xml in GTAV/mods/update/update.rpf/common/data
+Add the following line - <Item>dlcpacks:/lg91timreg/</Item>
+
+Now, In order to use the mod do the following:
+To use on any car, edit the vehicles.meta it is defined in, and replace this line with either;
+<audioNameHash>lg91timreg</audioNameHash>
+
+
+FiveM Install:
+
+Drag the 'lg91timreg' folder into your 'resource' folder. OR, you can install this on top of an existing sound resource.
+----------------------------------------------------------------------------------------------------------------------------------------
+Premade resource with fxmanifest.lua file strings provided. If using this, don't forget to ensure the new resource in server.cfg.
+Otherwise, you can manually install it to an existing resource by dragging the audioconfig & sfx folders.
+and properly setting up then on your existing fxmanifest.lua.
+----------------------------------------------------------------------------------------------------------------------------------------
+To use on any car, edit the vehicles.meta, find where the car is defined, and replace this line with either:
+<audioNameHash>lg91timreg</audioNameHash>

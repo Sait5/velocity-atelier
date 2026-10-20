@@ -13,10 +13,12 @@ export function createShowroomIntro(car:{root:T.Group,wheels:T.Object3D[]},camer
   target.set(0,.65,0);camera.position.set(-5.7,2.35,6.3);camera.lookAt(target);curtain.value=0;fade(0);changed(false)
  }
  function play(){
-  stop();wheelStarts=car.wheels.map(w=>w.rotation.z);changed(true);lights(0,0);car.root.position.x=home.x+7.5
+  stop();wheelStarts=car.wheels.map(w=>w.rotation.z);changed(true)
+  // each wheel rolls on its own tyre radius (half its height), so the tread never slips on the floor
+  const radii=car.wheels.map((w,i)=>new T.Box3().setFromObject(w).getSize(new T.Vector3()).y/2/(car.root.scale.y||1)||(i<2?.365:.335));lights(0,0);car.root.position.x=home.x+7.5
   camera.position.set(-5.7,1.55,6.7);camera.lookAt(target)
   timeline=gsap.timeline({onUpdate(){camera.lookAt(target);fade(curtain.value)},onComplete:stop})
-  timeline.to(car.root.position,{x:home.x,duration:3.4,ease:'sine.inOut',onUpdate(){car.wheels.forEach((w,i)=>w.rotation.z=wheelStarts[i]!+(7.5-(car.root.position.x-home.x))/(i<2?.365:.335))}},0)
+  timeline.to(car.root.position,{x:home.x,duration:3.4,ease:'sine.inOut',onUpdate(){car.wheels.forEach((w,i)=>w.rotation.z=wheelStarts[i]!+(7.5-(car.root.position.x-home.x))/radii[i]!)}},0)
   const shots:[number[],number[],number[],number,'front'|'rear'|'off'][]=[
    [[-4.5,.95,1.65],[-3.2,1.6,2.7],[-1,.55,0],2.8,'front'],
    [[-1.25,1.18,4.8],[1.15,1.4,4.65],[0,.58,0],3.0,'off'],

@@ -105,3 +105,86 @@ Porsche door correction: complete UV/edge-connected trim, window seals, carbon i
 ## Bugatti Tourbillon
 2026 Bugatti Tourbillon — Ddiaz Design; based on CSR2, credits ZD 3D Modelling and Design. CC BY-NC-SA 4.0. https://sketchfab.com/3d-models/2026-bugatti-tourbillon-4f63f5a74611477989cefd9861b9784a
 Changes: metre scale, door and wheel assemblies, materials and lamp controls. Source rights beyond uploader license not independently verified.
+
+## Asset cleanup — 2026-10-15
+Models the site no longer loads were removed from `public/models` (they stay in git history): the desert map (`desert/`), `fitted-hinges/`, `italian-urban-facade.glb`, `revuelto-two-arm-mechanism.glb`, `saltflat/forward-massif.glb`, unused far terrain tiles, and the uncompressed car exports `lamborghini-revuelto.glb`, `porsche-911-gt3.glb`, `porsche-911-gt3-side-door-fixed.glb`, `bugatti-tourbillon.glb`.
+The site now serves Draco/WebP web versions: `lamborghini-revuelto-web.glb`, `porsche-911-gt3-web.glb`, `bugatti-tourbillon-web.glb` (same authors and licenses as above). Their editable sources are in `tools/source-assets/cars`. Door hinge hardware (`*-door-hinges.glb`) is original geometry built for this project in Blender (`tools/blender-hinges`).
+
+## Garage trailers — 2026-10-16
+`public/video/garage/*.webm` and their posters are recordings of the site's own scenes (the car models listed above on the project's maps). Each clip carries the licence and attribution of the car model it shows: Revuelto (Anatolian Studios), Ferrari 458 Italia (Ddiaz Design) and Mercedes-AMG GT 63 (mohamedouartassi; its cabin from Mercedes-AMG E 63 S (W213) by Mona x Supercars) CC BY 4.0; Porsche 911 GT3, Bugatti Tourbillon and Aston Martin Valhalla (Ddiaz Design) CC BY-NC-SA 4.0; McLaren 750S (geyges) Sketchfab Free Standard.
+
+# McLaren 750S
+
+**McLaren 750S**, geyges: https://sketchfab.com/3d-models/mclaren-750s-d9c90e0bb53c450f88544559640143e0
+Sketchfab Free Standard licence: https://sketchfab.com/licenses
+
+`mclaren-750s-web.glb` is built by `tools/prepare-mclaren-model.py` (Blender) and `tools/compress-glb.mjs`. Changes: turned
+to the site axes, the merged wheel meshes split into four wheels, the door parts gathered into two dihedral door groups,
+identical materials folded, Draco geometry and WebP textures. No affiliation with McLaren.
+
+# Aston Martin Valhalla
+
+**2026 Aston Martin Valhalla**, Ddiaz Design (@ddiaz-design): https://sketchfab.com/3d-models/2026-aston-martin-valhalla-deeba86cc31e47de90237cafdf2be348
+CC Attribution-NonCommercial-ShareAlike 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+`aston-martin-valhalla-web.glb` is built by `tools/prepare-valhalla-model.py` (Blender) and `tools/compress-glb.mjs`. Changes:
+scaled from 1:100 to metres and turned to the site axes, four wheel groups (calipers stay still), two dihedral door
+groups with their halves of the roof, wheel groups on their true (cambered) axles, the lamp atlas split into front and
+rear, loose hem triangles and hinge-corner pieces hidden by the shut doors removed, a dark finish in the hinge pockets and
+a dark lining inside the door skins, the doors' open ends (front, rear, bottom) closed with the mod's door ends where the
+shut car hides them (`tools/extract-valhalla-door-ends.py`; geometry only, in a dark finish), the door apertures (sill
+with its seal channel, jambs) taken from the mod's body where the shut doors hide them (`tools/extract-valhalla-apertures.py`;
+geometry only, in the model's own carbon), a gas strut and pin
+brackets in the door aperture (`valhalla-door-hinges.glb`, built for the project), Draco geometry and WebP textures. The door parts and the hinge axis were decided against the door meshes and
+hinge nodes of the "Aston Martin Valhalla" mod for BeamNG.drive by S7471C (`tools/match-valhalla-doors.py`); nothing of
+the mod is shipped but those door ends and apertures. Distributed under the same licence; non-commercial use only. No affiliation with Aston Martin.
+
+# Mercedes-AMG GT 63
+
+**Mercedes Gt63 Amg**, mohamedouartassi: https://sketchfab.com/3d-models/mercedes-gt63-amg-fdca0306571b47adaf440f08a9b98231
+CC Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+Its cabin comes from **Mercedes-AMG E 63 S (W213)**, Mona x Supercars (@Car2022):
+https://sketchfab.com/3d-models/mercedes-amg-e-63-s-w213-f61d8efb0b9b4c499fc66fcf35a4d09c
+CC Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+`mercedes-amg-gt63-web.glb` is built by `tools/prepare-amg-model.py` (Blender) and `tools/compress-glb.mjs`. Changes to
+the GT 63: modifiers applied (subdivision one level lighter than the source's viewport, tyres decimated), scaled to
+metres and turned to the site axes, four wheel groups (calipers stay still), four door groups hinged at their front
+edges with their glass (the site opens only the front pair), beltline trim and mirrors, tyre and indicator lens colours reduced to plain surfaces (the
+source's procedural dust layers do not survive glTF), the author's plate lettering removed (the site draws its own
+plates), painted shut faces with a rubber seal, window ledges and hinge faces closing the doors, painted hinge pillars with the body's aperture flange and the door seal. Its own
+cabin, a placeholder, is replaced by the W213's (`tools/extract-amg-interior.py`: the cabin only, no paint, glass,
+lamps, running gear or the doors' base panels), fitted under the GT 63's roof and glass, the door card pieces given to
+the doors with their window frames cut off and closed into whole door shells (the card's base panel rebuilt from its own
+surface, shut faces, window ledges, a speaker, a door pocket and a carpet strip built for the project), materials made matte, the pure-black plastics lifted to a charcoal, repeated textures folded into one
+material each, the leather texture lifted to a light grain the upholstery colour tints, the steering wheel rim rebuilt
+as a smooth tube on the same ring, the airbag cover subdivided, the console controller's chrome ring and the hazard
+switch's triangle rebuilt, the game's instrument cluster screen replaced by a screen filling its half of the widescreen
+glass, the wheel's silver spokes welded and subdivided; the game's label atlases and door inserts
+upscaled 2-4x (`tools/amg-hd-textures.mjs`). The instrument cluster, media screen, carbon, microfibre, leather, door grain
+(with their normal maps) and speaker grille textures
+(`amg-cabin-*.png`) were drawn for the project. Door hinges
+and check straps (`amg-door-hinges.glb`) are original geometry built for this project in Blender
+(`tools/blender-hinges/build_amg_hinges.py`). Draco geometry and WebP textures. No affiliation with Mercedes-Benz.
+
+# Koenigsegg Jesko Attack
+
+**2023 Koenigsegg Jesko Attack**, Ddiaz Design: https://sketchfab.com/3d-models/2023-koenigsegg-jesko-attack-18240b21b4d747c7b7e86a404c3a195a
+CC Attribution-NonCommercial-ShareAlike 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+This work is based on "2023 Koenigsegg Jesko Attack" by Ddiaz Design, licensed under CC BY-NC-SA 4.0.
+`koenigsegg-jesko-web.glb` is built by `tools/prepare-jesko-model.py` (Blender) and `tools/compress-glb.mjs`. Changes:
+scaled from 1:100 to metres and turned to the site axes, four wheel groups on their axles (calipers stay still), the two
+doors rigged as dihedral doors on one diagonal hinge axis at the A-pillar root (the axis found by sweeping the door's
+path against the body), the model's own hinge arm kept in the doors and its clevis on the A-pillar removed, the lamp
+atlas split into head, tail and mirror-indicator lamps, the leathers made one plain leather the upholstery colour sets,
+the cabin made matte (its light trims a satin aluminium), every material two-sided, the back of the roof's and pillars'
+paint lined where the cabin sees it through the headliner's ribs. The carbon weave (2048 px, with its normal map), the
+screens (the centre touchscreen with a Russian interface and the steering-wheel cluster, 4096 px in the game atlas's
+layout) and the tyres' sidewall lettering (Michelin Pilot Sport Cup 2 in place of the game's own branding) were drawn
+for the project; the cabin, label, badge, lamp, tyre and brake atlases were upscaled 4x (`tools/jesko-hd-textures.mjs`).
+The cluster's speed, gear and rev ring are drawn live on the site (`app/three/jeskoInstruments.ts`). The gas strut and
+pin brackets in the door aperture (`jesko-door-hinges.glb`) are original geometry built for this project in Blender
+(`tools/blender-hinges/build_jesko_hinges.py`). Draco geometry and WebP textures. Distributed under the same licence;
+non-commercial use only. No affiliation with Koenigsegg.

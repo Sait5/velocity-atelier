@@ -5,17 +5,21 @@ import {createVehicle} from './vehicle'
 import {installItaliaLamps} from './vehicleLamps'
 import {installInstruments} from './instruments'
 import {enhanceCabin} from './cabinDetails'
-import {installWheelShutter} from './wheelShutter'
 import {prepareRevuelto} from './revuelto'
 import {prepareTourbillon} from './tourbillon'
 import {preparePorsche} from './porsche'
-import {installSideDoorConnections,removeRetiredItaliaHinges} from './sideDoorConnections'
-import {connectSuppliedRevueltoHinge} from './suppliedRevueltoHinge'
+import {prepareMcLaren} from './mclaren'
+import {prepareValhalla} from './valhalla'
+import {prepareAmg} from './amg'
+import {prepareJesko} from './jesko'
+import {installHingeHardware,italiaDoorOpening,italiaHingeAxis,removeRetiredItaliaHinges,swingDoors} from './sideDoorConnections'
 import {installItaliaJambTrim} from './italiaJambTrim'
+import {alignWheelAxes} from './wheelAxis'
+import {installPlates} from './plates'
 
 
 /** Use the complete authored Italia, with its native cabin and exterior. */
-export function prepareCompleteItalia(root:T.Group,driving=false){
+export function prepareCompleteItalia(root:T.Group){
  removeRetiredItaliaHinges(root)
  const material=(name:string)=>{
   let found:T.MeshStandardMaterial|undefined
@@ -53,6 +57,13 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
   return part as T.Group
  }
  const doors=[group('door_L'),group('door_R')],wheels=[0,1,2,3].map(i=>group('wheel_'+i)),spokes:T.Group[]=[]
+ // The authored brake discs sit 1.5 mm off the hub axis and visibly wobble when the wheel turns: centre them on it.
+ for(const wheel of wheels){
+  wheel.updateWorldMatrix(true,true);const inverse=wheel.matrixWorld.clone().invert()
+  wheel.traverse(o=>{if(!(o instanceof T.Mesh)||Array.isArray(o.material)||o.material.name!=='brake_bump_metal2'||!o.parent)return
+   const centre=new T.Box3().setFromObject(o,true).getCenter(new T.Vector3()).applyMatrix4(inverse),onAxis=new T.Vector3(0,0,centre.z)
+   o.position.add(o.parent.worldToLocal(wheel.localToWorld(onAxis)).sub(o.parent.worldToLocal(wheel.localToWorld(centre))))})
+ }
  root.updateMatrixWorld(true)
  // Only the two door panes retract. Clip the hidden portion at the belt seal.
  const windows=doors.flatMap(door=>door.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&!Array.isArray(o.material)&&o.material.name==='window').map(mesh=>{
@@ -63,9 +74,7 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
  enhanceCabin(root,leather)
  function setUpholstery(color:string){leather.color.set(color);leather.color.r+=.022;leather.color.g+=.022;leather.color.b+=.022}
  const {updateInstruments}=installInstruments(root)
- const shutter=driving?installWheelShutter(wheels):undefined
- function updateWheelMotion(speed:number){shutter?.update(speed)}
- return {updateWheelMotion,setWindows,setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
+ return {setWindows,setUpholstery,updateInstruments,root,body,rim,brake,glass,leather,white,doors,wheels,spokes,setLights,dispose(){
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>()
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));if(o instanceof T.InstancedMesh)o.dispose()}})
   geometries.forEach(g=>g.dispose());[body,rim,brake,glass,leather,white].forEach(m=>materials.add(m))
@@ -73,15 +82,26 @@ export function prepareCompleteItalia(root:T.Group,driving=false){
  }}
 }
 
-export async function loadVehicle(shape:number,onProgress:(n:number)=>void,driving=false){
- if(shape!==8&&shape!==0&&shape!==1&&shape!==3)return createVehicle(shape)
+/** Any glass still using transmission makes three.js render every opaque object a second time per frame (into the
+ * transmission buffer) and compile a second set of programs for it: the Ferrari detail glass, Revuelto dark glass and
+ * Porsche windows did, doubling draw calls. Plain alpha blending reads the same at these thin panes. */
+function retireTransmission(root:T.Object3D){root.traverse(o=>{if(!(o instanceof T.Mesh))return;for(const m of Array.isArray(o.material)?o.material:[o.material]){if(!(m instanceof T.MeshPhysicalMaterial)||m.transmission<=0)continue;m.transmission=0;m.transparent=true;if(m.opacity>=1)m.opacity=/dark/i.test(m.name)?.55:.28;m.depthWrite=false;o.castShadow=false;m.needsUpdate=true}})}
+
+export async function loadVehicle(shape:number,onProgress:(n:number)=>void){
+ if(shape!==8&&shape!==0&&shape!==1&&shape!==3&&shape!==4&&shape!==5&&shape!==6&&shape!==7)return createVehicle(shape)
  const decoder=new DRACOLoader().setDecoderPath('/draco/'),loader=new GLTFLoader().setDRACOLoader(decoder)
  try{
-  const gltf=await loader.loadAsync(shape===3?'/models/bugatti-tourbillon-door-fit-v4.glb?v=1':shape===0?'/models/lamborghini-revuelto-user-edited.glb?v=1':shape===1?'/models/porsche-911-gt3-door-assembly.glb?v=3':'/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
-  const vehicle=shape===3?prepareTourbillon(gltf.scene):shape===0?prepareRevuelto(gltf.scene,driving):shape===1?preparePorsche(gltf.scene):prepareCompleteItalia(gltf.scene,driving)
-  if(shape===3)return vehicle
-  if(shape===0){const hinge=await loader.loadAsync('/models/revuelto-two-arm-mechanism.glb?v=1');return connectSuppliedRevueltoHinge(vehicle,hinge)}
-  return installSideDoorConnections(vehicle,shape===1?'porsche':'ferrari')
+  const gltf=await loader.loadAsync(shape===7?'/models/koenigsegg-jesko-web.glb?v=7':shape===6?'/models/mercedes-amg-gt63-web.glb?v=26':shape===5?'/models/aston-martin-valhalla-web.glb?v=17':shape===4?'/models/mclaren-750s-web.glb?v=10':shape===3?'/models/bugatti-tourbillon-web.glb?v=4':shape===0?'/models/lamborghini-revuelto-web.glb?v=1':shape===1?'/models/porsche-911-gt3-web.glb?v=2':'/models/ferrari-italia-complete.glb',e=>{if(e.lengthComputable)onProgress(65+Math.round(e.loaded/e.total*20))})
+  const vehicle=shape===7?prepareJesko(gltf.scene):shape===6?prepareAmg(gltf.scene):shape===5?prepareValhalla(gltf.scene):shape===4?prepareMcLaren(gltf.scene):shape===3?prepareTourbillon(gltf.scene):shape===0?prepareRevuelto(gltf.scene):shape===1?preparePorsche(gltf.scene):prepareCompleteItalia(gltf.scene)
+  retireTransmission(vehicle.root)
+  installPlates(vehicle.root,shape)
+  // spin each wheel about its own (cambered) axle, not the car's lateral axis
+  // (the Valhalla's wheel groups already sit on their true, cambered axles: tools/prepare-valhalla-model.py; the Jesko's
+  // wheels have no camber and their groups turn about the true lateral axle: tools/prepare-jesko-model.py)
+  const axles=shape===5||shape===7||import.meta.dev&&typeof location!=='undefined'&&location.search.includes('noalign')?[]:alignWheelAxes(vehicle.wheels);if(import.meta.dev)vehicle.root.userData.wheelAxes=axles
+  // Blender-built hinge hardware; the Revuelto keeps its native arm and gas strut and only gets the strut's door bracket.
+  const hinges=await loader.loadAsync(shape===7?'/models/jesko-door-hinges.glb?v=1':shape===6?'/models/amg-door-hinges.glb?v=9':shape===5?'/models/valhalla-door-hinges.glb?v=2':shape===4?'/models/mclaren-door-hinges.glb?v=5':shape===8?'/models/ferrari-door-hinges.glb?v=3':shape===3?'/models/bugatti-door-hinges.glb?v=2':shape===0?'/models/revuelto-door-hinges.glb?v=1':'/models/porsche-door-hinges.glb?v=4')
+  return installHingeHardware(shape===8?swingDoors(vehicle,italiaHingeAxis.x,italiaHingeAxis.z,italiaDoorOpening):vehicle,hinges.scene,{concealWhenClosed:shape===3||shape===4||shape===5||shape===6||shape===7})
  }finally{decoder.dispose()}
 }
 

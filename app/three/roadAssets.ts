@@ -17,11 +17,7 @@ export function createRoadAssets(){
   if(disposed)owned.forEach(release);return asset
  })();models.set(url,task)}return task}
 
- async function preloadItalian(){
-  // Decode sequentially during spare frames; GPU upload remains under the loading curtain.
-  for(const url of ['/models/italian-roadside-tree.glb','/models/italian-canopy-tree.glb','/models/roman-pine_tree_01.glb','/models/roman-shrub_01.glb','/models/roman-grass_medium_01.glb','/models/italian-roadside-tree-lod.glb','/models/italian-canopy-tree-lod.glb','/models/roman-pine_tree_01-lod.glb']){if(disposed)return;await new Promise<void>(r=>setTimeout(r,50));await model(url)}
-  for(const url of ['/textures/asphalt_01_diff_4k.jpg','/textures/asphalt_01_nor_gl_2k.jpg','/textures/asphalt_01_rough_2k.jpg','/textures/roman-cobbles-diff.webp','/textures/roman-cobbles-normal.webp']){if(disposed)return;await texture(url,/diff/.test(url)).ready}
- }
- return {texture,model,owns:(value:T.Texture|T.Material|T.BufferGeometry)=>owned.has(value),preloadItalian,dispose(){disposed=true;owned.forEach(release);owned.clear();models.clear();textures.clear()}}
+
+ return {texture,model,owns:(value:T.Texture|T.Material|T.BufferGeometry)=>owned.has(value),dispose(){disposed=true;owned.forEach(release);owned.clear();models.clear();textures.clear()}}
 }
 export type RoadAssets=ReturnType<typeof createRoadAssets>

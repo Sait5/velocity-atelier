@@ -1,8 +1,0 @@
-const fs=require('fs'),path=require('path');
-let p='app/pages/drive/[car].vue',s=fs.readFileSync(p,'utf8');s=s.replace(/const roadMap=[^\n]*/,"const roadMap=ref<'tunnel'>('tunnel')").replace(/function chooseMap[^\n]*\n/,'').replace(/const mapName=[^\n]*/,"const mapName=computed(()=>t('Тоннель','Road Tunnel'))").replace("!['tunnel','cinematic'].includes(String(route.query.map))","route.query.map!=='tunnel'").replace(/    <button @click="chooseMap[^\n]*\n/,'');fs.writeFileSync(p,s);
-p='app/components/VehicleScene.client.vue';s=fs.readFileSync(p,'utf8').replace(/import \{createCinematicRoad\}[^\n]*\n/,'').replaceAll("|'cinematic'",'').replace("['italy','coast','forest','cinematic']","['italy','coast','forest']").replace("driveLook?.setTunnel(props.roadMap!=='cinematic');return props.roadMap==='cinematic'?createCinematicRoad(scene):createTunnelRoad(scene)","driveLook?.setTunnel(true);return createTunnelRoad(scene)");fs.writeFileSync(p,s);
-p='app/pages/legal.vue';s=fs.readFileSync(p,'utf8').replace(/\{name:'Cinematic roads pack — Straight road'[^\n]*?\},/,'');fs.writeFileSync(p,s);
-p='public/models/CREDITS.md';s=fs.readFileSync(p,'utf8').replace(/\n\n## Cinematic roads pack — Straight road \(local evaluation\)[\s\S]*/,'\n');fs.writeFileSync(p,s);
-p='README.md';s=fs.readFileSync(p,'utf8').replace(/\n\n### Cinematic road trial[\s\S]*/,'\n');fs.writeFileSync(p,s);
-const archive=path.resolve('tools/generated/archived-maps/rejected-cinematic');fs.mkdirSync(archive,{recursive:true});
-for(const file of ['public/models/cinematic-road.glb','app/three/cinematicRoad.ts','app/three/cinematicMeta.json']){if(fs.existsSync(file))fs.renameSync(file,path.join(archive,path.basename(file)));}

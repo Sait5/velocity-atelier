@@ -69,7 +69,7 @@ function createTourbillonEngineAudio() {
       Object.assign(timing, await response.json());
     });
     loading = Promise.all([timingReady, ...["acceleration", "coast", "coast-end", "ignition"].map(async (name) => {
-      const response = await fetch("/audio/bugatti/user-" + name + (name === "ignition" || name === "coast-end" ? "" : "-continuous") + ".wav?v=4", { signal: abort.signal });
+      const response = await fetch("/audio/bugatti/user-" + name + (name === "ignition" || name === "coast-end" ? "" : "-continuous") + ".wav?v=5", { signal: abort.signal });
       if (!response.ok) throw Error("Bugatti recording unavailable");
       const buffer = await ctx.decodeAudioData(await response.arrayBuffer());
       if (!disposed) buffers.set(name, buffer);

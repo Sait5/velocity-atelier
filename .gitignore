@@ -31,3 +31,7 @@ tools/generated/showroomIntro.mjs
 
 # Large intermediate Blender source; exported runtime models are tracked.
 /tools/generated/cinematic-road-source/Cinematic roads pack/Straight road/forBlender.blend
+
+# Blender caches and check renders
+__pycache__/
+/tools/blender-hinges/out/

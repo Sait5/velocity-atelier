@@ -10,7 +10,8 @@ export function createLampDynamics(root:T.Group){
  })
  let road=false;const direction=new T.Vector3()
  return {
-  configure(quality:string,shadows:boolean,driving:boolean){road=driving;spots.forEach((l,i)=>{l.castShadow=shadows&&quality!=='Medium'&&i===0&&l.intensity>0});spills.forEach(m=>{m.visible=!road&&m.userData.enabled!==false})},
+  // The shadow flag must not follow the lamp switching on: a change of shadow-casting lights recompiles every material.
+  configure(quality:string,shadows:boolean,driving:boolean){road=driving;spots.forEach((l,i)=>{l.castShadow=shadows&&quality!=='Medium'&&i===0});spills.forEach(m=>{m.visible=!road&&m.userData.enabled!==false})},
   update(distance:number){spills.forEach(m=>{
    const material=m.material as T.ShaderMaterial,u=material.uniforms;u.lampTravel!.value=distance;
    const rear=m.name.includes('Rear'),enabled=rear?root.userData.tailEnabled:root.userData.frontEnabled;m.userData.enabled=enabled;m.visible=!road&&enabled!==false;

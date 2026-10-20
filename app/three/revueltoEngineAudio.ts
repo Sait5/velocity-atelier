@@ -39,7 +39,7 @@ export function createRevueltoEngineAudio(){
    if(!response.ok)throw Error('Coast loop timing unavailable');coastTiming=await response.json()
   })
   loading=Promise.all([timingReady,coastTimingReady,...['miura-user-driving','aventador-user-coast','aventador-ignition-exhaust','car-braking'].map(async name=>{
-   const response=await fetch('/audio/'+name+'.wav?v=miura-coast-8',{signal:abort.signal})
+   const response=await fetch('/audio/'+name+'.flac?v=miura-coast-8',{signal:abort.signal})
    if(!response.ok)throw Error('Engine audio unavailable')
    const buffer=await ctx.decodeAudioData(await response.arrayBuffer());if(!disposed)buffers.set(name,buffer)
   })]).then(()=>{

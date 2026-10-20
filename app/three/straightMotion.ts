@@ -1,16 +1,18 @@
 /** Straight presentation motion with vehicle-specific gears and a configurable speed limit. */
 export function createStraightMotion(maxKph=325,gearCount:7|8=maxKph>350?8:7){
  const mass=1800,grip=1.05,gravity=9.81
- let speed=0,distance=0,gear=1,shiftCooldown=0,rpm=900
+ let speed=0,distance=0,gear=1,shiftCooldown=0,rpm=900,surface=1
  const maximum=maxKph/3.6,ratios=gearCount===8?[3.9,2.7,2.1,1.72,1.45,1.24,1.05,.88]:[3.4,2.2,1.6,1.25,1.02,.85,.72]
  function step(dt:number,forward:boolean,brake:boolean,reverse:boolean,lateralAcceleration=0,endDistance=Infinity){
   dt=Math.max(0,Math.min(dt,.15));shiftCooldown=Math.max(0,shiftCooldown-dt)
-  const availableGrip=Math.sqrt(Math.max(0,(grip*gravity)**2-lateralAcceleration**2))
-  const acceleration=forward?Math.max(.4,9.2*(1-Math.pow(Math.max(0,speed)/maximum,1.5))):reverse?-4*(1-Math.max(0,-speed)/8):0
+  const availableGrip=Math.sqrt(Math.max(0,(grip*surface*gravity)**2-lateralAcceleration**2)),limit=maximum*(.45+.55*surface)
+  const acceleration=forward?Math.max(.4,9.2*(1-Math.pow(Math.min(1,Math.max(0,speed)/limit),1.5))):reverse?-4*(1-Math.max(0,-speed)/8):0
   speed+=Math.max(-availableGrip,Math.min(availableGrip,acceleration))*(forward&&shiftCooldown>.25?.48:1)*dt
   if(brake)speed=Math.sign(speed)*Math.max(0,Math.abs(speed)-Math.min(18,availableGrip)*dt)
   else if(!forward&&!reverse)speed=Math.sign(speed)*Math.max(0,Math.abs(speed)-(.4+Math.abs(speed)*.015)*dt)
   const routeLimit=Number.isFinite(endDistance)?Math.min(25,Math.sqrt(Math.max(0,endDistance-distance)*6)):maximum
+  // above the wet/snow limit the car eases back down instead of stopping dead
+  if(speed>limit)speed=Math.max(limit,speed-3*dt)
   speed=Math.max(-8,Math.min(maximum,routeLimit,speed));distance+=speed*dt
   if(Number.isFinite(endDistance)){distance=Math.max(0,Math.min(endDistance,distance));if(endDistance-distance<.02||distance===0&&speed<0)speed=0}
   const wheelRpm=Math.abs(speed)/(2*Math.PI*.34)*60
@@ -21,6 +23,8 @@ export function createStraightMotion(maxKph=325,gearCount:7|8=maxKph>350?8:7){
   return {speed,distance,gear,rpm:Math.round(rpm),shifting:shiftCooldown>.25}
  }
  function reset(){speed=distance=shiftCooldown=0;gear=1;rpm=900}
- return {step,reset,parameters:{mass,grip}}
+ /** Road surface: 1 dry; lower in rain and snow — gentler acceleration and braking and a lower cruising limit. */
+ function setSurface(value:number){surface=Math.max(.3,Math.min(1,value))}
+ return {step,reset,setSurface,parameters:{mass,grip}}
 }
 

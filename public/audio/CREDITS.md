@@ -205,3 +205,37 @@ Changes: mono conversion, band-pass filtering, excerpting, normalization and cro
 These are real Veyron W16 samples adapted to the interactive engine, not a recording of the Tourbillon V16.
 The startup is a faded engine-loop onset; this source does not contain a cold start.
 The previous procedural V16 is no longer used. Shared braking recording retains its existing credit.
+
+## Asset cleanup — 2026-10-15
+Recordings marked inactive above were removed from `public/audio` (they stay in git history): the earlier Aventador, Sonniss, Pixabay and Performance Cars engine files, Ferrari band and cabin loops, the exterior acceleration take, Porsche coast/drive previews, the Veyron-derived `bugatti/idle|load|coast.wav`, the Bugatti previews and non-continuous takes, the generic door close clip, and the unused original themes Night Pulse, Midnight Glass and Afterglow.
+Active Bugatti audio: owner-supplied recordings `bugatti/user-ignition.wav`, `user-acceleration-continuous.wav`, `user-coast-continuous.wav`, `user-coast-end.wav` (see `tools/bugatti-user-audio-manifest.json`).
+Bugatti level fix: the few full-scale (clipped) samples of the owner takes were rebuilt by interpolation and the acceleration/coast/coast-end files share a -1.78 dB gain, loudest peak -1 dBFS (`tools/prepare-bugatti-user-continuation.py`).
+
+## McLaren 750S engine audio — 2026-10-17
+`mclaren-start|idle|stop|load-low|load-high|overrun.wav` derive from "McLaren 720S" in the Internet Archive item
+[Car Engine Sounds](https://archive.org/details/car-engines) (uploaded by JasonBurke, "free use"),
+licence [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The 720S shares the 750S's twin-turbo 4.0 V8 family (M840T); this is not a recording of a 750S.
+Changes: excerpting, two load loops resampled along the tracked engine pitch so each holds one rpm, crossfaded loop
+points, fades, normalisation (built by scratchpad tooling, FLAC via `tools/compress-engine-audio.py`).
+Replaced the same day at the owner's choice: the active McLaren set (`mclaren-start|idle|stop`, `mclaren-load-1800…7650`,
+`mclaren-overrun-1350…7500`) now derives from the exhaust takes of the "McLaren 720S" GTA V sound mod by Legacy DMC
+(original instructions by Aquaphobic), supplied by the owner. Loops were cut at fixed rpm along its acceleration and
+deceleration sweeps and resampled to one pitch each. The Internet Archive WAVs stay in `tools/source-assets/audio/mclaren-720s-ia`.
+
+## Aston Martin Valhalla engine audio — 2026-10-18
+`valhalla-exhaust-load|exhaust-overrun|engine-load|engine-overrun.flac` hold, unchanged and one after another, the
+rpm-stepped engine and exhaust loops (named M840T, one loop every ~400 rpm from 1100 to 8200 rpm) of the
+"Aston Martin Valhalla" mod for BeamNG.drive by S7471C (gtmods.ru upload, supplied by the owner); `valhalla-idle.flac` mixes
+its exhaust and engine idles. Not a recording of a Valhalla. Built by `tools/pack-valhalla-audio.cjs` (loop table in
+`app/three/valhallaEngineAudio.ts`) and `tools/compress-engine-audio.py` (lossless, checked sample by sample). Start and
+stop reuse the McLaren takes above.
+
+## Koenigsegg Jesko engine audio — 2026-10-20
+`jesko-load-2700…7200.flac`, `jesko-overrun-2500…6900.flac`, `jesko-idle|start|stop.flac` derive from the
+"Koenigsegg Regera Sound" GTA V sound mod by Legacy DMC (lg91timreg), supplied by the owner (its AWC container is kept in
+`tools/source-assets/audio/jesko-regera-mod`). The Regera has the twin-turbo 5.0 V8 the Jesko's is developed from; this
+is not a recording of a Jesko. Loops were cut at fixed rpm along the mod's full-throttle and overrun sweeps (each window
+re-timed along the tracked engine pitch so it holds one rpm), exhaust and engine takes mixed, crossfaded loop points;
+idle, start and stop are the mod's own. Built losslessly by `tools/pack-jesko-audio.py` (Blender audaspace).
+(An earlier set from a GTA San Andreas Jesko mod was replaced the same day at the owner's word.)

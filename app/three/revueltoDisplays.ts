@@ -45,8 +45,9 @@ export function installRevueltoDisplays(source:T.Group){
   c.strokeStyle='#3d5668';c.beginPath();c.moveTo(24,932);c.lineTo(744,932);c.stroke();c.font='25px Arial';c.fillStyle='#b8c9d4';c.fillText('⌂',80,988);c.fillText('STRADA',384,988);c.fillText('VOL  18',654,988);map.needsUpdate=true
  }
  let previous='',lastUpdate=0
- function updateInstruments(speed:number,rpm:number,gear:number){
-  if(!cluster)return;const kph=Math.round(Math.abs(speed)*3.6),revs=Math.round(rpm/100)*100,key=`${kph}/${revs}/${gear}`,now=performance.now()
+ function updateInstruments(speed:number,rpm:number,gear:number,inView=true){
+  // the display canvases are only redrawn and re-uploaded while the cabin is in view
+  if(!cluster)return;if(!inView){previous='';return}const kph=Math.round(Math.abs(speed)*3.6),revs=Math.round(rpm/100)*100,key=`${kph}/${revs}/${gear}`,now=performance.now()
   if(key===previous||(previous&&now-lastUpdate<100))return;previous=key;lastUpdate=now
   base(cluster);const {c,map}=cluster
   // Circular production tachometer, angular Y braces and outlined central gear.

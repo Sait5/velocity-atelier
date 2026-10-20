@@ -1,5 +1,7 @@
 import * as T from 'three'
 import {createHeadlightPool} from './lampPool'
+import {installTourbillonGauges} from './tourbillonGauges'
+import {liftDarkUpholstery} from './upholstery'
 
 export function prepareTourbillon(root:T.Group){
  const materials=new Map<string,T.MeshStandardMaterial>()
@@ -16,15 +18,19 @@ export function prepareTourbillon(root:T.Group){
   m.customProgramCacheKey=()=> 'tourbillon-neutral-tint-v1'
  }
  function setSecondaryPaint(color:string){rearPaint.color.set(color)}
- for(const [x,y,z,power] of [[-.45,1.03,-.38,.8],[.2,1.08,.3,.55],[.05,.62,0,.22]]){const l=new T.PointLight('#fff3e2',power,1.65,2);l.name='Tourbillon cabin bounce';l.position.set(x!,y!,z!);root.add(l)}
+ // Soft cabin fill: the black-and-graphite cockpit otherwise reads as a dark hole (driver side is -z).
+ for(const [x,y,z,power] of [[-.45,1.03,-.38,1.45],[.2,1.08,.3,1.0],[.05,.62,0,.5],[-.55,.66,-.34,.55]]){const l=new T.PointLight('#fff3e2',power,1.7,2);l.name='Tourbillon cabin bounce';l.position.set(x!,y!,z!);root.add(l)}
 
  const head={value:0},tail={value:0}
  root.traverse(o=>{if(!(o instanceof T.Mesh))return;o.castShadow=true;o.receiveShadow=true
   for(const raw of Array.isArray(o.material)?o.material:[o.material]){const m=raw as T.MeshPhysicalMaterial
-   for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=8
+   for(const v of Object.values(m))if(v instanceof T.Texture)v.anisotropy=16
    if(/Window_|sliding glass|red_glass/.test(m.name)){m.transmission=0;m.transparent=true;m.opacity=m.name==='red_glass'?.75:.23;m.depthWrite=false;m.side=T.DoubleSide;m.roughness=.08;o.castShadow=false}
    if(/Interior|Carbon/.test(m.name)){m.metalness=0;m.roughness=.72;if(/Interior/.test(m.name)){m.transparent=false;m.opacity=1;m.depthWrite=true;m.side=T.DoubleSide}}
    if(/GrilleAlpha/.test(m.name)){m.alphaTest=.4;m.transparent=false;m.depthWrite=true}
+   // The fitted return around the door edge was exported untextured white; it is the door's dark carbon structure.
+   // It is tucked just under the paint where they meet; the depth offset settles the sub-millimetre overlaps left there.
+   if(/^Door return/.test(m.name)){m.color.set('#121417');m.metalness=.15;m.roughness=.62;m.envMapIntensity=.5;m.polygonOffset=true;m.polygonOffsetFactor=1;m.polygonOffsetUnits=2}
   }
  })
  white.emissive.set('#ffffff');white.emissiveIntensity=1
@@ -47,18 +53,23 @@ totalEmissiveRadiance=vec3(1.,.96,.88)*front*tourHead*2.+vec3(1.,.015,.005)*rear
  const spill=createHeadlightPool(-2.02,.75);root.add(spill)
  const headlights=[-1,1].map(side=>{const l=new T.SpotLight('#f7f4ee',0,8,.42,.8,2);l.position.set(-2.03,.6,side*.75);l.target.position.set(-5,.05,side*.8);root.add(l,l.target);return l})
  function setLights(front:boolean,rear:boolean,frontLevel=Number(front),rearLevel=Number(rear)){head.value=frontLevel;tail.value=rearLevel;root.userData.frontEnabled=front;root.userData.tailEnabled=rear;spill.visible=front;headlights.forEach(l=>l.intensity=85*frontLevel);if(rearLens)rearLens.emissiveIntensity=rearLevel*1.2}
- const doorQuaternion=new T.Quaternion()
+ // Dihedral doors turn rigidly on a hinge axis hidden under the front fender skin (fitted in Blender, no
+ // door/body collisions); the dark gas strut in the aperture comes from bugatti-door-hinges.glb and shows only while
+ // the door is open. The old fitted
+ // mounting brackets belonged to a sampled path that pushed the door 20 cm away from the body.
+ root.traverse(o=>{if(o.name.includes('front mounting assembly'))o.visible=false})
+ const doorRest=doors.map(d=>d.position.clone())
  function setDoors(left:number,right=left){doors.forEach((d,i)=>{
-  const p=T.MathUtils.clamp(i===0?left:right,0,1),samples=d.userData.siteDoorSamples as number[][]|undefined
-  if(samples?.length){const frame=p*(samples.length-1),index=Math.floor(frame),a=samples[index]!,b=samples[Math.min(index+1,samples.length-1)]!,t=frame-index;d.position.set(a[0]!+(b[0]!-a[0]!)*t,a[1]!+(b[1]!-a[1]!)*t,a[2]!+(b[2]!-a[2]!)*t);d.quaternion.set(a[3]!,a[4]!,a[5]!,a[6]!);doorQuaternion.set(b[3]!,b[4]!,b[5]!,b[6]!);d.quaternion.slerp(doorQuaternion,t)}
-  else d.rotation.set(0,-Math.sign(d.position.z)*p*.25,p*1.05)
-  // Close the exposed mounting gap only after the door has cleared the jamb.
-  if(samples?.length){const fit=T.MathUtils.smoothstep(p,.4,1);d.position.x-=.04*fit;d.position.z-=Math.sign(samples[0]![2]!)*.08*fit}
+  const p=T.MathUtils.clamp(i===0?left:right,0,1),side=Math.sign(doorRest[i]!.z),pivot=new T.Vector3(-1.10,.78,side*.92)
+  d.quaternion.setFromAxisAngle(new T.Vector3(0,-side*.55,1).normalize(),1.13*p)
+  d.position.copy(doorRest[i]!).sub(pivot).applyQuaternion(d.quaternion).add(pivot)
  })}
  const panes=doors.flatMap(d=>d.children.filter(o=>o.name.includes('sliding_glass')||o.name.includes('sliding glass')).map(mesh=>({mesh,rest:mesh.position.clone()})))
  function setWindows(value:number){for(const {mesh,rest} of panes){mesh.position.copy(rest);mesh.position.y-=T.MathUtils.clamp(value,0,1)*.3;mesh.visible=value<.98}}
- function setUpholstery(color:string){trimTargets.forEach(m=>m.color.set(color))}
+ const lifted=new T.Color()
+ function setUpholstery(color:string){liftDarkUpholstery(color,lifted);trimTargets.forEach(m=>m.color.copy(lifted))}
  function dispose(){const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>(),textures=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geometries.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())}
  setLights(false,false)
- return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,setSecondaryPaint,dispose}
+ const {updateInstruments}=installTourbillonGauges(root)
+ return {root,body,secondaryPaint:rearPaint,rim,brake,glass,leather,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,setSecondaryPaint,updateInstruments,dispose}
 }
