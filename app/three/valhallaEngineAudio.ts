@@ -1,3 +1,4 @@
+import type {EngineDrive} from './engineAudio'
 /**
  * Aston Martin Valhalla: the engine loops of the "Aston Martin Valhalla" mod for BeamNG.drive by S7471C (named M840T
  * there): engine and exhaust, on load and on overrun, one loop every ~400 rpm from 1100 to 8200, packed into four banks
@@ -21,8 +22,8 @@ export function createValhallaEngineAudio(){
  let ready=false,disposed=false,wasEnabled=false,startUntil=0,stopUntil=0
  const abort=new AbortController(),banks=new Map<string,{rpm:number,buffer:AudioBuffer}[]>(),takes=new Map<string,AudioBuffer>()
  type Take={source:AudioBufferSourceNode,gain:GainNode}
- const playing=new Set<Take>(),active=new Map<string,Take>();let ignition:Take|undefined,idle:Take|undefined
- let desired={rpm:900,throttle:false,volume:.2,enabled:false,speed:0,shifting:false,inside:false,braking:false}
+ const playing=new Set<Take>(),active=new Map<string,Take>(),lastHeard=new Map<string,number>();let ignition:Take|undefined,idle:Take|undefined
+ let desired:{rpm:number,throttle:boolean,volume:number,enabled:boolean,speed:number,shifting:boolean,inside:boolean,braking:boolean,drive?:EngineDrive}={rpm:900,throttle:false,volume:.2,enabled:false,speed:0,shifting:false,inside:false,braking:false}
  const idleBase=900
  function stop(t:Take|undefined,fade=.08){if(!t||!context)return;t.gain.gain.setTargetAtTime(0,context.currentTime,fade);try{t.source.stop(context.currentTime+fade*5)}catch{}}
  function play(buffer:AudioBuffer|undefined,level=0,loop=false){
@@ -43,7 +44,7 @@ export function createValhallaEngineAudio(){
     if(!disposed)banks.set(name,list)
    }),
    ...[['idle','/audio/valhalla-idle.flac?v=1'],['start','/audio/mclaren-start.flac?v=2'],['stop','/audio/mclaren-stop.flac?v=2']].map(async([key,url])=>{const b=await fetchBuffer(ctx,url!);if(!disposed)takes.set(key!,b)}),
-  ]).then(()=>{if(disposed)return;ready=true;update(desired.rpm,desired.throttle,desired.volume,desired.enabled,desired.speed,desired.shifting,desired.inside,desired.braking)}).catch(e=>{if(!disposed)console.warn('Valhalla recordings could not load',e)})
+  ]).then(()=>{if(disposed)return;ready=true;update(desired.rpm,desired.throttle,desired.volume,desired.enabled,desired.speed,desired.shifting,desired.inside,desired.braking,desired.drive)}).catch(e=>{if(!disposed)console.warn('Valhalla recordings could not load',e)})
   return loading
  }
  function start(){if(disposed)return;void preload();void context?.resume()}
@@ -53,34 +54,42 @@ export function createValhallaEngineAudio(){
   const i=list.findIndex(b=>b.rpm>revs)-1,blend=(Math.log(revs)-Math.log(list[i]!.rpm))/(Math.log(list[i+1]!.rpm)-Math.log(list[i]!.rpm))
   return [[i,Math.cos(blend*Math.PI/2)],[i+1,Math.sin(blend*Math.PI/2)]]
  }
- function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false){
-  desired={rpm,throttle,volume,enabled,speed,shifting,inside,braking};if(!ready||!context||!master||!filter)return
+ function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false,drive?:EngineDrive){
+  desired={rpm,throttle,volume,enabled,speed,shifting,inside,braking,drive};if(!ready||!context||!master||!filter)return
   const now=context.currentTime
   if(enabled&&!wasEnabled){ignition=play(takes.get('start'),.8);startUntil=now+takes.get('start')!.duration;stopUntil=0;idle=play(takes.get('idle'),0,true)}
-  if(!enabled&&wasEnabled){stop(ignition);ignition=undefined;stop(idle);idle=undefined;active.forEach(t=>stop(t));active.clear();play(takes.get('stop'),.8);stopUntil=now+takes.get('stop')!.duration}
+  if(!enabled&&wasEnabled){stop(ignition);ignition=undefined;stop(idle);idle=undefined;active.forEach(t=>stop(t));active.clear();lastHeard.clear();play(takes.get('stop'),.8);stopUntil=now+takes.get('stop')!.duration}
   wasEnabled=enabled
   master.gain.setTargetAtTime((enabled||now<stopUntil)?Math.max(0,Math.min(1,volume))*(inside?.5:1):0,now,.1)
   filter.frequency.setTargetAtTime(inside?3400:10000,now,.15)
   if(!enabled)return
-  const revs=Math.max(900,Math.min(8200,rpm)),loaded=throttle&&!braking,moving=Math.abs(speed)>.35
+  const revs=Math.max(900,Math.min(8200,rpm)),moving=Math.abs(speed)>.35
+  // the pedal (smoothed by createEngineAudio) trades the load and overrun banks with equal power
+  const pull=drive?.load??(throttle&&!braking?1:0),onLoad=Math.sin(pull*Math.PI/2),onOverrun=Math.cos(pull*Math.PI/2)
   const revWeight=Math.max(0,Math.min(1,(revs-1250)/600)),started=throttle||moving||now>startUntil-.3
-  if((loaded||moving)&&ignition){stop(ignition);ignition=undefined}
-  const on=started?1:0,shift=shifting?.65:1
+  if((throttle&&!braking||moving)&&ignition){stop(ignition);ignition=undefined}
+  const on=started?1:0,shift=1-.35*(drive?.shift??(shifting?1:0))
   idle?.gain.gain.setTargetAtTime(on*GAIN.idle*.75*(1-revWeight),now,.07);idle?.source.playbackRate.setTargetAtTime(Math.max(.9,Math.min(1.25,revs/idleBase)),now,.08)
   // inside the cabin the engine behind the seats carries more than the tailpipes
-  const wanted=new Map<string,number>()
+  // a loop that falls silent (the revs moved past it, or the pedal took its bank away) keeps running quietly for 1.5 s,
+  // so tapping the pedal or hovering about one rpm brings the same loop back instead of starting it over
+  const heard=new Set<string>()
   for(const [name,list] of banks){
    const part=name.startsWith('exhaust')?'exhaust':'engine',load=name.endsWith('load')
-   const level=on*revWeight*shift*(load?(loaded?.85:0):(loaded?0:.6))*GAIN[part]*lift(revs)*(inside&&part==='engine'?1.4:1)
-   if(level<=0)continue
+   const level=on*revWeight*shift*(load?.85*onLoad:.6*onOverrun)*GAIN[part]*lift(revs)*(inside&&part==='engine'?1.4:1)
    for(const [i,w] of neighbours(list,revs)){
-    const key=name+':'+i;wanted.set(key,level*w)
-    let t=active.get(key);if(!t){t=play(list[i]!.buffer,0,true);if(!t)continue;active.set(key,t)}
-    t.gain.gain.setTargetAtTime(level*w,now,.06);t.source.playbackRate.setTargetAtTime(Math.max(.7,Math.min(1.35,revs/list[i]!.rpm)),now,.06)
+    const key=name+':'+i,value=level*w;let t=active.get(key)
+    if(!t&&value>1e-3){t=play(list[i]!.buffer,0,true);if(t)active.set(key,t)}
+    if(!t)continue
+    heard.add(key);if(value>1e-3)lastHeard.set(key,now)
+    t.gain.gain.setTargetAtTime(value,now,.04);t.source.playbackRate.setTargetAtTime(Math.max(.7,Math.min(1.35,revs/list[i]!.rpm)),now,.06)
    }
   }
-  for(const [key,t] of active)if(!wanted.has(key)){stop(t,.06);active.delete(key)}
+  for(const [key,t] of active){
+   if(!heard.has(key))t.gain.gain.setTargetAtTime(0,now,.04)
+   if(now-(lastHeard.get(key)??0)>1.5){stop(t,.04);active.delete(key);lastHeard.delete(key)}
+  }
  }
- function dispose(){disposed=true;abort.abort();playing.forEach(t=>{try{t.source.stop()}catch{}});playing.clear();active.clear();banks.clear();takes.clear();void context?.close();context=undefined}
+ function dispose(){disposed=true;abort.abort();playing.forEach(t=>{try{t.source.stop()}catch{}});playing.clear();active.clear();lastHeard.clear();banks.clear();takes.clear();void context?.close();context=undefined}
  return {preload,start,update,dispose}
 }

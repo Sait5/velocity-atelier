@@ -3,7 +3,7 @@
 // frame rate so the effect of a change is visible at once.
 const s=useAtelier(),{t}=useLocale()
 const performance=useState<{fps:number,visible:boolean}>('scene-performance')
-const qualities=[{id:'Medium',ru:'Среднее',en:'Medium',note:['Без постобработки, обычная чёткость — для слабых ноутбуков','No post-processing, standard resolution — for slower laptops']},{id:'High',ru:'Высокое',en:'High',note:['Сглаживание, блики, полуторная чёткость','Anti-aliasing, glow, 1.5× resolution']},{id:'Ultra',ru:'Ультра',en:'Ultra',note:['Максимальная чёткость (2×) и все эффекты','Full 2× resolution and every effect']}] as const
+const qualities=[{id:'Medium',ru:'Среднее',en:'Medium',note:['Без постобработки, обычная чёткость, облегчённые текстуры — для телефонов и слабых ноутбуков','No post-processing, standard resolution, lighter textures — for phones and slower laptops']},{id:'High',ru:'Высокое',en:'High',note:['Сглаживание, блики, полуторная чёткость','Anti-aliasing, glow, 1.5× resolution']},{id:'Ultra',ru:'Ультра',en:'Ultra',note:['Максимальная чёткость (2×) и все эффекты','Full 2× resolution and every effect']}] as const
 const limits=[{value:30,label:'30'},{value:60,label:'60'},{value:120,label:'120'},{value:0,label:'∞'}]
 const note=computed(()=>qualities.find(q=>q.id===s.quality.value)?.note??qualities[2].note)
 </script>

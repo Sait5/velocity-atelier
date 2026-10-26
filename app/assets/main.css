@@ -36,3 +36,7 @@ html.photo-mode .vehicle-canvas,html.photo-mode .vehicle-canvas *,html.photo-mod
    a slim dark track with an olive thumb in the site's accent family */
 html{color-scheme:dark;scrollbar-width:thin;scrollbar-color:#5d6b3f #070a09}
 html::-webkit-scrollbar{width:8px;background:#070a09}html::-webkit-scrollbar-thumb{background:#5d6b3f;border-radius:8px;border:2px solid #070a09}html::-webkit-scrollbar-thumb:hover{background:#d9ec8a}
+/* the garage pages by chapters and marks them on its own rail (GarageChapterRail): no scrollbar there, in any browser */
+html.garage-snap{scrollbar-width:none}html.garage-snap::-webkit-scrollbar{display:none}
+/* the header's glass is 91% opaque: over a playing 1080p film the blur behind it was redone every frame for no visible gain */
+html.garage-snap .header{-webkit-backdrop-filter:none;backdrop-filter:none}

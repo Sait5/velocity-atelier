@@ -1,1 +1,1 @@
-<template><AmbientAudio /><NuxtPage /></template>
+<template><AmbientAudio /><NuxtPage /><SiteGuide /></template>

@@ -1,6 +1,6 @@
 import * as T from 'three'
 import {createRoadAssets} from './roadAssets'
-import {placeRoadside,rockGeometry,rockMaterial,type Placement} from './roadsideScatter'
+import {GRASS_BLOCK,GRASS_BLOCKS,grassMaterial,grassTuft,placeVerge,rockMaterial,rockShape,shoulderGeometry,shoulderMaterial,snowBankGeometry,snowBankMaterial,vergeGlsl,type VergePlacement} from './roadsideScatter'
 import {atmosphereUniforms} from './atmosphere'
 import {createRain} from './rain'
 import {roadWearGlsl} from './roadWear'
@@ -126,6 +126,7 @@ export function createMountainRoad(scene:T.Scene,winter=false){
    float mHash(vec2 c,float period){c.x=mod(c.x,period);return fract(sin(dot(c,vec2(127.1,311.7)))*43758.5453);}
    float mNoise(vec2 p,float period){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mHash(i,period),mHash(i+vec2(1.,0.),period),f.x),mix(mHash(i+vec2(0.,1.),period),mHash(i+vec2(1.,1.),period),f.x),f.y);}
    vec3 tri(sampler2D tex,vec3 p){vec3 w=pow(abs(normalize(terrainNormal)),vec3(4.));w/=max(.001,w.x+w.y+w.z);return texture2D(tex,p.yz).rgb*w.x+texture2D(tex,p.xz).rgb*w.y+texture2D(tex,p.xy).rgb*w.z;}
+   ${vergeGlsl}
   `).replace('#include <map_fragment>',`#include <map_fragment>
    float closeDetail=1.-smoothstep(65.,320.,length(vViewPosition));vec3 grain=tri(rockDetail,terrainPoint*${winter?'.5':'.1875'});
    ${winter?'float sourceGrey=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));diffuseColor.rgb=vec3(sourceGrey)*vec3(.94,.98,1.04);diffuseColor.rgb=mix(diffuseColor.rgb,grain*vec3(.90,.95,1.0),closeDetail*.70);':`float sourceGrey=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));
@@ -148,6 +149,12 @@ export function createMountainRoad(scene:T.Scene,winter=false){
    float grassMask=(1.-steep)*smoothstep(.24,.5,macro+.3*(up.y-.8))*(1.-smoothstep(95.,150.,terrainPoint.y));
    vec3 ground=mix(rockColour,scree,(1.-steep)*(1.-grassMask)*.65);ground=mix(ground,grass,grassMask*.9);
    ground=mix(ground,vec3(sourceGrey)*vec3(1.,.97,.93),.14);
+   // the verge: compacted gravel along the shoulder, then soil and thatch under the grass up to the slope foot (no bare
+   // grey shelf); its lattices repeat over the 256 m chunk, so chunk joints stay seamless
+   float vergeZ=abs(terrainPoint.z),vergeGrain=dot(tri(rockDetail,terrainPoint*.875),vec3(.2126,.7152,.0722));
+   float toMeadow=smoothstep(4.9,6.4,vergeZ)*smoothstep(.72,.9,up.y)*(1.-smoothstep(2.5,8.,terrainPoint.y+.22))*(1.-smoothstep(16.,24.,vergeZ));
+   ground=mix(ground,vergeMeadow(terrainPoint.xz,vergeGrain),toMeadow*.92);
+   ground=mix(ground,vergeGravel(terrainPoint.xz,vergeGrain),(1.-smoothstep(5.,6.4+1.2*vgNoise(terrainPoint.xz*.5,128.),vergeZ))*smoothstep(.6,.85,up.y));
    float summitSnow=smoothstep(128.,152.,terrainPoint.y+macro*24.)*(1.-steep*.55);
    diffuseColor.rgb=mix(ground,vec3(.80,.82,.85),summitSnow);vec3 outerTone=rockColour;`}
    // Source UVs stop at the scan border; the outer closure uses continuous
@@ -170,84 +177,129 @@ export function createMountainRoad(scene:T.Scene,winter=false){
    #endif
   `)
  }
- terrain.customProgramCacheKey=()=>`mountain-pbr-hidden-boundary-v7-${winter}`
+ terrain.customProgramCacheKey=()=>`mountain-pbr-hidden-boundary-v8-${winter}`
  const asphalt=assets.texture('/textures/asphalt_01_diff_4k.webp',true),normal=assets.texture('/textures/asphalt_01_nor_gl_2k.webp'),rough=assets.texture('/textures/asphalt_01_rough_2k.webp')
  for(const t of [asphalt.map,normal.map,rough.map])t.repeat.set(128,3.8)
- const roadMat=own(new T.MeshStandardMaterial({map:asphalt.map,normalMap:normal.map,normalScale:new T.Vector2(.5,.5),roughnessMap:rough.map,roughness:.95,color:'#ffffff',envMapIntensity:.42}))
- roadMat.onBeforeCompile=s=>{s.uniforms.roadTravel=roadTravel;s.uniforms.atmoWet=atmo.wet;s.uniforms.lakeTimeRipple=mistTime;s.uniforms.snowColour={value:rock.map};s.uniforms.snowNormal={value:rockNormal.map};s.uniforms.snowRough={value:rockRough.map};s.vertexShader=s.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 roadPoint;uniform float roadTravel;').replace('#include <begin_vertex>','#include <begin_vertex>\nroadPoint=position;roadPoint.x=(modelMatrix*vec4(position,1.)).x-roadTravel;');s.fragmentShader=s.fragmentShader.replace('#include <common>',`#include <common>
- varying vec3 roadPoint;uniform sampler2D snowColour,snowNormal,snowRough;uniform float atmoWet,lakeTimeRipple;
- ${roadWearGlsl}
- float snowHash(vec2 p){p.x=mod(p.x,128.);return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
- float snowNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(snowHash(i),snowHash(i+vec2(1.,0.)),f.x),mix(snowHash(i+vec2(0.,1.)),snowHash(i+vec2(1.,1.)),f.x),f.y);}
- float snowMask(vec2 p){vec2 q=vec2(p.x/32.,p.y*.65);float broad=snowNoise(q+vec2(19.,7.));float fine=snowNoise(q*4.+vec2(43.,13.));float bank=smoothstep(1.55+broad*1.35,3.7,abs(p.y));float field=broad*.64+fine*.36;float drift=smoothstep(.48,.71,field)*(.55+.38*snowNoise(q*.25+vec2(31.,4.)));return clamp(bank*(.55+.4*fine)+drift,0.,.96);}
+ // The road surface is one shader: the 4K asphalt scan read twice (the second read turned a quarter and rescaled, whole
+ // tiles per chunk) so its 2 m tile never repeats visibly, slow changes of age along the route, wheel tracks, painted
+ // lines filtered to the pixel and worn, a crumbly edge into the gravel shoulder (summer), and in winter packed snow
+ // with the wheel tracks cleared to wet, glossy asphalt. Texture reads use the chunk's own UVs (exact to the texel at
+ // any distance driven); only slow noise uses the travelled distance.
+ const roadMat=own(new T.MeshStandardMaterial({map:asphalt.map,normalMap:normal.map,normalScale:new T.Vector2(.55,.55),roughnessMap:rough.map,roughness:.95,color:'#ffffff',envMapIntensity:.42}))
+ roadMat.onBeforeCompile=s=>{Object.assign(s.uniforms,{roadTravel,atmoWet:atmo.wet,lakeTimeRipple:mistTime,snowColour:{value:rock.map},snowNormal:{value:rockNormal.map},snowRough:{value:rockRough.map},edgeDetail:{value:rock.map}})
+  s.vertexShader=s.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 roadPoint;varying vec2 roadLocal;uniform float roadTravel;').replace('#include <begin_vertex>','#include <begin_vertex>\nroadPoint=position;roadPoint.x=(modelMatrix*vec4(position,1.)).x-roadTravel;roadLocal=position.xy;')
+  s.fragmentShader=s.fragmentShader.replace('#include <common>',`#include <common>
+ varying vec3 roadPoint;varying vec2 roadLocal;uniform sampler2D snowColour,snowNormal,snowRough,edgeDetail;uniform float atmoWet,lakeTimeRipple;
+ ${roadWearGlsl}${vergeGlsl}
+ float rdHash(vec2 p){vec3 p3=fract(vec3(p.xyx)*.1031);p3+=dot(p3,p3.yzx+33.33);return fract((p3.x+p3.y)*p3.z);}
+ float rdNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(rdHash(i),rdHash(i+vec2(1.,0.)),f.x),mix(rdHash(i+vec2(0.,1.)),rdHash(i+vec2(1.,1.)),f.x),f.y);}
  `).replace('#include <map_fragment>',`#include <map_fragment>
- float asphaltGrey=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));vec3 asphalt=mix(vec3(asphaltGrey)*vec3(1.,.985,.96),diffuseColor.rgb,.3)*.92+vec3(.018,.018,.017);
- float lane=abs(roadPoint.y),tyre=exp(-pow((abs(lane-1.9)-.8)/.3,2.));vec2 wear=roadWear(roadPoint.xy);
- // broad, soft variation in the asphalt's age (sharp-edged noise patches read as squares)
- float repair=smoothstep(.35,.95,snowNoise(mat2(.8,-.6,.6,.8)*roadPoint.xy*vec2(.03,.1)+vec2(5.,1.)))*.45;
+ vec2 rp=roadPoint.xy;float lane=abs(rp.y);
+ vec2 tileB=vec2(vMapUv.y*.723+.37,vMapUv.x*.6953125);float tileMix=smoothstep(.28,.72,rdNoise(mat2(.8,-.6,.6,.8)*rp*vec2(.16,.4)+vec2(3.,1.)));
+ vec3 asp=mix(diffuseColor.rgb,texture2D(map,tileB).rgb,tileMix);float aspGrey=dot(asp,vec3(.2126,.7152,.0722));
+ vec3 asphalt=mix(vec3(aspGrey)*vec3(1.,.985,.96),asp,.3)*.92+vec3(.018,.018,.017);
+ // age: long, soft bands of greyer older surface and darker fresher stretches (no sharp patches)
+ float age=rdNoise(rp*vec2(.011,.09)+vec2(9.,2.))*.65+rdNoise(rp*vec2(.05,.3)+vec2(1.,7.))*.35;
+ asphalt*=.88+.24*age;asphalt=mix(asphalt,vec3(dot(asphalt,vec3(.3333)))*vec3(1.03,1.,.96),.3*age);
+ float tyre=exp(-pow((abs(lane-1.9)-.8)/.3,2.));vec2 wear=roadWear(rp);
  // rain: a glossy film, water standing in the tyre ruts and shallow dips
- float roadWater=atmoWet*clamp(roadPuddles(roadPoint.xy)*.9+tyre*smoothstep(.3,.6,snowNoise(vec2(roadPoint.x*.05,roadPoint.y)+7.))*.85,0.,1.)*(1.-smoothstep(3.,3.6,lane));
- asphalt*=(1.-.16*repair)*wear.x*(1.-.4*atmoWet-.22*roadWater);diffuseColor.rgb=mix(asphalt,vec3(.19,.175,.15),smoothstep(3.,3.8,lane)*.4);
- ${winter?'float snowCover=snowMask(roadPoint.xy);vec3 roadSnow=texture2D(snowColour,roadPoint.xy*.5).rgb;diffuseColor.rgb=mix(diffuseColor.rgb,roadSnow*vec3(.89,.94,1.),snowCover);':''}
- `);s.fragmentShader=s.fragmentShader.replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=mix(roughnessFactor,.7,tyre*.6)+wear.y;roughnessFactor=mix(roughnessFactor,.2,atmoWet);roughnessFactor=mix(roughnessFactor,.025,roadWater);');s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>','#include <normal_fragment_maps>\nvec2 rippleCellPoint=roadPoint.xy*2.4;vec2 rippleCell=floor(rippleCellPoint),rippleLocal=fract(rippleCellPoint)-.5;float rippleSeed=fract(sin(dot(rippleCell,vec2(41.3,289.1)))*43758.5453);\n float rippleAge=fract(lakeTimeRipple*1.4+rippleSeed);vec2 rippleCentre=(vec2(fract(rippleSeed*7.3),fract(rippleSeed*3.1))-.5)*.5;float rippleR=length(rippleLocal-rippleCentre),rippleFront=rippleR-rippleAge*.42;\n float rippleRing=sin(rippleFront*70.)*exp(-pow(rippleFront*16.,2.))*(1.-rippleAge);vec2 rippleSlope=normalize(rippleLocal-rippleCentre+1e-4)*rippleRing*.12*roadWater*(1.-smoothstep(8.,30.,length(vViewPosition)));\nvec3 waterUp=normalize((viewMatrix*vec4(rippleSlope.x,1.,rippleSlope.y,0.)).xyz);normal=normalize(mix(normal,waterUp,roadWater*.85));');if(winter){s.fragmentShader=s.fragmentShader.replace('roughnessFactor=mix(roughnessFactor,.7,tyre*.6);',`roughnessFactor=mix(roughnessFactor,.7,tyre*.6);
- roughnessFactor=mix(roughnessFactor,max(.8,texture2D(snowRough,roadPoint.xy*.5).r),snowMask(roadPoint.xy));
- `).replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
- vec3 snowN=texture2D(snowNormal,roadPoint.xy*.5).xyz*2.-1.;vec3 snowT=normalize(dFdx(-vViewPosition));vec3 snowB=normalize(cross(normal,snowT));normal=normalize(normal+(snowT*snowN.x+snowB*snowN.y)*snowMask(roadPoint.xy)*.18);
- `)}s.fragmentShader=s.fragmentShader.replace('#include <fog_fragment>',`#ifdef USE_FOG
+ float roadWater=atmoWet*clamp(roadPuddles(rp)*.9+tyre*smoothstep(.3,.6,rdNoise(vec2(rp.x*.05,rp.y)+7.))*.85,0.,1.)*(1.-smoothstep(3.,3.6,lane));
+ asphalt*=wear.x*(1.-.4*atmoWet-.22*roadWater);
+ // painted lines: dashed centre (3.2 m in every 12.8 m, whole periods per chunk) and solid edges, worn thin in places
+ float lineAA=max(fwidth(roadLocal.y),1e-4),dashU=(roadLocal.x+128.)/12.8,dashAA=max(fwidth(dashU),1e-4),dashF=fract(dashU);
+ float dash=smoothstep(0.,dashAA,dashF)*(1.-smoothstep(.25-dashAA,.25+dashAA,dashF));
+ float paint=max((1.-smoothstep(.06-lineAA,.06+lineAA,lane))*dash,1.-smoothstep(.06-lineAA,.06+lineAA,abs(lane-3.44)));
+ paint*=clamp(1.-.45*smoothstep(.45,.95,rdNoise(rp*vec2(.35,3.)+vec2(2.,4.)))-.35*smoothstep(.5,.2,aspGrey*2.4),0.,1.);
+ vec3 paintColour=vec3(.64,.635,.59)*(.86+.3*aspGrey);
+ // the asphalt breaks off unevenly where the shoulder begins
+ float edgeNoise=rdNoise(rp*vec2(1.7,2.3)+5.)*.6+rdNoise(rp*vec2(6.,7.))*.4,crumble=${winter?'0.':'smoothstep(3.6+.13*edgeNoise,3.8,lane)'};
+ ${winter?`
+ // packed snow (накат) over the whole lane, cleared by the tyres to wet asphalt in two tracks per lane, grey slush at
+ // their rims, deeper snow drifted toward the banks; the lines show only where the tracks run over them
+ float track=exp(-pow((abs(lane-1.9)-.85)/.3,2.));
+ float nBig=rdNoise(rp*vec2(.035,.3)+vec2(11.,3.)),nMid=rdNoise(rp*vec2(.21,1.2)+vec2(5.,8.)),nFine=rdNoise(rp*vec2(1.6,3.8)+vec2(2.,6.));
+ float clearTrack=smoothstep(.35,.8,track*(.8+.4*nMid)+.15*(nFine-.5));
+ float snowCover=clamp(.5+.45*nBig+.25*(nMid-.5),0.,1.)*(1.-.94*clearTrack);
+ snowCover=clamp(max(snowCover,smoothstep(2.85+.4*nMid,3.45,lane))+.14*(nFine-.5),0.,1.);
+ float snowCoverage=smoothstep(.15,.85,snowCover);
+ vec3 snowTex=mix(texture2D(snowColour,vMapUv).rgb,texture2D(snowColour,tileB).rgb,tileMix);float imprint=rdNoise(vec2(rp.x*.8,rp.y*7.5)+vec2(3.,9.));
+ vec3 packedSnow=mix(vec3(dot(snowTex,vec3(.2126,.7152,.0722))),snowTex,.6)*vec3(.8,.85,.93)*(.84+.22*imprint);
+ float slush=clearTrack*(1.-clearTrack)*4.*(1.-snowCoverage);
+ vec3 winterGround=mix(asphalt*.5,vec3(.2,.21,.23)*(.75+.5*snowTex.g),slush*.6);
+ winterGround=mix(winterGround,packedSnow,snowCoverage);
+ diffuseColor.rgb=mix(winterGround,paintColour*.9,paint*(1.-.85*snowCoverage));`:`
+ vec2 edgeAt=vec2(roadLocal.x,-roadLocal.y);vec3 edgeGround=vergeGravel(edgeAt,dot(texture2D(edgeDetail,edgeAt*.875).rgb,vec3(.2126,.7152,.0722)));
+ diffuseColor.rgb=mix(mix(asphalt,paintColour,paint),edgeGround,crumble);`}
+ `).replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
+ roughnessFactor=roughness*mix(texelRoughness.g,texture2D(roughnessMap,tileB).g,tileMix);
+ roughnessFactor=mix(roughnessFactor,.7,tyre*.6)+wear.y;roughnessFactor=mix(roughnessFactor,.62,paint);roughnessFactor=mix(roughnessFactor,.96,crumble);
+ ${winter?'roughnessFactor=mix(mix(roughnessFactor,.2,clearTrack*.85),max(.72,texture2D(snowRough,vMapUv).r),snowCoverage);roughnessFactor=mix(roughnessFactor,.38,slush);':''}
+ roughnessFactor=mix(roughnessFactor,.2,atmoWet);roughnessFactor=mix(roughnessFactor,.025,roadWater);`).replace('#include <normal_fragment_maps>',`
+ vec3 nA=texture2D(normalMap,vNormalMapUv).xyz*2.-1.,nB=texture2D(normalMap,tileB).xyz*2.-1.;
+ vec3 mapN=mix(nA,vec3(nB.y,nB.x,nB.z),tileMix);mapN.xy*=normalScale*(1.-.7*paint)*(1.+crumble);normal=normalize(tbn*mapN);
+ ${winter?`{vec3 snowN=texture2D(snowNormal,vMapUv).xyz*2.-1.;normal=normalize(mix(normal,normalize(tbn*vec3(snowN.xy*.7,snowN.z)),snowCoverage));
+  // the cleared tracks hold a film of melt water: flatter, mirror-like
+  normal=normalize(mix(normal,normalize((viewMatrix*vec4(0.,1.,0.,0.)).xyz),clearTrack*(1.-snowCoverage)*.55));}`:''}
+ vec2 rippleCellPoint=rp*2.4;vec2 rippleCell=floor(rippleCellPoint),rippleLocal=fract(rippleCellPoint)-.5;float rippleSeed=rdHash(rippleCell+vec2(41.3,289.1));
+ float rippleAge=fract(lakeTimeRipple*1.4+rippleSeed);vec2 rippleCentre=(vec2(fract(rippleSeed*7.3),fract(rippleSeed*3.1))-.5)*.5;float rippleR=length(rippleLocal-rippleCentre),rippleFront=rippleR-rippleAge*.42;
+ float rippleRing=sin(rippleFront*70.)*exp(-pow(rippleFront*16.,2.))*(1.-rippleAge);vec2 rippleSlope=normalize(rippleLocal-rippleCentre+1e-4)*rippleRing*.12*roadWater*(1.-smoothstep(8.,30.,length(vViewPosition)));
+ vec3 waterUp=normalize((viewMatrix*vec4(rippleSlope.x,1.,rippleSlope.y,0.)).xyz);normal=normalize(mix(normal,waterUp,roadWater*.85));`).replace('#include <fog_fragment>',`#ifdef USE_FOG
  gl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,smoothstep(fogNear,fogFar,length(vViewPosition)));
- #endif`)};roadMat.customProgramCacheKey=()=> `mountain-road-world-snow-v11-${winter}`
- const roadGeo=own(new T.PlaneGeometry(256,7.6)),placeholder=own(new T.BufferGeometry()),paintMat=own(new T.MeshStandardMaterial({color:'#d0cec1',roughness:.87,envMapIntensity:.2})),lineGeo=own(new T.PlaneGeometry(4,.13)),edgeGeo=own(new T.PlaneGeometry(256,.12))
+ #endif`)}
+ roadMat.customProgramCacheKey=()=> `mountain-road-v12-${winter}`
+ const roadGeo=own(new T.PlaneGeometry(256,7.6)),placeholder=own(new T.BufferGeometry())
  const steel=own(new T.MeshStandardMaterial({color:'#a4afb6',metalness:.82,roughness:.43})),postGeo=own(new T.BoxGeometry(.11,.82,.08))
- for(const material of [paintMat,steel]){material.onBeforeCompile=s=>{s.fragmentShader=s.fragmentShader.replace('#include <fog_fragment>',`#ifdef USE_FOG
+ steel.onBeforeCompile=s=>{s.fragmentShader=s.fragmentShader.replace('#include <fog_fragment>',`#ifdef USE_FOG
  gl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,smoothstep(fogNear,fogFar,length(vViewPosition)));
- #endif`)};material.customProgramCacheKey=()=> 'mountain-distance-fog-v1'}
+ #endif`)};steel.customProgramCacheKey=()=> 'mountain-distance-fog-v1'
  // A closed pressed W-beam profile, rather than a flat texture pretending to be metal.
  const profile=[[-.08,.48],[-.025,.52],[.01,.59],[-.04,.64],[.01,.69],[-.025,.76],[-.08,.80]],points:number[]=[],indices:number[]=[]
  for(const x of [-128,128])for(const [z,y] of [...profile,...[...profile].reverse().map(([z,y])=>[z!-.009,y])])points.push(x,y!,z!)
  const n=profile.length*2;for(let i=0;i<n;i++){let j=(i+1)%n;indices.push(i,j,n+j,i,n+j,n+i)}
  const railGeo=own(new T.BufferGeometry());railGeo.setAttribute('position',new T.Float32BufferAttribute(points,3));railGeo.setIndex(indices);railGeo.computeVertexNormals()
+ // Between the asphalt and the terrain: a gravel shoulder in summer, ploughed snow banks (one shape per chunk) in winter.
+ const shoulder=winter?undefined:own(shoulderGeometry()),edgeMaterial=own(winter?snowBankMaterial(rock.map,rockNormal.map,rockRough.map):shoulderMaterial(rock.map)),bankShapes:T.BufferGeometry[]=[]
+ type VergeMesh={mesh:T.InstancedMesh,centre:number,range:number,pick:(p:VergePlacement)=>{matrices:Float32Array,colours?:Float32Array}}
  const slots=Array.from({length:9},()=>{const group=new T.Group();root.add(group);const road=new T.Mesh(roadGeo,roadMat);road.rotation.x=-Math.PI/2;road.position.y=.007;road.receiveShadow=true;group.add(road)
-  const markers=new T.InstancedMesh(lineGeo,paintMat,16),dummy=new T.Object3D();for(let i=0;i<16;i++){dummy.position.set(-120+i*16,.011,0);dummy.rotation.x=-Math.PI/2;dummy.updateMatrix();markers.setMatrixAt(i,dummy.matrix)}group.add(markers)
-  for(const z of [-3.45,3.45]){const edge=new T.Mesh(edgeGeo,paintMat);edge.rotation.x=-Math.PI/2;edge.position.set(0,.012,z);group.add(edge)}
+  const dummy=new T.Object3D()
   // The valley-side barrier is deliberately absent from the mountain side.
   for(const z of winter?[-4.05,4.05]:[-4.05]){const rail=new T.Mesh(railGeo,steel);rail.position.z=z;group.add(rail);const posts=new T.InstancedMesh(postGeo,steel,64);for(let i=0;i<64;i++){dummy.position.set(-126+i*4,.35,z-.045);dummy.rotation.set(0,0,0);dummy.updateMatrix();posts.setMatrixAt(i,dummy.matrix)}group.add(posts)}
-  return {group,mesh:new T.Mesh(placeholder,terrain),plants:[] as T.InstancedMesh[],rocks:[] as T.InstancedMesh[],variant:-1,lod:''}
+  const edge=new T.Mesh(shoulder??placeholder,edgeMaterial);edge.receiveShadow=true;group.add(edge)
+  const mesh=new T.Mesh(placeholder,terrain);mesh.receiveShadow=true;mesh.castShadow=false
+  return {group,mesh,edge,verge:[] as VergeMesh[],variant:-1}
  })
- const geometries:T.BufferGeometry[][]=[]
- let scatter:number[][][]=[],plantBase=new T.Matrix4(),roadside:Placement[]=[]
+ const geometries:T.BufferGeometry[]=[]
+ let placements:VergePlacement[]=[]
  const ready=(async()=>{
   await Promise.all([colour.ready,rock.ready,rockRough.ready,rockNormal.ready,asphalt.ready,normal.ready,rough.ready,waves?.ready])
   // Bounded decoding keeps the loader responsive and all source chunks resident.
-  for(let i=0;i<16;i++){const a=await assets.model(`/models/${folder}/terrain-${i}-near.glb`);let result:T.BufferGeometry|undefined;a.scene.traverse(o=>{if(o instanceof T.Mesh)result=o.geometry});if(!result)throw new Error('Terrain mesh missing');geometries[i]=[result]}
+  for(let i=0;i<16;i++){const a=await assets.model(`/models/${folder}/terrain-${i}-near.glb`);let result:T.BufferGeometry|undefined;a.scene.traverse(o=>{if(o instanceof T.Mesh)result=o.geometry});if(!result)throw new Error('Terrain mesh missing');geometries[i]=result}
   if(!alive)return
-  if(!winter){
-   const [metadata,shrub]=await Promise.all([fetch(`/models/${folder}/scene.json`).then(r=>{if(!r.ok)throw new Error('Mountain metadata missing');return r.json()}),assets.model('/models/mountain-road/shrub-optimized.glb')]);scatter=metadata.scatter
-   shrub.scene.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(shrub.scene),size=bounds.getSize(new T.Vector3()),centre=bounds.getCenter(new T.Vector3()),scale=1.35/Math.max(.01,size.y);plantBase.makeScale(scale,scale,scale);plantBase.setPosition(-centre.x*scale,-bounds.min.y*scale,-centre.z*scale)
-   shrub.scene.traverse(o=>{if(o instanceof T.Mesh){const geo=own(o.geometry.clone());
-    // Quantized POSITION must be decoded before a world transform; Int16 would overflow.
-    for(const key of ['position','normal']){const a=geo.getAttribute(key);if(a?.normalized){const values=[];for(let i=0;i<a.count;i++)values.push(a.getX(i),a.getY(i),a.getZ(i));geo.setAttribute(key,new T.Float32BufferAttribute(values,3))}}
-    geo.applyMatrix4(o.matrixWorld);geo.applyMatrix4(plantBase);const materials=(Array.isArray(o.material)?o.material:[o.material]).map(original=>{const m=own(original.clone());if(m instanceof T.MeshStandardMaterial){m.side=T.DoubleSide;m.alphaTest=.4;m.roughness=1;m.envMapIntensity=.7;m.color.multiplyScalar(1.12);m.onBeforeCompile=s=>{s.fragmentShader=s.fragmentShader.replace('#include <fog_fragment>',`#ifdef USE_FOG
- gl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,smoothstep(fogNear,fogFar,length(vViewPosition)));
- #endif`)};m.customProgramCacheKey=()=> 'mountain-foliage-distance-fog-v1'}return m});
-    slots.forEach(slot=>{const plants=new T.InstancedMesh(geo,materials.length===1?materials[0]:materials,7+20);plants.castShadow=false;plants.receiveShadow=false;slot.group.add(plants);slot.plants.push(plants)})
-   }})
+  if(winter)for(let v=0;v<16;v++)bankShapes.push(own(snowBankGeometry(v)))
+  else{
+   // Summer verge: four boulder shapes and two small-stone shapes, two kinds of grass tuft, set once per chunk.
+   const shapes=[...[1,2,3,4].map(k=>rockShape(k,3)),...[5,6].map(k=>rockShape(k,2))];shapes.forEach(s=>own(s.geometry))
+   const tufts=[own(grassTuft(3,30,.3,3,.28)),own(grassTuft(8,12,.6,4,.6))]
+   placements=geometries.map((geo,i)=>placeVerge(geo,i,shapes,4,tufts.length))
+   const stone=own(rockMaterial(rock.map,rockNormal.map,rockRough.map)),blades=own(grassMaterial(mistTime))
+   const capacity=(pick:VergeMesh['pick'])=>Math.max(1,...placements.map(p=>pick(p).matrices.length/16))
+   slots.forEach(slot=>{
+    shapes.forEach((shape,k)=>{const pick:VergeMesh['pick']=p=>({matrices:p.rocks[k]!}),mesh=new T.InstancedMesh(shape.geometry,stone,capacity(pick));mesh.castShadow=k<4;mesh.receiveShadow=true;mesh.count=0;slot.group.add(mesh);slot.verge.push({mesh,centre:0,range:k<4?640:240,pick})})
+    for(let b=0;b<GRASS_BLOCKS;b++)tufts.forEach((geo,kind)=>{const pick:VergeMesh['pick']=p=>p.grass[b]![kind]!,size=capacity(pick),mesh=new T.InstancedMesh(geo,blades,size);mesh.instanceColor=new T.InstancedBufferAttribute(new Float32Array(size*3).fill(1),3);mesh.receiveShadow=true;mesh.count=0;slot.group.add(mesh);slot.verge.push({mesh,centre:-128+GRASS_BLOCK*(b+.5),range:112,pick})})
+   })
   }
-  if(!winter){
-   // Roadside rocks and shrubs on the mountain-side verge, placed once per chunk on its own surface.
-   roadside=geometries.map((pair,i)=>placeRoadside(pair[0]!,i))
-   const shapes=[own(rockGeometry(1)),own(rockGeometry(2))],stone=own(rockMaterial(rock.map,rockNormal.map,rockRough.map)),most=shapes.map((_,k)=>Math.max(...roadside.map(r=>r.rocks[k]!.length)))
-   slots.forEach(slot=>{slot.rocks=shapes.map((shape,k)=>{const m=new T.InstancedMesh(shape,stone,Math.max(1,most[k]!));m.castShadow=m.receiveShadow=true;m.count=0;slot.group.add(m);return m})})
-  }
-  slots.forEach(s=>{s.group.add(s.mesh);s.mesh.receiveShadow=true});update(0,0,0)
+  slots.forEach(s=>s.group.add(s.mesh));update(0,0,0)
  })()
+ function fillVerge(e:VergeMesh,p:VergePlacement){const {matrices,colours}=e.pick(p);e.mesh.instanceMatrix.array.set(matrices);e.mesh.count=matrices.length/16;e.mesh.instanceMatrix.needsUpdate=true;if(colours&&e.mesh.instanceColor){e.mesh.instanceColor.array.set(colours);e.mesh.instanceColor.needsUpdate=true}e.mesh.computeBoundingSphere()}
  function update(distance:number,speed:number,time:number){if(rain.object.visible)rain.update(time,speed,contacts);const base=Math.floor(distance/256),offset=T.MathUtils.euclideanModulo(distance,256);roadTravel.value=T.MathUtils.euclideanModulo(distance,16384);mistTime.value=time
-  // Every visible section keeps the same geometry/material. Recycle only beyond
-  // the opaque end of atmospheric fog; no whole-section LOD or foliage popping.
-  for(let i=0;i<slots.length;i++){const s=slots[T.MathUtils.euclideanModulo(i-base,slots.length)]!;const chunk=i-4-base,variant=T.MathUtils.euclideanModulo(chunk,16),x=offset+(i-4)*256;const lod=0;s.group.position.x=x;s.group.visible=Math.abs(x)-128<650;s.mesh.castShadow=false;s.plants.forEach(p=>{p.visible=Math.abs(x)<896});s.rocks.forEach(r=>{r.visible=Math.abs(x)<640})
-   if(geometries[variant]&&(s.variant!==variant||s.lod!==String(lod))){s.mesh.geometry=geometries[variant]![lod]!;const dummy=new T.Object3D();s.plants.forEach(plants=>{scatter[variant]?.forEach((p,j)=>{dummy.position.set(p[0]!,p[1]!-.12,p[2]!);dummy.rotation.y=j*2.39+variant;dummy.scale.setScalar(p[3]!);dummy.updateMatrix();plants.setMatrixAt(j,dummy.matrix)});const extra=roadside[variant]?.shrubs??[],first=scatter[variant]?.length??0;extra.forEach((m,j)=>plants.setMatrixAt(first+j,m));plants.count=Math.min(first+extra.length,7+20);plants.instanceMatrix.needsUpdate=true;plants.computeBoundingSphere();plants.visible=Math.abs(x)<896});s.rocks.forEach((r,k)=>{const list=roadside[variant]?.rocks[k]??[];list.forEach((m,j)=>r.setMatrixAt(j,m));r.count=list.length;r.instanceMatrix.needsUpdate=true;r.computeBoundingSphere();r.visible=Math.abs(x)<640});s.variant=variant;s.lod=String(lod)}
+  // Every visible section keeps the same geometry/material. Recycle only beyond the opaque end of atmospheric fog
+  // (a section changes its chunk only when it jumps from behind the car to ~1 km ahead); no LOD or foliage popping.
+  for(let i=0;i<slots.length;i++){const s=slots[T.MathUtils.euclideanModulo(i-base,slots.length)]!;const chunk=i-4-base,variant=T.MathUtils.euclideanModulo(chunk,16),x=offset+(i-4)*256;s.group.position.x=x;s.group.visible=Math.abs(x)-128<650
+   if(geometries[variant]&&s.variant!==variant){s.mesh.geometry=geometries[variant]!;if(bankShapes[variant])s.edge.geometry=bankShapes[variant]!;const p=placements[variant];if(p)s.verge.forEach(e=>fillVerge(e,p));s.variant=variant}
+   for(const e of s.verge)e.mesh.visible=Math.abs(x+e.centre)<e.range
   }
  }
- function prepare(renderer:T.WebGLRenderer,camera:T.Camera){const stage=new T.Group();for(const pair of geometries)for(const geo of pair){const m=new T.Mesh(geo,terrain);m.frustumCulled=false;stage.add(m)}root.add(stage);const groupVisibility=slots.map(s=>s.group.visible);slots.forEach(s=>{s.group.visible=true});const plants=slots.flatMap(s=>[...s.plants,...s.rocks]),saved=plants.map(p=>[p.visible,p.frustumCulled]);plants.forEach(p=>{p.visible=true;p.frustumCulled=false});for(const t of [colour.map,rock.map,rockRough.map,rockNormal.map,asphalt.map,normal.map,rough.map,...(waves?[waves.map]:[])])renderer.initTexture(t);const old=renderer.getRenderTarget(),target=new T.WebGLRenderTarget(2,2);try{renderer.setRenderTarget(target);renderer.render(scene,camera)}finally{renderer.setRenderTarget(old);root.remove(stage);slots.forEach((s,i)=>{s.group.visible=groupVisibility[i]!});plants.forEach((p,i)=>{p.visible=saved[i]![0]!;p.frustumCulled=saved[i]![1]!});target.dispose()}}
+ function prepare(renderer:T.WebGLRenderer,camera:T.Camera){const stage=new T.Group();for(const geo of geometries){const m=new T.Mesh(geo,terrain);m.frustumCulled=false;stage.add(m)}for(const geo of bankShapes){const m=new T.Mesh(geo,edgeMaterial);m.frustumCulled=false;stage.add(m)}root.add(stage);const groupVisibility=slots.map(s=>s.group.visible);slots.forEach(s=>{s.group.visible=true});const extras=slots.flatMap(s=>s.verge.map(e=>e.mesh)),saved=extras.map(p=>[p.visible,p.frustumCulled]);extras.forEach(p=>{p.visible=true;p.frustumCulled=false});for(const t of [colour.map,rock.map,rockRough.map,rockNormal.map,asphalt.map,normal.map,rough.map,...(waves?[waves.map]:[])])renderer.initTexture(t);const old=renderer.getRenderTarget(),target=new T.WebGLRenderTarget(2,2);try{renderer.setRenderTarget(target);renderer.render(scene,camera)}finally{renderer.setRenderTarget(old);root.remove(stage);slots.forEach((s,i)=>{s.group.visible=groupVisibility[i]!});extras.forEach((p,i)=>{p.visible=saved[i]![0]!;p.frustumCulled=saved[i]![1]!});target.dispose()}}
  // Orbit stays in the carved corridor; no camera can enter the nearby mountain face.
  function adjustCamera(camera:T.PerspectiveCamera,position:T.Vector3){if(camera.position.z>4.8||(winter&&camera.position.z< -4.8)){camera.position.z=T.MathUtils.clamp(camera.position.z,winter?-4.8:-100,4.8);camera.lookAt(position.x,position.y+.65,position.z)}}
  return {ready,prepare,adjustCamera,heightAt:()=>.007,setAtmosphere(options:{rain:boolean,snow:boolean,horizon:T.Color}){rain.setVisible(options.rain);if(flakes)flakes.visible=options.snow;horizonMaterial.color.copy(options.horizon)},setContacts:(points:T.Vector3[])=>{contacts=points;if(points.length)snowCar.value.set(points.reduce((s,p)=>s+p.x,0)/points.length,points.reduce((s,p)=>s+p.z,0)/points.length)},update,setVisible:(visible:boolean)=>{root.visible=visible},dispose(){alive=false;rain.dispose();scene.remove(root);root.traverse(o=>{if(o instanceof T.InstancedMesh)o.dispose()});assets.dispose();owned.forEach(o=>o.dispose())}}

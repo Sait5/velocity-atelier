@@ -1,6 +1,7 @@
 import * as T from 'three'
 import {createHeadlightPool} from './lampPool'
 import {liftDarkUpholstery} from './upholstery'
+import {createWindowRegulator} from './windowRegulator'
 
 /**
  * Aston Martin Valhalla (Ddiaz Design, Sketchfab), rigged by tools/prepare-valhalla-model.py: metre scale, front -x,
@@ -57,15 +58,16 @@ export function prepareValhalla(root:T.Group){
  if(doors.some(d=>!d)||wheels.some(w=>!w))throw Error('Valhalla rig unavailable')
  const axes=doors.map(d=>{const side=Math.sign(d.position.z);return {axis:new T.Vector3(-.0146,-.0852,.0931*side).normalize(),side}})
  function setDoors(left:number,right=left){doors.forEach((door,i)=>door.quaternion.setFromAxisAngle(axes[i]!.axis,T.MathUtils.clamp(i===0?left:right,0,1)*OPEN*axes[i]!.side))}
- const panes=doors.flatMap(d=>d.children.filter(o=>o.name.endsWith('__glass')).map(mesh=>({mesh,rest:mesh.position.clone()})))
- function setWindows(value:number){for(const {mesh,rest} of panes){mesh.position.copy(rest);mesh.position.y-=value*.25;mesh.visible=value<.99}}
+ // the door glass slides as one rigid pane along its own slope into the door and is clipped under its own lowest edge
+ // (windowRegulator.ts): dropped straight down, the leaning pane showed through the door skin
+ const {setWindows,dispose:disposeWindows}=createWindowRegulator(doors.flatMap(d=>d.children.filter(o=>o.name.endsWith('__glass')).flatMap(o=>{const found:T.Mesh[]=[];o.traverse(c=>{if(c instanceof T.Mesh)found.push(c)});return found})))
  const headlights:T.SpotLight[]=[]
  const spill=createHeadlightPool(-2.1,.62);root.add(spill)
  for(const side of [-1,1]){const lamp=new T.SpotLight('#dceaff',0,8,.42,.8,2);lamp.position.set(-1.95,.6,side*.78);lamp.target.position.set(-5,.05,side*.85);root.add(lamp,lamp.target);headlights.push(lamp)}
  function setLights(front:boolean,rear:boolean,frontLevel=Number(front),rearLevel=Number(rear)){root.userData.frontEnabled=front;root.userData.tailEnabled=rear;spill.visible=front;head.emissiveIntensity=4*frontLevel;tail.emissiveIntensity=3.2*rearLevel;headlights.forEach(l=>l.intensity=65*frontLevel)}
  function setUpholstery(color:string){liftDarkUpholstery(color,leather.color)}
  function updateInstruments(){}
- function dispose(){const geo=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([body,white]),tex=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geo.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geo.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)tex.add(v);m.dispose()});tex.forEach(t=>t.dispose())}
+ function dispose(){disposeWindows();const geo=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([body,white]),tex=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geo.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geo.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)tex.add(v);m.dispose()});tex.forEach(t=>t.dispose())}
  setDoors(0)
  return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments,dispose}
 }

@@ -31,6 +31,7 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
  <div class="drive-page" :class="{'controls-open':more}" :aria-busy="!ready&&!error">
   <AtelierHeader />
   <ClientOnly><VehicleScene ref="scene" :key="retry" drive :road-map="roadMap" @loading="beginLoading" @ready="finishLoading" @progress="progress=Math.max(progress,$event)" @speed="speed=$event" @telemetry="telemetry=$event" @brake="cancelAuto" @error="error=$event" /></ClientOnly>
+  <div v-if="s.cinema.value" class="letterbox" aria-hidden="true"><i /><i /></div>
   <div class="drive-title"><h2>{{s.car.value.brand}} {{s.car.value.name}}</h2></div>
   <NuxtLink to="/" class="drive-exit outline">{{t('ВЫЙТИ','EXIT')}} ↗</NuxtLink>
   <SceneLoading @complete="ready=true" :active="!ready" :progress="progress" :title="mapName" :vehicle="s.car.value.brand+' '+s.car.value.name" :status="loadingKind==='weather'?t('Меняем время суток и погоду','Changing the time and weather'):undefined" :error="error" @retry="retryScene" />
@@ -43,11 +44,11 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
   <Transition name="panel-tab"><button v-if="ready&&panelHidden" type="button" class="panel-tab" @click="panelHidden=false"><span aria-hidden="true">▴</span> {{t('ПАНЕЛЬ','CONTROLS')}}</button></Transition>
   <Transition name="drive-panel"><div v-show="ready&&!panelHidden" class="drive-controls" :class="{open:more}">
    <button type="button" class="panel-hide" :aria-label="t('Скрыть панель','Hide controls')" @click="panelHidden=true">{{t('СКРЫТЬ','HIDE')}} <span aria-hidden="true">▾</span></button>
-   <div class="drive-hints">W / ↑ {{t('ГАЗ','ACCELERATE')}} · S / ↓ {{t('ТОРМОЗ','BRAKE')}} · A / D {{t('ПОЛОСА','LANE')}}<br>{{t('ПЕРЕТАСКИВАНИЕ — ОСМОТР','DRAG TO LOOK AROUND')}} · C {{t('КАМЕРА','CAMERA')}} · K {{t('КИНО','CINEMA')}}</div>
+   <div class="drive-hints">W / ↑ {{t('ГАЗ','ACCELERATE')}} · S / ↓ {{t('ТОРМОЗ','BRAKE')}}<br>{{t('ПЕРЕТАСКИВАНИЕ — ОСМОТР','DRAG TO LOOK AROUND')}} · C {{t('КАМЕРА','CAMERA')}} · K {{t('КИНО','CINEMA')}} · N {{t('СЛЕДУЮЩИЙ ПЛАН','NEXT SHOT')}}</div>
    <div class="drive-button-grid">
     <button :aria-pressed="cruise" @click="auto">{{cruise?t('ОСТАНОВИТЬ РАЗГОН','STOP ACCELERATING'):t('АВТОРАЗГОН','AUTO ACCELERATE')}}</button>
     <button class="secondary" :aria-pressed="s.engine.value" @click="s.engine.value=!s.engine.value">{{s.engine.value?t('ВЫКЛЮЧИТЬ МОТОР','MUTE ENGINE'):t('ЗВУК МОТОРА','ENGINE SOUND')}}</button>
-    <button v-if="[0,3,8].includes(s.car.value.shape)" class="secondary" :aria-pressed="s.windowsDown.value" @click="s.windowsDown.value=!s.windowsDown.value">{{s.windowsDown.value?t('ПОДНЯТЬ ОКНА','RAISE WINDOWS'):t('ОПУСТИТЬ ОКНА','LOWER WINDOWS')}}</button>
+    <button class="secondary" :aria-pressed="s.windowsDown.value" @click="s.windowsDown.value=!s.windowsDown.value">{{s.windowsDown.value?t('ПОДНЯТЬ ОКНА','RAISE WINDOWS'):t('ОПУСТИТЬ ОКНА','LOWER WINDOWS')}}</button>
     <button @click="scene?.cycleCamera()">{{t('КАМЕРА','CAMERA')}}</button>
     <button v-if="roadMap==='desert'||roadMap==='mountain'" class="secondary" @click="cycleTime">{{t('ВРЕМЯ','TIME')}}: {{timeLabel}}</button>
     <button v-if="roadMap==='desert'||roadMap==='mountain'" class="secondary" :aria-pressed="s.weather.value.rain" @click="s.weather.value.rain=!s.weather.value.rain">{{s.weather.value.rain?t('БЕЗ ДОЖДЯ','STOP RAIN'):t('ДОЖДЬ','RAIN')}}</button>
@@ -100,6 +101,8 @@ onBeforeUnmount(()=>{clearTimeout(revealTimer);scene.value?.setKey('w',false)})
 .drive-panel-enter-from,.drive-panel-leave-to{transform:translateY(calc(100% + 40px));opacity:0}
 .panel-tab-enter-active{transition:opacity .3s ease .25s}.panel-tab-leave-active{transition:opacity .15s}.panel-tab-enter-from,.panel-tab-leave-to{opacity:0}
 @media(max-width:700px){.panel-tab{left:12px;bottom:12px}}
+/* cinema camera: 2.39:1 bars that slide in over the picture (none when the screen is already wider) */
+.letterbox{position:fixed;inset:0;pointer-events:none;z-index:1}.letterbox i{position:absolute;left:0;right:0;height:max(0px,calc((100vh - 100vw / 2.39) / 2));background:#000;animation:letterbox .6s cubic-bezier(.2,.7,.2,1)}.letterbox i:first-child{top:0}.letterbox i:last-child{bottom:0}@keyframes letterbox{from{height:0}}
 </style>
 
 

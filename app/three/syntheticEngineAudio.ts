@@ -1,6 +1,7 @@
+import type {EngineDrive} from './engineAudio'
 /** Procedural V12 presentation audio; this is not a recorded Revuelto engine. */
 export function createSyntheticEngineAudio(){
- const abort=new AbortController();let disposed=false,brakeBuffer:AudioBuffer|undefined,brakeTake:{source:AudioBufferSourceNode,gain:GainNode}|undefined,lastBraking=false
+ const abort=new AbortController();let disposed=false,brakeBuffer:AudioBuffer|undefined,brakeTake:{source:AudioBufferSourceNode,gain:GainNode}|undefined
  let context:AudioContext|undefined,master:GainNode,pulse:OscillatorNode,bass:OscillatorNode,filter:BiquadFilterNode,air:GainNode,windFilter:BiquadFilterNode,brake:GainNode,noise:AudioBufferSourceNode,combustion:GainNode
  function start(){
   if(disposed)return
@@ -19,18 +20,22 @@ export function createSyntheticEngineAudio(){
   const ctx=context
   void fetch('/audio/car-braking.flac',{signal:abort.signal}).then(response=>{if(!response.ok)throw Error('Brake recording unavailable');return response.arrayBuffer()}).then(bytes=>ctx.decodeAudioData(bytes)).then(buffer=>{if(!disposed)brakeBuffer=buffer}).catch(()=>{})
  }
- function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false){
-  if(!context)return;const time=context.currentTime,velocity=Math.abs(speed),load=throttle&&!braking?1:.25,cut=shifting?.43:1
+ function update(rpm:number,throttle:boolean,volume:number,enabled:boolean,speed=0,shifting=false,inside=false,braking=false,drive?:EngineDrive){
+  if(!context)return;const time=context.currentTime,velocity=Math.abs(speed)
+  // the pedals as createEngineAudio smooths them: the combustion swells and eases with the load instead of switching
+  const load=.25+.75*(drive?.load??(throttle&&!braking?1:0)),cut=1-.57*(drive?.shift??(shifting?1:0)),pedal=drive?.brake??(braking?1:0)
   pulse.frequency.setTargetAtTime(Math.max(900,rpm)/10,time,.09);bass.frequency.setTargetAtTime(rpm/30,time,.12)
-  combustion.gain.setTargetAtTime((.14+load*.18)*cut,time,.08)
-  filter.frequency.setTargetAtTime(inside?450+rpm*.14:650+rpm*.30+load*500,time,.16)
+  combustion.gain.setTargetAtTime((.14+load*.18)*cut,time,.05)
+  filter.frequency.setTargetAtTime(inside?450+rpm*.14:650+rpm*.30+load*500,time,.1)
   windFilter.frequency.setTargetAtTime(inside?500:1250,time,.25)
   air.gain.setTargetAtTime(Math.min(.16,velocity*.0016)*(inside?.35:1),time,.25)
-  const stopping=enabled&&braking&&velocity>6
-  if(stopping&&!lastBraking&&brakeBuffer){const source=context.createBufferSource(),gain=context.createGain();source.buffer=brakeBuffer;gain.gain.value=Math.min(.8,.25+velocity*.006)*(inside?.45:1);source.connect(gain);gain.connect(master);source.start();const take={source,gain};brakeTake=take;source.onended=()=>{source.disconnect();gain.disconnect();if(brakeTake===take)brakeTake=undefined}}
-  if(!stopping&&brakeTake){brakeTake.gain.gain.setTargetAtTime(0,time,.03);try{brakeTake.source.stop(time+.15)}catch{}brakeTake=undefined}
-  lastBraking=stopping
-  brake.gain.setTargetAtTime(!brakeBuffer&&stopping?Math.min(.065,velocity*.0008)*(inside?.45:1):0,time,.10)
+  // the brake recording: a press above 6 m/s starts it, then its level follows the pedal and fades out between 6 and
+  // 4 m/s; a press while it is still sounding carries on with it rather than starting it again
+  const squeal=enabled?Math.max(0,Math.min(1,(velocity-4)/2))*(inside?.45:1):0
+  if(pedal>.02&&squeal>0&&velocity>6&&!brakeTake&&brakeBuffer){const source=context.createBufferSource(),gain=context.createGain();source.buffer=brakeBuffer;gain.gain.value=0;source.connect(gain);gain.connect(master);source.start();const take={source,gain};brakeTake=take;source.onended=()=>{source.disconnect();gain.disconnect();if(brakeTake===take)brakeTake=undefined}}
+  brakeTake?.gain.gain.setTargetAtTime(pedal*squeal*Math.min(.8,.25+velocity*.006),time,.03)
+  if(!enabled&&brakeTake){try{brakeTake.source.stop(time+.15)}catch{}brakeTake=undefined}
+  brake.gain.setTargetAtTime(!brakeBuffer?pedal*squeal*Math.min(.065,velocity*.0008):0,time,.10)
   master.gain.setTargetAtTime(enabled?volume*(inside?.24:.31):0,time,.16)
  }
  function dispose(){disposed=true;abort.abort();if(!context)return;brakeTake?.source.stop();brakeTake=undefined;noise.stop();pulse.stop();bass.stop();void context.close();context=undefined}

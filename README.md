@@ -1,5 +1,7 @@
 # Velocity Atelier
 
+**Сайт: [project-rkm9y.vercel.app](https://project-rkm9y.vercel.app)**
+
 Приватный 3D-шоурум на Nuxt 4, Vue 3, TypeScript и Three.js: осмотр автомобилей, настройка отделки, вход в салон и поездка со звуком двигателя.
 
 ![Ferrari в студии](docs/images/showroom.jpg)

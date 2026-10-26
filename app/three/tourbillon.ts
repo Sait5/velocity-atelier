@@ -2,6 +2,7 @@ import * as T from 'three'
 import {createHeadlightPool} from './lampPool'
 import {installTourbillonGauges} from './tourbillonGauges'
 import {liftDarkUpholstery} from './upholstery'
+import {createWindowRegulator} from './windowRegulator'
 
 export function prepareTourbillon(root:T.Group){
  const materials=new Map<string,T.MeshStandardMaterial>()
@@ -64,11 +65,13 @@ totalEmissiveRadiance=vec3(1.,.96,.88)*front*tourHead*2.+vec3(1.,.015,.005)*rear
   d.quaternion.setFromAxisAngle(new T.Vector3(0,-side*.55,1).normalize(),1.13*p)
   d.position.copy(doorRest[i]!).sub(pivot).applyQuaternion(d.quaternion).add(pivot)
  })}
- const panes=doors.flatMap(d=>d.children.filter(o=>o.name.includes('sliding_glass')||o.name.includes('sliding glass')).map(mesh=>({mesh,rest:mesh.position.clone()})))
- function setWindows(value:number){for(const {mesh,rest} of panes){mesh.position.copy(rest);mesh.position.y-=T.MathUtils.clamp(value,0,1)*.3;mesh.visible=value<.98}}
+ // the door glass slides as one rigid pane along its own slope into the door and is clipped under its own lowest edge
+ // (windowRegulator.ts); the small lens parts in the glass material stay put. (Dropped straight down, the leaning pane
+ // came out through the door skin together with those parts.)
+ const {setWindows,dispose:disposeWindows}=createWindowRegulator(doors.flatMap(d=>d.children.filter((o):o is T.Mesh=>o instanceof T.Mesh&&(o.name.includes('sliding_glass')||o.name.includes('sliding glass')))))
  const lifted=new T.Color()
  function setUpholstery(color:string){liftDarkUpholstery(color,lifted);trimTargets.forEach(m=>m.color.copy(lifted))}
- function dispose(){const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>(),textures=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geometries.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())}
+ function dispose(){disposeWindows();const geometries=new Set<T.BufferGeometry>(),mats=new Set<T.Material>(),textures=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geometries.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)textures.add(v);m.dispose()});textures.forEach(t=>t.dispose())}
  setLights(false,false)
  const {updateInstruments}=installTourbillonGauges(root)
  return {root,body,secondaryPaint:rearPaint,rim,brake,glass,leather,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,setSecondaryPaint,updateInstruments,dispose}

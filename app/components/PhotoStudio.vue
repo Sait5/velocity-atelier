@@ -7,17 +7,17 @@ const p=state.photoSettings
 const driving=computed(()=>route.path.startsWith('/drive'))
 const panelOpen=ref(true),flash=ref(false),toast=ref('')
 const lenses=[0,24,35,50,85]
-const looks=[{id:'natural',ru:'Натуральный',en:'Natural'},{id:'warm',ru:'Тёплый',en:'Warm'},{id:'cool',ru:'Холодный',en:'Cool'},{id:'cinema',ru:'Кино',en:'Cinema'},{id:'mono',ru:'Ч/Б',en:'B&W'},{id:'film',ru:'Плёнка',en:'Film'}] as const
+const looks=[{id:'natural',ru:'Натуральный',en:'Natural'},{id:'warm',ru:'Тёплый',en:'Warm'},{id:'cool',ru:'Холодный',en:'Cool'},{id:'cinema',ru:'Кино',en:'Cinema'},{id:'mono',ru:'Ч/Б',en:'B&W'},{id:'film',ru:'Плёнка',en:'Film'},{id:'golden',ru:'Золотой час',en:'Golden hour'},{id:'noir',ru:'Нуар',en:'Noir'},{id:'vivid',ru:'Сочный',en:'Vivid'}] as const
 const blurs=[{id:0,ru:'Выкл.',en:'Off'},{id:1,ru:'Мягко',en:'Soft'},{id:2,ru:'Сильно',en:'Strong'}]
-const frames=[{id:'free',ru:'Весь экран',en:'Full'},{id:'16:9',ru:'16:9',en:'16:9'},{id:'2.39:1',ru:'Кино 2.39',en:'Cinema 2.39'},{id:'4:5',ru:'4:5',en:'4:5'},{id:'1:1',ru:'1:1',en:'1:1'}] as const
-const ratios:Record<string,number>={'16:9':16/9,'2.39:1':2.39,'4:5':.8,'1:1':1}
+const frames=[{id:'free',ru:'Весь экран',en:'Full'},{id:'16:9',ru:'16:9',en:'16:9'},{id:'2.39:1',ru:'Кино 2.39',en:'Cinema 2.39'},{id:'4:5',ru:'4:5',en:'4:5'},{id:'1:1',ru:'1:1',en:'1:1'},{id:'9:16',ru:'Сторис 9:16',en:'Story 9:16'}] as const
+const ratios:Record<string,number>={'16:9':16/9,'2.39:1':2.39,'4:5':.8,'1:1':1,'9:16':9/16}
 const ratio=computed(()=>ratios[p.value.frame])
 // the frame is drawn over the 3D canvas itself (the saved photo is cut from the canvas), wherever the page puts it
 const box=ref({left:0,top:0,width:0,height:0})
 function measure(){const canvas=document.querySelector('.vehicle-canvas');if(!canvas)return;const r=canvas.getBoundingClientRect();box.value={left:r.left,top:r.top,width:r.width,height:r.height}}
 const boxStyle=computed(()=>({left:box.value.left+'px',top:box.value.top+'px',width:box.value.width+'px',height:box.value.height+'px'}))
 const exposureLabel=computed(()=>(p.value.exposure>0?'+':p.value.exposure<0?'−':'±')+Math.abs(p.value.exposure).toFixed(1)+' EV')
-function reset(){p.value={lens:0,exposure:0,look:'natural',vignette:.2,blur:0,frame:'free',grid:false,freeze:false}}
+function reset(){p.value={lens:0,exposure:0,look:'natural',vignette:.2,grain:0,blur:0,frame:'free',grid:false,freeze:false}}
 let flashTimer:ReturnType<typeof setTimeout>|undefined,toastTimer:ReturnType<typeof setTimeout>|undefined
 function shoot(){state.photoRequest.value++;flash.value=true;clearTimeout(flashTimer);flashTimer=setTimeout(()=>flash.value=false,180);toast.value=t('Снимок сохранён в загрузки','Photo saved to downloads');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.value='',2600)}
 function key(event:KeyboardEvent){if((event.target as HTMLElement)?.tagName==='INPUT')return;if(event.key==='Escape')state.photoMode.value=false;else if(event.code==='KeyH')panelOpen.value=!panelOpen.value}
@@ -35,6 +35,7 @@ onBeforeUnmount(()=>{window.removeEventListener('resize',measure);document.docum
   <section><small>{{t('ЭКСПОЗИЦИЯ','EXPOSURE')}}<b>{{exposureLabel}}</b></small><input v-model.number="p.exposure" type="range" min="-1.5" max="1.5" step="0.1" :aria-label="t('Экспозиция','Exposure')"></section>
   <section><small>{{t('СТИЛЬ','LOOK')}}</small><div class="photo-chips three"><button v-for="look in looks" :key="look.id" type="button" :aria-pressed="p.look===look.id" @click="p.look=look.id">{{t(look.ru,look.en)}}</button></div></section>
   <section><small>{{t('ВИНЬЕТКА','VIGNETTE')}}<b>{{Math.round(p.vignette*100)}}%</b></small><input v-model.number="p.vignette" type="range" min="0" max="0.8" step="0.02" :aria-label="t('Виньетка','Vignette')"></section>
+  <section><small>{{t('ЗЕРНО ПЛЁНКИ','FILM GRAIN')}}<b>{{Math.round(p.grain*100)}}%</b></small><input v-model.number="p.grain" type="range" min="0" max="1" step="0.05" :aria-label="t('Зерно плёнки','Film grain')"></section>
   <section><small>{{t('ГЛУБИНА РЕЗКОСТИ','DEPTH OF FIELD')}}</small><div class="photo-chips three"><button v-for="blur in blurs" :key="blur.id" type="button" :aria-pressed="p.blur===blur.id" @click="p.blur=blur.id">{{t(blur.ru,blur.en)}}</button></div></section>
   <section><small>{{t('КАДР','FRAME')}}</small><div class="photo-chips three"><button v-for="frame in frames" :key="frame.id" type="button" :aria-pressed="p.frame===frame.id" @click="p.frame=frame.id">{{t(frame.ru,frame.en)}}</button></div></section>
   <section class="photo-toggles"><label><input v-model="p.grid" type="checkbox">{{t('Сетка третей','Thirds grid')}}</label><label v-if="driving"><input v-model="p.freeze" type="checkbox">{{t('Стоп-кадр','Freeze motion')}}</label></section>

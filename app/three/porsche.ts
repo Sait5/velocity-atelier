@@ -6,6 +6,7 @@ import {installPorscheRimFinish} from './porscheRimFinish'
 import {removeLooseHardware} from './sideDoorConnections'
 import {liftDarkUpholstery} from './upholstery'
 import {installPorscheInstruments} from './porscheInstruments'
+import {createWindowRegulator} from './windowRegulator'
 
 /** Authored 992.2 geometry, with baked metre scale and independent door/wheel pivots. */
 export function preparePorsche(root:T.Group){
@@ -50,8 +51,9 @@ export function preparePorsche(root:T.Group){
  const doors=['Porsche door L','Porsche door R'].map(name=>root.getObjectByName(name.replaceAll(' ','_')) as T.Group)
  const wheels=[0,1,2,3].map(i=>root.getObjectByName('Porsche_wheel_'+i) as T.Group)
  if(doors.some(d=>!d)||wheels.some(w=>!w))throw Error('Porsche rig unavailable')
- const panes=doors.flatMap(d=>d.children.filter(o=>o.name.startsWith('Porsche_door_glass')).map(mesh=>({mesh,rest:mesh.position.clone()})))
- function setWindows(value:number){for(const {mesh,rest} of panes){mesh.position.copy(rest);mesh.position.y-=value*.30;mesh.visible=value<.99}}
+ // the door glass slides as one rigid pane along its own slope into the door and is clipped under its own lowest edge
+ // (windowRegulator.ts): dropped straight down, the leaning pane showed through the door skin
+ const {setWindows,dispose:disposeWindows}=createWindowRegulator(doors.flatMap(d=>d.children.filter(o=>o.name.startsWith('Porsche_door_glass')).flatMap(o=>{const found:T.Mesh[]=[];o.traverse(c=>{if(c instanceof T.Mesh)found.push(c)});return found})))
  const doorRest=doors.map(d=>d.position.clone())
  // Vertical axis through the barrels of the Blender-built hinges (porsche-door-hinges.glb), in the front door gap.
  const hingeAxis=new T.Vector3(0,1,0)
@@ -62,7 +64,7 @@ export function preparePorsche(root:T.Group){
  function setLights(head:boolean,tail:boolean,frontLevel=Number(head),rearLevel=Number(tail)){root.userData.frontEnabled=head;root.userData.tailEnabled=tail;spill.visible=head;lamps.forEach(set=>set(frontLevel,rearLevel));headlights.forEach(l=>l.intensity=65*frontLevel);taillights.forEach(l=>l.intensity=0)}
  function setUpholstery(color:string){liftDarkUpholstery(color,leather.color)}
  const {updateInstruments}=installPorscheInstruments(root)
- function dispose(){const geo=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([body,white]),tex=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geo.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geo.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)tex.add(v);m.dispose()});tex.forEach(t=>t.dispose())}
+ function dispose(){disposeWindows();const geo=new Set<T.BufferGeometry>(),mats=new Set<T.Material>([body,white]),tex=new Set<T.Texture>();root.traverse(o=>{if(o instanceof T.Mesh){geo.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])mats.add(m)}});geo.forEach(g=>g.dispose());mats.forEach(m=>{for(const v of Object.values(m))if(v instanceof T.Texture)tex.add(v);m.dispose()});tex.forEach(t=>t.dispose())}
  return {root,body,rim,brake,glass,leather,white,doors,wheels,spokes:[] as T.Group[],setDoors,setWindows,setLights,setUpholstery,updateInstruments,dispose}
 }
 

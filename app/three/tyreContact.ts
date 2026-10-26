@@ -1,9 +1,12 @@
 import * as T from 'three'
+import {alignWheelAxes} from './wheelAxis'
 
 /** Four ground probes under a rigid chassis: the body follows the road height, grade and camber, and every wheel stays
  * fixed on its hub (no spring travel, so no wheel drifts or leaves its arch). Front wheels steer on carriers that also
- * hold the calipers and other non-spinning wheel hardware. Each wheel turns about its own axle (see wheelAxis.ts). */
+ * hold the calipers and other non-spinning wheel hardware. Each wheel turns about its own axle (wheelAxis.ts; wheels the
+ * loader left as authored, the Valhalla's and the Jesko's, are trued here before they roll). */
 export function createTyreContact(root:T.Group,wheels:T.Group[],surface:(x:number,z:number,distance:number)=>number,lateralLimit=()=>2.7){
+ if(!(import.meta.dev&&typeof location!=='undefined'&&location.search.includes('noalign')))alignWheelAxes(wheels)
  root.updateMatrixWorld(true)
  // Hub positions in the chassis frame (some wheels sit under intermediate model nodes).
  const rest=wheels.map(w=>root.worldToLocal(w.getWorldPosition(new T.Vector3()))),point=new T.Vector3()
